@@ -25,12 +25,6 @@ namespace MPhys
                 Console.WriteLine("Couldn't connect to PM100A");
             }
 
-            string[] ports = SerialPort.GetPortNames();
-            foreach (string port in ports)
-            {
-                Console.WriteLine(port);
-            }
-
             Console.ReadKey();
         }
     }
