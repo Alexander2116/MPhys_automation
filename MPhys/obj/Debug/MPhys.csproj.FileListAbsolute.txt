@@ -1,0 +1,9 @@
+C:\Users\Alex\Documents\GitHub\MPhys_automation\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\Alex\Documents\GitHub\MPhys_automation\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\Alex\Documents\GitHub\MPhys_automation\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+C:\Users\Alex\Documents\GitHub\MPhys_automation\ConsoleApp2\ConsoleApp2\bin\Debug\Thorlabs.PM100D_32.Interop.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\ConsoleApp2\ConsoleApp2\bin\Debug\Thorlabs.PM100D_32.Interop.xml
+C:\Users\Alex\Documents\GitHub\MPhys_automation\ConsoleApp2\ConsoleApp2\obj\Debug\MPhys.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Documents\GitHub\MPhys_automation\ConsoleApp2\ConsoleApp2\obj\Debug\MPhys.csproj.CopyComplete
+C:\Users\Alex\Documents\GitHub\MPhys_automation\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\Alex\Documents\GitHub\MPhys_automation\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
