@@ -25,7 +25,7 @@ namespace MPhys
                 Console.WriteLine("Couldn't connect to PM100A");
             }
 
-            TC9700 tc = new TC9700("COM3");
+            TC9700 tc = new TC9700("COM11");
             tc.get_temperature();
 
             Console.ReadKey();

@@ -30,7 +30,7 @@ namespace MPhys.Devices
         //
         public TC9700(string COM = "COM1", int Baud_Rate = 9600)
         {
-            _port = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
+            _port = new SerialPort(COM, Baud_Rate, Parity.None, 8, StopBits.One);
             ;
         }
 
@@ -50,13 +50,17 @@ namespace MPhys.Devices
 
         private void send_command(string command)
         {
+            if (!(_port.IsOpen))
+                _port.Open();
+
             byte[] bytes = Encoding.ASCII.GetBytes(command);
-            //_port.Write(bytes, 0, bytes.Length);
-            //_port.Write(command);
-            foreach(byte b in bytes)
+            _port.Write(bytes, 0, bytes.Length);
+            _port.Write(command);
+            /*foreach(byte b in bytes)
             {
                 Console.WriteLine(b);
-            }
+            }*/
+            //_port.Close();
             
         }
         private string receive()
@@ -70,7 +74,7 @@ namespace MPhys.Devices
                 byte[] ByteArray = new byte[count];
                 _port.Read(ByteArray, 0, count);
                 received = Encoding.ASCII.GetString(ByteArray);
-
+                _port.Close();
             }
             catch (Exception ex)
             {
