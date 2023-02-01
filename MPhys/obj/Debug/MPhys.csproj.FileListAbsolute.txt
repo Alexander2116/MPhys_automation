@@ -12,7 +12,6 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.Cor
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\MPhys.exe.config
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\MPhys.exe
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\MPhys.pdb
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Thorlabs.PM100D_32.Interop.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Thorlabs.PM100D_32.Interop.xml
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.CopyComplete
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.exe
