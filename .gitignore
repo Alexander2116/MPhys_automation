@@ -3,3 +3,7 @@
 *.user
 *.cache
 *.cache
+.vs/MPhys/v16/.suo
+*.exe
+*.p7s
+*.png
