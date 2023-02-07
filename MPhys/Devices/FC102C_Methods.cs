@@ -21,7 +21,7 @@ namespace MPhys.Devices
         /// <param name="serialNo">port list returned string include serial number and device descriptor, seperated by comma</param>
         /// <returns>non-negtive number: number of device in the list; negtive number : failed.</returns>
         [DllImport(FilterDLLName, EntryPoint = "GetPorts", CallingConvention = CallingConvention.Cdecl)]
-        public static extern int GetPorts(out StringBuilder serialNo);
+        public static extern int GetPorts(StringBuilder serialNo);
 
         /// <summary>
         ///  open port function.
@@ -30,15 +30,15 @@ namespace MPhys.Devices
         /// <param name="nBaud">bit per second of port</param>
         /// <param name="timeout">set timeout value in (s)</param>
         /// <returns> non-negtive number: hdl number returned successfully; negtive number : failed.</returns>
-        [DllImport(FilterDLLName, EntryPoint = "Open")]
-        public static extern int Open(char serialNo, int nBaud, int timeout);
+        [DllImport(FilterDLLName, EntryPoint = "Open", CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open(String serialNo, int nBaud, int timeout);
 
         /// <summary>
         /// close current opend port
         /// </summary>
         /// <param name="hdl">handle of port.</param>
         /// <returns> 0: success; negtive number : failed.</returns>
-        [DllImport(FilterDLLName, EntryPoint = "Close")]
+        [DllImport(FilterDLLName, EntryPoint = "Close", CallingConvention = CallingConvention.Cdecl)]
         public static extern int Close(char serialNo, int nBaud, int timeout);
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace MPhys.Devices
         /// <p>0xEB: time out;</p>
         /// <p>0xED: invalid string buffer;</p>
         /// </returns>
-        [DllImport(FilterDLLName, EntryPoint = "SetPosition")]
+        [DllImport(FilterDLLName, EntryPoint = "SetPosition", CallingConvention = CallingConvention.Cdecl)]
         public static extern int SetPosition(int hdl, int pos);
 
 
@@ -71,15 +71,9 @@ namespace MPhys.Devices
         /// <p>0xEB: time out;</p>
         /// <p>0xED: invalid string buffer;</p>
         /// </returns>
-        [DllImport(FilterDLLName, EntryPoint = "GetPosition")]
+        [DllImport(FilterDLLName, EntryPoint = "GetPosition", CallingConvention = CallingConvention.Cdecl)]
         public static extern int GetPosition(int hdl, IntPtr pos);
 
-        static int GetPos(int hdl)
-        {
-            int pos = 0;
-            GetPosition(hdl, (IntPtr)pos);
-            return pos;
-        }
     }
 
 }

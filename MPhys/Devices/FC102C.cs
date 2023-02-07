@@ -10,29 +10,40 @@ namespace MPhys.Devices
 
     class FC102C
     {
-        public FC102C()
+        private string _port;
+        public FC102C(string port)
         {
+            _port = port;
         }
 
         public void GetPorts()
         {
             var ports = new StringBuilder(256);
-            FC102C_Methods.GetPorts(out ports);
+            FC102C_Methods.GetPorts(ports);
 
             Console.WriteLine(ports);
 
         }
 
-        public void Open(int pos)
+        public int Open(int BaudRate = 9600)
         {
-            //FC102C_Methods.Open();
+            var hld = FC102C_Methods.Open(_port, BaudRate, 10);
+            return (int)hld;
         }
 
-        public void SetPostion(int pos)
+        public void SetPostion(int hld,int pos)
         {
-
+            FC102C_Methods.SetPosition(hld,pos);
         }
 
-        
+        public int GetPostion()
+        {
+            int pos =0;
+            int hld = Open();
+            FC102C_Methods.GetPosition(hld,(IntPtr)pos);
+            return pos;
+        }
+
+
     }
 }

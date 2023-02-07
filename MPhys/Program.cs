@@ -16,10 +16,10 @@ namespace MPhys
             Console.WriteLine("Hello");
             try
             {
-                pm = new PM100A();
+                //pm = new PM100A();
                 //Console.WriteLine(pm.get_power());
                 //pm.change_wavelength_correction(635);
-                pm.remove();
+                //pm.remove();
             }
             catch{
                 Console.WriteLine("Couldn't connect to PM100A");
@@ -35,14 +35,16 @@ namespace MPhys
                 //tc.close();
             }
             catch (Exception ex){ }
-            FC102C fc = new FC102C();
+            FC102C fc;
             try
             {
-                fc = new FC102C();
-                fc.GetPorts();
+                fc = new FC102C("COM4");
+                //fc.GetPorts();
+                int hld = fc.Open();
+                fc.SetPostion(hld,3);
+                //Console.WriteLine(fc.GetPostion());
             }
             catch { }
-
             Console.ReadKey();
         }
     }
