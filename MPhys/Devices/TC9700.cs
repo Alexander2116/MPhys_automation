@@ -41,14 +41,14 @@ namespace MPhys.Devices
 
         // Send a command requesting temperature value
         // Send TA?<CR>, get TA[value]<CR>.
-        public double get_temperature()
+        public string get_temperature()
         {
             string command = "TA?\r"; // <CR> = \r
             send_command(command);
             string data = receive("TA");
-            data = data.Replace("TA", "");
-            double data_double = Convert.ToDouble(data);
-            return data_double;
+            //data = data.Replace("TA", "");
+            //double data_double = Convert.ToDouble(data);
+            return data;
         }
 
         // Send a command to set a temperature to 'temperature'
@@ -80,14 +80,13 @@ namespace MPhys.Devices
         {
             string received = "";
             string data;
+            Thread.Sleep(50);
             try
             {
                 if (!(_port.IsOpen))
                     _port.Open();
 
                 // The number of bytes present in device's buffer
-                int count = _port.BytesToRead;
-                byte[] ByteArray = new byte[count];
 
 
                 // read bytes from the device
@@ -95,7 +94,21 @@ namespace MPhys.Devices
                 _continue = true;
 
                 while (_continue) 
-                { 
+                {
+                    int count = _port.BytesToRead;
+                    if (count >2)
+                    {
+                        Thread.Sleep(20);
+                        //Console.WriteLine(count);
+                        byte[] ByteArray = new byte[count];
+                        _port.Read(ByteArray, 0, count);
+                        foreach(byte ba in ByteArray)
+                        {
+                            //Console.WriteLine(ba);
+                        }
+                        received = (Encoding.ASCII.GetString(ByteArray));
+                        _continue = false;
+                    }
                     //_port.Read(ByteArray, 0, count);
                     data = _port.ReadExisting();
                     //int data = _port.ReadByte();
@@ -121,6 +134,7 @@ namespace MPhys.Devices
             catch (Exception ex)
             {
                 Console.WriteLine("Couldn't read data");
+                Console.WriteLine(ex.Message);
             }
             return received;
         }

@@ -26,7 +26,11 @@ namespace MPhys
             }
 
             TC9700 tc = new TC9700("COM3");
-            Console.WriteLine(tc.get_temperature());
+            for(int i =0; i<10;i++)
+            {
+                Console.WriteLine(tc.get_temperature());
+            }
+            //Console.WriteLine(tc.get_temperature());
             tc.close();
 
             Console.ReadKey();
