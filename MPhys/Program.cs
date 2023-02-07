@@ -24,14 +24,24 @@ namespace MPhys
             catch{
                 Console.WriteLine("Couldn't connect to PM100A");
             }
-
-            TC9700 tc = new TC9700("COM3");
-            for(int i =0; i<10;i++)
+            try
             {
-                Console.WriteLine(tc.get_temperature());
+                //TC9700 tc = new TC9700("COM3");
+                for (int i = 0; i < 10; i++)
+                {
+                    //Console.WriteLine(tc.get_temperature());
+                }
+                //Console.WriteLine(tc.get_temperature());
+                //tc.close();
             }
-            //Console.WriteLine(tc.get_temperature());
-            tc.close();
+            catch (Exception ex){ }
+            FC102C fc = new FC102C();
+            try
+            {
+                fc = new FC102C();
+                fc.GetPorts();
+            }
+            catch { }
 
             Console.ReadKey();
         }

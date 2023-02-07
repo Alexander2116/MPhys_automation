@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
+using System.Reflection;
 
 namespace MPhys.Devices
 {
     internal class FC102C_Methods
     {
         const String FilterDLLName = "FilterWheel102_win32.dll";
-        static FC102C_Methods()
+        private FC102C_Methods()
         {
 
         }
@@ -19,8 +20,8 @@ namespace MPhys.Devices
         /// </summary>
         /// <param name="serialNo">port list returned string include serial number and device descriptor, seperated by comma</param>
         /// <returns>non-negtive number: number of device in the list; negtive number : failed.</returns>
-        [DllImport(FilterDLLName, EntryPoint = "GetPorts")]
-        public static extern int _GetPorts(char serialNo);
+        [DllImport(FilterDLLName, EntryPoint = "GetPorts", CallingConvention = CallingConvention.Cdecl)]
+        public static extern int GetPorts(out StringBuilder serialNo);
 
         /// <summary>
         ///  open port function.
@@ -30,7 +31,15 @@ namespace MPhys.Devices
         /// <param name="timeout">set timeout value in (s)</param>
         /// <returns> non-negtive number: hdl number returned successfully; negtive number : failed.</returns>
         [DllImport(FilterDLLName, EntryPoint = "Open")]
-        public static extern int _Open(char serialNo, int nBaud, int timeout);
+        public static extern int Open(char serialNo, int nBaud, int timeout);
+
+        /// <summary>
+        /// close current opend port
+        /// </summary>
+        /// <param name="hdl">handle of port.</param>
+        /// <returns> 0: success; negtive number : failed.</returns>
+        [DllImport(FilterDLLName, EntryPoint = "Close")]
+        public static extern int Close(char serialNo, int nBaud, int timeout);
 
         /// <summary>
         /// <p>set fiterwheel's position to pos</p>
@@ -46,7 +55,7 @@ namespace MPhys.Devices
         /// <p>0xED: invalid string buffer;</p>
         /// </returns>
         [DllImport(FilterDLLName, EntryPoint = "SetPosition")]
-        public static extern int _SetPosition(int hdl, int pos);
+        public static extern int SetPosition(int hdl, int pos);
 
 
         /// <summary>
@@ -63,13 +72,14 @@ namespace MPhys.Devices
         /// <p>0xED: invalid string buffer;</p>
         /// </returns>
         [DllImport(FilterDLLName, EntryPoint = "GetPosition")]
-        public static extern int _GetPosition(int hdl, IntPtr pos);
+        public static extern int GetPosition(int hdl, IntPtr pos);
 
         static int GetPos(int hdl)
         {
             int pos = 0;
-            _GetPosition(hdl, (IntPtr)pos);
+            GetPosition(hdl, (IntPtr)pos);
             return pos;
         }
     }
+
 }
