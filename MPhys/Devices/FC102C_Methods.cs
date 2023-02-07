@@ -39,7 +39,7 @@ namespace MPhys.Devices
         /// <param name="hdl">handle of port.</param>
         /// <returns> 0: success; negtive number : failed.</returns>
         [DllImport(FilterDLLName, EntryPoint = "Close", CallingConvention = CallingConvention.Cdecl)]
-        public static extern int Close(char serialNo, int nBaud, int timeout);
+        public static extern int Close(String serialNo, int nBaud, int timeout);
 
         /// <summary>
         /// <p>set fiterwheel's position to pos</p>
@@ -73,6 +73,22 @@ namespace MPhys.Devices
         /// </returns>
         [DllImport(FilterDLLName, EntryPoint = "GetPosition", CallingConvention = CallingConvention.Cdecl)]
         public static extern int GetPosition(int hdl, IntPtr pos);
+
+        /// <summary>
+        /// <p>get the fiterwheel current position count</p>
+        /// <p>make sure the port was opened successful before call this function.</p>
+        /// <p>make sure this is the correct device by checking the ID string before call this function.</p>
+        /// </summary>
+        /// <param name="hdl">handle of port.</param>
+        /// <param name="poscount">fiterwheel actual position count</param>
+        /// <returns>
+        /// <p>0: success;</p>
+        /// <p>0xEA: CMD_NOT_DEFINED;</p>
+        /// <p>0xEB: time out;</p>
+        /// <p>0xED: invalid string buffer;</p>
+        /// </returns>
+        [DllImport(FilterDLLName, EntryPoint = "GetPositionCount", CallingConvention = CallingConvention.Cdecl)]
+        public static extern int GetPositionCount(int hdl, int pos);
 
     }
 
