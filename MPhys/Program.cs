@@ -39,14 +39,18 @@ namespace MPhys
             try
             {
                 fc = new FC102C("COM4");
-                //fc.GetPorts();
-                int hld = fc.Open();
+                int hld = fc._hdl;
                 Console.WriteLine(hld);
-                //fc.SetPostion(hld,3);
-                Console.WriteLine(fc.GetPostionCount(hld));
-                fc.Close();
-                //Console.WriteLine(fc.GetPostion());
+                if (hld < 0)
+                { }
+                else
+                {
+
+
+
+                }
             }
+            
             catch { }
             Console.ReadKey();
         }

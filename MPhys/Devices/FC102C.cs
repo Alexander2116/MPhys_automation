@@ -10,50 +10,86 @@ namespace MPhys.Devices
 
     class FC102C
     {
-        private string _port;
-        public FC102C(string port)
+        // Port COM[]
+        private String _port;
+        // handle of port
+        public Int32 _hdl;
+        public FC102C(String port, Int32 BaudRate = 115200)
         {
             _port = port;
+            _hdl = Open(BaudRate);
         }
 
         public void GetPorts()
         {
             var ports = new StringBuilder(256);
-            FC102C_Methods.GetPorts(ports);
+            FC102C_Methods.GetPorts(ports,256);
 
             Console.WriteLine(ports);
 
         }
 
-        public int Open(int BaudRate = 9600)
+        public int GetID()
         {
-            var hld = FC102C_Methods.Open(_port, BaudRate, 10);
-            return (int)hld;
+            var ID = new StringBuilder(256);
+            var res = FC102C_Methods.GetId(_hdl, ID);
+
+            Console.WriteLine(ID);
+            return (int)res;
         }
 
-        public int Close(int BaudRate = 9600)
+        // Open connection
+        // From documentation initial BaudRate = 115200
+        public int Open(int BaudRate)
         {
-            var hld = FC102C_Methods.Close(_port, BaudRate, 10);
-            return (int)hld;
+            var res = FC102C_Methods.Open(_port, BaudRate, 10);
+            return (int)res;
         }
 
-        public void SetPostion(int hld,int pos)
+        /// <return> 
+        /// <p> 0: Not Opened; </p>  
+        /// <p> 1: Opened; </p> 
+        /// </return> 
+        public int IsOpen()
         {
-            FC102C_Methods.SetPosition(hld,pos);
+            var ret = FC102C_Methods.IsOpen(_port);
+            // 0: Not Opened ; 1: Opened 
+            return (int)ret;
         }
 
+        /// <return> 
+        /// <p> 0: Closed; </p>  
+        /// <p> Negative number: Fail; </p> 
+        /// </return> 
+        public int Close()
+        {
+            var ret = FC102C_Methods.Close(_hdl);
+            // 0: Closed ; Negative number: Fail
+            return (int)ret;
+        }
+
+        // 
+        public void SetPostion(Int32 pos)
+        {
+            var ret = FC102C_Methods.SetPosition(_hdl,pos);
+            //return (int)ret;
+        }
+
+        // Get CURRENT position
         public int GetPostion()
         {
-            int pos =0;
-            int hld = Open();
-            FC102C_Methods.GetPosition(hld,(IntPtr)pos);
+            Int32 pos = 0;
+            var ret = FC102C_Methods.GetPosition(_hdl, out pos);
+
             return pos;
         }
 
-        public int GetPostionCount(int hld)
+        // For FW102C it is pos=6
+        public int GetPostionCount()
         {
             int pos = 0;
-            FC102C_Methods.GetPositionCount(hld, pos);
+            FC102C_Methods.GetPositionCount(_hdl, out pos);
+
             return pos;
         }
 
