@@ -39,17 +39,16 @@ namespace MPhys
             try
             {
                 fc = new FC102C("COM4");
-                // Must be present, cannot connect without it (weird)
-                fc.GetPorts();
+                
+                int hld = fc._hdl;
 
-                int hld = fc.Open();
-                fc.Enter_handler(hld);
                 Console.WriteLine(hld);
+
                 if (hld < 0)
                 { }
                 else
                 {
-                    fc.SetPostion(3);
+                    fc.SetPostion(2);
 
 
                 }

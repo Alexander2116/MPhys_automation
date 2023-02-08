@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Devices\FC102C.cs" />
-    <Compile Include="Devices\FC102C_Methods.cs" />
     <Compile Include="Devices\PM100A.cs" />
     <Compile Include="Devices\TC9700.cs" />
     <Compile Include="Program.cs" />
