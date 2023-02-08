@@ -14,10 +14,14 @@ namespace MPhys.Devices
         private String _port;
         // handle of port
         public Int32 _hdl;
-        public FC102C(String port, Int32 BaudRate = 115200)
+        public FC102C(String port)
         {
             _port = port;
-            _hdl = Open(BaudRate);
+        }
+
+        public void Enter_handler(int hdl)
+        {
+            _hdl = hdl;
         }
 
         public void GetPorts()
@@ -40,7 +44,7 @@ namespace MPhys.Devices
 
         // Open connection
         // From documentation initial BaudRate = 115200
-        public int Open(int BaudRate)
+        public int Open(int BaudRate = 115200)
         {
             var res = FC102C_Methods.Open(_port, BaudRate, 10);
             return (int)res;

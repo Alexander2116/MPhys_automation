@@ -10,7 +10,7 @@ namespace MPhys.Devices
 {
     internal class FC102C_Methods
     {
-        const String FilterDLLName = @".\FilterWheel102_win32.dll";
+        const String FilterDLLName = @"FilterWheel102_win32.dll";
         private FC102C_Methods()
         {
 
