@@ -186,10 +186,17 @@ namespace MPhys.Devices
             return (int)ret;
         }
 
-        // 
+        // Set position to: 1, 2, 3, 4, 5, 6
         public void SetPostion(Int32 pos)
         {
-            var ret = FC102C_Methods.SetPosition(_hdl,pos);
+            if (pos > 0 && pos < 7)
+            {
+                var ret = FC102C_Methods.SetPosition(_hdl, pos);
+            }
+            else
+            {
+                Console.WriteLine("Incorrect position");
+            }
             //return (int)ret;
         }
 

@@ -46,7 +46,8 @@ namespace MPhys.Devices
             string command = "TA?\r"; // <CR> = \r
             Send_command(command);
             string data = Receive("TA");
-            //data = data.Replace("TA", "");
+            data = data.Replace("TA", "");
+            data = data.Replace("\r", "");
             //double data_double = Convert.ToDouble(data);
             return data;
         }
@@ -54,8 +55,27 @@ namespace MPhys.Devices
         // Send a command to set a temperature to 'temperature'
         public void Set_temperature(double temperature)
         {
-            string command = "SET " + temperature.ToString() + "\r"; //<CR>
+            double temp = Math.Round(temperature, 3);
+            string command = "SET " + temp.ToString() + "\r"; //<CR>
             Send_command(command);
+        }
+
+        // Send a command to set PID
+        // Parameters: a,bbb,ccc,ddd. a={0,1} - control loop
+        public void Set_PID(int control_loop, int P, int I, int D)
+        {
+            string command = "PID "+ control_loop.ToString()+ "," + P.ToString() + "," + I.ToString() + "," + D.ToString() + "\r";
+            Send_command(command);
+        }
+
+        // Send a command to set mode
+        public void Set_mode(int mode)
+        {
+            if(mode==1 || mode==2 || mode==3 || mode==4)
+            {
+                string command = "MODE " + mode.ToString() + "\r";
+                Send_command(command);
+            }
         }
 
         // sends string command to the device. It needs to be ASCII encoded 
@@ -67,11 +87,6 @@ namespace MPhys.Devices
             byte[] bytes = Encoding.ASCII.GetBytes(command);
             _port.Write(bytes, 0, bytes.Length);
             _port.Write(command);
-            /*foreach(byte b in bytes)
-            {
-                Console.WriteLine(b);
-            }*/
-            //_port.Close();
             
         }
 
@@ -86,20 +101,17 @@ namespace MPhys.Devices
                 if (!(_port.IsOpen))
                     _port.Open();
 
-                // The number of bytes present in device's buffer
-
-
                 // read bytes from the device
                 // read until you receive 
                 _continue = true;
 
                 while (_continue) 
                 {
+                    /*
                     int count = _port.BytesToRead;
                     if (count >2)
                     {
                         Thread.Sleep(20);
-                        //Console.WriteLine(count);
                         byte[] ByteArray = new byte[count];
                         _port.Read(ByteArray, 0, count);
                         foreach(byte ba in ByteArray)
@@ -108,26 +120,18 @@ namespace MPhys.Devices
                         }
                         received = (Encoding.ASCII.GetString(ByteArray));
                         _continue = false;
-                    }
-                    //_port.Read(ByteArray, 0, count);
-                    data = _port.ReadExisting();
-                    //int data = _port.ReadByte();
-                    //received = Encoding.ASCII.GetString(BitConverter.GetBytes(data));
+                    }*/
 
-                    //received = Encoding.ASCII.GetString(ByteArray);
-                    //Console.Write(data);
+                    data = _port.ReadExisting();
+
+                    // Read if data has (initial) ____ \r structure (that's what should be receive from the device)
                     if(data.Contains("\r") && data.Contains(initial))
                     {
-                        //Console.WriteLine("Stop \r");
                         received = data;
                         _continue = false;
                     }
                     Thread.Sleep(_sleep_time); // 1/9600 * 10000 = 1.04ms
                 }
-
-                // encode to string
-                //received = Encoding.ASCII.GetString(ByteArray);
-                //Console.WriteLine("End");
 
                 _port.Close();
             }

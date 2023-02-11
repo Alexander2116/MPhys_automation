@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Devices\FC102C.cs" />
     <Compile Include="Devices\PM100A.cs" />
-    <Compile Include="Devices\TC9700.cs" />
+    <Compile Include="Devices\M9700.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
