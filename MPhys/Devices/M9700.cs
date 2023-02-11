@@ -24,7 +24,7 @@ using System.IO.Ports;
 
 namespace MPhys.Devices
 {
-    class TC9700
+    class M9700
     {
         private SerialPort _port;
         private bool _continue;
@@ -32,7 +32,7 @@ namespace MPhys.Devices
         private int _sleep_time;
 
         // Constructor, set COM channel and baud rate. Default value for M9700 is 9600.
-        public TC9700(string COM = "COM1", int Baud = 9600)
+        public M9700(string COM = "COM1", int Baud = 9600)
         {
             _Baud_Rate = Baud;
             _port = new SerialPort(COM, _Baud_Rate, Parity.None, 8, StopBits.One);
@@ -41,25 +41,25 @@ namespace MPhys.Devices
 
         // Send a command requesting temperature value
         // Send TA?<CR>, get TA[value]<CR>.
-        public string get_temperature()
+        public string Get_temperature()
         {
             string command = "TA?\r"; // <CR> = \r
-            send_command(command);
-            string data = receive("TA");
+            Send_command(command);
+            string data = Receive("TA");
             //data = data.Replace("TA", "");
             //double data_double = Convert.ToDouble(data);
             return data;
         }
 
         // Send a command to set a temperature to 'temperature'
-        public void set_temperature(double temperature)
+        public void Set_temperature(double temperature)
         {
             string command = "SET " + temperature.ToString() + "\r"; //<CR>
-            send_command(command);
+            Send_command(command);
         }
 
         // sends string command to the device. It needs to be ASCII encoded 
-        private void send_command(string command)
+        private void Send_command(string command)
         {
             if (!(_port.IsOpen))
                 _port.Open();
@@ -76,7 +76,7 @@ namespace MPhys.Devices
         }
 
         // receive data from the device
-        private string receive(string initial)
+        private string Receive(string initial)
         {
             string received = "";
             string data;
@@ -139,7 +139,7 @@ namespace MPhys.Devices
             return received;
         }
 
-        public void close()
+        public void Close()
         {
             _port.Close();
         }

@@ -26,13 +26,16 @@ namespace MPhys
             }
             try
             {
-                //TC9700 tc = new TC9700("COM3");
-                for (int i = 0; i < 10; i++)
+                M9700 tc = new M9700("COM5");
+                Console.WriteLine("Fine");
+                for (int i = 0; i < 50; i++)
                 {
-                    //Console.WriteLine(tc.get_temperature());
+                   Console.WriteLine(tc.Get_temperature());
+                    Console.WriteLine(i);
                 }
-                //Console.WriteLine(tc.get_temperature());
-                //tc.close();
+                tc.Set_temperature(295);
+                Console.WriteLine(tc.Get_temperature());
+                tc.Close();
             }
             catch (Exception ex){ }
             FC102C fc;
@@ -48,9 +51,7 @@ namespace MPhys
                 { }
                 else
                 {
-                    fc.SetPostion(2);
-
-
+                    fc.SetPostion(3);
                 }
             }
             
