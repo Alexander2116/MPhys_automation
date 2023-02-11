@@ -34,13 +34,13 @@ namespace MPhys.Devices
         }
 
         // Int value, lambda given in nm
-        public void change_wavelength_correction(int lambda)
+        public void Change_wavelength_correction(int lambda)
         {
             pm.setWavelength(lambda);
         }
 
         // measures power and return power in uW
-        public double get_power()
+        public double Get_power()
         {
             double power;
             pm.measPower(out power);
@@ -48,7 +48,7 @@ namespace MPhys.Devices
         }
 
         // Disconnects the connection between the program and the device, removes object 
-        public void remove()
+        public void Remove()
         {
             pm.Dispose();
             pm = null;
