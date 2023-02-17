@@ -92,7 +92,6 @@
     <Content Include="Devices\FilterWheel102_win32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GUI\DeviceConfig.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GUI\MainForm.resx">
