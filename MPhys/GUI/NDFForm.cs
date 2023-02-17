@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace MPhys.GUI
 {
@@ -22,6 +23,8 @@ namespace MPhys.GUI
             this.ControlBox = false;
             this.TopLevel = false;
             this.TopMost = true;
+            NDF1COM.Text = ConfigurationManager.AppSettings.Get("NDF1");
+            NDF2COM.Text = ConfigurationManager.AppSettings.Get("NDF2");
         }
     }
 }

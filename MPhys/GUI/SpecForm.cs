@@ -15,6 +15,10 @@ namespace MPhys.GUI
         public SpecForm()
         {
             InitializeComponent();
+            this.Location = new Point(60, 26);
+            this.ControlBox = false;
+            this.TopLevel = false;
+            this.TopMost = true;
         }
     }
 }

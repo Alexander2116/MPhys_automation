@@ -21,6 +21,11 @@ namespace MPhys.GUI
         public MainForm()
         {
             InitializeComponent();
+            NDFf = new NDFForm();
+            this.Controls.Add(NDFf);
+            buttonNDF.Enabled = false;
+            NDFf.Show();
+            NDFf.BringToFront();
         }
 
         private void enable_buttons()
@@ -40,11 +45,6 @@ namespace MPhys.GUI
             if (NDFf == null)
             {
                 NDFf = new NDFForm();
-                /*
-                NDFf.Location = new Point(60, 26);
-                NDFf.ControlBox = false;
-                NDFf.TopLevel = false;
-                NDFf.TopMost = true;*/
                 this.Controls.Add(NDFf);
 
                 buttonNDF.Enabled = false;
@@ -53,11 +53,9 @@ namespace MPhys.GUI
             }
             else
             {
-                Console.WriteLine("Sss");
                 NDFf.TopMost = true;
                 buttonNDF.Enabled = false;
                 NDFf.BringToFront();
-                //NDFf.Show();
             }
 
         }
@@ -68,11 +66,6 @@ namespace MPhys.GUI
             if (PMf == null)
             { 
                 PMf = new PMForm();
-                /*
-                PMf.Location = new Point(60, 26);
-                PMf.ControlBox = false;
-                PMf.TopLevel = false;
-                PMf.TopMost = true;*/
                 this.Controls.Add(PMf);
 
                 buttonPM.Enabled = false;
@@ -81,11 +74,9 @@ namespace MPhys.GUI
             }
             else
             {
-                Console.WriteLine("Sss");
                 PMf.TopMost = true;
                 buttonPM.Enabled = false;
                 PMf.BringToFront();
-                //PMf.Show();
             }
             
         }
