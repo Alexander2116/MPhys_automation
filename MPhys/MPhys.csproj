@@ -35,6 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
@@ -44,6 +47,36 @@
     <Compile Include="Devices\FC102C.cs" />
     <Compile Include="Devices\PM100A.cs" />
     <Compile Include="Devices\M9700.cs" />
+    <Compile Include="GUI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NDFForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NDFForm.Designer.cs">
+      <DependentUpon>NDFForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PMForm.Designer.cs">
+      <DependentUpon>PMForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SpecForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SpecForm.Designer.cs">
+      <DependentUpon>SpecForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TempForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TempForm.Designer.cs">
+      <DependentUpon>TempForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +91,14 @@
     <Content Include="Devices\FilterWheel102_win32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NDFForm.resx">
+      <DependentUpon>NDFForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

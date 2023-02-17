@@ -5,12 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using MPhys.Devices;
 using System.IO.Ports;
+using System.Windows.Forms;
+using MPhys.GUI;
 
 namespace MPhys
 {
     class Program
     {
-        static void Main(string[] args)
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
+        }
+
+
+        static void TestMain(string[] args)
         {
             PM100A pm;
             Console.WriteLine("Hello");
@@ -21,7 +32,8 @@ namespace MPhys
                 //pm.change_wavelength_correction(635);
                 //pm.remove();
             }
-            catch{
+            catch
+            {
                 Console.WriteLine("Couldn't connect to PM100A");
             }
             try
@@ -30,19 +42,19 @@ namespace MPhys
                 Console.WriteLine("Fine");
                 for (int i = 0; i < 50; i++)
                 {
-                   Console.WriteLine(tc.Get_temperature());
+                    Console.WriteLine(tc.Get_temperature());
                     Console.WriteLine(i);
                 }
                 tc.Set_temperature(295);
                 Console.WriteLine(tc.Get_temperature());
                 tc.Close();
             }
-            catch (Exception ex){ }
+            catch (Exception ex) { }
             FC102C fc;
             try
             {
                 fc = new FC102C("COM4");
-                
+
                 int hld = fc._hdl;
 
                 Console.WriteLine(hld);
@@ -54,7 +66,7 @@ namespace MPhys
                     fc.SetPostion(3);
                 }
             }
-            
+
             catch { }
             Console.ReadKey();
         }
