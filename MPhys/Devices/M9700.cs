@@ -39,6 +39,28 @@ namespace MPhys.Devices
             _sleep_time = 10000/Baud; //ms
         }
 
+        public void Open()
+        {
+            _port.Open();
+        }
+
+
+        /// <return> 
+        /// <p> 0: Not Opened; </p>  
+        /// <p> 1: Opened; </p> 
+        /// </return> 
+        public int IsOpen()
+        {
+            if (_port.IsOpen)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         // Send a command requesting temperature value
         // Send TA?<CR>, get TA[value]<CR>.
         public string Get_temperature()

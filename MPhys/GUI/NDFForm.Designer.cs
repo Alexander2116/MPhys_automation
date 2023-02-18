@@ -68,7 +68,7 @@ namespace MPhys.GUI
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(52, 92);
+            this.label3.Location = new System.Drawing.Point(275, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace MPhys.GUI
             // 
             // NDF1COM
             // 
-            this.NDF1COM.Location = new System.Drawing.Point(92, 89);
+            this.NDF1COM.Location = new System.Drawing.Point(315, 53);
             this.NDF1COM.Name = "NDF1COM";
             this.NDF1COM.ReadOnly = true;
             this.NDF1COM.Size = new System.Drawing.Size(37, 20);
@@ -84,7 +84,7 @@ namespace MPhys.GUI
             // 
             // NDF2COM
             // 
-            this.NDF2COM.Location = new System.Drawing.Point(413, 89);
+            this.NDF2COM.Location = new System.Drawing.Point(628, 53);
             this.NDF2COM.Name = "NDF2COM";
             this.NDF2COM.ReadOnly = true;
             this.NDF2COM.Size = new System.Drawing.Size(37, 20);
@@ -95,7 +95,7 @@ namespace MPhys.GUI
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(373, 92);
+            this.label4.Location = new System.Drawing.Point(588, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 4;
@@ -104,14 +104,14 @@ namespace MPhys.GUI
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 88);
+            this.comboBox1.Location = new System.Drawing.Point(154, 98);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(54, 21);
             this.comboBox1.TabIndex = 6;
             // 
             // buttonSet1
             // 
-            this.buttonSet1.Location = new System.Drawing.Point(195, 86);
+            this.buttonSet1.Location = new System.Drawing.Point(214, 96);
             this.buttonSet1.Name = "buttonSet1";
             this.buttonSet1.Size = new System.Drawing.Size(75, 23);
             this.buttonSet1.TabIndex = 7;
@@ -121,7 +121,7 @@ namespace MPhys.GUI
             // 
             // buttonSet2
             // 
-            this.buttonSet2.Location = new System.Drawing.Point(525, 86);
+            this.buttonSet2.Location = new System.Drawing.Point(525, 96);
             this.buttonSet2.Name = "buttonSet2";
             this.buttonSet2.Size = new System.Drawing.Size(75, 23);
             this.buttonSet2.TabIndex = 9;
@@ -132,7 +132,7 @@ namespace MPhys.GUI
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(465, 88);
+            this.comboBox2.Location = new System.Drawing.Point(465, 98);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(54, 21);
             this.comboBox2.TabIndex = 8;
