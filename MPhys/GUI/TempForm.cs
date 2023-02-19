@@ -15,36 +15,35 @@ namespace MPhys.GUI
 {
     public partial class TempForm : Form
     {
-        M9700 TempDev;
+        private M9700 TempDev;
+        private bool DeviceOpen = false;
+
 
         public TempForm()
         {
+            // Initialize and set possition of the window
             InitializeComponent();
             this.Location = new Point(60, 26);
             this.ControlBox = false;
             this.TopLevel = false;
             this.TopMost = true;
 
-            string M9700port = ConfigurationManager.AppSettings.Get("M9700");
-            textM9700COM.Text = M9700port;
+            modify_com_boxes();
 
-            TempDev = new M9700(M9700port);
+            timer1.Start();
 
-            foreach (string s in SerialPort.GetPortNames())
-            {
-                comboBox1.Items.Add(s);
-            }
-
-            check_com(M9700port);
         }
 
         private void buttonSet1_Click(object sender, EventArgs e)
         {
-            string new_com = comboBox1.SelectedItem.ToString();
-            textM9700COM.Text = new_com;
+            if (comboBox1.SelectedItem != null)
+            {
+                string new_com = comboBox1.SelectedItem.ToString();
+                textM9700COM.Text = new_com;
 
-            UpdateAppSettings("M9700", new_com);
-            modify_com_boxes();
+                UpdateAppSettings("M9700", new_com);
+                modify_com_boxes();
+            }
         }
 
 
@@ -52,18 +51,25 @@ namespace MPhys.GUI
         {
             string M9700port = ConfigurationManager.AppSettings.Get("M9700");
             textM9700COM.Text = M9700port;
-
-            check_com(M9700port);
-
-        }
-
-        private void check_com(string com1)
-        {
-            string M9700port = ConfigurationManager.AppSettings.Get("M9700");
-            // M9700
             try
             {
                 TempDev = new M9700(M9700port);
+                TempDev.Open();
+                TempDev.Close();
+                DeviceOpen = true;
+            }
+            catch { }
+
+            check_com();
+
+        }
+
+        private void check_com()
+        {
+            // M9700
+            try
+            {
+                //TempDev = new M9700(com1);
                 TempDev.Open();
                 if (TempDev.IsOpen()==1)
                 {
@@ -101,6 +107,56 @@ namespace MPhys.GUI
             catch (ConfigurationErrorsException)
             {
                 Console.WriteLine("Error writing app settings");
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            if(TempDev != null && DeviceOpen)
+            {
+                try
+                {
+                    //Uncomment when commencing
+                    //textBoxTemp.Text = TempDev.Get_temperature(); 
+                }
+                catch { }
+            }
+            if (checkBox1.Checked)
+            {
+                foreach (string s in SerialPort.GetPortNames())
+                {
+                    if (comboBox1.Items.Contains(s) == false)
+                    {
+                        comboBox1.Items.Add(s);
+                    }
+                }
+            }
+            if(TempDev == null)
+            {
+                modify_com_boxes();
+            }
+            check_com();
+            //textBoxTemp.Text = "";
+            
+        }
+
+        private void buttonSetTemp_Click(object sender, EventArgs e)
+        {
+            string text = textTempWrite.Text.ToString();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                comboBox1.Enabled = true;
+                buttonSet1.Enabled = true;
+            }
+            else
+            {
+                comboBox1.Enabled = false;
+                buttonSet1.Enabled = false;
             }
         }
     }

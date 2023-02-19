@@ -21,3 +21,4 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.NDFFor
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.PMForm.resources
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.SpecForm.resources
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.TempForm.resources
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.AssemblyReference.cache

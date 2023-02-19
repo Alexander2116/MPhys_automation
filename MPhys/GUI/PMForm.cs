@@ -10,13 +10,16 @@ using System.Windows.Forms;
 using System.Threading;
 using MPhys.Devices;
 using System.Configuration;
+using System.Diagnostics;
+using System.Timers;
 
 namespace MPhys.GUI
 {
     public partial class PMForm : Form
     {
         PM100A PMdev;
-        public bool is_open;
+        public bool DevOpen = false;
+
         public PMForm()
         {
             InitializeComponent();
@@ -25,21 +28,14 @@ namespace MPhys.GUI
             this.TopLevel = false;
             this.TopMost = true;
 
+
             string PMport = ConfigurationManager.AppSettings.Get("PM100A");
             textPMconnection.Text = PMport;
             textBoxConnSet.Text = PMport;
 
-            try
-            {
-                PMdev = new PM100A();
-                textBoxPower.Text = PMdev.Get_power().ToString();
-                textPMconnection.BackColor = Color.Green;
-            }
-            catch
-            {
-                textPMconnection.BackColor = Color.Red;
-            }
+            modify_com_boxes();
 
+            timer1.Start();
 
         }
 
@@ -47,19 +43,32 @@ namespace MPhys.GUI
         {
             string PMport = ConfigurationManager.AppSettings.Get("PM100A");
             textPMconnection.Text = PMport;
+            try
+            {
+                PMdev = new PM100A(PMport);
+                PMdev.Get_power();
+                DevOpen = true;
+            }
+            catch { }
 
-            check_com(PMport);
+            check_com();
 
         }
 
-        private void check_com(string com1)
+        private void check_com()
         {
             // PM100
             try
             {
-                PMdev = new PM100A();
-                textBoxPower.Text = PMdev.Get_power().ToString();
-                textPMconnection.BackColor = Color.Green;
+                if(PMdev != null)
+                {
+                    textBoxPower.Text = PMdev.Get_power().ToString();
+                    textPMconnection.BackColor = Color.Green;
+                }
+                else
+                {
+                    textPMconnection.BackColor = Color.Red;
+                }
             }
             catch
             {
@@ -97,6 +106,33 @@ namespace MPhys.GUI
 
             UpdateAppSettings("PM100A", new_com);
             modify_com_boxes();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(PMdev != null && DevOpen)
+            {
+                textBoxPower.Text = PMdev.Get_power().ToString();
+            }
+            if (PMdev == null)
+            {
+                modify_com_boxes();
+            }
+            check_com();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBoxConnSet.Enabled = true;
+                buttonComSet.Enabled = true;
+            }
+            else
+            {
+                textBoxConnSet.Enabled = false;
+                buttonComSet.Enabled = false;
+            }
         }
     }
 }

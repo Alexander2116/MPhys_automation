@@ -17,6 +17,8 @@ namespace MPhys.GUI
     {
         private FC102C NDF1;
         private FC102C NDF2;
+        private bool NDF1Open = false;
+        private bool NDF2Open = false;
 
         public NDFForm()
         {
@@ -28,21 +30,17 @@ namespace MPhys.GUI
 
             modify_com_boxes();
 
-            foreach (string s in SerialPort.GetPortNames())
-            {
-                comboBox1.Items.Add(s);
-                comboBox2.Items.Add(s);
-            }
+            timer1.Start();
+
         }
 
         #region Private functions 
-        private void check_com(string com1, string com2)
+        private void check_com()
         {
             // NDF1
             try
             {
-                NDF1 = new FC102C(com1);
-                if (NDF1.IsOpen() == 1)
+                if (NDF1 != null && NDF1Open)
                 {
                     NDF1COM.BackColor = Color.Green;
                 }
@@ -56,8 +54,7 @@ namespace MPhys.GUI
             // NDF2
             try
             {
-                NDF2 = new FC102C(com2);
-                if (NDF2.IsOpen() == 1)
+                if (NDF2 != null && NDF2Open)
                 {
                     NDF2COM.BackColor = Color.Green;
                 }
@@ -75,8 +72,34 @@ namespace MPhys.GUI
             string NDF2port = ConfigurationManager.AppSettings.Get("NDF2");
             NDF1COM.Text = NDF1port;
             NDF2COM.Text = NDF2port;
+            try
+            {
+                NDF1 = new FC102C(NDF1port);
+                if (NDF1.IsOpen()==1)
+                {
+                    NDF1Open = true;
+                }
+                else
+                {
+                    NDF1Open = false;
+                }
+            }
+            catch { }
+            try
+            {
+                NDF2 = new FC102C(NDF2port);
+                if (NDF2.IsOpen() == 1)
+                {
+                    NDF2Open = true;
+                }
+                else
+                {
+                    NDF2Open = false;
+                }
+            }
+            catch { }
 
-            check_com(NDF1port, NDF2port);
+            check_com();
 
         }
 
@@ -106,20 +129,120 @@ namespace MPhys.GUI
 
         private void buttonSet1_Click(object sender, EventArgs e)
         {
-            string new_com = comboBox1.SelectedItem.ToString();
-            NDF1COM.Text = new_com;
+            if (comboBox1.SelectedItem != null )
+            {
+                string new_com = comboBox1.SelectedItem.ToString();
+                NDF1COM.Text = new_com;
 
-            UpdateAppSettings("NDF1", new_com);
-            modify_com_boxes();
+                UpdateAppSettings("NDF1", new_com);
+                modify_com_boxes();
+            }
         }
 
         private void buttonSet2_Click(object sender, EventArgs e)
         {
-            string new_com = comboBox2.SelectedItem.ToString();
-            NDF2COM.Text = new_com;
+            if (comboBox2.SelectedItem != null)
+            {
+                string new_com = comboBox2.SelectedItem.ToString();
+                NDF2COM.Text = new_com;
 
-            UpdateAppSettings("NDF2", new_com);
-            modify_com_boxes();
+                UpdateAppSettings("NDF2", new_com);
+                modify_com_boxes();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // ************
+            if (checkBox1.Checked)
+            {
+                foreach (string s in SerialPort.GetPortNames())
+                {
+                    if (comboBox1.Items.Contains(s) == false)
+                    {
+                        comboBox1.Items.Add(s);
+                    }
+                }
+            }
+            // ************
+            if (checkBox2.Checked)
+            {
+                foreach (string s in SerialPort.GetPortNames())
+                {
+                    if (comboBox2.Items.Contains(s) == false)
+                    {
+                        comboBox2.Items.Add(s);
+                    }
+                }
+            }
+            // ************
+            if (NDF1 == null || NDF2 == null)
+            {
+                modify_com_boxes();
+            }
+            // ************
+            if (NDF1COM.BackColor == Color.Green)
+            {
+                buttonNDF1pos.Enabled = true;
+                comboNDF1pos.Enabled = true;
+
+            }
+            else
+            {
+                buttonNDF1pos.Enabled = false;
+                comboNDF1pos.Enabled = false;
+            }
+            // ************
+            if (NDF2COM.BackColor == Color.Green)
+            {
+                buttonNDF2pos.Enabled = true;
+                comboNDF2pos.Enabled = true;
+            }
+            else
+            {
+                buttonNDF2pos.Enabled = false;
+                comboNDF2pos.Enabled = false;
+            }
+            // ************
+            if (NDF1.IsOpen() != 1)
+            {
+                NDF1COM.BackColor = Color.Red;
+            }
+            // ************
+            if (NDF2.IsOpen() != 1)
+            {
+                NDF2COM.BackColor = Color.Red;
+            }
+
+            check_com();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                comboBox1.Enabled = true;
+                buttonSet1.Enabled = true;
+            }
+            else
+            {
+                comboBox1.Enabled = false;
+                buttonSet1.Enabled = false;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                comboBox2.Enabled = true;
+                buttonSet2.Enabled = true;
+            }
+            else
+            {
+                comboBox2.Enabled = false;
+                buttonSet2.Enabled = false;
+            }
         }
     }
 }
