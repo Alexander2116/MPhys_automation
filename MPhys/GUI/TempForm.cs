@@ -136,8 +136,20 @@ namespace MPhys.GUI
             {
                 modify_com_boxes();
             }
+            // *********
+            if (textM9700COM.BackColor == Color.Green && buttonSetTemp.Enabled == false)
+            {
+                buttonSetTemp.Enabled = true;
+                textTempWrite.Enabled = true;
+
+            }
+            else if (buttonSetTemp.Enabled) { }
+            else
+            {
+                buttonSetTemp.Enabled = false;
+                textTempWrite.Enabled = false;
+            }
             check_com();
-            //textBoxTemp.Text = "";
             
         }
 

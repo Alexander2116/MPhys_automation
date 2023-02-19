@@ -16,7 +16,8 @@ namespace MPhys.GUI
         private NDFForm NDFf;
         private PMForm PMf;
         private TempForm Tf;
-        //private SpecForm Sf;
+        private SpecForm Sf;
+        private AutoForm Af;
 
         public MainForm()
         {
@@ -103,12 +104,42 @@ namespace MPhys.GUI
 
         private void buttonSpec_Click(object sender, EventArgs e)
         {
+            enable_buttons();
+            if (Sf == null)
+            {
+                Sf = new SpecForm();
+                this.Controls.Add(Sf);
 
+                buttonSpec.Enabled = false;
+                Sf.Show();
+                Sf.BringToFront();
+            }
+            else
+            {
+                Sf.TopMost = true;
+                buttonSpec.Enabled = false;
+                Sf.BringToFront();
+            }
         }
 
         private void buttonAuto_Click(object sender, EventArgs e)
         {
+            enable_buttons();
+            if (Af == null)
+            {
+                Af = new AutoForm();
+                this.Controls.Add(Af);
 
+                buttonAuto.Enabled = false;
+                Af.Show();
+                Af.BringToFront();
+            }
+            else
+            {
+                Af.TopMost = true;
+                buttonAuto.Enabled = false;
+                Af.BringToFront();
+            }
         }
     }
 }

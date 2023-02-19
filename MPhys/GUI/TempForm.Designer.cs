@@ -103,8 +103,9 @@ namespace MPhys.GUI
             // 
             // textBoxTemp
             // 
-            this.textBoxTemp.Location = new System.Drawing.Point(585, 156);
+            this.textBoxTemp.Location = new System.Drawing.Point(585, 152);
             this.textBoxTemp.Name = "textBoxTemp";
+            this.textBoxTemp.ReadOnly = true;
             this.textBoxTemp.Size = new System.Drawing.Size(77, 20);
             this.textBoxTemp.TabIndex = 13;
             // 
@@ -135,7 +136,7 @@ namespace MPhys.GUI
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(481, 159);
+            this.label5.Location = new System.Drawing.Point(481, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 13);
             this.label5.TabIndex = 16;
@@ -154,6 +155,7 @@ namespace MPhys.GUI
             // 
             // textTempWrite
             // 
+            this.textTempWrite.Enabled = false;
             this.textTempWrite.Location = new System.Drawing.Point(153, 152);
             this.textTempWrite.Name = "textTempWrite";
             this.textTempWrite.Size = new System.Drawing.Size(77, 20);
@@ -161,6 +163,7 @@ namespace MPhys.GUI
             // 
             // buttonSetTemp
             // 
+            this.buttonSetTemp.Enabled = false;
             this.buttonSetTemp.Location = new System.Drawing.Point(236, 150);
             this.buttonSetTemp.Name = "buttonSetTemp";
             this.buttonSetTemp.Size = new System.Drawing.Size(75, 23);

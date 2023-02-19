@@ -47,7 +47,7 @@ namespace MPhys.GUI
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textNDF1Pos = new System.Windows.Forms.TextBox();
+            this.textNDF1pos = new System.Windows.Forms.TextBox();
             this.textNDF2pos = new System.Windows.Forms.TextBox();
             this.comboNDF1pos = new System.Windows.Forms.ComboBox();
             this.comboNDF2pos = new System.Windows.Forms.ComboBox();
@@ -157,7 +157,7 @@ namespace MPhys.GUI
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // checkBox1
@@ -218,13 +218,13 @@ namespace MPhys.GUI
             this.label8.TabIndex = 14;
             this.label8.Text = "Set position";
             // 
-            // textNDF1Pos
+            // textNDF1pos
             // 
-            this.textNDF1Pos.Location = new System.Drawing.Point(149, 169);
-            this.textNDF1Pos.Name = "textNDF1Pos";
-            this.textNDF1Pos.ReadOnly = true;
-            this.textNDF1Pos.Size = new System.Drawing.Size(34, 20);
-            this.textNDF1Pos.TabIndex = 16;
+            this.textNDF1pos.Location = new System.Drawing.Point(149, 169);
+            this.textNDF1pos.Name = "textNDF1pos";
+            this.textNDF1pos.ReadOnly = true;
+            this.textNDF1pos.Size = new System.Drawing.Size(34, 20);
+            this.textNDF1pos.TabIndex = 16;
             // 
             // textNDF2pos
             // 
@@ -275,6 +275,7 @@ namespace MPhys.GUI
             this.buttonNDF1pos.TabIndex = 20;
             this.buttonNDF1pos.Text = "Set";
             this.buttonNDF1pos.UseVisualStyleBackColor = true;
+            this.buttonNDF1pos.Click += new System.EventHandler(this.buttonNDF1pos_Click);
             // 
             // buttonNDF2pos
             // 
@@ -285,6 +286,7 @@ namespace MPhys.GUI
             this.buttonNDF2pos.TabIndex = 21;
             this.buttonNDF2pos.Text = "Set";
             this.buttonNDF2pos.UseVisualStyleBackColor = true;
+            this.buttonNDF2pos.Click += new System.EventHandler(this.buttonNDF2pos_Click);
             // 
             // NDFForm
             // 
@@ -297,7 +299,7 @@ namespace MPhys.GUI
             this.Controls.Add(this.comboNDF2pos);
             this.Controls.Add(this.comboNDF1pos);
             this.Controls.Add(this.textNDF2pos);
-            this.Controls.Add(this.textNDF1Pos);
+            this.Controls.Add(this.textNDF1pos);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -341,7 +343,7 @@ namespace MPhys.GUI
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textNDF1Pos;
+        private System.Windows.Forms.TextBox textNDF1pos;
         private System.Windows.Forms.TextBox textNDF2pos;
         private System.Windows.Forms.ComboBox comboNDF1pos;
         private System.Windows.Forms.ComboBox comboNDF2pos;

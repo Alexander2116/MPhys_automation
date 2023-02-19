@@ -181,27 +181,37 @@ namespace MPhys.GUI
                 modify_com_boxes();
             }
             // ************
-            if (NDF1COM.BackColor == Color.Green)
+            if (NDF1COM.BackColor == Color.Green && buttonNDF1pos.Enabled == false)
             {
                 buttonNDF1pos.Enabled = true;
                 comboNDF1pos.Enabled = true;
-
             }
+            else if (buttonNDF1pos.Enabled) { }
             else
             {
                 buttonNDF1pos.Enabled = false;
                 comboNDF1pos.Enabled = false;
             }
             // ************
-            if (NDF2COM.BackColor == Color.Green)
+            if (NDF2COM.BackColor == Color.Green && buttonNDF2pos.Enabled == false)
             {
                 buttonNDF2pos.Enabled = true;
                 comboNDF2pos.Enabled = true;
             }
+            else if (buttonNDF2pos.Enabled) { }
             else
             {
                 buttonNDF2pos.Enabled = false;
                 comboNDF2pos.Enabled = false;
+            }
+            //***********
+            if (NDF1COM.BackColor == Color.Green)
+            {
+                //textNDF1pos.Text = NDF1.GetPostion().ToString();
+            }
+            if (NDF2COM.BackColor == Color.Green)
+            {
+                //textNDF2pos.Text = NDF2.GetPostion().ToString();
             }
             // ************
             if (NDF1.IsOpen() != 1)
@@ -242,6 +252,24 @@ namespace MPhys.GUI
             {
                 comboBox2.Enabled = false;
                 buttonSet2.Enabled = false;
+            }
+        }
+
+        private void buttonNDF1pos_Click(object sender, EventArgs e)
+        {
+            if (comboNDF1pos.SelectedItem != null)
+            {
+                string new_pos = comboNDF1pos.SelectedItem.ToString();
+                NDF1.SetPostion(Int32.Parse(new_pos));
+            }
+        }
+
+        private void buttonNDF2pos_Click(object sender, EventArgs e)
+        {
+            if (comboNDF2pos.SelectedItem != null)
+            {
+                string new_pos = comboNDF2pos.SelectedItem.ToString();
+                NDF2.SetPostion(Int32.Parse(new_pos));
             }
         }
     }

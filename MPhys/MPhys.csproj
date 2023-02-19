@@ -48,6 +48,12 @@
     <Compile Include="Devices\FC102C.cs" />
     <Compile Include="Devices\PM100A.cs" />
     <Compile Include="Devices\M9700.cs" />
+    <Compile Include="GUI\AutoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AutoForm.Designer.cs">
+      <DependentUpon>AutoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\AutoForm.resx">
+      <DependentUpon>AutoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
