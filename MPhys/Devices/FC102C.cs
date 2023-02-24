@@ -1,4 +1,17 @@
-﻿using System;
+﻿/*============================================================
+**
+** Class:  FC102C
+**
+** Purpose: Connect to ThorLab FC102C NDF
+**        : Change and read position
+**
+** Possible changes: Connection is open all the time. Open connection to do some task and then close it.
+**                 : Last time tested, _hdl changes value every time it is called (did I forget to close the COM?)
+**
+** Date:  31 January 2023
+**
+===========================================================*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -130,13 +143,10 @@ namespace MPhys.Devices
             GetPorts();
 
             _port = port;
+            // Opens a connection (and keep it open till deconstructed)
             _hdl = Open(port);
         }
 
-        public void Enter_handler(int hdl)
-        {
-            _hdl = hdl;
-        }
 
         public void GetPorts()
         {
@@ -149,9 +159,10 @@ namespace MPhys.Devices
 
         public int GetID()
         {
+            //_hdl = Open(_port);
             var ID = new StringBuilder(256);
             var res = FC102C_Methods.GetId(_hdl, ID);
-
+            //Close();
             Console.WriteLine(ID);
             return (int)res;
         }
@@ -181,7 +192,9 @@ namespace MPhys.Devices
         /// </return> 
         public int Close()
         {
+            //_hdl = Open(_port);
             var ret = FC102C_Methods.Close(_hdl);
+            //Close();
             // 0: Closed ; Negative number: Fail
             return (int)ret;
         }
@@ -189,6 +202,7 @@ namespace MPhys.Devices
         // Set position to: 1, 2, 3, 4, 5, 6
         public void SetPostion(Int32 pos)
         {
+            //_hdl = Open(_port);
             if (pos > 0 && pos < 7)
             {
                 var ret = FC102C_Methods.SetPosition(_hdl, pos);
@@ -197,24 +211,27 @@ namespace MPhys.Devices
             {
                 Console.WriteLine("Incorrect position");
             }
+            //Close();
             //return (int)ret;
         }
 
         // Get CURRENT position
         public int GetPostion()
         {
+            //_hdl = Open(_port);
             Int32 pos = 0;
             var ret = FC102C_Methods.GetPosition(_hdl, out pos);
-
+            //Close();
             return pos;
         }
 
         // For FW102C it is pos=6
         public int GetPostionCount()
         {
+            //_hdl = Open(_port);
             int pos = 0;
             FC102C_Methods.GetPositionCount(_hdl, out pos);
-
+            //Close();
             return pos;
         }
 
