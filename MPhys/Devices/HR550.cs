@@ -46,7 +46,7 @@ namespace MPhys.Devices
         private String sMonoName;
 
         public JYConfigBrowerInterface mConfigBrowser;
-        private JYMONOLib.MonochromatorClass mMono;
+        private JYMONOLib.Monochromator mMono; // ??? Why ??? It works in the different example
 
         String sDevId;
         String sDevName;
@@ -91,7 +91,7 @@ namespace MPhys.Devices
             }
         }
 
-        private void Initialize(String CurrMono)
+        private void Initialize(SCDid CurrMono)
         {
             String sDevUniqueId;
             String sDevFoundName;
@@ -116,20 +116,18 @@ namespace MPhys.Devices
                 sMonoName = sDevFoundName;
 
                 // Create New MonochromatorClass
-                mMono = new JYMONOLib.MonochromatorClass();
+                mMono = new JYMONOLib.Monochromator();
 
                 mMono.Uniqueid = sDevUniqueId;
 
                 // Set Mono Initialize event handler
-                mMono._IJYDeviceReqdEvents_Event_Initialize += OnReceivedInitMono;
+                // NO
 
                 // Loads up the device with the specified configuration
                 mMono.Load();
 
-                tbStatus.Clear();
                 sStatus = String.Format("Opening Communications ... ");
-                tbStatus.AppendText(sStatus);
-
+                Console.WriteLine(sStatus);
                 // Attempts to communicate with a device on the specified communication 
                 // settings (in the configuration). If it fails, the catch allows the
                 // device to be emulated in software.
@@ -139,49 +137,21 @@ namespace MPhys.Devices
                 mbEmulate = false;
 
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
-                tbStatus.AppendText(sStatus);
+                Console.WriteLine(sStatus);
 
             }
             catch (Exception ex)
             {
                 sStatus = String.Format("Failed{0}", Environment.NewLine);
-                tbStatus.AppendText(sStatus);
-
-                DialogResult dr;
-                sStatus = String.Format(
-                    "{0} Hardware Not Detected{1}{1}Do you want to emulate this device?",
-                    sMonoName, Environment.NewLine);
-                dr = MessageBox.Show(
-                    sStatus, "Mono Hardware Not Detected", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (dr == DialogResult.Yes)
-                {
-                    // Yes: Emulate
-                    mbEmulate = true;
-                    sStatus = String.Format("Emulating {0} ...{1}", sMonoName, Environment.NewLine);
-                    tbStatus.AppendText(sStatus);
-                }
-                else if (dr == DialogResult.No)
-                {
-                    // No: Do not Emulate
-                    mbEmulate = false;
-                    sStatus = String.Format("Check {0} Hardware and attempt again.", sMonoName);
-                    tbStatus.AppendText(sStatus);
-                    return;
-                }
+                Console.WriteLine(sStatus);
             }
 
 
             // INITIALIZE
             try
             {
-                // Disable Intialize button while Initializing - could take time
-                buttonInitialize.Enabled = false;
-                labelInitStatus.Text = "Initializing...";
-                labelInitStatus.ForeColor = Color.Black;
-
                 sStatus = String.Format("Initializing Mono ... ");
-                tbStatus.AppendText(sStatus);
+                Console.WriteLine(sStatus);
 
                 if (mbInitialized == true)
                     mbForceInit = true;
@@ -191,13 +161,40 @@ namespace MPhys.Devices
             catch (Exception ex)
             {
                 sStatus = String.Format("{0} Initialize Failed.{1}", sMonoName, Environment.NewLine);
-                MessageBox.Show(sStatus, "Mono Initialize", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(sStatus);
+            }
+        }
 
-                // Disable Intialize button while Initializing - could take time
-                buttonInitialize.Enabled = true;
-                buttonInitialize.Text = "Initialize";
-                labelInitStatus.Text = "Error";
-                labelInitStatus.ForeColor = Color.Red;
+        // Declaration of an event handler for HJY Mono
+        public void OnReceivedInitMono(int status, JYSYSTEMLIBLib.IJYEventInfo myEvent)
+        {
+            String sStatus;
+            jyUnits Units;
+            Object oUnitsString;
+
+
+            if (status == 0)
+            {
+                mbInitialized = true;
+
+                sStatus = String.Format("Complete{0}", Environment.NewLine);
+                Console.WriteLine(sStatus);
+
+                GetPosition();
+
+                GetSlits();
+                GetGratings();
+                GetMirrors();
+
+                Application.DoEvents();
+
+
+                mMono.GetDefaultUnits(jyUnitsType.jyutSlitWidth, out Units, out oUnitsString);
+            }
+            else
+            {
+                sStatus = String.Format("Failed{0}", Environment.NewLine);
+                Console.WriteLine(sStatus);
             }
         }
     }
