@@ -5,6 +5,7 @@
 ** Purpose: Connect to Horiba iHR550 spectrometer
 **        : Control the spectrometer (inc. shutter)
 **
+** Comments: This is taken from Mono_Cs_NET example from SDK
 **
 ** Date:  24 February 2023
 **
@@ -51,10 +52,28 @@ namespace MPhys.Devices
         String sDevId;
         String sDevName;
         String SCD; // SCDid
-        public List<SCDid> combobox_list = new List<SCDid>(); // Upload list to ComboBox in the form
 
-        // Initilize, adding all available objects to combobox_list (all available SCDs)
-        HR550()
+        // Lists for ComboBoxes
+        public List<SCDid> combobox_list = new List<SCDid>(); // Upload list to ComboBox in the form
+        public List<double> combobox_Grating = new List<double>(); // List of gratings
+
+        //
+        public String Text_CurrentWavelength;
+
+        // Slits 
+        public String Text_Slit_Front_Entrance = "";
+        public String Text_Slit_Front_Exit = "";
+        public String Text_Slit_Side_Entrance = "";
+        public String Text_Slit_Side_Exit = "";
+
+        // Mirrors
+        public Boolean Radio_Entrance_Axial = false;
+        public Boolean Radio_Entrance_Lateral = false;
+        public Boolean Radio_Exit_Axial = false;
+        public Boolean Radio_Exit_Lateral = false;
+
+         // Initilize, adding all available objects to combobox_list (all available SCDs)
+        public HR550()
         {
             String sDevId;
             String sDevName;
@@ -91,7 +110,7 @@ namespace MPhys.Devices
             }
         }
 
-        private void Initialize(SCDid CurrMono)
+        public void Initialize(SCDid CurrMono)
         {
             String sDevUniqueId;
             String sDevFoundName;
@@ -186,7 +205,7 @@ namespace MPhys.Devices
                 GetGratings();
                 GetMirrors();
 
-                Application.DoEvents();
+                //Application.DoEvents();
 
 
                 mMono.GetDefaultUnits(jyUnitsType.jyutSlitWidth, out Units, out oUnitsString);
@@ -196,6 +215,162 @@ namespace MPhys.Devices
                 sStatus = String.Format("Failed{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
             }
+
         }
+
+
+
+
+
+
+
+        private void GetPosition()
+        {
+            Double dCurrPosition = 0;
+            dCurrPosition = mMono.GetCurrentWavelength();
+            Text_CurrentWavelength = dCurrPosition.ToString("0.00");
+            mbPositionChanged = false;
+        }
+
+        void GetMirrors()
+        {
+            MirrorLocation locationEN, locationEX;
+            Boolean bIsInstalled = true, bEnt = false, bExit = false;
+
+            //Entrance mirror
+            bIsInstalled = mMono.IsSubItemInstalled(MonoSubItemType.Mirror_Entrance);
+            if (bIsInstalled)
+            {
+                bEnt = true;
+
+                locationEN = mMono.GetCurrentMirrorPosition(MirrorLocation.EntranceMirror);
+                switch (locationEN)
+                {
+                    case MirrorLocation.Front:
+                        Radio_Entrance_Axial = true;
+                        break;
+
+                    case MirrorLocation.Side:
+                        Radio_Entrance_Lateral = true;
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            //Exit mirror
+            bIsInstalled = mMono.IsSubItemInstalled(MonoSubItemType.Mirror_Exit);
+            if (bIsInstalled)
+            {
+                bExit = true;
+
+                locationEX = mMono.GetCurrentMirrorPosition(MirrorLocation.ExitMirror);
+                switch (locationEX)
+                {
+                    case MirrorLocation.Front:
+                        Radio_Exit_Axial = true;
+                        break;
+
+                    case MirrorLocation.Side:
+                        Radio_Exit_Lateral= true;
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+        }
+
+        private void GetGratings()
+        {
+            int nCurrTurr;
+            Double dCurrTurr;
+            Object oGratings;
+            Array arrGratings;
+
+            combobox_Grating.Clear();
+
+            nCurrTurr = mMono.GetCurrentTurret();
+
+            mMono.GetCurrentGrating(out dCurrTurr, out oGratings);
+
+            try
+            {
+                arrGratings = (Array)oGratings;
+                foreach (double grating in arrGratings)
+                {
+                    combobox_Grating.Add(grating);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+        private void GetSlits()
+        {
+            //get slit width from the component
+            // Check to see if slit of each type is installed
+            bool IsInstalled = true, bEitherEnt = false, bEitherExit = false;
+            double slitWidthFE = 0, slitWidthFX = 0, slitWidthSE = 0, slitWidthSX = 0;
+
+            //Front_Entrance slit
+            IsInstalled = mMono.IsSubItemInstalled(MonoSubItemType.Slit_Front_Entrance);
+            if (IsInstalled)
+            {
+                slitWidthFE = mMono.GetCurrentSlitWidth(SlitLocation.Front_Entrance);
+                Text_Slit_Front_Entrance = Convert.ToString(slitWidthFE);
+                bEitherEnt = true;
+            }
+            else
+            {
+                Text_Slit_Front_Entrance = "";
+            }
+
+            //Front_Exit slit
+            IsInstalled = mMono.IsSubItemInstalled(MonoSubItemType.Slit_Front_Exit);
+            if (IsInstalled)
+            {
+                slitWidthFX = mMono.GetCurrentSlitWidth(SlitLocation.Front_Exit);
+                Text_Slit_Front_Exit = Convert.ToString(slitWidthFX);
+                bEitherEnt = true;
+            }
+            else
+            {
+                Text_Slit_Front_Exit = "";
+            }
+
+            //Side_Entrance slit
+            IsInstalled = mMono.IsSubItemInstalled(MonoSubItemType.Slit_Side_Entrance);
+            if (IsInstalled)
+            {
+                slitWidthSE = mMono.GetCurrentSlitWidth(SlitLocation.Side_Entrance);
+                Text_Slit_Side_Entrance = Convert.ToString(slitWidthSE);
+                bEitherExit = true;
+            }
+            else
+            {
+                Text_Slit_Side_Entrance = "";
+            }
+
+            //Side_Exit slit
+            IsInstalled = mMono.IsSubItemInstalled(MonoSubItemType.Slit_Side_Exit);
+            if (IsInstalled)
+            {
+                slitWidthSX = mMono.GetCurrentSlitWidth(SlitLocation.Side_Exit);
+                Text_Slit_Side_Exit = Convert.ToString(slitWidthSX);
+                bEitherExit = true;
+            }
+            else
+            {
+                Text_Slit_Side_Exit = "";
+            }
+
+        }
+
     }
 }

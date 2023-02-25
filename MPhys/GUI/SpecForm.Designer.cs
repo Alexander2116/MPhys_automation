@@ -29,7 +29,43 @@ namespace MPhys.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.buttonComSet = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.comboBoxSCDs = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
+            // 
+            // buttonComSet
+            // 
+            this.buttonComSet.Enabled = false;
+            this.buttonComSet.Location = new System.Drawing.Point(278, 25);
+            this.buttonComSet.Name = "buttonComSet";
+            this.buttonComSet.Size = new System.Drawing.Size(75, 23);
+            this.buttonComSet.TabIndex = 6;
+            this.buttonComSet.Text = "Set";
+            this.buttonComSet.UseVisualStyleBackColor = true;
+            this.buttonComSet.Click += new System.EventHandler(this.buttonComSet_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(26, 29);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(67, 17);
+            this.checkBox1.TabIndex = 22;
+            this.checkBox1.Text = "Set SCD";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // comboBoxSCDs
+            // 
+            this.comboBoxSCDs.Enabled = false;
+            this.comboBoxSCDs.FormattingEnabled = true;
+            this.comboBoxSCDs.Location = new System.Drawing.Point(99, 25);
+            this.comboBoxSCDs.Name = "comboBoxSCDs";
+            this.comboBoxSCDs.Size = new System.Drawing.Size(54, 21);
+            this.comboBoxSCDs.TabIndex = 21;
             // 
             // SpecForm
             // 
@@ -37,13 +73,22 @@ namespace MPhys.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.comboBoxSCDs);
+            this.Controls.Add(this.buttonComSet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SpecForm";
             this.Text = "SpecForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button buttonComSet;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox comboBoxSCDs;
     }
 }
