@@ -14,6 +14,7 @@ using System.Timers;
 
 namespace MPhys.GUI
 {
+
     public partial class SpecForm : Form
     {
         HR550 MonoSpec;
@@ -38,44 +39,6 @@ namespace MPhys.GUI
 
         }
 
-
-
-        private void modify_com_boxes()
-        {
-            string PMport = ConfigurationManager.AppSettings.Get("PM100A");
-            textPMconnection.Text = PMport;
-            try
-            {
-                PMdev = new PM100A(PMport);
-                PMdev.Get_power();
-                DevOpen = true;
-            }
-            catch { }
-
-            check_com();
-
-        }
-
-        private void check_com()
-        {
-            // PM100
-            try
-            {
-                if (PMdev != null)
-                {
-                    textBoxPower.Text = PMdev.Get_power().ToString();
-                    textPMconnection.BackColor = Color.Green;
-                }
-                else
-                {
-                    textPMconnection.BackColor = Color.Red;
-                }
-            }
-            catch
-            {
-                textPMconnection.BackColor = Color.Red;
-            }
-        }
 
         static void UpdateAppSettings(string key, string value)
         {
@@ -106,9 +69,11 @@ namespace MPhys.GUI
             string sName = ConfigurationManager.AppSettings.Get("iHR550_sName");
             string sID = ConfigurationManager.AppSettings.Get("iHR550_sID");
 
-            if(comboBoxSCDs.Enabled == true)
+            if(comboBoxSCDs.Enabled == true && comboBoxSCDs.Text != null)
             {
-
+                SCD = (SCDid)comboBoxSCDs.SelectedItem;
+                UpdateAppSettings("iHR550_sName", SCD.sName);
+                UpdateAppSettings("iHR550_sID", SCD.sID);
             }
 
             SCD.sID = sID;
@@ -116,7 +81,22 @@ namespace MPhys.GUI
 
             if (sName != "")
             {
-                MonoSpec.Initialize(SCD);
+                try
+                {
+                    MonoSpec.Initialize(SCD);
+                    StatusLabel.Text = "Connected";
+                    StatusLabel.ForeColor = Color.Green;
+                }
+                catch
+                {
+                    StatusLabel.Text = "Disconnected";
+                    StatusLabel.ForeColor = Color.Red;
+                }
+            }
+            else
+            {
+                StatusLabel.Text = "Disconnected";
+                StatusLabel.ForeColor = Color.Red;
             }
 
         }
@@ -126,11 +106,20 @@ namespace MPhys.GUI
             if (checkBox1.Checked)
             {
                 comboBoxSCDs.Enabled = true;
+                foreach(SCDid s in MonoSpec.combobox_list)
+                {
+                    comboBoxSCDs.Items.Add(s);
+                }
             }
             else
             {
                 comboBoxSCDs.Enabled = false;
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

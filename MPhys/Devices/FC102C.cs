@@ -152,7 +152,7 @@ namespace MPhys.Devices
         {
             var ports = new StringBuilder(256);
             FC102C_Methods.GetPorts(ports,256);
-
+            
             //Console.WriteLine(ports);
 
         }

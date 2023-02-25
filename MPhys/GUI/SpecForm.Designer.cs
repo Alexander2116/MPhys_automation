@@ -34,16 +34,21 @@ namespace MPhys.GUI
             this.buttonComSet = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBoxSCDs = new System.Windows.Forms.ComboBox();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // buttonComSet
             // 
-            this.buttonComSet.Enabled = false;
-            this.buttonComSet.Location = new System.Drawing.Point(278, 25);
+            this.buttonComSet.Location = new System.Drawing.Point(254, 23);
             this.buttonComSet.Name = "buttonComSet";
             this.buttonComSet.Size = new System.Drawing.Size(75, 23);
             this.buttonComSet.TabIndex = 6;
-            this.buttonComSet.Text = "Set";
+            this.buttonComSet.Text = "Initialize";
             this.buttonComSet.UseVisualStyleBackColor = true;
             this.buttonComSet.Click += new System.EventHandler(this.buttonComSet_Click);
             // 
@@ -67,12 +72,23 @@ namespace MPhys.GUI
             this.comboBoxSCDs.Size = new System.Drawing.Size(54, 21);
             this.comboBoxSCDs.TabIndex = 21;
             // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.ForeColor = System.Drawing.Color.Red;
+            this.StatusLabel.Location = new System.Drawing.Point(175, 28);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(73, 13);
+            this.StatusLabel.TabIndex = 23;
+            this.StatusLabel.Text = "Disconnected";
+            // 
             // SpecForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBoxSCDs);
             this.Controls.Add(this.buttonComSet);
@@ -90,5 +106,6 @@ namespace MPhys.GUI
         private System.Windows.Forms.Button buttonComSet;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox comboBoxSCDs;
+        private System.Windows.Forms.Label StatusLabel;
     }
 }
