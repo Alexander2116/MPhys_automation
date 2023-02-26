@@ -52,10 +52,10 @@ namespace MPhys.Devices
 
         // Should be private, may change it later
         public JYConfigBrowerInterface mConfigBrowser;
-        public JYMONOLib.Monochromator mMono;
+        public JYMONOLib.MonochromatorClass mMono;
 
         // CCD
-        public JYCCDLib.JYMCD mCCD;
+        public JYCCDLib.JYMCDClass mCCD;
         public JYSYSTEMLIBLib.IJYDataObject ccdData;
         public JYSYSTEMLIBLib.IJYResultsObject ccdResult;
 
@@ -121,6 +121,8 @@ namespace MPhys.Devices
                     SCD = new SCDid();
                     SCD.sName = sDevName;
                     SCD.sID = sDevId;
+                    Console.WriteLine(sDevName);
+                    Console.WriteLine(sDevId);
                     combobox_CCD.Add(SCD);
 
                     // Find the next Mono in this Configuration
@@ -162,7 +164,7 @@ namespace MPhys.Devices
                 sMonoName = sDevFoundName;
 
                 // Create New MonochromatorClass
-                mMono = new JYMONOLib.Monochromator();
+                mMono = new JYMONOLib.MonochromatorClass();
 
                 mMono.Uniqueid = sDevUniqueId;
 
@@ -211,30 +213,35 @@ namespace MPhys.Devices
 
         public void InitializeCCD(SCDid CurrCCD)
         {
-            String sDevUniqueId;
-            String sDevFoundName;
+            String sDevUniqueId = CurrCCD.sID;
+            String sDevFoundName = CurrCCD.sName;
             String sStatus;
 
             // OPEN COMMUNICATIONS
             try
             {
                 // Find Selected Device UniqueId & Name
+                /*
                 sCCDId = CurrCCD.sID;
 
                 if ((sCCDId == null) || (sCCDId.CompareTo("") == 0))
                     return;
 
-                sDevUniqueId = mConfigBrowser.GetFirstMono(out sDevFoundName);
-
-                while ((sDevUniqueId != null) && (sDevUniqueId.CompareTo(sMonoDevId) != 0))
+                sDevUniqueId = mConfigBrowser.GetFirstCCD(out sDevFoundName);
+                int temp_i = 0;
+                while (((sDevUniqueId != null) && (sDevUniqueId.CompareTo(sMonoDevId) != 0)) && temp_i < 10)
                 {
-                    sDevUniqueId = mConfigBrowser.GetNextMono(out sDevFoundName);
+                    sStatus = String.Format("Loop ... ");
+                    Console.WriteLine(sStatus);
+                    sDevUniqueId = mConfigBrowser.GetNextCCD(out sDevFoundName);
+                    temp_i += 1;
                 }
+                */
 
                 sMonoName = sDevFoundName;
 
                 // Create New MonochromatorClass
-                mCCD = new JYCCDLib.JYMCD();
+                mCCD = new JYCCDLib.JYMCDClass();
 
                 mCCD.Uniqueid = sDevUniqueId;
 
@@ -272,7 +279,7 @@ namespace MPhys.Devices
                 if (mbInitialized == true)
                     mbForceInit = true;
 
-                mMono.Initialize(mbForceInit, mbEmulate, false);
+                mMono.Initialize(mbForceInit, false, false);
             }
             catch (Exception ex)
             {
@@ -367,7 +374,7 @@ namespace MPhys.Devices
         // streaming - mode: 1, 2, 3.
         // Mode 2 and 3 are almost the same (saves file somewhere)
         //=================================
-        private void GoStream(string path, int total_count = 1, int streaming = 2)
+        public void GoStream(string path, int total_count = 1, int streaming = 2)
         {
             int counter;
             String fname;
@@ -512,10 +519,11 @@ namespace MPhys.Devices
             */
         }
 
-        private void Start_acquisition()
+        public void Start_acquisition()
         {
             mCCD.DoAcquisition(true);
         }
+
 
 
 
