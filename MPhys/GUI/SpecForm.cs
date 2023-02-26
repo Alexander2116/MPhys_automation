@@ -39,6 +39,35 @@ namespace MPhys.GUI
 
         }
 
+        // Function to activate all buttons
+        private void Activate_buttons()
+        {
+            if(StatusLabel.ForeColor == Color.Green && button_shutter.Enabled == false)
+            {
+                button_shutter.Enabled = true;
+                groupboxWlCtrl.Enabled = true;
+            }
+            else
+            {
+                button_shutter.Enabled = false;
+                groupboxWlCtrl.Enabled = false;
+            }
+        }
+
+        private void Is_initialized()
+        {
+            if (MonoSpec.mMono != null && StatusLabel.Text != "Connected")
+            {
+                StatusLabel.Text = "Connected";
+                StatusLabel.ForeColor = Color.Green;
+            }
+            else
+            {
+                StatusLabel.Text = "Disconnected";
+                StatusLabel.ForeColor = Color.Red;
+            }
+
+        }
 
         static void UpdateAppSettings(string key, string value)
         {
@@ -69,7 +98,7 @@ namespace MPhys.GUI
             string sName = ConfigurationManager.AppSettings.Get("iHR550_sName");
             string sID = ConfigurationManager.AppSettings.Get("iHR550_sID");
 
-            if(comboBoxSCDs.Enabled == true && comboBoxSCDs.Text != null)
+            if(comboBoxSCDs.Enabled == true && comboBoxSCDs.Text != null && comboBoxSCDs.Text != "")
             {
                 SCD = (SCDid)comboBoxSCDs.SelectedItem;
                 UpdateAppSettings("iHR550_sName", SCD.sName);
@@ -86,6 +115,7 @@ namespace MPhys.GUI
                     MonoSpec.Initialize(SCD);
                     StatusLabel.Text = "Connected";
                     StatusLabel.ForeColor = Color.Green;
+                    textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
                 }
                 catch
                 {
@@ -98,6 +128,8 @@ namespace MPhys.GUI
                 StatusLabel.Text = "Disconnected";
                 StatusLabel.ForeColor = Color.Red;
             }
+
+            Activate_buttons();
 
         }
 
@@ -119,7 +151,50 @@ namespace MPhys.GUI
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if(comboBoxSCDs.Items.Count < 1 && checkBox1.Checked)
+            {
+                MonoSpec = new HR550();
+                foreach (SCDid s in MonoSpec.combobox_list)
+                {
+                    comboBoxSCDs.Items.Add(s);
+                }
+            }
+        }
 
+        private void button_shutter_Click(object sender, EventArgs e)
+        {
+            string ltext = ShutterStateLabel.Text;
+            if(ltext =="Open")
+            {
+                MonoSpec.Close_Shutter();
+                ShutterStateLabel.Text = "Close";
+            }
+            else
+            {
+                MonoSpec.Open_Shutter();
+                ShutterStateLabel.Text = "Open";
+            }
+        }
+
+        private void comboboxGrating_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Boolean bBusy;
+
+            try
+            {
+                bBusy = true;
+                while (bBusy == true)
+                {
+                    Application.DoEvents();
+                    bBusy = MonoSpec.IsBusy();
+                }
+                MonoSpec.GetPosition();
+                textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

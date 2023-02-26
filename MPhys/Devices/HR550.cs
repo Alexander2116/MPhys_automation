@@ -20,6 +20,7 @@ using System.Threading.Tasks;
 using JYMONOLib;
 using JYCONFIGBROWSERCOMPONENTLib;
 using JYSYSTEMLIBLib;
+using JYCCDLib;
 
 namespace MPhys.Devices
 {
@@ -47,7 +48,12 @@ namespace MPhys.Devices
         private String sMonoName;
 
         public JYConfigBrowerInterface mConfigBrowser;
-        private JYMONOLib.Monochromator mMono; // ??? Why ??? It works in the different example
+        public JYMONOLib.Monochromator mMono; // ??? Why ??? It works in the different example
+        public JYSYSTEMLIBLib.IJYDataObject ccdData;
+        public JYSYSTEMLIBLib.IJYResultsObject ccdResult;
+        private JYCCDLib.JYMCD mCCD;
+        // jyCCD = new JYCCDLib.JYMCDClass();
+        // jyMono = new JYMONOLib.MonochromatorClass();
 
         String sDevId;
         String sDevName;
@@ -72,7 +78,7 @@ namespace MPhys.Devices
         public Boolean Radio_Exit_Axial = false;
         public Boolean Radio_Exit_Lateral = false;
 
-         // Initilize, adding all available objects to combobox_list (all available SCDs)
+        // Initilize, adding all available objects to combobox_list (all available SCDs)
         public HR550()
         {
             String sDevId;
@@ -218,13 +224,87 @@ namespace MPhys.Devices
 
         }
 
+        // Open/Close shutter
+        public void Close_Shutter()
+        {
+            if (mMono != null)
+            {
+                try
+                {
+                    mMono.CloseShutter();
+                }
+                catch
+                {
+                    Console.WriteLine("Shutter Close Fail");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Shutter Close Fail - not initialized");
+            }
+
+        }
+        public void Open_Shutter()
+        {
+            if (mMono != null)
+            {
+                try
+                {
+                    mMono.OpenShutter();
+                }
+                catch
+                {
+                    Console.WriteLine("Shutter Open Fail");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Shutter Open Fail - not initialized");
+            }
+        }
+
+        public bool IsBusy()
+        {
+            return mMono.IsBusy();
+        }
+
+
+        //=====================================================
+        // save data from ccd as either spc or tab delimited.
+        //=====================================================
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            String saveFileName;
+
+            saveFileName = FileName.Text;
+            try
+            {
+                if (savespc)
+                {
+                    ccdData.FileType = JYSYSTEMLIBLib.jySupportedFileType.jySPC;
+                    ccdData.Save(saveFileName);
+                }
+                else
+                {
+                    ccdData.FileType = JYSYSTEMLIBLib.jySupportedFileType.jyTabDelimitted;
+                    ccdData.Save(saveFileName);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Couldn't open data file, make sure folder exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void Start_acquisition()
+        {
+            jyCCD.DoAcquisition(shutterOpen);
+        }
 
 
 
-
-
-
-        private void GetPosition()
+        public void GetPosition()
         {
             Double dCurrPosition = 0;
             dCurrPosition = mMono.GetCurrentWavelength();
@@ -232,7 +312,7 @@ namespace MPhys.Devices
             mbPositionChanged = false;
         }
 
-        void GetMirrors()
+        public void GetMirrors()
         {
             MirrorLocation locationEN, locationEX;
             Boolean bIsInstalled = true, bEnt = false, bExit = false;
@@ -283,7 +363,7 @@ namespace MPhys.Devices
 
         }
 
-        private void GetGratings()
+        public void GetGratings()
         {
             int nCurrTurr;
             Double dCurrTurr;
@@ -311,7 +391,7 @@ namespace MPhys.Devices
         }
 
 
-        private void GetSlits()
+        public void GetSlits()
         {
             //get slit width from the component
             // Check to see if slit of each type is installed
