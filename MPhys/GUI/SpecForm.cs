@@ -112,7 +112,7 @@ namespace MPhys.GUI
             {
                 try
                 {
-                    MonoSpec.Initialize(SCD);
+                    MonoSpec.InitializeMono(SCD);
                     StatusLabel.Text = "Connected";
                     StatusLabel.ForeColor = Color.Green;
                     textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
@@ -138,7 +138,7 @@ namespace MPhys.GUI
             if (checkBox1.Checked)
             {
                 comboBoxSCDs.Enabled = true;
-                foreach(SCDid s in MonoSpec.combobox_list)
+                foreach(SCDid s in MonoSpec.combobox_Mono)
                 {
                     comboBoxSCDs.Items.Add(s);
                 }
@@ -154,7 +154,7 @@ namespace MPhys.GUI
             if(comboBoxSCDs.Items.Count < 1 && checkBox1.Checked)
             {
                 MonoSpec = new HR550();
-                foreach (SCDid s in MonoSpec.combobox_list)
+                foreach (SCDid s in MonoSpec.combobox_Mono)
                 {
                     comboBoxSCDs.Items.Add(s);
                 }

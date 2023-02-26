@@ -127,7 +127,7 @@ namespace MPhys.GUI
             this.groupboxWlCtrl.Controls.Add(this.textboxPosition);
             this.groupboxWlCtrl.Controls.Add(this.labelPosition);
             this.groupboxWlCtrl.Enabled = false;
-            this.groupboxWlCtrl.Location = new System.Drawing.Point(26, 64);
+            this.groupboxWlCtrl.Location = new System.Drawing.Point(26, 97);
             this.groupboxWlCtrl.Name = "groupboxWlCtrl";
             this.groupboxWlCtrl.Size = new System.Drawing.Size(241, 78);
             this.groupboxWlCtrl.TabIndex = 27;
