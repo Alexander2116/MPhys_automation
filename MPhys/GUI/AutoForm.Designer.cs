@@ -42,6 +42,10 @@ namespace MPhys.GUI
             this.buttonLoad = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonSaveProfile = new System.Windows.Forms.Button();
+            this.buttonRun = new System.Windows.Forms.Button();
+            this.labelFinishTasks = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelMaxTask = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxTasks
@@ -172,12 +176,54 @@ namespace MPhys.GUI
             this.buttonSaveProfile.UseVisualStyleBackColor = true;
             this.buttonSaveProfile.Click += new System.EventHandler(this.buttonSaveProfile_Click);
             // 
+            // buttonRun
+            // 
+            this.buttonRun.Enabled = false;
+            this.buttonRun.Location = new System.Drawing.Point(615, 305);
+            this.buttonRun.Name = "buttonRun";
+            this.buttonRun.Size = new System.Drawing.Size(75, 23);
+            this.buttonRun.TabIndex = 31;
+            this.buttonRun.Text = "Run";
+            this.buttonRun.UseVisualStyleBackColor = true;
+            this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
+            // 
+            // labelFinishTasks
+            // 
+            this.labelFinishTasks.AutoSize = true;
+            this.labelFinishTasks.Location = new System.Drawing.Point(555, 310);
+            this.labelFinishTasks.Name = "labelFinishTasks";
+            this.labelFinishTasks.Size = new System.Drawing.Size(13, 13);
+            this.labelFinishTasks.TabIndex = 32;
+            this.labelFinishTasks.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(574, 310);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 13);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "of";
+            // 
+            // labelMaxTask
+            // 
+            this.labelMaxTask.AutoSize = true;
+            this.labelMaxTask.Location = new System.Drawing.Point(587, 310);
+            this.labelMaxTask.Name = "labelMaxTask";
+            this.labelMaxTask.Size = new System.Drawing.Size(13, 13);
+            this.labelMaxTask.TabIndex = 34;
+            this.labelMaxTask.Text = "0";
+            // 
             // AutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelMaxTask);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labelFinishTasks);
+            this.Controls.Add(this.buttonRun);
             this.Controls.Add(this.buttonSaveProfile);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonLoad);
@@ -214,5 +260,9 @@ namespace MPhys.GUI
         private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonSaveProfile;
+        private System.Windows.Forms.Button buttonRun;
+        private System.Windows.Forms.Label labelFinishTasks;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelMaxTask;
     }
 }

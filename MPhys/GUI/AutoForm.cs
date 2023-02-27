@@ -13,7 +13,7 @@ namespace MPhys.GUI
 {
     public partial class AutoForm : Form
     {
-        private System.Data.DataTable dataTable;
+        private System.Data.DataTable dataTable; // Current loaded dataTable (Tasks to perform)
 
         public AutoForm()
         {
@@ -144,6 +144,7 @@ namespace MPhys.GUI
                 if (Check_unique_rows())
                 {
                     listBoxTasks.Items.Add(text);
+                    enable_Run();
                 }
                     
 
@@ -167,7 +168,9 @@ namespace MPhys.GUI
                 fileName = dlg.FileName;
                 dataTable.ReadXml(fileName);
             }
+
             Update_TextBox();
+            enable_Run();
         }
 
         private void buttonSaveProfile_Click(object sender, EventArgs e)
@@ -226,5 +229,53 @@ namespace MPhys.GUI
             return dialogResult;
         }
 
+        private void enable_Run()
+        {
+            if(dataTable.Rows.Count > 0)
+            {
+                buttonRun.Enabled = true;
+            }
+
+            labelMaxTask.Text = dataTable.Rows.Count.ToString();
+        }
+
+        private void buttonRun_Click(object sender, EventArgs e)
+        {
+            double ct = 0.0, ce = 0.0; // current temperature ; current exposure time
+            int cp1=0, cp2=0; // current possition 1, 2
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                DataRow lastRow = dataTable.Rows[i];
+
+                double temp = double.Parse(lastRow["temperature"].ToString());
+                int pos1 = int.Parse(lastRow["NDF1pos"].ToString());
+                int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
+                double expt = double.Parse(lastRow["ExpTime"].ToString());
+
+                // Statements to avoid unecessary commands to be send
+                if(ct != temp)
+                {
+                    ct = temp;
+                    // Set temp
+                }
+                if(cp1 != pos1)
+                {
+                    cp1 = pos1;
+                    // Set pos1
+                }
+                if(cp2 != pos2)
+                {
+                    cp2 = pos2;
+                    // Set pos2
+                }
+                if (ce != expt)
+                {
+                    ce = expt;
+                    // Set exp time
+                }
+
+            }
+
+        }
     }
 }
