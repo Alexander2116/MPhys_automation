@@ -44,6 +44,17 @@ namespace MPhys.GUI
             this.textTempWrite = new System.Windows.Forms.TextBox();
             this.buttonSetTemp = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.buttonPID = new System.Windows.Forms.Button();
+            this.textBoxD = new System.Windows.Forms.TextBox();
+            this.textBoxI = new System.Windows.Forms.TextBox();
+            this.textBoxP = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxCL = new System.Windows.Forms.ComboBox();
+            this.groupBoxPID = new System.Windows.Forms.GroupBox();
+            this.groupBoxPID.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonSet1
@@ -183,12 +194,121 @@ namespace MPhys.GUI
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // buttonPID
+            // 
+            this.buttonPID.Location = new System.Drawing.Point(168, 44);
+            this.buttonPID.Name = "buttonPID";
+            this.buttonPID.Size = new System.Drawing.Size(75, 23);
+            this.buttonPID.TabIndex = 23;
+            this.buttonPID.Text = "Set";
+            this.buttonPID.UseVisualStyleBackColor = true;
+            this.buttonPID.Click += new System.EventHandler(this.buttonPID_Click);
+            // 
+            // textBoxD
+            // 
+            this.textBoxD.Location = new System.Drawing.Point(128, 45);
+            this.textBoxD.Name = "textBoxD";
+            this.textBoxD.Size = new System.Drawing.Size(34, 20);
+            this.textBoxD.TabIndex = 26;
+            this.textBoxD.Text = "ccc";
+            // 
+            // textBoxI
+            // 
+            this.textBoxI.Location = new System.Drawing.Point(88, 45);
+            this.textBoxI.Name = "textBoxI";
+            this.textBoxI.Size = new System.Drawing.Size(34, 20);
+            this.textBoxI.TabIndex = 27;
+            this.textBoxI.Text = "bbb";
+            // 
+            // textBoxP
+            // 
+            this.textBoxP.Location = new System.Drawing.Point(48, 45);
+            this.textBoxP.Name = "textBoxP";
+            this.textBoxP.Size = new System.Drawing.Size(34, 20);
+            this.textBoxP.TabIndex = 28;
+            this.textBoxP.Text = "aaa";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(58, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(15, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "P";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(90, 29);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(11, 13);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "I";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(135, 29);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(16, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "D";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(5, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 26);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Control\r\nloop";
+            // 
+            // comboBoxCL
+            // 
+            this.comboBoxCL.FormattingEnabled = true;
+            this.comboBoxCL.Items.AddRange(new object[] {
+            "0",
+            "1"});
+            this.comboBoxCL.Location = new System.Drawing.Point(5, 44);
+            this.comboBoxCL.Name = "comboBoxCL";
+            this.comboBoxCL.Size = new System.Drawing.Size(37, 21);
+            this.comboBoxCL.TabIndex = 33;
+            // 
+            // groupBoxPID
+            // 
+            this.groupBoxPID.Controls.Add(this.comboBoxCL);
+            this.groupBoxPID.Controls.Add(this.label11);
+            this.groupBoxPID.Controls.Add(this.label10);
+            this.groupBoxPID.Controls.Add(this.label9);
+            this.groupBoxPID.Controls.Add(this.label8);
+            this.groupBoxPID.Controls.Add(this.textBoxP);
+            this.groupBoxPID.Controls.Add(this.textBoxI);
+            this.groupBoxPID.Controls.Add(this.textBoxD);
+            this.groupBoxPID.Controls.Add(this.buttonPID);
+            this.groupBoxPID.Enabled = false;
+            this.groupBoxPID.Location = new System.Drawing.Point(29, 188);
+            this.groupBoxPID.Name = "groupBoxPID";
+            this.groupBoxPID.Size = new System.Drawing.Size(254, 82);
+            this.groupBoxPID.TabIndex = 34;
+            this.groupBoxPID.TabStop = false;
+            this.groupBoxPID.Text = "PID";
+            // 
             // TempForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBoxPID);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.buttonSetTemp);
             this.Controls.Add(this.textTempWrite);
@@ -205,6 +325,8 @@ namespace MPhys.GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TempForm";
             this.Text = "TempForm";
+            this.groupBoxPID.ResumeLayout(false);
+            this.groupBoxPID.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +348,15 @@ namespace MPhys.GUI
         private System.Windows.Forms.TextBox textTempWrite;
         private System.Windows.Forms.Button buttonSetTemp;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button buttonPID;
+        private System.Windows.Forms.TextBox textBoxD;
+        private System.Windows.Forms.TextBox textBoxI;
+        private System.Windows.Forms.TextBox textBoxP;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBoxCL;
+        internal System.Windows.Forms.GroupBox groupBoxPID;
     }
 }

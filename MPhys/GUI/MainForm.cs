@@ -36,7 +36,6 @@ namespace MPhys.GUI
             buttonTemp.Enabled = true;
             buttonSpec.Enabled = true;
             buttonAuto.Enabled = true;
-
         }
 
 

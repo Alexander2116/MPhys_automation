@@ -141,6 +141,7 @@ namespace MPhys.GUI
             {
                 buttonSetTemp.Enabled = true;
                 textTempWrite.Enabled = true;
+                groupBoxPID.Enabled = true;
 
             }
             else if (buttonSetTemp.Enabled) { }
@@ -148,6 +149,7 @@ namespace MPhys.GUI
             {
                 buttonSetTemp.Enabled = false;
                 textTempWrite.Enabled = false;
+                groupBoxPID.Enabled = false;
             }
             check_com();
             
@@ -170,6 +172,29 @@ namespace MPhys.GUI
                 comboBox1.Enabled = false;
                 buttonSet1.Enabled = false;
             }
+        }
+
+        private void buttonPID_Click(object sender, EventArgs e)
+        {
+            int CL, P, I, D;
+            CL = int.Parse(comboBoxCL.SelectedItem.ToString());
+            try
+            {
+                P = int.Parse(textBoxP.Text.ToString());
+                I = int.Parse(textBoxI.Text.ToString());
+                D = int.Parse(textBoxD.Text.ToString());
+                if (P > 999 || I > 999 || D > 999 )
+                {
+                    MessageBox.Show("Entered P, I, D maximal values are 999.");
+                    return;
+                }
+                TempDev.Set_PID(CL, P, I, D);
+            }
+            catch
+            {
+                MessageBox.Show("Entered P, I, D values must be an int in format of 'xxx'.");
+            }
+
         }
     }
 
