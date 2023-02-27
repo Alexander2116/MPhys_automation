@@ -37,11 +37,41 @@ namespace MPhys.GUI
             buttonSpec.Enabled = true;
             buttonAuto.Enabled = true;
         }
+        private void make_inactive()
+        {
+            if(NDFf != null)
+            {
+                NDFf.Dispose();
+                NDFf = null;
+            }
+            if(PMf != null)
+            {
+                PMf.Dispose();
+                PMf = null;
+            }
+            if(Tf != null)
+            {
+                Tf.Dispose();
+                Tf = null;
+            }
+            if(Sf != null)
+            {
+                Sf.Dispose();
+                Sf = null;
+            }
+            if(Af != null)
+            {
+                Af.Dispose();
+                Af = null;
+            }
+
+        }
 
 
         private void buttonNDF_Click(object sender, EventArgs e)
         {
             enable_buttons();
+            make_inactive();
             if (NDFf == null)
             {
                 NDFf = new NDFForm();
@@ -63,6 +93,7 @@ namespace MPhys.GUI
         private void buttonPM_Click(object sender, EventArgs e)
         {
             enable_buttons();
+            make_inactive();
             if (PMf == null)
             { 
                 PMf = new PMForm();
@@ -84,6 +115,7 @@ namespace MPhys.GUI
         private void buttonTemp_Click(object sender, EventArgs e)
         {
             enable_buttons();
+            make_inactive();
             if (Tf == null)
             {
                 Tf = new TempForm();
@@ -104,6 +136,7 @@ namespace MPhys.GUI
         private void buttonSpec_Click(object sender, EventArgs e)
         {
             enable_buttons();
+            make_inactive();
             if (Sf == null)
             {
                 Sf = new SpecForm();
@@ -124,6 +157,7 @@ namespace MPhys.GUI
         private void buttonAuto_Click(object sender, EventArgs e)
         {
             enable_buttons();
+            make_inactive();
             if (Af == null)
             {
                 Af = new AutoForm();

@@ -28,6 +28,8 @@ namespace MPhys.GUI
             this.TopLevel = false;
             this.TopMost = true;
 
+            comboBoxModes.SelectedIndex = 0;
+
             modify_com_boxes();
 
             timer1.Start();
@@ -142,6 +144,7 @@ namespace MPhys.GUI
                 buttonSetTemp.Enabled = true;
                 textTempWrite.Enabled = true;
                 groupBoxPID.Enabled = true;
+                groupBoxMode.Enabled = true;
 
             }
             else if (buttonSetTemp.Enabled) { }
@@ -150,6 +153,7 @@ namespace MPhys.GUI
                 buttonSetTemp.Enabled = false;
                 textTempWrite.Enabled = false;
                 groupBoxPID.Enabled = false;
+                groupBoxMode.Enabled = false;
             }
             check_com();
             
@@ -195,6 +199,13 @@ namespace MPhys.GUI
                 MessageBox.Show("Entered P, I, D values must be an int in format of 'xxx'.");
             }
 
+        }
+
+        private void buttonMode_Click(object sender, EventArgs e)
+        {
+            int mode = int.Parse(comboBoxModes.SelectedItem.ToString());
+
+            TempDev.Set_mode(mode);
         }
     }
 

@@ -93,7 +93,7 @@ namespace MPhys.Devices
         // Send a command to set mode
         public void Set_mode(int mode)
         {
-            if(mode==1 || mode==2 || mode==3 || mode==4)
+            if(mode==1 || mode==2 || mode==3 || mode==4 || mode==5)
             {
                 string command = "MODE " + mode.ToString() + "\r";
                 Send_command(command);
@@ -108,7 +108,7 @@ namespace MPhys.Devices
 
             byte[] bytes = Encoding.ASCII.GetBytes(command);
             _port.Write(bytes, 0, bytes.Length);
-            _port.Write(command);
+            //_port.Write(command);
             
         }
 

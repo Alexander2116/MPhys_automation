@@ -54,7 +54,12 @@ namespace MPhys.GUI
             this.label11 = new System.Windows.Forms.Label();
             this.comboBoxCL = new System.Windows.Forms.ComboBox();
             this.groupBoxPID = new System.Windows.Forms.GroupBox();
+            this.groupBoxMode = new System.Windows.Forms.GroupBox();
+            this.comboBoxModes = new System.Windows.Forms.ComboBox();
+            this.buttonMode = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBoxPID.SuspendLayout();
+            this.groupBoxMode.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonSet1
@@ -302,12 +307,61 @@ namespace MPhys.GUI
             this.groupBoxPID.TabStop = false;
             this.groupBoxPID.Text = "PID";
             // 
+            // groupBoxMode
+            // 
+            this.groupBoxMode.Controls.Add(this.label7);
+            this.groupBoxMode.Controls.Add(this.comboBoxModes);
+            this.groupBoxMode.Controls.Add(this.buttonMode);
+            this.groupBoxMode.Enabled = false;
+            this.groupBoxMode.Location = new System.Drawing.Point(29, 276);
+            this.groupBoxMode.Name = "groupBoxMode";
+            this.groupBoxMode.Size = new System.Drawing.Size(254, 82);
+            this.groupBoxMode.TabIndex = 35;
+            this.groupBoxMode.TabStop = false;
+            this.groupBoxMode.Text = "Mode";
+            // 
+            // comboBoxModes
+            // 
+            this.comboBoxModes.FormattingEnabled = true;
+            this.comboBoxModes.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBoxModes.Location = new System.Drawing.Point(8, 29);
+            this.comboBoxModes.Name = "comboBoxModes";
+            this.comboBoxModes.Size = new System.Drawing.Size(37, 21);
+            this.comboBoxModes.TabIndex = 33;
+            // 
+            // buttonMode
+            // 
+            this.buttonMode.Location = new System.Drawing.Point(48, 27);
+            this.buttonMode.Name = "buttonMode";
+            this.buttonMode.Size = new System.Drawing.Size(75, 23);
+            this.buttonMode.TabIndex = 23;
+            this.buttonMode.Text = "Set";
+            this.buttonMode.UseVisualStyleBackColor = true;
+            this.buttonMode.Click += new System.EventHandler(this.buttonMode_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(132, 14);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 65);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "1: Stop\r\n2: Manual\r\n3: Program\r\n4: AutoTune\r\n5: Fixed Output (?)";
+            // 
             // TempForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBoxMode);
             this.Controls.Add(this.groupBoxPID);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.buttonSetTemp);
@@ -327,6 +381,8 @@ namespace MPhys.GUI
             this.Text = "TempForm";
             this.groupBoxPID.ResumeLayout(false);
             this.groupBoxPID.PerformLayout();
+            this.groupBoxMode.ResumeLayout(false);
+            this.groupBoxMode.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +414,9 @@ namespace MPhys.GUI
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBoxCL;
         internal System.Windows.Forms.GroupBox groupBoxPID;
+        internal System.Windows.Forms.GroupBox groupBoxMode;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBoxModes;
+        private System.Windows.Forms.Button buttonMode;
     }
 }
