@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MPhys.Devices;
 
 namespace MPhys.GUI
 {
@@ -18,6 +19,8 @@ namespace MPhys.GUI
         private TempForm Tf;
         private SpecForm Sf;
         private AutoForm Af;
+
+        private FC102C NDFtest;
 
         public MainForm()
         {
@@ -76,7 +79,6 @@ namespace MPhys.GUI
             {
                 NDFf = new NDFForm();
                 this.Controls.Add(NDFf);
-
                 buttonNDF.Enabled = false;
                 NDFf.Show();
                 NDFf.BringToFront();
