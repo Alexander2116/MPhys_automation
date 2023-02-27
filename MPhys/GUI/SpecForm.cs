@@ -38,9 +38,8 @@ namespace MPhys.GUI
             {
                 Console.WriteLine(ex.Message);
             }
-
-
         }
+
 
         // Function to activate all buttons
         private void Activate_buttonsSCD()
