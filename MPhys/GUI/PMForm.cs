@@ -28,7 +28,6 @@ namespace MPhys.GUI
             this.TopLevel = false;
             this.TopMost = true;
 
-
             string PMport = ConfigurationManager.AppSettings.Get("PM100A");
             textPMconnection.Text = PMport;
             textBoxConnSet.Text = PMport;

@@ -121,8 +121,6 @@ namespace MPhys.Devices
                     SCD = new SCDid();
                     SCD.sName = sDevName;
                     SCD.sID = sDevId;
-                    Console.WriteLine(sDevName);
-                    Console.WriteLine(sDevId);
                     combobox_CCD.Add(SCD);
 
                     // Find the next Mono in this Configuration
@@ -137,6 +135,24 @@ namespace MPhys.Devices
                 Console.WriteLine(String.Format("Exception: {0}", ex.Message));
                 return;
             }
+        }
+
+        public bool can_be_initialized()
+        {
+            try
+            {
+                mMono = new JYMONOLib.MonochromatorClass();
+                mMono = null;
+                mCCD = new JYCCDLib.JYMCDClass();
+                mCCD = null;
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
 
         public void InitializeMono(SCDid CurrMono)

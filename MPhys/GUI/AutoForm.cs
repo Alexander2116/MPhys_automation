@@ -8,12 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MPhys.Devices;
+using System.Configuration;
 
 namespace MPhys.GUI
 {
     public partial class AutoForm : Form
     {
         private System.Data.DataTable dataTable; // Current loaded dataTable (Tasks to perform)
+
+        //Devices
+        FC102C NDF1, NDF2;
+        HR550 MonoSpec;
+        M9700 TempDev;
+        PM100A PMDev;
 
         public AutoForm()
         {
@@ -35,13 +42,119 @@ namespace MPhys.GUI
             Create_DataSet();
         }
 
+        private bool connect_devices()
+        {
+            bool all_good = true;
+
+            string NDF1port = ConfigurationManager.AppSettings.Get("NDF1");
+            string NDF2port = ConfigurationManager.AppSettings.Get("NDF2");
+            string PMport = ConfigurationManager.AppSettings.Get("PM100A");
+            string M9700port = ConfigurationManager.AppSettings.Get("M9700");
+
+            SCDid Mono = new SCDid();
+            string sNameM = ConfigurationManager.AppSettings.Get("iHR550_sName");
+            string sIDM = ConfigurationManager.AppSettings.Get("iHR550_sID");
+            Mono.sID = sIDM;
+            Mono.sName = sNameM;
+
+            SCDid CCD = new SCDid();
+            string sNameC = ConfigurationManager.AppSettings.Get("iCCD_sName");
+            string sIDC = ConfigurationManager.AppSettings.Get("iCCD_sID");
+            CCD.sID = sIDC;
+            CCD.sName = sNameC;
+
+            // NDF1
+            try
+            {
+                NDF1 = new FC102C(NDF1port);
+                if (NDF1.IsOpen() == 1)
+                {
+                }
+                else
+                {
+                    all_good = false;
+                    MessageBox.Show("NDF1 connection cannot be opened");
+                }
+            }
+            catch
+            {
+                all_good = false;
+                MessageBox.Show("NDF1 not connected");
+            }
+            // NDF2
+            try
+            {
+                NDF2 = new FC102C(NDF2port);
+                if (NDF2.IsOpen() == 1)
+                {
+                }
+                else
+                {
+                    all_good = false;
+                    MessageBox.Show("NDF2 connection cannot be opened");
+                }
+            }
+            catch
+            {
+                all_good = false;
+                MessageBox.Show("NDF2 not connected");
+            }
+            // PM
+            try
+            {
+                PMDev = new PM100A(PMport);
+                PMDev.Get_power();
+            }
+            catch
+            {
+                all_good = false;
+                MessageBox.Show("PM100A not connected");
+            }
+            // TEMP
+            try
+            {
+                TempDev = new M9700(M9700port);
+                TempDev.Open();
+                TempDev.Close();
+            }
+            catch
+            {
+                all_good = false;
+                MessageBox.Show("Temperature controller not connected");
+            }
+            // Mono & CCD
+            try
+            {
+                MonoSpec = new HR550();
+                if (MonoSpec.can_be_initialized())
+                {
+                    MonoSpec.InitializeMono(Mono);
+                    MonoSpec.InitializeMono(CCD);
+                }
+                else
+                {
+                    all_good = false;
+                    MessageBox.Show("Issues with connecting with iHR550");
+                }
+
+            }
+            catch
+            {
+                all_good = false;
+                MessageBox.Show("Issues with connecting with iHR550");
+            }
+
+            return all_good;
+
+        }
+
+
         private bool Check_unique_rows()
         {
             DataView view = new DataView(dataTable);
             DataTable distinctValues = view.ToTable(true, "temperature", "NDF1pos", "NDF2pos", "ExpTime");
             if(distinctValues.Rows.Count == dataTable.Rows.Count)
             {
-                Console.WriteLine("Fine");
                 return true;
             }
             else
@@ -249,7 +362,11 @@ namespace MPhys.GUI
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            auto_run();
+            if (connect_devices())
+            {
+                Console.WriteLine("Go on");
+                auto_run();
+            }
 
         }
 
@@ -312,6 +429,10 @@ namespace MPhys.GUI
                     // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K
                     string path;
                     path = default_path();
+                    if(path == "")
+                    {
+                        path = FileName.Text.ToString();
+                    }
                     //MonoSpec.GoStream(path, count, 2);
 
                 }
@@ -349,7 +470,6 @@ namespace MPhys.GUI
 
                 System.IO.Directory.CreateDirectory(path);
             }
-
 
             return path;
         }
