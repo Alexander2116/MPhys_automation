@@ -218,22 +218,22 @@ namespace MPhys.GUI
             // 
             // Count
             // 
-            this.Count.Location = new System.Drawing.Point(56, 212);
+            this.Count.Location = new System.Drawing.Point(615, 266);
             this.Count.Margin = new System.Windows.Forms.Padding(2);
             this.Count.Name = "Count";
             this.Count.Size = new System.Drawing.Size(39, 20);
             this.Count.TabIndex = 36;
-            this.Count.Text = "1";
+            this.Count.Text = "0";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 212);
+            this.label10.Location = new System.Drawing.Point(537, 260);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.Size = new System.Drawing.Size(74, 26);
             this.label10.TabIndex = 35;
-            this.label10.Text = "Count:";
+            this.label10.Text = "Count of each\r\nspectra taken";
             // 
             // AutoForm
             // 

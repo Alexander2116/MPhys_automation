@@ -257,49 +257,67 @@ namespace MPhys.GUI
         {
             double ct = 0.0, ce = 0.0; // current temperature ; current exposure time
             int cp1 = 0, cp2 = 0; // current possition 1, 2
-            for (int i = 0; i < dataTable.Rows.Count; i++)
+            int count = 0;
+            try
             {
-                DataRow lastRow = dataTable.Rows[i];
-
-                double temp = double.Parse(lastRow["temperature"].ToString());
-                int pos1 = int.Parse(lastRow["NDF1pos"].ToString());
-                int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
-                double expt = double.Parse(lastRow["ExpTime"].ToString());
-
-                // Statements to avoid unecessary commands to be send
-                if (ct != temp)
-                {
-                    ct = temp;
-                    // Set temp
-                }
-                if (cp1 != pos1)
-                {
-                    cp1 = pos1;
-                    // Set pos1
-                }
-                if (cp2 != pos2)
-                {
-                    cp2 = pos2;
-                    // Set pos2
-                }
-                if (ce != expt)
-                {
-                    ce = expt;
-                    // Set exp time
-                }
-
-                // Wait for pos to change
-
-                // Wait for temp to change
-
-                // Take spectra
-
-                // Take power
-
-                // Save data
-                // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K
-
+                count = int.Parse(Count.Text.ToString());
             }
+            catch
+            {
+                MessageBox.Show("Count is not set correctly");
+            }
+
+            if(count > 0)
+            {
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    DataRow lastRow = dataTable.Rows[i];
+
+                    double temp = double.Parse(lastRow["temperature"].ToString());
+                    int pos1 = int.Parse(lastRow["NDF1pos"].ToString());
+                    int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
+                    double expt = double.Parse(lastRow["ExpTime"].ToString());
+
+                    // Statements to avoid unecessary commands to be send
+                    if (ct != temp)
+                    {
+                        ct = temp;
+                        // Set temp
+                    }
+                    if (cp1 != pos1)
+                    {
+                        cp1 = pos1;
+                        // Set pos1
+                    }
+                    if (cp2 != pos2)
+                    {
+                        cp2 = pos2;
+                        // Set pos2
+                    }
+                    if (ce != expt)
+                    {
+                        ce = expt;
+                        // Set exp time
+                    }
+
+                    // Wait for pos to change
+
+                    // Wait for temp to change
+
+                    // Take spectra
+
+                    // Take power
+
+                    // Save data
+                    // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Count is not set. It's current value is: 0 (must be greater than that)");
+            }
+           
         }
     }
 }
