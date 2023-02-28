@@ -241,8 +241,14 @@ namespace MPhys.GUI
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
+            auto_run();
+
+        }
+
+        private void auto_run()
+        {
             double ct = 0.0, ce = 0.0; // current temperature ; current exposure time
-            int cp1=0, cp2=0; // current possition 1, 2
+            int cp1 = 0, cp2 = 0; // current possition 1, 2
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
                 DataRow lastRow = dataTable.Rows[i];
@@ -253,17 +259,17 @@ namespace MPhys.GUI
                 double expt = double.Parse(lastRow["ExpTime"].ToString());
 
                 // Statements to avoid unecessary commands to be send
-                if(ct != temp)
+                if (ct != temp)
                 {
                     ct = temp;
                     // Set temp
                 }
-                if(cp1 != pos1)
+                if (cp1 != pos1)
                 {
                     cp1 = pos1;
                     // Set pos1
                 }
-                if(cp2 != pos2)
+                if (cp2 != pos2)
                 {
                     cp2 = pos2;
                     // Set pos2
@@ -274,8 +280,18 @@ namespace MPhys.GUI
                     // Set exp time
                 }
 
-            }
+                // Wait for pos to change
 
+                // Wait for temp to change
+
+                // Take spectra
+
+                // Take power
+
+                // Save data
+                // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K
+
+            }
         }
     }
 }

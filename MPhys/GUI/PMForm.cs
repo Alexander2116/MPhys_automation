@@ -110,12 +110,16 @@ namespace MPhys.GUI
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(PMdev != null && DevOpen)
+            if (PMdev != null && DevOpen)
             {
                 textBoxPower.Text = PMdev.Get_power().ToString();
+                textCorr.Enabled = true;
+                buttonSetCorr.Enabled = true;
             }
             if (PMdev == null)
             {
+                //textCorr.Enabled = false;
+                //buttonSetCorr.Enabled = false;
                 modify_com_boxes();
             }
             check_com();
@@ -132,6 +136,27 @@ namespace MPhys.GUI
             {
                 textBoxConnSet.Enabled = false;
                 buttonComSet.Enabled = false;
+            }
+        }
+
+        private void buttonSetCorr_Click(object sender, EventArgs e)
+        {
+            string a = textCorr.Text.ToString();
+            try
+            {
+                double wavelength = double.Parse(textCorr.Text.ToString());
+                if(wavelength > 0 && wavelength < 1000)
+                {
+                    PMdev.Change_wavelength_correction(wavelength);
+                }
+                else
+                {
+                    MessageBox.Show("Must be a number within 0nm, 1000nm");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Must be a number");
             }
         }
     }

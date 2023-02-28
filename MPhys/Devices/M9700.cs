@@ -100,6 +100,22 @@ namespace MPhys.Devices
             }
         }
 
+        // checkes if temperature is within acceptable offset (tolerance)
+        public bool is_temp_good(double set_temperature, double tolerance = 0.5)
+        {
+            double cTemp;
+            cTemp = double.Parse(Get_temperature());
+            if(Math.Abs(cTemp - set_temperature) < tolerance)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         // sends string command to the device. It needs to be ASCII encoded 
         private void Send_command(string command)
         {
@@ -111,6 +127,7 @@ namespace MPhys.Devices
             //_port.Write(command);
             
         }
+
 
         // receive data from the device
         private string Receive(string initial)

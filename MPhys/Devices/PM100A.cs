@@ -34,7 +34,7 @@ namespace MPhys.Devices
         }
 
         // Int value, lambda given in nm
-        public void Change_wavelength_correction(int lambda)
+        public void Change_wavelength_correction(double lambda)
         {
             pm.setWavelength(lambda);
         }
