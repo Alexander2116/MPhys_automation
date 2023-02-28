@@ -310,6 +310,9 @@ namespace MPhys.GUI
 
                     // Save data
                     // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K
+                    string path;
+                    path = default_path();
+                    //MonoSpec.GoStream(path, count, 2);
 
                 }
             }
@@ -318,6 +321,37 @@ namespace MPhys.GUI
                 MessageBox.Show("Count is not set. It's current value is: 0 (must be greater than that)");
             }
            
+        }
+
+        private void OpenPathDialog_Click(object sender, EventArgs e)
+        {
+            var dlg = new FolderBrowserDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                string fileName;
+                fileName = dlg.SelectedPath;
+                FileName.Text = fileName;
+            }
+        }
+
+        private string default_path()
+        {
+            string path = "";
+            string temp;
+
+            if (FileName.Text.ToString() == "Default")
+            {
+                path = ".\\Data";
+                DateTime aDate = DateTime.Now;
+                temp = aDate.ToString("dd MMMM yyyy HH:mm").Replace(" ", "").Replace(":","");
+                path = path + "\\" + temp;
+                Console.WriteLine(temp);
+
+                System.IO.Directory.CreateDirectory(path);
+            }
+
+
+            return path;
         }
     }
 }
