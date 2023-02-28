@@ -182,7 +182,15 @@ namespace MPhys.GUI
 
             if (InputBox("Save the profile", "Enter the name of the profile (.xml)", ref filename) == DialogResult.OK)
             {
-                dataTable.WriteXml(path + "\\" + filename + ".xml");
+                string final_path = path + "\\" + filename + ".xml";
+                if (System.IO.File.Exists(final_path) == false)
+                {
+                    dataTable.WriteXml(final_path);
+                }
+                else
+                {
+                    MessageBox.Show("File with the given name already exists. Profile has not been saved");
+                }
             }
             
         }

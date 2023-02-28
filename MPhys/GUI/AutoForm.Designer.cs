@@ -46,6 +46,8 @@ namespace MPhys.GUI
             this.labelFinishTasks = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labelMaxTask = new System.Windows.Forms.Label();
+            this.Count = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxTasks
@@ -214,12 +216,33 @@ namespace MPhys.GUI
             this.labelMaxTask.TabIndex = 34;
             this.labelMaxTask.Text = "0";
             // 
+            // Count
+            // 
+            this.Count.Location = new System.Drawing.Point(56, 212);
+            this.Count.Margin = new System.Windows.Forms.Padding(2);
+            this.Count.Name = "Count";
+            this.Count.Size = new System.Drawing.Size(39, 20);
+            this.Count.TabIndex = 36;
+            this.Count.Text = "1";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 212);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Count:";
+            // 
             // AutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Count);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.labelMaxTask);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelFinishTasks);
@@ -264,5 +287,7 @@ namespace MPhys.GUI
         private System.Windows.Forms.Label labelFinishTasks;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labelMaxTask;
+        private System.Windows.Forms.TextBox Count;
+        private System.Windows.Forms.Label label10;
     }
 }
