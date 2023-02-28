@@ -119,8 +119,7 @@ namespace MPhys.GUI
             {
                 try
                 {
-                    //Uncomment when commencing
-                    //textBoxTemp.Text = TempDev.Get_temperature(); 
+                    textBoxTemp.Text = TempDev.Get_temperature(); 
                 }
                 catch { }
             }
