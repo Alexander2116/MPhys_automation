@@ -144,7 +144,8 @@ namespace MPhys.Devices
 
             _port = port;
             // Opens a connection (and keep it open till deconstructed)
-            _hdl = Open(port);
+            // _hdl = Open(port);
+            Open(port);
         }
 
 
@@ -172,6 +173,8 @@ namespace MPhys.Devices
         public int Open(String port, int BaudRate = 115200)
         {
             var res = FC102C_Methods.Open(_port, BaudRate, 10);
+            // newly added
+            _hdl = (int)res;
             return (int)res;
         }
 
