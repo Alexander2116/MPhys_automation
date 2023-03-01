@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MPhys.Devices;
 using System.Configuration;
+using System.Threading;
 
 namespace MPhys.GUI
 {
@@ -126,16 +127,11 @@ namespace MPhys.GUI
             try
             {
                 MonoSpec = new HR550();
-                if (MonoSpec.can_be_initialized())
-                {
-                    MonoSpec.InitializeMono(Mono);
-                    MonoSpec.InitializeMono(CCD);
-                }
-                else
-                {
-                    all_good = false;
-                    MessageBox.Show("Issues with connecting with iHR550");
-                }
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+
+                MonoSpec.InitializeMono(Mono);
+                MonoSpec.InitializeMono(CCD);
+
 
             }
             catch

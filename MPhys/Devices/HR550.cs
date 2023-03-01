@@ -141,6 +141,7 @@ namespace MPhys.Devices
         {
             try
             {
+                
                 mMono = new JYMONOLib.MonochromatorClass();
                 mMono = null;
                 mCCD = new JYCCDLib.JYMCDClass();

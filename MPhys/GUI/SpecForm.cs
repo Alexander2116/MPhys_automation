@@ -131,6 +131,7 @@ namespace MPhys.GUI
             {
                 try
                 {
+                    Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
                     MonoSpec.InitializeMono(SCD);
                     StatusLabel.Text = "Connected";
                     StatusLabel.ForeColor = Color.Green;
@@ -238,6 +239,7 @@ namespace MPhys.GUI
             {
                 try
                 {
+                    Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
                     MonoSpec.InitializeCCD(SCD);
                     StatusLabelCCD.Text = "Connected";
                     StatusLabelCCD.ForeColor = Color.Green;
