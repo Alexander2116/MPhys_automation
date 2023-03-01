@@ -128,9 +128,11 @@ namespace MPhys.GUI
             {
                 MonoSpec = new HR550();
                 Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-
-                MonoSpec.InitializeMono(Mono);
-                MonoSpec.InitializeMono(CCD);
+                if (MonoSpec.can_be_initialized())
+                {
+                    MonoSpec.InitializeMono(Mono);
+                    MonoSpec.InitializeMono(CCD);
+                }
 
 
             }
