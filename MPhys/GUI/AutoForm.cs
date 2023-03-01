@@ -133,6 +133,11 @@ namespace MPhys.GUI
                     MonoSpec.InitializeMono(Mono);
                     MonoSpec.InitializeMono(CCD);
                 }
+                else
+                {
+                    all_good = false;
+                    MessageBox.Show("Issues with connecting with iHR550");
+                }
 
 
             }
