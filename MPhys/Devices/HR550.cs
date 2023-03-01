@@ -22,6 +22,7 @@ using JYMONOLib;
 using JYCONFIGBROWSERCOMPONENTLib;
 using JYSYSTEMLIBLib;
 using JYCCDLib;
+using JYSCDLib;
 
 namespace MPhys.Devices
 {
@@ -55,9 +56,10 @@ namespace MPhys.Devices
         public JYMONOLib.MonochromatorClass mMono;
 
         // CCD
-        public JYCCDLib.JYMCDClass mCCD;
+        //public JYCCDLib.JYMCDClass mCCD;
         public JYSYSTEMLIBLib.IJYDataObject ccdData;
         public JYSYSTEMLIBLib.IJYResultsObject ccdResult;
+        public JYSCDLib.JYSCDClass mCCD;
 
         // jyCCD = new JYCCDLib.JYMCDClass();
         // jyMono = new JYMONOLib.MonochromatorClass();
@@ -114,7 +116,7 @@ namespace MPhys.Devices
                     sDevId = mConfigBrowser.GetNextMono(out sDevName);
                 }
 
-                sDevId = mConfigBrowser.GetFirstCCD(out sDevName);
+                sDevId = mConfigBrowser.GetFirstSCD(out sDevName);
                 while ((sDevName != null) && (String.Compare(sDevName, "") != 0))
                 {
                     // Add Configuration Names and IDs to combo box
@@ -144,7 +146,7 @@ namespace MPhys.Devices
                 
                 mMono = new JYMONOLib.MonochromatorClass();
                 mMono = null;
-                mCCD = new JYCCDLib.JYMCDClass();
+                mCCD = new JYSCDLib.JYSCDClass();
                 mCCD = null;
 
                 return true;
@@ -258,7 +260,7 @@ namespace MPhys.Devices
                 sMonoName = sDevFoundName;
 
                 // Create New MonochromatorClass
-                mCCD = new JYCCDLib.JYMCDClass();
+                mCCD = new JYSCDLib.JYSCDClass();
 
                 mCCD.Uniqueid = sDevUniqueId;
 
@@ -413,7 +415,8 @@ namespace MPhys.Devices
                 while (busy == true);
 
                 // Get result of data acquisition
-                ccdResult = mCCD.GetResult();
+                //ccdResult = mCCD.GetResult();
+                mCCD.GetData(ccdResult);
                 // pull off as data object
                 ccdData = ccdResult.GetFirstDataObject();
 
