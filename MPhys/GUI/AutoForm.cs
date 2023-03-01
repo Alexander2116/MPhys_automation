@@ -397,22 +397,30 @@ namespace MPhys.GUI
                     int pos1 = int.Parse(lastRow["NDF1pos"].ToString());
                     int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
                     double expt = double.Parse(lastRow["ExpTime"].ToString());
-
+                    int wait_few = 0;
                     // Statements to avoid unecessary commands to be send
                     if (ct != temp)
                     {
                         ct = temp;
                         // Set temp
+                        TempDev.Set_temperature(ct);
                     }
                     if (cp1 != pos1)
                     {
+                        wait_few = Math.Abs(cp1 - pos1);
                         cp1 = pos1;
                         // Set pos1
+                        NDF1.SetPostion(cp1);
                     }
                     if (cp2 != pos2)
                     {
+                        if(Math.Abs(cp2-pos2) > wait_few)
+                        {
+                            wait_few = Math.Abs(cp2 - pos2);
+                        }
                         cp2 = pos2;
                         // Set pos2
+                        NDF2.SetPostion(cp2);
                     }
                     if (ce != expt)
                     {
@@ -420,13 +428,25 @@ namespace MPhys.GUI
                         // Set exp time
                     }
 
+                    // Wait 2s to make sure wheel is set
+                    if (wait_few > 0)
+                    {
+                        Thread.Sleep(1000 *wait_few);
+                    }
+
                     // Wait for pos to change
 
                     // Wait for temp to change
-
-                    // Take spectra
+                    // Wait additional 20s for stability
+                    int cont = 1;
+                    while (!TempDev.is_temp_good(ct) && cont>5)
+                    {
+                        Thread.Sleep(4000);
+                        cont += 1;
+                    }
 
                     // Take power
+                    double power = PMDev.Get_power();
 
                     // Save data
                     // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K
@@ -436,7 +456,8 @@ namespace MPhys.GUI
                     {
                         path = FileName.Text.ToString();
                     }
-                    //MonoSpec.GoStream(path, count, 2);
+                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 +"_"+power +"_" + ce +"_"+ct+"K.csv";
+                    MonoSpec.GoStream(path, count, 2);
 
                 }
             }
