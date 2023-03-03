@@ -19,8 +19,7 @@ namespace MPhys.GUI
         private TempForm Tf;
         private SpecForm Sf;
         private AutoForm Af;
-
-        private FC102C NDFtest;
+        private TestForm TestF;
 
         public MainForm()
         {
@@ -39,6 +38,7 @@ namespace MPhys.GUI
             buttonTemp.Enabled = true;
             buttonSpec.Enabled = true;
             buttonAuto.Enabled = true;
+            buttonTest.Enabled = true;
         }
         private void make_inactive()
         {
@@ -66,6 +66,11 @@ namespace MPhys.GUI
             {
                 Af.Dispose();
                 Af = null;
+            }
+            if (TestF != null)
+            {
+                TestF.Dispose();
+                TestF = null;
             }
 
         }
@@ -174,6 +179,27 @@ namespace MPhys.GUI
                 Af.TopMost = true;
                 buttonAuto.Enabled = false;
                 Af.BringToFront();
+            }
+        }
+
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+            enable_buttons();
+            make_inactive();
+            if (TestF == null)
+            {
+                TestF = new TestForm();
+                this.Controls.Add(TestF);
+
+                buttonTest.Enabled = false;
+                TestF.Show();
+                TestF.BringToFront();
+            }
+            else
+            {
+                TestF.TopMost = true;
+                buttonTest.Enabled = false;
+                TestF.BringToFront();
             }
         }
     }

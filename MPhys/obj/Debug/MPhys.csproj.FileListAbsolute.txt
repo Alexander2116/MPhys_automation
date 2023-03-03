@@ -32,3 +32,4 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.Cop
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.exe
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.pdb
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.AssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.TestForm.resources

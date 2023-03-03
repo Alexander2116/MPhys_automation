@@ -134,6 +134,12 @@
     <Compile Include="GUI\TempForm.Designer.cs">
       <DependentUpon>TempForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TempForm.resx">
       <DependentUpon>TempForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

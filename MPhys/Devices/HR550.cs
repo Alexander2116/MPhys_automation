@@ -143,7 +143,6 @@ namespace MPhys.Devices
         {
             try
             {
-                
                 mMono = new JYMONOLib.MonochromatorClass();
                 mMono = null;
                 mCCD = new JYSCDLib.JYSCDClass();
@@ -188,7 +187,7 @@ namespace MPhys.Devices
                 mMono.Uniqueid = sDevUniqueId;
 
                 // Set Mono Initialize event handler
-                // NO
+                mMono._IJYDeviceReqdEvents_Event_Initialize += OnReceivedInitMono;
 
                 // Loads up the device with the specified configuration
                 mMono.Load();
@@ -239,27 +238,11 @@ namespace MPhys.Devices
             // OPEN COMMUNICATIONS
             try
             {
-                // Find Selected Device UniqueId & Name
-                /*
-                sCCDId = CurrCCD.sID;
 
-                if ((sCCDId == null) || (sCCDId.CompareTo("") == 0))
-                    return;
 
-                sDevUniqueId = mConfigBrowser.GetFirstCCD(out sDevFoundName);
-                int temp_i = 0;
-                while (((sDevUniqueId != null) && (sDevUniqueId.CompareTo(sMonoDevId) != 0)) && temp_i < 10)
-                {
-                    sStatus = String.Format("Loop ... ");
-                    Console.WriteLine(sStatus);
-                    sDevUniqueId = mConfigBrowser.GetNextCCD(out sDevFoundName);
-                    temp_i += 1;
-                }
-                */
+                sMonoName = CurrCCD.sName;
 
-                sMonoName = sDevFoundName;
-
-                // Create New MonochromatorClass
+                // Create New Single Channel Detector
                 mCCD = new JYSCDLib.JYSCDClass();
 
                 mCCD.Uniqueid = sDevUniqueId;
@@ -693,6 +676,11 @@ namespace MPhys.Devices
             }
 
         }
+
+
+
+
+
 
     }
 }

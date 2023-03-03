@@ -52,13 +52,13 @@ namespace MPhys.GUI
             string PMport = ConfigurationManager.AppSettings.Get("PM100A");
             string M9700port = ConfigurationManager.AppSettings.Get("M9700");
 
-            SCDid Mono = new SCDid();
+            MPhys.Devices.SCDid Mono = new MPhys.Devices.SCDid();
             string sNameM = ConfigurationManager.AppSettings.Get("iHR550_sName");
             string sIDM = ConfigurationManager.AppSettings.Get("iHR550_sID");
             Mono.sID = sIDM;
             Mono.sName = sNameM;
 
-            SCDid CCD = new SCDid();
+            MPhys.Devices.SCDid CCD = new MPhys.Devices.SCDid();
             string sNameC = ConfigurationManager.AppSettings.Get("iCCD_sName");
             string sIDC = ConfigurationManager.AppSettings.Get("iCCD_sID");
             CCD.sID = sIDC;
@@ -131,7 +131,7 @@ namespace MPhys.GUI
                 if (MonoSpec.can_be_initialized())
                 {
                     MonoSpec.InitializeMono(Mono);
-                    MonoSpec.InitializeMono(CCD);
+                    MonoSpec.InitializeCCD(CCD);
                 }
                 else
                 {

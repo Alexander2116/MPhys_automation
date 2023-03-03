@@ -113,13 +113,13 @@ namespace MPhys.GUI
 
         private void buttonComSet_Click(object sender, EventArgs e)
         {
-            SCDid SCD = new SCDid();
+            MPhys.Devices.SCDid SCD = new MPhys.Devices.SCDid();
             string sName = ConfigurationManager.AppSettings.Get("iHR550_sName");
             string sID = ConfigurationManager.AppSettings.Get("iHR550_sID");
 
             if(comboBoxSCDs.Enabled == true && comboBoxSCDs.Text != null && comboBoxSCDs.Text != "")
             {
-                SCD = (SCDid)comboBoxSCDs.SelectedItem;
+                SCD = (MPhys.Devices.SCDid)comboBoxSCDs.SelectedItem;
                 UpdateAppSettings("iHR550_sName", SCD.sName);
                 UpdateAppSettings("iHR550_sID", SCD.sID);
             }
@@ -159,7 +159,7 @@ namespace MPhys.GUI
             if (checkBox1.Checked)
             {
                 comboBoxSCDs.Enabled = true;
-                foreach(SCDid s in MonoSpec.combobox_Mono)
+                foreach(MPhys.Devices.SCDid s in MonoSpec.combobox_Mono)
                 {
                     comboBoxSCDs.Items.Add(s);
                 }
@@ -175,7 +175,7 @@ namespace MPhys.GUI
             if(comboBoxSCDs.Items.Count < 1 && checkBox1.Checked)
             {
                 MonoSpec = new HR550();
-                foreach (SCDid s in MonoSpec.combobox_Mono)
+                foreach (MPhys.Devices.SCDid s in MonoSpec.combobox_Mono)
                 {
                     comboBoxSCDs.Items.Add(s);
                 }
@@ -221,13 +221,13 @@ namespace MPhys.GUI
         // ********* ACQUIRE
         private void buttonCDDInit_Click(object sender, EventArgs e)
         {
-            SCDid SCD = new SCDid();
+            MPhys.Devices.SCDid SCD = new MPhys.Devices.SCDid();
             string sName = ConfigurationManager.AppSettings.Get("iCCD_sName");
             string sID = ConfigurationManager.AppSettings.Get("iCCD_sID");
 
             if (comboBoxCCDs.Enabled == true && comboBoxCCDs.Text != null && comboBoxCCDs.Text != "")
             {
-                SCD = (SCDid)comboBoxCCDs.SelectedItem;
+                SCD = (MPhys.Devices.SCDid)comboBoxCCDs.SelectedItem;
                 UpdateAppSettings("iCCD_sName", SCD.sName);
                 UpdateAppSettings("iCCD_sID", SCD.sID);
             }
@@ -265,7 +265,7 @@ namespace MPhys.GUI
             if (checkBox2.Checked)
             {
                 comboBoxCCDs.Enabled = true;
-                foreach (SCDid s in MonoSpec.combobox_CCD)
+                foreach (MPhys.Devices.SCDid s in MonoSpec.combobox_CCD)
                 {
                     comboBoxCCDs.Items.Add(s);
                 }
