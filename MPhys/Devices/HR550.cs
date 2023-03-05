@@ -5,6 +5,9 @@
 ** Purpose: Connect to Horiba iHR550 spectrometer
 **        : Control the spectrometer (inc. shutter)
 **
+**         : All the data will be stored in DataTable dData
+*          : you can access it using list<double> methods
+*          
 ** Comments: This is taken from Mono_Cs_NET example from SDK
 **
 ** Date:  24 February 2023
@@ -17,6 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Data;
 
 using JYMONOLib;
 using JYCONFIGBROWSERCOMPONENTLib;
@@ -50,6 +54,8 @@ namespace MPhys.Devices
         private String sMonoName;
         private String sCCDId;
         private String sCCDName;
+
+        private DataTable dData;
 
         // Should be private, may change it later
         public JYConfigBrowerInterface mConfigBrowser;
@@ -94,6 +100,8 @@ namespace MPhys.Devices
             String sDevId;
             String sDevName;
             SCDid SCD;
+            dData = new DataTable();
+            SetDataTable();
 
             try
             {
@@ -117,7 +125,7 @@ namespace MPhys.Devices
                 }
 
                 sDevId = mConfigBrowser.GetFirstSCD(out sDevName);
-                while ((sDevName != null) && (String.Compare(sDevName, "") != 0))
+                while ((String.IsNullOrEmpty(sDevName) == false) && (String.IsNullOrEmpty(sDevId) == false))
                 {
                     // Add Configuration Names and IDs to combo box
                     SCD = new SCDid();
@@ -137,6 +145,46 @@ namespace MPhys.Devices
                 Console.WriteLine(String.Format("Exception: {0}", ex.Message));
                 return;
             }
+        }
+
+        public void SetDataTable()
+        {
+            DataColumn column;
+
+            // Wavelength [nm]
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Double");
+            column.ColumnName = "Wavelength";
+            column.ReadOnly = false;
+            column.Unique = false;
+            dData.Columns.Add(column);
+
+            // Intensity [count]
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Double");
+            column.ColumnName = "Intensity";
+            column.ReadOnly = false;
+            column.Unique = false;
+            dData.Columns.Add(column);
+        }
+
+        public List<double> GetWavelengthDataColumn()
+        {
+            List<double> list = new List<double>();
+            for (int i = 0; i <= dData.Rows.Count; i++)
+            {
+                list.Add((double)dData.Rows[i]["Wavelength"]);
+            }
+            return list;
+        }
+        public List<double> GetIntensityDataColumn()
+        {
+            List<double> list = new List<double>();
+            for(int i = 0; i <= dData.Rows.Count; i++)
+            {
+                list.Add((double)dData.Rows[i]["Intensity"]);
+            }
+            return list;
         }
 
         public bool can_be_initialized()
@@ -527,6 +575,99 @@ namespace MPhys.Devices
             mCCD.DoAcquisition(true);
         }
 
+
+        // Synchronus data acquisition
+        public void GetData(double ScanStart, double ScanEnd, double ScanInc = 0.36)
+        {
+            Double dPos, dValue;
+            String sMsg, sPos, sDisplay;
+            Boolean isMonoBusy, isSCDBusy;
+            System.Object oData = null;
+            bool m_bSyncAcq, m_bStopAcq;
+            int m_loopCount;
+            DataRow row;
+
+            if (mCCD == null)
+            {
+                Console.WriteLine("Monochromator Must Be Selected and Initialized Before Collecting Data");
+                return;
+            }
+
+            if ((ScanStart < 0) || (ScanEnd <= 0) || (ScanInc <= 0))
+            {
+                sMsg = String.Format("Invalid Scan Start ({0}), Stop ({1}) or Inc ({2}) Value", ScanStart, ScanEnd, ScanInc);
+                Console.WriteLine(sMsg);
+                return;
+            }
+            else if (ScanStart > ScanEnd)
+            {
+                Console.WriteLine("Scan End Must Be Greater Than Scan Start.");
+                return;
+            }
+
+
+            m_bSyncAcq = true; ;
+            m_loopCount = 0;
+            m_bStopAcq = false;
+
+            if (m_bSyncAcq == true)
+            {
+                // A Synchronous (or Serial) acquisition method will loop through the positions requested, moving 
+                // the mono and taking data at every point.  NOTE: this method will not relinquish control to the 
+                // UI thread (i.e. - the UI will appear hung) until it has completed.  If this operation is 
+                // already taking place on a non-ui thread, then this is not an issue.  If your scan is happening 
+                // in the main UI thread, then you'd want to consider using the Asynchronous method of acquisition...
+                dPos = ScanStart;
+                dData.Clear();
+                while (dPos <= ScanEnd)
+                {
+                    // move mono
+                    mMono.MovetoWavelength(dPos);
+
+                    isMonoBusy = true;
+                    while (isMonoBusy == true)
+                    {
+                        isMonoBusy = mMono.IsBusy();
+                    }
+                    dPos = mMono.GetCurrentWavelength();
+
+                    // Start the acquisition
+                    isSCDBusy = true;
+                    mCCD.StartAcquisition(true);
+                    while ((isSCDBusy == true) && (m_bStopAcq == false))
+                    {
+                        // Poll Busy
+                        isSCDBusy = mCCD.AcquisitionBusy();
+                    }
+
+                    // Retrieve the data
+                    mCCD.GetData(ref oData);
+                    IConvertible convert = oData as IConvertible;
+                    if (convert != null)
+                        dValue = convert.ToDouble(null);
+                    else
+                        dValue = 0d;
+
+                    row = dData.NewRow();
+
+                    row["Wavelength"] = dPos;
+                    row["Intensity"] = dValue;
+                    dData.Rows.Add(row);
+
+                    if (m_bStopAcq == true)
+                        break;
+
+                    
+
+                    m_loopCount = m_loopCount + 1;
+
+                    dPos += ScanInc;
+
+                }          // end of loop
+            }
+            
+
+        }
 
 
 

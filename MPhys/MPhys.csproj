@@ -61,7 +61,7 @@
     </Reference>
     <Reference Include="Interop.MSXML2, Version=4.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>bin\Debug\Interop.MSXML2.dll</HintPath>
     </Reference>
     <Reference Include="System">
@@ -98,6 +98,7 @@
     <Compile Include="Devices\HR550.cs" />
     <Compile Include="Devices\PM100A.cs" />
     <Compile Include="Devices\M9700.cs" />
+    <Compile Include="Devices\TestClass.cs" />
     <Compile Include="GUI\AutoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +141,7 @@
     <Compile Include="GUI\TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyFunctions\MyFunctionsClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -177,6 +179,17 @@
     <EmbeddedResource Include="GUI\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSXML2">
+      <Guid>{F5078F18-C551-11D3-89B9-0000F81FE221}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MPhys.Devices;
 using System.Configuration;
 using System.Threading;
+using MPhys.MyFunctions;
 
 namespace MPhys.GUI
 {
@@ -22,6 +23,7 @@ namespace MPhys.GUI
         HR550 MonoSpec;
         M9700 TempDev;
         PM100A PMDev;
+        MyFunctionsClass myfunctions;
 
         public AutoForm()
         {
@@ -378,6 +380,10 @@ namespace MPhys.GUI
             double ct = 0.0, ce = 0.0; // current temperature ; current exposure time
             int cp1 = 0, cp2 = 0; // current possition 1, 2
             int count = 0;
+            double mStart, mEnd;
+            bool all_good = false;
+
+
             try
             {
                 count = int.Parse(Count.Text.ToString());
@@ -385,9 +391,30 @@ namespace MPhys.GUI
             catch
             {
                 MessageBox.Show("Count is not set correctly");
+                return;
             }
 
-            if(count > 0)
+            try
+            {
+                mStart = double.Parse(Count.Text.ToString());
+                mEnd = double.Parse(Count.Text.ToString());
+                if (mStart < mEnd && mStart>0)
+                {
+                    all_good = true;
+                }
+                else
+                {
+                    MessageBox.Show("Start and End are not set correctly");
+                    return;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Start and End are not set correctly");
+                return;
+            }
+
+            if (count > 0 && all_good)
             {
                 for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
@@ -447,8 +474,30 @@ namespace MPhys.GUI
 
                     // Take power
                     double power = PMDev.Get_power();
+                    List<double> wavelengthdata = new List<double>();
+                    List<double> intensitydata = new List<double>();
+                    DataTable DataToBeSaved = new DataTable();
 
                     // Save data
+                    for (int j=0; j < count; j++)
+                    {
+
+                        MonoSpec.GetData(mStart, mEnd);
+
+                        wavelengthdata = MonoSpec.GetWavelengthDataColumn();
+                        intensitydata = MonoSpec.GetIntensityDataColumn();
+
+                        string intensityName = "Intensity" + j.ToString();
+                        if (!DataToBeSaved.Columns.Contains("Wavelength"))
+                        {
+                            myfunctions.DataAddColumn(ref DataToBeSaved, wavelengthdata, "Wavelength");
+                        }
+                        myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, intensityName);
+                        wavelengthdata.Clear();
+                        intensitydata.Clear();
+                    }
+
+
                     // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K
                     string path;
                     path = default_path();
@@ -457,7 +506,10 @@ namespace MPhys.GUI
                         path = FileName.Text.ToString();
                     }
                     string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 +"_"+power +"_" + ce +"_"+ct+"K.csv";
-                    MonoSpec.GoStream(path, count, 2);
+
+                    myfunctions.ToCSV(DataToBeSaved, fullPath);
+                    DataToBeSaved.Dispose();
+                    //MonoSpec.GoStream(path, count, 2);
 
                 }
             }

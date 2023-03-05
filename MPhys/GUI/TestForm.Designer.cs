@@ -40,6 +40,16 @@ namespace MPhys.GUI
             this.buttonInitialize = new System.Windows.Forms.Button();
             this.labelMonosDevs = new System.Windows.Forms.Label();
             this.comboboxMonos = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.groupboxWlCtrl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,11 +157,111 @@ namespace MPhys.GUI
             this.comboboxMonos.TabIndex = 28;
             this.comboboxMonos.SelectedIndexChanged += new System.EventHandler(this.comboboxMonos_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(155, 226);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Initialize";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(10, 228);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 35;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(155, 255);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Initialize";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(10, 257);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 37;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(155, 284);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 40;
+            this.button3.Text = "Initialize";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(10, 286);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 39;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(155, 313);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 42;
+            this.button4.Text = "Initialize";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(10, 315);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 41;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(155, 342);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 44;
+            this.button5.Text = "Initialize";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(10, 344);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(121, 21);
+            this.comboBox5.TabIndex = 43;
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelInitStatus);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.groupboxWlCtrl);
@@ -182,5 +292,15 @@ namespace MPhys.GUI
         internal System.Windows.Forms.Button buttonInitialize;
         internal System.Windows.Forms.Label labelMonosDevs;
         internal System.Windows.Forms.ComboBox comboboxMonos;
+        internal System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.ComboBox comboBox1;
+        internal System.Windows.Forms.Button button2;
+        internal System.Windows.Forms.ComboBox comboBox2;
+        internal System.Windows.Forms.Button button3;
+        internal System.Windows.Forms.ComboBox comboBox3;
+        internal System.Windows.Forms.Button button4;
+        internal System.Windows.Forms.ComboBox comboBox4;
+        internal System.Windows.Forms.Button button5;
+        internal System.Windows.Forms.ComboBox comboBox5;
     }
 }

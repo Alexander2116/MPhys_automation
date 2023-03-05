@@ -53,6 +53,10 @@ namespace MPhys.GUI
             this.OpenPathDialog = new System.Windows.Forms.Button();
             this.FileName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxTasks
@@ -186,7 +190,7 @@ namespace MPhys.GUI
             // buttonRun
             // 
             this.buttonRun.Enabled = false;
-            this.buttonRun.Location = new System.Drawing.Point(615, 305);
+            this.buttonRun.Location = new System.Drawing.Point(615, 339);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(75, 23);
             this.buttonRun.TabIndex = 31;
@@ -197,7 +201,7 @@ namespace MPhys.GUI
             // labelFinishTasks
             // 
             this.labelFinishTasks.AutoSize = true;
-            this.labelFinishTasks.Location = new System.Drawing.Point(555, 310);
+            this.labelFinishTasks.Location = new System.Drawing.Point(555, 344);
             this.labelFinishTasks.Name = "labelFinishTasks";
             this.labelFinishTasks.Size = new System.Drawing.Size(13, 13);
             this.labelFinishTasks.TabIndex = 32;
@@ -206,7 +210,7 @@ namespace MPhys.GUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(574, 310);
+            this.label7.Location = new System.Drawing.Point(574, 344);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 13);
             this.label7.TabIndex = 33;
@@ -215,7 +219,7 @@ namespace MPhys.GUI
             // labelMaxTask
             // 
             this.labelMaxTask.AutoSize = true;
-            this.labelMaxTask.Location = new System.Drawing.Point(587, 310);
+            this.labelMaxTask.Location = new System.Drawing.Point(587, 344);
             this.labelMaxTask.Name = "labelMaxTask";
             this.labelMaxTask.Size = new System.Drawing.Size(13, 13);
             this.labelMaxTask.TabIndex = 34;
@@ -289,12 +293,54 @@ namespace MPhys.GUI
             this.label13.TabIndex = 39;
             this.label13.Text = "File Path:";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(551, 305);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(57, 20);
+            this.textBox1.TabIndex = 42;
+            this.textBox1.Text = "300";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(676, 305);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(62, 20);
+            this.textBox2.TabIndex = 43;
+            this.textBox2.Text = "500";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(503, 299);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 26);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Spectra\r\nStart";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(628, 299);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 26);
+            this.label9.TabIndex = 45;
+            this.label9.Text = "Spectra\r\nEnd";
+            // 
             // AutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.OpenPathDialog);
             this.Controls.Add(this.FileName);
             this.Controls.Add(this.label13);
@@ -353,5 +399,9 @@ namespace MPhys.GUI
         private System.Windows.Forms.Button OpenPathDialog;
         private System.Windows.Forms.TextBox FileName;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

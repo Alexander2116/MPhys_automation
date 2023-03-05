@@ -141,6 +141,7 @@ namespace MPhys.GUI
                 {
                     StatusLabel.Text = "Disconnected";
                     StatusLabel.ForeColor = Color.Red;
+                    MessageBox.Show("Couldn't Initialize");
                 }
             }
             else
