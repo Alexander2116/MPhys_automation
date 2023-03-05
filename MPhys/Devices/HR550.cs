@@ -417,6 +417,10 @@ namespace MPhys.Devices
             return mMono.IsBusy();
         }
 
+        public void SetIntegrationTime(double IntTime)
+        {
+            mCCD.IntegrationTime = IntTime;
+        }
 
         //=================================
         // begin streaming mode
@@ -577,7 +581,7 @@ namespace MPhys.Devices
 
 
         // Synchronus data acquisition
-        public void GetData(double ScanStart, double ScanEnd, double ScanInc = 0.36)
+        public void GetData(double ScanStart, double ScanEnd, double ScanInc = 0.036)
         {
             Double dPos, dValue;
             String sMsg, sPos, sDisplay;

@@ -33,3 +33,5 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.exe
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.pdb
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.AssemblyReference.cache
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.TestForm.resources
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\Interop.MSXML2.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.ResolveComReference.cache

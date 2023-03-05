@@ -452,6 +452,7 @@ namespace MPhys.GUI
                     if (ce != expt)
                     {
                         ce = expt;
+                        MonoSpec.SetIntegrationTime(ce);
                         // Set exp time
                     }
 
@@ -474,6 +475,7 @@ namespace MPhys.GUI
 
                     // Take power
                     double power = PMDev.Get_power();
+
                     List<double> wavelengthdata = new List<double>();
                     List<double> intensitydata = new List<double>();
                     DataTable DataToBeSaved = new DataTable();
@@ -482,7 +484,7 @@ namespace MPhys.GUI
                     for (int j=0; j < count; j++)
                     {
 
-                        MonoSpec.GetData(mStart, mEnd);
+                        MonoSpec.GetData(mStart, mEnd, 0.036);
 
                         wavelengthdata = MonoSpec.GetWavelengthDataColumn();
                         intensitydata = MonoSpec.GetIntensityDataColumn();
