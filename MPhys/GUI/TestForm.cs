@@ -12,6 +12,8 @@ using MPhys.Devices;
 using JYMONOLib;
 using JYCONFIGBROWSERCOMPONENTLib;
 using JYSYSTEMLIBLib;
+using JYCCDLib;
+using JYSCDLib;
 
 namespace MPhys.GUI
 {
@@ -30,6 +32,9 @@ namespace MPhys.GUI
 
         public JYConfigBrowerInterface mConfigBrowser;
         private JYMONOLib.MonochromatorClass mMono;
+        private JYCCDLib.JYMCDClass myCCD;
+        private JYSCDLib.JYSCDClass mySCD;
+        private JYSimpleDeviceClass myDevice;
 
         public TestForm()
         {
@@ -77,6 +82,77 @@ namespace MPhys.GUI
                 return;
             }
 
+            mConfigBrowser = new JYConfigBrowerInterface();
+
+            // Load Config Browser
+            mConfigBrowser.Load();
+
+            // File Combo Box with Mono devices
+            sDevId = mConfigBrowser.GetFirstMono(out sDevName);
+            while ((sDevName != null) && (String.Compare(sDevName, "") != 0))
+            {
+                // Add Configuration Names and IDs to combo box
+                SCD = new SCDid();
+                SCD.sName = sDevName;
+                SCD.sID = sDevId;
+                comboBox1.Items.Add(SCD);
+
+                // Find the next Mono in this Configuration
+                sDevId = mConfigBrowser.GetNextMono(out sDevName);
+            }
+
+            sDevId = mConfigBrowser.GetFirstDetector(out sDevName);
+            while ((sDevName != null) && (String.Compare(sDevName, "") != 0))
+            {
+                // Add Configuration Names and IDs to combo box
+                SCD = new SCDid();
+                SCD.sName = sDevName;
+                SCD.sID = sDevId;
+                comboBox2.Items.Add(SCD);
+
+                // Find the next Mono in this Configuration
+                sDevId = mConfigBrowser.GetNextDetector(out sDevName);
+            }
+
+            sDevId = mConfigBrowser.GetFirstCCD(out sDevName);
+            while ((sDevName != null) && (String.Compare(sDevName, "") != 0))
+            {
+                // Add Configuration Names and IDs to combo box
+                SCD = new SCDid();
+                SCD.sName = sDevName;
+                SCD.sID = sDevId;
+                comboBox3.Items.Add(SCD);
+
+                // Find the next Mono in this Configuration
+                sDevId = mConfigBrowser.GetNextCCD(out sDevName);
+            }
+
+            sDevId = mConfigBrowser.GetFirstDevice(out sDevName);
+            while ((sDevName != null) && (String.Compare(sDevName, "") != 0))
+            {
+                // Add Configuration Names and IDs to combo box
+                SCD = new SCDid();
+                SCD.sName = sDevName;
+                SCD.sID = sDevId;
+                comboBox4.Items.Add(SCD);
+
+                // Find the next Mono in this Configuration
+                sDevId = mConfigBrowser.GetNextDevice(out sDevName);
+            }
+
+            sDevId = mConfigBrowser.GetFirstSCD(out sDevName);
+            while ((sDevName != null) && (String.Compare(sDevName, "") != 0))
+            {
+                // Add Configuration Names and IDs to combo box
+                SCD = new SCDid();
+                SCD.sName = sDevName;
+                SCD.sID = sDevId;
+                comboBox5.Items.Add(SCD);
+
+                // Find the next Mono in this Configuration
+                sDevId = mConfigBrowser.GetNextSCD(out sDevName);
+            }
+
         }
         private void comboboxMonos_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -101,6 +177,7 @@ namespace MPhys.GUI
             // OPEN COMMUNICATIONS
             try
             {
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
                 // Find Selected Device UniqueId & Name
                 SCDid CurrMono = (SCDid)comboboxMonos.SelectedItem;
                 sMonoDevId = CurrMono.sID;
@@ -468,7 +545,196 @@ namespace MPhys.GUI
             }
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SCDid ss = new SCDid();
+            ss = (SCDid)comboBox2.SelectedItem;
+            try
+            {
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                myCCD = new JYCCDLib.JYMCDClass();
+                myCCD.Uniqueid = ss.sID;
+
+                // Loads up the device with the specified configuration
+                myCCD.Load();
+            }
+            catch
+            {
+                MessageBox.Show("Nope, load doesn't work");
+            }
+
+            try
+            {
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                System.Object oData = null;
+                double dValue;
+                myCCD.IntegrationTime = 1;
+                bool isSCDBusy = true;
+                myCCD.StartAcquisition(true);
+                while ((isSCDBusy == true))
+                {
+                    // Poll Busy
+                    isSCDBusy = myCCD.AcquisitionBusy();
+                }
+                myCCD.GetData(oData);
+                IConvertible convert = oData as IConvertible;
+                if (convert != null)
+                    dValue = convert.ToDouble(null);
+                else
+                    dValue = 0d;
+                MessageBox.Show("dValue: " + dValue.ToString());
+
+            }
+            catch
+            {
+                MessageBox.Show("Nope, acquisition doesn't work");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SCDid ss = new SCDid();
+            ss = (SCDid)comboBox3.SelectedItem;
+            try
+            {
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                myCCD = new JYCCDLib.JYMCDClass();
+                myCCD.Uniqueid = ss.sID;
+
+                // Loads up the device with the specified configuration
+                myCCD.Load();
+            }
+            catch
+            {
+                MessageBox.Show("Nope, load doesn't work");
+            }
+
+            try
+            {
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                System.Object oData = null;
+                double dValue;
+                myCCD.IntegrationTime = 1;
+                bool isSCDBusy = true;
+                myCCD.StartAcquisition(true);
+                while ((isSCDBusy == true))
+                {
+                    // Poll Busy
+                    isSCDBusy = myCCD.AcquisitionBusy();
+                }
+                myCCD.GetData(oData);
+                IConvertible convert = oData as IConvertible;
+                if (convert != null)
+                    dValue = convert.ToDouble(null);
+                else
+                    dValue = 0d;
+                MessageBox.Show("dValue: " + dValue.ToString());
+
+            }
+            catch
+            {
+                MessageBox.Show("Nope, acquisition doesn't work");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SCDid ss = new SCDid();
+            ss = (SCDid)comboBox4.SelectedItem;
+            try
+            {
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                myCCD = new JYCCDLib.JYMCDClass();
+                myCCD.Uniqueid = ss.sID;
+
+                // Loads up the device with the specified configuration
+                myCCD.Load();
+            }
+            catch
+            {
+                MessageBox.Show("Nope, load doesn't work");
+            }
+
+            try
+            {
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                System.Object oData = null;
+                double dValue;
+                myCCD.IntegrationTime = 1;
+                bool isSCDBusy = true;
+                myCCD.StartAcquisition(true);
+                while ((isSCDBusy == true))
+                {
+                    // Poll Busy
+                    isSCDBusy = myCCD.AcquisitionBusy();
+                }
+                myCCD.GetData(oData);
+                IConvertible convert = oData as IConvertible;
+                if (convert != null)
+                    dValue = convert.ToDouble(null);
+                else
+                    dValue = 0d;
+                MessageBox.Show("dValue: " + dValue.ToString());
+
+            }
+            catch
+            {
+                MessageBox.Show("Nope, acquisition doesn't work");
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SCDid ss = new SCDid();
+            ss = (SCDid)comboBox5.SelectedItem;
+            try
+            {
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                mySCD = new JYSCDLib.JYSCDClass();
+
+                mySCD.Uniqueid = ss.sID;
+                mySCD.Load();
+            }
+            catch
+            {
+                MessageBox.Show("Nope, load doesn 't work");
+            }
+            try
+            {
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                System.Object oData = null;
+                double dValue;
+                mySCD.IntegrationTime = 1;
+                bool isSCDBusy = true;
+                mySCD.StartAcquisition(true);
+                while ((isSCDBusy == true))
+                {
+                    // Poll Busy
+                    isSCDBusy = mySCD.AcquisitionBusy();
+                }
+                mySCD.GetData(oData);
+                IConvertible convert = oData as IConvertible;
+                if (convert != null)
+                    dValue = convert.ToDouble(null);
+                else
+                    dValue = 0d;
+                MessageBox.Show("dValue: " + dValue.ToString());
+
+            }
+            catch
+            {
+                MessageBox.Show("Nope, acquisition doesn't work");
+            }
+        }
     }
 }

@@ -159,21 +159,23 @@ namespace MPhys.GUI
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(155, 226);
+            this.button1.Location = new System.Drawing.Point(155, 181);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 36;
             this.button1.Text = "Initialize";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 228);
+            this.comboBox1.Location = new System.Drawing.Point(10, 183);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 35;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -183,6 +185,7 @@ namespace MPhys.GUI
             this.button2.TabIndex = 38;
             this.button2.Text = "Initialize";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox2
             // 
@@ -201,6 +204,7 @@ namespace MPhys.GUI
             this.button3.TabIndex = 40;
             this.button3.Text = "Initialize";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox3
             // 
@@ -219,6 +223,7 @@ namespace MPhys.GUI
             this.button4.TabIndex = 42;
             this.button4.Text = "Initialize";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox4
             // 
@@ -237,6 +242,7 @@ namespace MPhys.GUI
             this.button5.TabIndex = 44;
             this.button5.Text = "Initialize";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // comboBox5
             // 

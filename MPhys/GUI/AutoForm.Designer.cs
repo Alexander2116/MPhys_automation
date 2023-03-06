@@ -57,6 +57,9 @@ namespace MPhys.GUI
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxInc = new System.Windows.Forms.TextBox();
+            this.checkBoxInc = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // listBoxTasks
@@ -173,9 +176,9 @@ namespace MPhys.GUI
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 290);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(194, 13);
+            this.label5.Size = new System.Drawing.Size(249, 13);
             this.label5.TabIndex = 29;
-            this.label5.Text = "No.  |  Temp  |  pos1  |  pos2  |  Ext Time";
+            this.label5.Text = "No.  |  Temp  |  pos1  |  pos2  |  Integration Time (ns)";
             // 
             // buttonSaveProfile
             // 
@@ -190,7 +193,7 @@ namespace MPhys.GUI
             // buttonRun
             // 
             this.buttonRun.Enabled = false;
-            this.buttonRun.Location = new System.Drawing.Point(615, 339);
+            this.buttonRun.Location = new System.Drawing.Point(663, 384);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(75, 23);
             this.buttonRun.TabIndex = 31;
@@ -201,7 +204,7 @@ namespace MPhys.GUI
             // labelFinishTasks
             // 
             this.labelFinishTasks.AutoSize = true;
-            this.labelFinishTasks.Location = new System.Drawing.Point(555, 344);
+            this.labelFinishTasks.Location = new System.Drawing.Point(603, 389);
             this.labelFinishTasks.Name = "labelFinishTasks";
             this.labelFinishTasks.Size = new System.Drawing.Size(13, 13);
             this.labelFinishTasks.TabIndex = 32;
@@ -210,7 +213,7 @@ namespace MPhys.GUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(574, 344);
+            this.label7.Location = new System.Drawing.Point(622, 389);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 13);
             this.label7.TabIndex = 33;
@@ -219,7 +222,7 @@ namespace MPhys.GUI
             // labelMaxTask
             // 
             this.labelMaxTask.AutoSize = true;
-            this.labelMaxTask.Location = new System.Drawing.Point(587, 344);
+            this.labelMaxTask.Location = new System.Drawing.Point(635, 389);
             this.labelMaxTask.Name = "labelMaxTask";
             this.labelMaxTask.Size = new System.Drawing.Size(13, 13);
             this.labelMaxTask.TabIndex = 34;
@@ -314,12 +317,12 @@ namespace MPhys.GUI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(503, 299);
+            this.label8.Location = new System.Drawing.Point(495, 299);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 26);
+            this.label8.Size = new System.Drawing.Size(52, 26);
             this.label8.TabIndex = 44;
-            this.label8.Text = "Spectra\r\nStart";
+            this.label8.Text = "Spectra\r\nStart (nm)";
             // 
             // label9
             // 
@@ -327,9 +330,40 @@ namespace MPhys.GUI
             this.label9.Location = new System.Drawing.Point(628, 299);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 26);
+            this.label9.Size = new System.Drawing.Size(49, 26);
             this.label9.TabIndex = 45;
-            this.label9.Text = "Spectra\r\nEnd";
+            this.label9.Text = "Spectra\r\nEnd (nm)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(595, 347);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 13);
+            this.label11.TabIndex = 47;
+            this.label11.Text = "Increment (nm)";
+            // 
+            // textBoxInc
+            // 
+            this.textBoxInc.Enabled = false;
+            this.textBoxInc.Location = new System.Drawing.Point(676, 344);
+            this.textBoxInc.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxInc.Name = "textBoxInc";
+            this.textBoxInc.Size = new System.Drawing.Size(62, 20);
+            this.textBoxInc.TabIndex = 46;
+            this.textBoxInc.Text = "0.036";
+            // 
+            // checkBoxInc
+            // 
+            this.checkBoxInc.AutoSize = true;
+            this.checkBoxInc.Location = new System.Drawing.Point(477, 346);
+            this.checkBoxInc.Name = "checkBoxInc";
+            this.checkBoxInc.Size = new System.Drawing.Size(113, 17);
+            this.checkBoxInc.TabIndex = 48;
+            this.checkBoxInc.Text = "Change Increment";
+            this.checkBoxInc.UseVisualStyleBackColor = true;
+            this.checkBoxInc.CheckedChanged += new System.EventHandler(this.checkBoxInc_CheckedChanged);
             // 
             // AutoForm
             // 
@@ -337,6 +371,9 @@ namespace MPhys.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBoxInc);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBoxInc);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox2);
@@ -403,5 +440,8 @@ namespace MPhys.GUI
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxInc;
+        private System.Windows.Forms.CheckBox checkBoxInc;
     }
 }

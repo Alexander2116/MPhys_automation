@@ -382,7 +382,20 @@ namespace MPhys.GUI
             int count = 0;
             double mStart, mEnd;
             bool all_good = false;
+            double Inc = 0.036; // nm
 
+            if (checkBoxInc.Enabled)
+            {
+                try
+                {
+                    Inc = double.Parse(textBoxInc.Text.ToString());
+                }
+                catch
+                {
+                    MessageBox.Show("Unable to change Increment");
+                    return;
+                }
+            }
 
             try
             {
@@ -484,7 +497,7 @@ namespace MPhys.GUI
                     for (int j=0; j < count; j++)
                     {
 
-                        MonoSpec.GetData(mStart, mEnd, 0.036);
+                        MonoSpec.GetData(mStart, mEnd, Inc);
 
                         wavelengthdata = MonoSpec.GetWavelengthDataColumn();
                         intensitydata = MonoSpec.GetIntensityDataColumn();
@@ -530,6 +543,18 @@ namespace MPhys.GUI
                 string fileName;
                 fileName = dlg.SelectedPath;
                 FileName.Text = fileName;
+            }
+        }
+
+        private void checkBoxInc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxInc.Checked)
+            {
+                textBoxInc.Enabled = true;
+            }
+            else
+            {
+                textBoxInc.Enabled = false;
             }
         }
 
