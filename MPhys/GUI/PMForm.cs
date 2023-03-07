@@ -144,7 +144,7 @@ namespace MPhys.GUI
             try
             {
                 double wavelength = double.Parse(textCorr.Text.ToString());
-                if(wavelength > 0 && wavelength < 1000)
+                if(wavelength > 200 && wavelength < 1100)
                 {
                     PMdev.Change_wavelength_correction(wavelength);
                 }

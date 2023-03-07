@@ -161,6 +161,7 @@ namespace MPhys.GUI
         private void buttonSetTemp_Click(object sender, EventArgs e)
         {
             string text = textTempWrite.Text.ToString();
+            TempDev.Set_temperature(double.Parse(text));
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
