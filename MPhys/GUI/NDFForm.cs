@@ -207,11 +207,11 @@ namespace MPhys.GUI
             //***********
             if (NDF1COM.BackColor == Color.Green)
             {
-                //textNDF1pos.Text = NDF1.GetPostion().ToString();
+                textNDF1pos.Text = NDF1.GetPostion().ToString();
             }
             if (NDF2COM.BackColor == Color.Green)
             {
-                //textNDF2pos.Text = NDF2.GetPostion().ToString();
+                textNDF2pos.Text = NDF2.GetPostion().ToString();
             }
             // ************
             if (NDF1.IsOpen() != 1)
