@@ -205,7 +205,11 @@ namespace MPhys.Devices
         // Set position to: 1, 2, 3, 4, 5, 6
         public void SetPostion(Int32 pos)
         {
-            //_hdl = Open(_port);
+            if(IsOpen() == 0)
+            {
+                _hdl = Open(_port);
+            }
+            
             if (pos > 0 && pos < 7)
             {
                 var ret = FC102C_Methods.SetPosition(_hdl, pos);
@@ -214,27 +218,33 @@ namespace MPhys.Devices
             {
                 Console.WriteLine("Incorrect position");
             }
-            //Close();
+            Close();
             //return (int)ret;
         }
 
         // Get CURRENT position
         public int GetPostion()
         {
-            //_hdl = Open(_port);
+            if (IsOpen() == 0)
+            {
+                _hdl = Open(_port);
+            }
             Int32 pos = 0;
             var ret = FC102C_Methods.GetPosition(_hdl, out pos);
-            //Close();
+            Close();
             return pos;
         }
 
         // For FW102C it is pos=6
         public int GetPostionCount()
         {
-            //_hdl = Open(_port);
+            if (IsOpen() == 0)
+            {
+                _hdl = Open(_port);
+            }
             int pos = 0;
             FC102C_Methods.GetPositionCount(_hdl, out pos);
-            //Close();
+            Close();
             return pos;
         }
 
