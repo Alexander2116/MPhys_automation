@@ -7,6 +7,7 @@ using MPhys.Devices;
 using System.IO.Ports;
 using System.Windows.Forms;
 using MPhys.GUI;
+using JYMONOLib;
 
 namespace MPhys
 {
@@ -15,6 +16,8 @@ namespace MPhys
         [STAThread]
         static void Main()
         {
+            MonochromatorClass a;
+            a = new MonochromatorClass();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

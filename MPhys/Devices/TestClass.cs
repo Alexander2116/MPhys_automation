@@ -21,7 +21,6 @@ using JYMONOLib;
 using JYCONFIGBROWSERCOMPONENTLib;
 using JYSYSTEMLIBLib;
 using JYCCDLib;
-using JYSCDLib;
 
 namespace MPhys.Devices
 {
@@ -50,7 +49,7 @@ namespace MPhys.Devices
         //public JYCCDLib.JYMCDClass mCCD;
         public JYSYSTEMLIBLib.IJYDataObject ccdData;
         public JYSYSTEMLIBLib.IJYResultsObject ccdResult;
-        public JYSCDLib.JYSCDClass mCCD;
+        public JYCCDLib.JYMCDClass mCCD;
 
         // jyCCD = new JYCCDLib.JYMCDClass();
         // jyMono = new JYMONOLib.MonochromatorClass();
@@ -136,7 +135,7 @@ namespace MPhys.Devices
             {
                 mMono = new JYMONOLib.MonochromatorClass();
                 mMono = null;
-                mCCD = new JYSCDLib.JYSCDClass();
+                mCCD = new JYCCDLib.JYMCDClass();
                 mCCD = null;
 
                 return true;
@@ -234,7 +233,7 @@ namespace MPhys.Devices
                 sMonoName = CurrCCD.sName;
 
                 // Create New Single Channel Detector
-                mCCD = new JYSCDLib.JYSCDClass();
+                mCCD = new JYCCDLib.JYMCDClass();
 
                 mCCD.Uniqueid = sDevUniqueId;
 

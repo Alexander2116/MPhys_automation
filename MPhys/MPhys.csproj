@@ -5,13 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4686BB16-CC57-477E-8452-2F662B12DA6F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>MPhys</RootNamespace>
     <AssemblyName>MPhys</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,36 +34,32 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Interop.JYCCDLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Interop.JYCCDLib.1.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>bin\Debug\Interop.JYCCDLib.dll</HintPath>
+      <HintPath>Interop\Interop.JYCCDLib.1.0.dll</HintPath>
     </Reference>
-    <Reference Include="Interop.JYCONFIGBROWSERCOMPONENTLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Interop.JYCONFIGBROWSERCOMPONENTLib.1.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>bin\Debug\Interop.JYCONFIGBROWSERCOMPONENTLib.dll</HintPath>
+      <HintPath>Interop\Interop.JYCONFIGBROWSERCOMPONENTLib.1.0.dll</HintPath>
     </Reference>
-    <Reference Include="Interop.JYMONOLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Interop.JYMONOLib.1.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>bin\Debug\Interop.JYMONOLib.dll</HintPath>
+      <HintPath>Interop\Interop.JYMONOLib.1.0.dll</HintPath>
     </Reference>
-    <Reference Include="Interop.JYSCDLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Interop.JYSYSTEMLIBLib.1.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>bin\Debug\Interop.JYSCDLib.dll</HintPath>
-    </Reference>
-    <Reference Include="Interop.JYSYSTEMLIBLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>bin\Debug\Interop.JYSYSTEMLIBLib.dll</HintPath>
-    </Reference>
-    <Reference Include="Interop.MSXML2, Version=4.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>bin\Debug\Interop.MSXML2.dll</HintPath>
+      <HintPath>Interop\Interop.JYSYSTEMLIBLib.1.0.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>

@@ -13,7 +13,6 @@ using JYMONOLib;
 using JYCONFIGBROWSERCOMPONENTLib;
 using JYSYSTEMLIBLib;
 using JYCCDLib;
-using JYSCDLib;
 
 namespace MPhys.GUI
 {
@@ -33,7 +32,6 @@ namespace MPhys.GUI
         public JYConfigBrowerInterface mConfigBrowser;
         private JYMONOLib.MonochromatorClass mMono;
         private JYCCDLib.JYMCDClass myCCD;
-        private JYSCDLib.JYSCDClass mySCD;
         private JYSimpleDeviceClass myDevice;
 
         public TestForm()
@@ -695,46 +693,7 @@ namespace MPhys.GUI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            SCDid ss = new SCDid();
-            ss = (SCDid)comboBox5.SelectedItem;
-            try
-            {
-                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-                mySCD = new JYSCDLib.JYSCDClass();
-
-                mySCD.Uniqueid = ss.sID;
-                mySCD.Load();
-            }
-            catch
-            {
-                MessageBox.Show("Nope, load doesn 't work");
-            }
-            try
-            {
-                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-                System.Object oData = null;
-                double dValue;
-                mySCD.IntegrationTime = 1;
-                bool isSCDBusy = true;
-                mySCD.StartAcquisition(true);
-                while ((isSCDBusy == true))
-                {
-                    // Poll Busy
-                    isSCDBusy = mySCD.AcquisitionBusy();
-                }
-                mySCD.GetData(oData);
-                IConvertible convert = oData as IConvertible;
-                if (convert != null)
-                    dValue = convert.ToDouble(null);
-                else
-                    dValue = 0d;
-                MessageBox.Show("dValue: " + dValue.ToString());
-
-            }
-            catch
-            {
-                MessageBox.Show("Nope, acquisition doesn't work");
-            }
+            
         }
     }
 }
