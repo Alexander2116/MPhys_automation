@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4686BB16-CC57-477E-8452-2F662B12DA6F}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>MPhys</RootNamespace>
     <AssemblyName>MPhys</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -38,28 +38,32 @@
     <DefineConstants>TRACE;DEBUG</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>MPhys.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Interop.JYCCDLib.1.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>Interop\Interop.JYCCDLib.1.0.dll</HintPath>
+      <HintPath>D:\MPhys\PL_automation\Jobin_Yvon\SDK\Examples\NET\C++\MonoCCD_Cpp_NET\MonoCCD_Cpp_NET\Interop\Interop.JYCCDLib.1.0.dll</HintPath>
     </Reference>
     <Reference Include="Interop.JYCONFIGBROWSERCOMPONENTLib.1.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>Interop\Interop.JYCONFIGBROWSERCOMPONENTLib.1.0.dll</HintPath>
+      <HintPath>D:\MPhys\PL_automation\Jobin_Yvon\SDK\Examples\NET\C++\MonoCCD_Cpp_NET\MonoCCD_Cpp_NET\Interop\Interop.JYCONFIGBROWSERCOMPONENTLib.1.0.dll</HintPath>
     </Reference>
     <Reference Include="Interop.JYMONOLib.1.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>Interop\Interop.JYMONOLib.1.0.dll</HintPath>
+      <HintPath>D:\MPhys\PL_automation\Jobin_Yvon\SDK\Examples\NET\C++\MonoCCD_Cpp_NET\MonoCCD_Cpp_NET\Interop\Interop.JYMONOLib.1.0.dll</HintPath>
     </Reference>
     <Reference Include="Interop.JYSYSTEMLIBLib.1.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>Interop\Interop.JYSYSTEMLIBLib.1.0.dll</HintPath>
+      <HintPath>D:\MPhys\PL_automation\Jobin_Yvon\SDK\Examples\NET\C++\MonoCCD_Cpp_NET\MonoCCD_Cpp_NET\Interop\Interop.JYSYSTEMLIBLib.1.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MSXML2.4.0">
+      <HintPath>D:\MPhys\PL_automation\Jobin_Yvon\SDK\Examples\NET\C++\MonoCCD_Cpp_NET\MonoCCD_Cpp_NET\Interop\Interop.MSXML2.4.0.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
@@ -176,17 +180,6 @@
     <EmbeddedResource Include="GUI\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="MSXML2">
-      <Guid>{F5078F18-C551-11D3-89B9-0000F81FE221}</Guid>
-      <VersionMajor>4</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

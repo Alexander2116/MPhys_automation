@@ -1,0 +1,33 @@
+REM Assume target folder structure: Jobin Yvon\RunningComponents
+
+REM Device Components and support dlls
+REM ----------------------------------
+
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\JYSupport\jySystemLib.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\JYSupport\jyCommonObjects.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\JYSupport\JYConfigBrowserComponent.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\JYSupport\Communicationscom.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\JYSupport\jyHardware.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\JYSupport\jyDeviceConfig.dll" /s
+
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Detectors\JYMCD\jyccd.dll"  /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Detectors\JYMCD\ccd.ocx"  /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Detectors\JYSCD\Single Channel Detector.dll" /s
+
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Monos\JYMono\jyMono.dll " /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\LightSources\JYLightSource\jyLightSource.dll " /s
+
+
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Accessories\Filter Wheel\jyFilterWheel.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Accessories\Sample Changer\jySampleChanger.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Accessories\Polarizer\JYPolarizer.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Accessories\Temperature Controller\jyTemperatureController.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Accessories\XY Stage\jyXYStage.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Accessories\Titrator\jyTitrator.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Accessories\Microscope\jyMicroscope.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Accessories\Microscope\MicroscopeDLL.dll" /s
+
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Lifetime\JYDSP.dll" /s
+C:\Windows\SysWOW64\regsvr32.exe "Common\JY Components\Lifetime\JYSynthesizer.dll" /s
+
+
