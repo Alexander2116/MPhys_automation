@@ -7,9 +7,9 @@ using MPhys.Devices;
 using System.IO.Ports;
 using System.Windows.Forms;
 using MPhys.GUI;
-using JYMONOLib;
 using System.Runtime.InteropServices;
 using System.Reflection;
+using System.Data;
 
 namespace MPhys
 {
@@ -18,26 +18,6 @@ namespace MPhys
         [STAThread]
         static void Main()
         {
-            string path = @"Interop.JYMONOLib.1.0.dll";
-            Assembly assembly = Assembly.LoadFrom(path);
-            Type type = assembly.GetType("JYMONOLib.MonochromatorClass");
-            MethodInfo[] methods = type.GetMethods();
-            foreach(MethodInfo m in methods)
-            {
-                Console.WriteLine(m.Name);
-            }
-            object instance = Activator.CreateInstance(type);
-            
-
-            JYMONOLib.MonochromatorClass mono;
-            mono = new JYMONOLib.MonochromatorClass();
-            Assembly a = typeof(Program).Assembly;
-            Console.WriteLine("Assembly identity={0}", a.FullName);
-            String ClassName = "JYMONOLib.MonochromatorClass";
-            object obj = Activator.CreateInstance(null, ClassName);
-            //Console.WriteLine(obj);
-            //mono = (MonochromatorClass)Activator.CreateInstance("MPhys", ClassName);
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
