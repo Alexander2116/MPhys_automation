@@ -10,6 +10,9 @@ using MPhys.GUI;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Data;
+using JYCCDLib;
+using Thorlabs.PM100D_32.Interop;
+using NationalInstruments.Visa;
 
 namespace MPhys
 {

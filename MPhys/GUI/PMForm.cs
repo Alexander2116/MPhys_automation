@@ -30,8 +30,19 @@ namespace MPhys.GUI
 
             string PMport = ConfigurationManager.AppSettings.Get("PM100A");
             textPMconnection.Text = PMport;
-            textBoxConnSet.Text = PMport;
 
+            NationalInstruments.Visa.ResourceManager rm = new NationalInstruments.Visa.ResourceManager();
+            try { 
+            var a = rm.Find("USB?*");
+            foreach (string b in a)
+            {
+                comboBoxConnSet.Items.Add(b);
+            }
+            }
+            catch
+            {
+                MessageBox.Show("Any instrument couldn't be found");
+            }
             modify_com_boxes();
 
             timer1.Start();
@@ -47,6 +58,8 @@ namespace MPhys.GUI
                 PMdev = new PM100A(PMport);
                 PMdev.Get_power();
                 DevOpen = true;
+                textCorr.Enabled = true;
+                buttonSetCorr.Enabled = true;
             }
             catch { }
 
@@ -73,6 +86,7 @@ namespace MPhys.GUI
             {
                 textPMconnection.BackColor = Color.Red;
             }
+
         }
 
         static void UpdateAppSettings(string key, string value)
@@ -100,40 +114,35 @@ namespace MPhys.GUI
 
         private void buttonComSet_Click(object sender, EventArgs e)
         {
-            string new_com = textBoxConnSet.Text.ToString();
+            string new_com = comboBoxConnSet.SelectedItem.ToString();
             textPMconnection.Text = new_com;
-
-            UpdateAppSettings("PM100A", new_com);
-            modify_com_boxes();
+            if(new_com != "")
+            {
+                textPMconnection.Text = new_com;
+                UpdateAppSettings("PM100A", new_com);
+                modify_com_boxes();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (PMdev != null && DevOpen)
             {
-                textBoxPower.Text = PMdev.Get_power().ToString();
-                textCorr.Enabled = true;
-                buttonSetCorr.Enabled = true;
+                string power = PMdev.Get_power().ToString();
+                textBoxPower.Text = power;
             }
-            if (PMdev == null)
-            {
-                //textCorr.Enabled = false;
-                //buttonSetCorr.Enabled = false;
-                modify_com_boxes();
-            }
-            check_com();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
             {
-                textBoxConnSet.Enabled = true;
+                comboBoxConnSet.Enabled = true;
                 buttonComSet.Enabled = true;
             }
             else
             {
-                textBoxConnSet.Enabled = false;
+                comboBoxConnSet.Enabled = false;
                 buttonComSet.Enabled = false;
             }
         }

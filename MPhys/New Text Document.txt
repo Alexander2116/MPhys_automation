@@ -1,0 +1,2 @@
+call "%vsappiddir%..\..\VC\Auxiliary\Build\vcvarsall.bat" x86
+editbin.exe /NXCOMPAT:NO "$(TargetPath)"

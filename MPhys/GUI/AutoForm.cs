@@ -75,13 +75,13 @@ namespace MPhys.GUI
                 }
                 else
                 {
-                    all_good = false;
+                    //all_good = false;
                     MessageBox.Show("NDF1 connection cannot be opened");
                 }
             }
             catch
             {
-                all_good = false;
+                //all_good = false;
                 MessageBox.Show("NDF1 not connected");
             }
             // NDF2
@@ -93,13 +93,13 @@ namespace MPhys.GUI
                 }
                 else
                 {
-                    all_good = false;
+                    //all_good = false;
                     MessageBox.Show("NDF2 connection cannot be opened");
                 }
             }
             catch
             {
-                all_good = false;
+                //all_good = false;
                 MessageBox.Show("NDF2 not connected");
             }
             // PM
@@ -110,7 +110,7 @@ namespace MPhys.GUI
             }
             catch
             {
-                all_good = false;
+                //all_good = false;
                 MessageBox.Show("PM100A not connected");
             }
             // TEMP
@@ -122,7 +122,7 @@ namespace MPhys.GUI
             }
             catch
             {
-                all_good = false;
+                //all_good = false;
                 MessageBox.Show("Temperature controller not connected");
             }
             // Mono & CCD
@@ -367,7 +367,9 @@ namespace MPhys.GUI
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            if (connect_devices())
+            bool dev = connect_devices();
+            MessageBox.Show(dev.ToString());
+            if (dev)
             {
                 Console.WriteLine("Go on");
                 auto_run();
@@ -433,12 +435,13 @@ namespace MPhys.GUI
                 {
                     DataRow lastRow = dataTable.Rows[i];
 
-                    double temp = double.Parse(lastRow["temperature"].ToString());
-                    int pos1 = int.Parse(lastRow["NDF1pos"].ToString());
-                    int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
+                    //double temp = double.Parse(lastRow["temperature"].ToString());
+                    //int pos1 = int.Parse(lastRow["NDF1pos"].ToString());
+                    //int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
                     double expt = double.Parse(lastRow["ExpTime"].ToString());
                     int wait_few = 0;
                     // Statements to avoid unecessary commands to be send
+                    /*
                     if (ct != temp)
                     {
                         ct = temp;
@@ -461,7 +464,7 @@ namespace MPhys.GUI
                         cp2 = pos2;
                         // Set pos2
                         NDF2.SetPostion(cp2);
-                    }
+                    }*/
                     if (ce != expt)
                     {
                         ce = expt;
@@ -470,7 +473,7 @@ namespace MPhys.GUI
                     }
 
                     // Wait 2s to make sure wheel is set
-                    if (wait_few > 0)
+                    /*if (wait_few > 0)
                     {
                         Thread.Sleep(1000 *wait_few);
                     }
@@ -484,10 +487,11 @@ namespace MPhys.GUI
                     {
                         Thread.Sleep(4000);
                         cont += 1;
-                    }
+                    }*/
 
                     // Take power
-                    double power = PMDev.Get_power();
+                    //double power = PMDev.Get_power();
+                    double power = 0;
 
                     List<double> wavelengthdata = new List<double>();
                     List<double> intensitydata = new List<double>();
@@ -516,6 +520,11 @@ namespace MPhys.GUI
                     // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K
                     string path;
                     path = default_path();
+                    // Only for testing
+                    cp1 = 0;
+                    cp2 = 0;
+                    ct = 0;
+
                     if(path == "")
                     {
                         path = FileName.Text.ToString();

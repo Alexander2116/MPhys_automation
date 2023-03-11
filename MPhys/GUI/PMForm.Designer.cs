@@ -33,7 +33,6 @@ namespace MPhys.GUI
             this.textBoxPower = new System.Windows.Forms.TextBox();
             this.textPMconnection = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxConnSet = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonComSet = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@ namespace MPhys.GUI
             this.textCorr = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxConnSet = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBoxPower
@@ -69,14 +69,6 @@ namespace MPhys.GUI
             this.label1.Size = new System.Drawing.Size(360, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "USB[board]::0x1313::product id::serial number[::interface number][::INSTR]";
-            // 
-            // textBoxConnSet
-            // 
-            this.textBoxConnSet.Enabled = false;
-            this.textBoxConnSet.Location = new System.Drawing.Point(184, 95);
-            this.textBoxConnSet.Name = "textBoxConnSet";
-            this.textBoxConnSet.Size = new System.Drawing.Size(357, 20);
-            this.textBoxConnSet.TabIndex = 3;
             // 
             // label2
             // 
@@ -164,12 +156,21 @@ namespace MPhys.GUI
             this.label4.TabIndex = 20;
             this.label4.Text = "Write";
             // 
+            // comboBoxConnSet
+            // 
+            this.comboBoxConnSet.FormattingEnabled = true;
+            this.comboBoxConnSet.Location = new System.Drawing.Point(184, 95);
+            this.comboBoxConnSet.Name = "comboBoxConnSet";
+            this.comboBoxConnSet.Size = new System.Drawing.Size(357, 21);
+            this.comboBoxConnSet.TabIndex = 24;
+            // 
             // PMForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBoxConnSet);
             this.Controls.Add(this.buttonSetCorr);
             this.Controls.Add(this.textCorr);
             this.Controls.Add(this.label6);
@@ -178,7 +179,6 @@ namespace MPhys.GUI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonComSet);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxConnSet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textPMconnection);
             this.Controls.Add(this.textBoxPower);
@@ -195,7 +195,6 @@ namespace MPhys.GUI
         private System.Windows.Forms.TextBox textBoxPower;
         private System.Windows.Forms.TextBox textPMconnection;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxConnSet;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonComSet;
         private System.Windows.Forms.Label label3;
@@ -205,5 +204,6 @@ namespace MPhys.GUI
         private System.Windows.Forms.TextBox textCorr;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxConnSet;
     }
 }

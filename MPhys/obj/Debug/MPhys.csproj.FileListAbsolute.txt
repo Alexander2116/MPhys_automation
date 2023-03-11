@@ -17,6 +17,7 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Interop.JYMONOLi
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Interop.JYSYSTEMLIBLib.1.0.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Interop.MSXML2.4.0.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\NationalInstruments.Visa.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Configuration.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Data.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.dll
@@ -26,7 +27,12 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Windows.F
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Xml.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Xml.Linq.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Thorlabs.PM100D_32.Interop.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Ivi.Visa.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\NationalInstruments.Visa.xml
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Thorlabs.PM100D_32.Interop.xml
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Ivi.Visa.xml
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.AssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.SuggestedBindingRedirects.cache
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.AutoForm.resources
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.MainForm.resources
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.NDFForm.resources
@@ -39,5 +45,3 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.Cor
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.CopyComplete
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.exe
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.pdb
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.AssemblyReference.cache
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.SuggestedBindingRedirects.cache

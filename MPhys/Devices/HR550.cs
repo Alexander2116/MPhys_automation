@@ -211,8 +211,7 @@ namespace MPhys.Devices
             String sStatus;
 
             // OPEN COMMUNICATIONS
-            try
-            {
+
                 // Find Selected Device UniqueId & Name
                 sMonoDevId = CurrMono.sID;
 
@@ -250,12 +249,6 @@ namespace MPhys.Devices
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
 
-            }
-            catch (Exception ex)
-            {
-                sStatus = String.Format("Failed{0}", Environment.NewLine);
-                Console.WriteLine(sStatus);
-            }
 
 
             // INITIALIZE
@@ -283,9 +276,6 @@ namespace MPhys.Devices
             String sStatus;
 
             // OPEN COMMUNICATIONS
-            try
-            {
-
 
                 sMonoName = CurrCCD.sName;
 
@@ -311,12 +301,6 @@ namespace MPhys.Devices
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
 
-            }
-            catch (Exception ex)
-            {
-                sStatus = String.Format("Failed{0}", Environment.NewLine);
-                Console.WriteLine(sStatus);
-            }
 
 
             // INITIALIZE
