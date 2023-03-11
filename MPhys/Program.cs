@@ -10,7 +10,6 @@ using MPhys.GUI;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Data;
-using JYCCDLib;
 
 namespace MPhys
 {
@@ -19,7 +18,6 @@ namespace MPhys
         [STAThread]
         static void Main()
         {
-            JYCCDLib.JYMCDClass a = new JYMCDClass();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
