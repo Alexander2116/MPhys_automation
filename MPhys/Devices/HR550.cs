@@ -123,7 +123,7 @@ namespace MPhys.Devices
                     sDevId = mConfigBrowser.GetNextMono(out sDevName);
                 }
 
-                sDevId = mConfigBrowser.GetFirstSCD(out sDevName);
+                sDevId = mConfigBrowser.GetFirstCCD(out sDevName);
                 while ((String.IsNullOrEmpty(sDevName) == false) && (String.IsNullOrEmpty(sDevId) == false))
                 {
                     // Add Configuration Names and IDs to combo box
@@ -206,31 +206,16 @@ namespace MPhys.Devices
 
         public void InitializeMono(SCDid CurrMono)
         {
-            String sDevUniqueId;
-            String sDevFoundName;
             String sStatus;
 
             // OPEN COMMUNICATIONS
 
-                // Find Selected Device UniqueId & Name
-                sMonoDevId = CurrMono.sID;
-
-                if ((sMonoDevId == null) || (sMonoDevId.CompareTo("") == 0))
-                    return;
-
-                sDevUniqueId = mConfigBrowser.GetFirstMono(out sDevFoundName);
-
-                while ((sDevUniqueId != null) && (sDevUniqueId.CompareTo(sMonoDevId) != 0))
-                {
-                    sDevUniqueId = mConfigBrowser.GetNextMono(out sDevFoundName);
-                }
-
-                sMonoName = sDevFoundName;
+                sMonoName = CurrMono.sName;
 
                 // Create New MonochromatorClass
                 mMono = new JYMONOLib.MonochromatorClass();
 
-                mMono.Uniqueid = sDevUniqueId;
+                mMono.Uniqueid = CurrMono.sID;
 
                 // Set Mono Initialize event handler
                 mMono._IJYDeviceReqdEvents_Event_Initialize += OnReceivedInitMono;
@@ -271,8 +256,6 @@ namespace MPhys.Devices
 
         public void InitializeCCD(SCDid CurrCCD)
         {
-            String sDevUniqueId = CurrCCD.sID;
-            String sDevFoundName = CurrCCD.sName;
             String sStatus;
 
             // OPEN COMMUNICATIONS
@@ -282,7 +265,7 @@ namespace MPhys.Devices
                 // Create New Single Channel Detector
                 mCCD = new JYCCDLib.JYMCDClass();
 
-                mCCD.Uniqueid = sDevUniqueId;
+                mCCD.Uniqueid = CurrCCD.sID;
 
                 // Set Mono Initialize event handler
                 // NO
