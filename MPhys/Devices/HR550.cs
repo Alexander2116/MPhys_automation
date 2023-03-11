@@ -210,8 +210,9 @@ namespace MPhys.Devices
 
             // OPEN COMMUNICATIONS
 
-                sMonoName = CurrMono.sName;
-
+            sMonoName = CurrMono.sName;
+            if (sMonoName != "")
+            {
                 // Create New MonochromatorClass
                 mMono = new JYMONOLib.MonochromatorClass();
 
@@ -233,24 +234,25 @@ namespace MPhys.Devices
 
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
-
+            
 
 
             // INITIALIZE
-            try
-            {
-                sStatus = String.Format("Initializing Mono ... ");
-                Console.WriteLine(sStatus);
+                try
+                {
+                    sStatus = String.Format("Initializing Mono ... ");
+                    Console.WriteLine(sStatus);
 
-                if (mbInitialized == true)
+                    //if (mbInitialized == true)
                     mbForceInit = true;
 
-                mMono.Initialize(mbForceInit, mbEmulate, false);
-            }
-            catch (Exception ex)
-            {
-                sStatus = String.Format("{0} Initialize Failed.{1}", sMonoName, Environment.NewLine);
-                Console.WriteLine(sStatus);
+                    mMono.Initialize(mbForceInit, mbEmulate, false);
+                }
+                catch (Exception ex)
+                {
+                    sStatus = String.Format("{0} Initialize Failed.{1}", sMonoName, Environment.NewLine);
+                    Console.WriteLine(sStatus);
+                }
             }
         }
 
@@ -261,7 +263,8 @@ namespace MPhys.Devices
             // OPEN COMMUNICATIONS
 
                 sMonoName = CurrCCD.sName;
-
+            if (sMonoName != "")
+            {
                 // Create New Single Channel Detector
                 mCCD = new JYCCDLib.JYMCDClass();
 
@@ -286,21 +289,22 @@ namespace MPhys.Devices
 
 
 
-            // INITIALIZE
-            try
-            {
-                sStatus = String.Format("Initializing Mono ... ");
-                Console.WriteLine(sStatus);
+                // INITIALIZE
+                try
+                {
+                    sStatus = String.Format("Initializing Mono ... ");
+                    Console.WriteLine(sStatus);
 
-                if (mbInitialized == true)
+                    //if (mbInitialized == true)
                     mbForceInit = true;
 
-                mMono.Initialize(mbForceInit, false, false);
-            }
-            catch (Exception ex)
-            {
-                sStatus = String.Format("{0} Initialize Failed.{1}", sMonoName, Environment.NewLine);
-                Console.WriteLine(sStatus);
+                    mMono.Initialize(mbForceInit, false, false);
+                }
+                catch (Exception ex)
+                {
+                    sStatus = String.Format("{0} Initialize Failed.{1}", sMonoName, Environment.NewLine);
+                    Console.WriteLine(sStatus);
+                }
             }
         }
 

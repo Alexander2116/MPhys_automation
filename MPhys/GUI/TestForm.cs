@@ -178,18 +178,8 @@ namespace MPhys.GUI
                 Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
                 // Find Selected Device UniqueId & Name
                 SCDid CurrMono = (SCDid)comboboxMonos.SelectedItem;
-                sMonoDevId = CurrMono.sID;
-
-                if ((sMonoDevId == null) || (sMonoDevId.CompareTo("") == 0))
-                    return;
-
-                sDevUniqueId = mConfigBrowser.GetFirstMono(out sDevFoundName);
-
-                while ((sDevUniqueId != null) && (sDevUniqueId.CompareTo(sMonoDevId) != 0))
-                {
-                    sDevUniqueId = mConfigBrowser.GetNextMono(out sDevFoundName);
-                }
-                sMonoName = sDevFoundName;
+                sDevUniqueId = CurrMono.sID;
+                sDevFoundName = CurrMono.sName;
 
                 // Create New MonochromatorClass
                 mMono = new JYMONOLib.MonochromatorClass();

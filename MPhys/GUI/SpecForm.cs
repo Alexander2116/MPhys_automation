@@ -38,11 +38,36 @@ namespace MPhys.GUI
             {
                 Console.WriteLine(ex.Message);
             }
+
+            string sID = ConfigurationManager.AppSettings.Get("iHR550_sID");
+            string sName = ConfigurationManager.AppSettings.Get("iHR550_sName");
+            if (sID != "")
+            {
+                labelMonoID.Text = sID;
+            }
+            if(sName != "")
+            {
+                labelMonoName.Text = sName;
+            }
+
+            sID = ConfigurationManager.AppSettings.Get("iCCD_sID");
+            sName = ConfigurationManager.AppSettings.Get("iCCD_sName");
+            if (sID != "")
+            {
+                labelCCDID.Text = sID;
+            }
+            if (sName != "")
+            {
+                labelCCDID.Text = sName;
+            }
+            sID = null;
+            sName = null;
+
         }
 
 
         // Function to activate all buttons
-        private void Activate_buttonsSCD()
+        private void Activate_buttonsMono()
         {
             //StatusLabel.ForeColor = Color.Green;
             if (StatusLabel.ForeColor == Color.Green && button_shutter.Enabled == false)
@@ -113,72 +138,58 @@ namespace MPhys.GUI
 
         private void buttonComSet_Click(object sender, EventArgs e)
         {
-            MPhys.Devices.SCDid SCD = new MPhys.Devices.SCDid();
+            MPhys.Devices.SCDid sMono = new MPhys.Devices.SCDid();
             string sName = ConfigurationManager.AppSettings.Get("iHR550_sName");
             string sID = ConfigurationManager.AppSettings.Get("iHR550_sID");
 
-            if(comboBoxSCDs.Enabled == true && comboBoxSCDs.Text != null && comboBoxSCDs.Text != "")
-            {
-                SCD = (MPhys.Devices.SCDid)comboBoxSCDs.SelectedItem;
-                UpdateAppSettings("iHR550_sName", SCD.sName);
-                UpdateAppSettings("iHR550_sID", SCD.sID);
-            }
 
-            SCD.sID = sID;
-            SCD.sName = sName;
+            sMono.sID = sID;
+            sMono.sName = sName;
 
             if (sName != "")
             {
-                try
-                {
-                    Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-                    MonoSpec.InitializeMono(SCD);
-                    StatusLabel.Text = "Connected";
-                    StatusLabel.ForeColor = Color.Green;
-                    textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
-                }
-                catch
-                {
-                    StatusLabel.Text = "Disconnected";
-                    StatusLabel.ForeColor = Color.Red;
-                    MessageBox.Show("Couldn't Initialize");
-                }
+                MonoSpec.InitializeMono(sMono);
+                StatusLabel.Text = "Connected";
+                StatusLabel.ForeColor = Color.Green;
+                textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
+
             }
             else
             {
                 StatusLabel.Text = "Disconnected";
                 StatusLabel.ForeColor = Color.Red;
+                MessageBox.Show("Mono ID and Name fields are empty");
             }
 
-            Activate_buttonsSCD();
+            Activate_buttonsMono();
 
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            comboBoxSCDs.Items.Clear();
+            comboBoxMonos.Items.Clear();
             if (checkBox1.Checked)
             {
-                comboBoxSCDs.Enabled = true;
+                comboBoxMonos.Enabled = true;
                 foreach(MPhys.Devices.SCDid s in MonoSpec.combobox_Mono)
                 {
-                    comboBoxSCDs.Items.Add(s);
+                    comboBoxMonos.Items.Add(s);
                 }
             }
             else
             {
-                comboBoxSCDs.Enabled = false;
+                comboBoxMonos.Enabled = false;
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(comboBoxSCDs.Items.Count < 1 && checkBox1.Checked)
+            if(comboBoxMonos.Items.Count < 1 && checkBox1.Checked)
             {
                 MonoSpec = new HR550();
                 foreach (MPhys.Devices.SCDid s in MonoSpec.combobox_Mono)
                 {
-                    comboBoxSCDs.Items.Add(s);
+                    comboBoxMonos.Items.Add(s);
                 }
             }
         }
@@ -222,39 +233,25 @@ namespace MPhys.GUI
         // ********* ACQUIRE
         private void buttonCDDInit_Click(object sender, EventArgs e)
         {
-            MPhys.Devices.SCDid SCD = new MPhys.Devices.SCDid();
+            MPhys.Devices.SCDid CCD = new MPhys.Devices.SCDid();
             string sName = ConfigurationManager.AppSettings.Get("iCCD_sName");
             string sID = ConfigurationManager.AppSettings.Get("iCCD_sID");
 
-            if (comboBoxCCDs.Enabled == true && comboBoxCCDs.Text != null && comboBoxCCDs.Text != "")
-            {
-                SCD = (MPhys.Devices.SCDid)comboBoxCCDs.SelectedItem;
-                UpdateAppSettings("iCCD_sName", SCD.sName);
-                UpdateAppSettings("iCCD_sID", SCD.sID);
-            }
-
-            SCD.sID = sID;
-            SCD.sName = sName;
+            CCD.sID = sID;
+            CCD.sName = sName;
 
             if (sName != "")
             {
-                try
-                {
-                    Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-                    MonoSpec.InitializeCCD(SCD);
-                    StatusLabelCCD.Text = "Connected";
-                    StatusLabelCCD.ForeColor = Color.Green;
-                }
-                catch
-                {
-                    StatusLabelCCD.Text = "Disconnected";
-                    StatusLabelCCD.ForeColor = Color.Red;
-                }
+                MonoSpec.InitializeCCD(CCD);
+                StatusLabelCCD.Text = "Connected";
+                StatusLabelCCD.ForeColor = Color.Green;
+
             }
             else
             {
                 StatusLabelCCD.Text = "Disconnected";
                 StatusLabelCCD.ForeColor = Color.Red;
+                MessageBox.Show("Mono ID and Name fields are empty");
             }
 
             Activate_buttonsCCD();
@@ -434,6 +431,33 @@ namespace MPhys.GUI
                 string fileName;
                 fileName = dlg.SelectedPath;
                 FileName.Text = fileName;
+            }
+        }
+
+        // ==================
+        private void buttonMonoSet_Click(object sender, EventArgs e)
+        {
+            SCDid sMono;
+            if (comboBoxMonos.Enabled == true && comboBoxMonos.Text != null && comboBoxMonos.Text != "")
+            {
+                sMono = (MPhys.Devices.SCDid)comboBoxMonos.SelectedItem;
+                UpdateAppSettings("iHR550_sName", sMono.sName);
+                UpdateAppSettings("iHR550_sID", sMono.sID);
+                labelMonoID.Text = sMono.sID;
+                labelMonoID.Text = sMono.sName;
+            }
+        }
+
+        private void buttonCCDSet_Click(object sender, EventArgs e)
+        {
+            MPhys.Devices.SCDid CCD = new MPhys.Devices.SCDid();
+            if (comboBoxCCDs.Enabled == true && comboBoxCCDs.Text != null && comboBoxCCDs.Text != "")
+            {
+                CCD = (MPhys.Devices.SCDid)comboBoxCCDs.SelectedItem;
+                UpdateAppSettings("iCCD_sName", CCD.sName);
+                UpdateAppSettings("iCCD_sID", CCD.sID);
+                labelCCDID.Text = CCD.sID;
+                labelCCDName.Text = CCD.sName;
             }
         }
         //=============================================

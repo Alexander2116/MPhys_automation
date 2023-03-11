@@ -33,7 +33,7 @@ namespace MPhys.GUI
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.buttonComSet = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBoxSCDs = new System.Windows.Forms.ComboBox();
+            this.comboBoxMonos = new System.Windows.Forms.ComboBox();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.button_shutter = new System.Windows.Forms.Button();
             this.ShutterLabel = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@ namespace MPhys.GUI
             this.label19 = new System.Windows.Forms.Label();
             this.StartBtn = new System.Windows.Forms.Button();
             this.GroupBoxStreamAcq = new System.Windows.Forms.GroupBox();
+            this.OpenPathDialog = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.GoBtn = new System.Windows.Forms.Button();
             this.FileName = new System.Windows.Forms.TextBox();
@@ -72,7 +73,14 @@ namespace MPhys.GUI
             this.checkBoxSyncAcq = new System.Windows.Forms.CheckBox();
             this.buttonAbort = new System.Windows.Forms.Button();
             this.buttonGo = new System.Windows.Forms.Button();
-            this.OpenPathDialog = new System.Windows.Forms.Button();
+            this.buttonCCDSet = new System.Windows.Forms.Button();
+            this.buttonMonoSet = new System.Windows.Forms.Button();
+            this.labelCCDID = new System.Windows.Forms.Label();
+            this.labelMonoID = new System.Windows.Forms.Label();
+            this.labelCCDName = new System.Windows.Forms.Label();
+            this.labelMonoName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupboxWlCtrl.SuspendLayout();
             this.GroupBoxAcquire.SuspendLayout();
             this.GroupBoxStreamAcq.SuspendLayout();
@@ -86,7 +94,7 @@ namespace MPhys.GUI
             // 
             // buttonComSet
             // 
-            this.buttonComSet.Location = new System.Drawing.Point(254, 23);
+            this.buttonComSet.Location = new System.Drawing.Point(467, 27);
             this.buttonComSet.Name = "buttonComSet";
             this.buttonComSet.Size = new System.Drawing.Size(75, 23);
             this.buttonComSet.TabIndex = 6;
@@ -105,20 +113,20 @@ namespace MPhys.GUI
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // comboBoxSCDs
+            // comboBoxMonos
             // 
-            this.comboBoxSCDs.Enabled = false;
-            this.comboBoxSCDs.FormattingEnabled = true;
-            this.comboBoxSCDs.Location = new System.Drawing.Point(99, 25);
-            this.comboBoxSCDs.Name = "comboBoxSCDs";
-            this.comboBoxSCDs.Size = new System.Drawing.Size(54, 21);
-            this.comboBoxSCDs.TabIndex = 21;
+            this.comboBoxMonos.Enabled = false;
+            this.comboBoxMonos.FormattingEnabled = true;
+            this.comboBoxMonos.Location = new System.Drawing.Point(99, 25);
+            this.comboBoxMonos.Name = "comboBoxMonos";
+            this.comboBoxMonos.Size = new System.Drawing.Size(54, 21);
+            this.comboBoxMonos.TabIndex = 21;
             // 
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
             this.StatusLabel.ForeColor = System.Drawing.Color.Red;
-            this.StatusLabel.Location = new System.Drawing.Point(175, 28);
+            this.StatusLabel.Location = new System.Drawing.Point(388, 32);
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(73, 13);
             this.StatusLabel.TabIndex = 23;
@@ -127,7 +135,7 @@ namespace MPhys.GUI
             // button_shutter
             // 
             this.button_shutter.Enabled = false;
-            this.button_shutter.Location = new System.Drawing.Point(440, 23);
+            this.button_shutter.Location = new System.Drawing.Point(653, 27);
             this.button_shutter.Name = "button_shutter";
             this.button_shutter.Size = new System.Drawing.Size(75, 23);
             this.button_shutter.TabIndex = 24;
@@ -138,7 +146,7 @@ namespace MPhys.GUI
             // ShutterLabel
             // 
             this.ShutterLabel.AutoSize = true;
-            this.ShutterLabel.Location = new System.Drawing.Point(342, 28);
+            this.ShutterLabel.Location = new System.Drawing.Point(555, 32);
             this.ShutterLabel.Name = "ShutterLabel";
             this.ShutterLabel.Size = new System.Drawing.Size(44, 13);
             this.ShutterLabel.TabIndex = 25;
@@ -147,7 +155,7 @@ namespace MPhys.GUI
             // ShutterStateLabel
             // 
             this.ShutterStateLabel.AutoSize = true;
-            this.ShutterStateLabel.Location = new System.Drawing.Point(390, 28);
+            this.ShutterStateLabel.Location = new System.Drawing.Point(603, 32);
             this.ShutterStateLabel.Name = "ShutterStateLabel";
             this.ShutterStateLabel.Size = new System.Drawing.Size(33, 13);
             this.ShutterStateLabel.TabIndex = 26;
@@ -305,6 +313,16 @@ namespace MPhys.GUI
             this.GroupBoxStreamAcq.TabStop = false;
             this.GroupBoxStreamAcq.Text = "Stream Acquisition";
             // 
+            // OpenPathDialog
+            // 
+            this.OpenPathDialog.Location = new System.Drawing.Point(56, 95);
+            this.OpenPathDialog.Name = "OpenPathDialog";
+            this.OpenPathDialog.Size = new System.Drawing.Size(47, 23);
+            this.OpenPathDialog.TabIndex = 10;
+            this.OpenPathDialog.Text = "Open";
+            this.OpenPathDialog.UseVisualStyleBackColor = true;
+            this.OpenPathDialog.Click += new System.EventHandler(this.OpenPathDialog_Click);
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -414,7 +432,7 @@ namespace MPhys.GUI
             // 
             this.StatusLabelCCD.AutoSize = true;
             this.StatusLabelCCD.ForeColor = System.Drawing.Color.Red;
-            this.StatusLabelCCD.Location = new System.Drawing.Point(175, 57);
+            this.StatusLabelCCD.Location = new System.Drawing.Point(388, 61);
             this.StatusLabelCCD.Name = "StatusLabelCCD";
             this.StatusLabelCCD.Size = new System.Drawing.Size(73, 13);
             this.StatusLabelCCD.TabIndex = 33;
@@ -442,7 +460,7 @@ namespace MPhys.GUI
             // 
             // buttonCDDInit
             // 
-            this.buttonCDDInit.Location = new System.Drawing.Point(254, 52);
+            this.buttonCDDInit.Location = new System.Drawing.Point(467, 56);
             this.buttonCDDInit.Name = "buttonCDDInit";
             this.buttonCDDInit.Size = new System.Drawing.Size(75, 23);
             this.buttonCDDInit.TabIndex = 30;
@@ -531,15 +549,87 @@ namespace MPhys.GUI
             this.buttonGo.UseVisualStyleBackColor = true;
             this.buttonGo.Click += new System.EventHandler(this.buttonGo_Click);
             // 
-            // OpenPathDialog
+            // buttonCCDSet
             // 
-            this.OpenPathDialog.Location = new System.Drawing.Point(56, 95);
-            this.OpenPathDialog.Name = "OpenPathDialog";
-            this.OpenPathDialog.Size = new System.Drawing.Size(47, 23);
-            this.OpenPathDialog.TabIndex = 10;
-            this.OpenPathDialog.Text = "Open";
-            this.OpenPathDialog.UseVisualStyleBackColor = true;
-            this.OpenPathDialog.Click += new System.EventHandler(this.OpenPathDialog_Click);
+            this.buttonCCDSet.Location = new System.Drawing.Point(159, 54);
+            this.buttonCCDSet.Name = "buttonCCDSet";
+            this.buttonCCDSet.Size = new System.Drawing.Size(50, 23);
+            this.buttonCCDSet.TabIndex = 36;
+            this.buttonCCDSet.Text = "Set";
+            this.buttonCCDSet.UseVisualStyleBackColor = true;
+            this.buttonCCDSet.Click += new System.EventHandler(this.buttonCCDSet_Click);
+            // 
+            // buttonMonoSet
+            // 
+            this.buttonMonoSet.Location = new System.Drawing.Point(159, 25);
+            this.buttonMonoSet.Name = "buttonMonoSet";
+            this.buttonMonoSet.Size = new System.Drawing.Size(50, 23);
+            this.buttonMonoSet.TabIndex = 35;
+            this.buttonMonoSet.Text = "Set";
+            this.buttonMonoSet.UseVisualStyleBackColor = true;
+            this.buttonMonoSet.Click += new System.EventHandler(this.buttonMonoSet_Click);
+            // 
+            // labelCCDID
+            // 
+            this.labelCCDID.AutoSize = true;
+            this.labelCCDID.ForeColor = System.Drawing.Color.Black;
+            this.labelCCDID.Location = new System.Drawing.Point(306, 61);
+            this.labelCCDID.Name = "labelCCDID";
+            this.labelCCDID.Size = new System.Drawing.Size(43, 13);
+            this.labelCCDID.TabIndex = 38;
+            this.labelCCDID.Text = "CCD ID";
+            // 
+            // labelMonoID
+            // 
+            this.labelMonoID.AutoSize = true;
+            this.labelMonoID.ForeColor = System.Drawing.Color.Black;
+            this.labelMonoID.Location = new System.Drawing.Point(306, 32);
+            this.labelMonoID.Name = "labelMonoID";
+            this.labelMonoID.Size = new System.Drawing.Size(48, 13);
+            this.labelMonoID.TabIndex = 37;
+            this.labelMonoID.Text = "Mono ID";
+            // 
+            // labelCCDName
+            // 
+            this.labelCCDName.AutoSize = true;
+            this.labelCCDName.ForeColor = System.Drawing.Color.Black;
+            this.labelCCDName.Location = new System.Drawing.Point(215, 60);
+            this.labelCCDName.Name = "labelCCDName";
+            this.labelCCDName.Size = new System.Drawing.Size(60, 13);
+            this.labelCCDName.TabIndex = 40;
+            this.labelCCDName.Text = "CCD Name";
+            // 
+            // labelMonoName
+            // 
+            this.labelMonoName.AutoSize = true;
+            this.labelMonoName.ForeColor = System.Drawing.Color.Black;
+            this.labelMonoName.Location = new System.Drawing.Point(215, 31);
+            this.labelMonoName.Name = "labelMonoName";
+            this.labelMonoName.Size = new System.Drawing.Size(65, 13);
+            this.labelMonoName.TabIndex = 39;
+            this.labelMonoName.Text = "Mono Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(215, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Mono Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(306, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Mono ID";
             // 
             // SpecForm
             // 
@@ -547,6 +637,14 @@ namespace MPhys.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelCCDName);
+            this.Controls.Add(this.labelMonoName);
+            this.Controls.Add(this.labelCCDID);
+            this.Controls.Add(this.labelMonoID);
+            this.Controls.Add(this.buttonCCDSet);
+            this.Controls.Add(this.buttonMonoSet);
             this.Controls.Add(this.groupBoxCollect);
             this.Controls.Add(this.StatusLabelCCD);
             this.Controls.Add(this.checkBox2);
@@ -560,7 +658,7 @@ namespace MPhys.GUI
             this.Controls.Add(this.button_shutter);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.comboBoxSCDs);
+            this.Controls.Add(this.comboBoxMonos);
             this.Controls.Add(this.buttonComSet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SpecForm";
@@ -583,7 +681,7 @@ namespace MPhys.GUI
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button buttonComSet;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox comboBoxSCDs;
+        private System.Windows.Forms.ComboBox comboBoxMonos;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.Button button_shutter;
         private System.Windows.Forms.Label ShutterLabel;
@@ -623,5 +721,13 @@ namespace MPhys.GUI
         internal System.Windows.Forms.Button buttonAbort;
         internal System.Windows.Forms.Button buttonGo;
         private System.Windows.Forms.Button OpenPathDialog;
+        private System.Windows.Forms.Button buttonCCDSet;
+        private System.Windows.Forms.Button buttonMonoSet;
+        private System.Windows.Forms.Label labelCCDID;
+        private System.Windows.Forms.Label labelMonoID;
+        private System.Windows.Forms.Label labelCCDName;
+        private System.Windows.Forms.Label labelMonoName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
