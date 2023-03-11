@@ -187,7 +187,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>call "%25vsappiddir%25..\..\VC\Auxiliary\Build\vcvarsall.bat" x86
+editbin.exe /NXCOMPAT:NO "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -11,8 +11,6 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Data;
 using JYCCDLib;
-using Thorlabs.PM100D_32.Interop;
-using NationalInstruments.Visa;
 
 namespace MPhys
 {
@@ -21,6 +19,7 @@ namespace MPhys
         [STAThread]
         static void Main()
         {
+            JYCCDLib.JYMCDClass a = new JYMCDClass();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
