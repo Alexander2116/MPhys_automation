@@ -26,6 +26,7 @@ using JYMONOLib;
 using JYCONFIGBROWSERCOMPONENTLib;
 using JYSYSTEMLIBLib;
 using JYCCDLib;
+using System.Drawing;
 
 namespace MPhys.Devices
 {
@@ -230,6 +231,12 @@ namespace MPhys.Devices
                 // settings (in the configuration). If it fails, the catch allows the
                 // device to be emulated in software.
                 mMono.OpenCommunications();
+
+                /*GetPosition();
+
+                GetSlits();
+                GetGratings();
+                GetMirrors();*/
 
 
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
@@ -792,8 +799,10 @@ namespace MPhys.Devices
 
         }
 
-
-
+        public void MoveToTurret(int nSelectedTurr)
+        {
+            mMono.MovetoTurret(nSelectedTurr);
+        }
 
 
 

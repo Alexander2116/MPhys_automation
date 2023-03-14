@@ -74,6 +74,11 @@ namespace MPhys.GUI
             {
                 button_shutter.Enabled = true;
                 groupboxWlCtrl.Enabled = true;
+                foreach(double s in MonoSpec.combobox_Grating)
+                {
+                    comboboxGrating.Items.Add(s);
+                }
+                textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
             }
             else
             {
@@ -212,15 +217,17 @@ namespace MPhys.GUI
         private void comboboxGrating_SelectedIndexChanged(object sender, EventArgs e)
         {
             Boolean bBusy;
-
+            int nSelectedTurr;
             try
             {
+                nSelectedTurr = (int)comboboxGrating.SelectedIndex;
+                MonoSpec.MoveToTurret(nSelectedTurr);
                 bBusy = true;
                 while (bBusy == true)
                 {
-                    Application.DoEvents();
                     bBusy = MonoSpec.IsBusy();
                 }
+
                 MonoSpec.GetPosition();
                 textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
             }
