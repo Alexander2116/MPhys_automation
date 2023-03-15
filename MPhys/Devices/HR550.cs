@@ -587,12 +587,9 @@ namespace MPhys.Devices
             }
 
 
-            m_bSyncAcq = true; ;
-            m_loopCount = 0;
+            m_bSyncAcq = true;
             m_bStopAcq = false;
 
-            if (m_bSyncAcq == true)
-            {
                 // A Synchronous (or Serial) acquisition method will loop through the positions requested, moving 
                 // the mono and taking data at every point.  NOTE: this method will not relinquish control to the 
                 // UI thread (i.e. - the UI will appear hung) until it has completed.  If this operation is 
@@ -638,14 +635,10 @@ namespace MPhys.Devices
                     if (m_bStopAcq == true)
                         break;
 
-                    
-
-                    m_loopCount = m_loopCount + 1;
-
                     dPos += ScanInc;
 
                 }          // end of loop
-            }
+            
             
 
         }

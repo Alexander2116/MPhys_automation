@@ -2,11 +2,6 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Devices\Filter
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\MPhys.exe.config
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\MPhys.exe
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\MPhys.pdb
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Interop.JYCCDLib.dll
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Interop.JYCONFIGBROWSERCOMPONENTLib.dll
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Interop.JYMONOLib.dll
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Interop.JYSCDLib.dll
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Interop.JYSYSTEMLIBLib.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Microsoft.CSharp.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\System.Configuration.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\System.Data.dll
@@ -19,8 +14,6 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\System.Xml.Lin
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Thorlabs.PM100D_32.Interop.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Thorlabs.PM100D_32.Interop.xml
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MPhys.csproj.AssemblyReference.cache
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\Interop.MSXML2.dll
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MPhys.csproj.ResolveComReference.cache
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MPhys.GUI.AutoForm.resources
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MPhys.GUI.MainForm.resources
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MPhys.GUI.NDFForm.resources
@@ -33,4 +26,13 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MPhys.csproj.C
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MPhys.csproj.CopyComplete
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MPhys.exe
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MPhys.pdb
-C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MonoSimple.Form1.resources
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Release\MPhys.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Interop.JYCCDLib.1.0.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Interop.JYCONFIGBROWSERCOMPONENTLib.1.0.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Interop.JYMONOLib.1.0.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Interop.JYSYSTEMLIBLib.1.0.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Interop.MSXML2.4.0.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\NationalInstruments.Visa.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Ivi.Visa.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\NationalInstruments.Visa.xml
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Release\Ivi.Visa.xml

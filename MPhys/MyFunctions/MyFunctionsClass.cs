@@ -100,5 +100,16 @@ namespace MPhys.MyFunctions
             }
             sw.Close();
         }
+
+        public void add_to_log(string function_name, string text_message)
+        {
+            string path = ".\\log.txt";
+            System.IO.Directory.CreateDirectory(path);
+            DateTime aDate = DateTime.Now;
+            string temp = aDate.ToString("HH:mm");
+
+            string mes = temp + " : " + function_name + " :  " + text_message;
+            File.AppendAllText(path, function_name + " " + text_message + Environment.NewLine);
+        }
     }
 }

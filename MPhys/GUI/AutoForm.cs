@@ -72,6 +72,7 @@ namespace MPhys.GUI
                 NDF1 = new FC102C(NDF1port);
                 if (NDF1.IsOpen() == 1)
                 {
+                    myfunctions.add_to_log("bool connect_devices()","NDF1 connected");
                 }
                 else
                 {
@@ -90,6 +91,7 @@ namespace MPhys.GUI
                 NDF2 = new FC102C(NDF2port);
                 if (NDF2.IsOpen() == 1)
                 {
+                    myfunctions.add_to_log("bool connect_devices()", "NDF2 connected");
                 }
                 else
                 {
@@ -107,6 +109,7 @@ namespace MPhys.GUI
             {
                 PMDev = new PM100A(PMport);
                 PMDev.Get_power();
+                myfunctions.add_to_log("bool connect_devices()", "PM100A connected");
             }
             catch
             {
@@ -119,6 +122,7 @@ namespace MPhys.GUI
                 TempDev = new M9700(M9700port);
                 TempDev.Open();
                 TempDev.Close();
+                myfunctions.add_to_log("bool connect_devices()", "M9700 connected");
             }
             catch
             {
@@ -129,19 +133,9 @@ namespace MPhys.GUI
             try
             {
                 MonoSpec = new HR550();
-                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-                if (MonoSpec.can_be_initialized())
-                {
-                    MonoSpec.InitializeMono(Mono);
-                    MonoSpec.InitializeCCD(CCD);
-                }
-                else
-                {
-                    all_good = false;
-                    MessageBox.Show("Issues with connecting with iHR550");
-                }
-
-
+                MonoSpec.InitializeMono(Mono);
+                MonoSpec.InitializeCCD(CCD);
+                myfunctions.add_to_log("bool connect_devices()", "Mono and CCD connected");
             }
             catch
             {
@@ -431,8 +425,10 @@ namespace MPhys.GUI
 
             if (count > 0 && all_good)
             {
+                myfunctions.add_to_log("auto_run()", "Starting data acquisition");
                 for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
+                    myfunctions.add_to_log("auto_run()", "Task"+i.ToString());
                     DataRow lastRow = dataTable.Rows[i];
 
                     //double temp = double.Parse(lastRow["temperature"].ToString());
@@ -498,19 +494,27 @@ namespace MPhys.GUI
                     DataTable DataToBeSaved = new DataTable();
 
                     // Save data
-                    for (int j=0; j < count; j++)
+                    myfunctions.add_to_log("auto_run()", "Getting data...");
+                    MonoSpec.GetData(mStart, mEnd, Inc);
+
+                    wavelengthdata = MonoSpec.GetWavelengthDataColumn();
+                    intensitydata = MonoSpec.GetIntensityDataColumn();
+
+                    string intensityName = "Intensity0";
+
+                    myfunctions.DataAddColumn(ref DataToBeSaved, wavelengthdata, "Wavelength");
+                    myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, intensityName);
+
+                    wavelengthdata.Clear();
+                    intensitydata.Clear();
+
+                    for (int j=1; j < count; j++)
                     {
 
                         MonoSpec.GetData(mStart, mEnd, Inc);
-
-                        wavelengthdata = MonoSpec.GetWavelengthDataColumn();
                         intensitydata = MonoSpec.GetIntensityDataColumn();
 
-                        string intensityName = "Intensity" + j.ToString();
-                        if (!DataToBeSaved.Columns.Contains("Wavelength"))
-                        {
-                            myfunctions.DataAddColumn(ref DataToBeSaved, wavelengthdata, "Wavelength");
-                        }
+                        intensityName = "Intensity" + j.ToString();
                         myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, intensityName);
                         wavelengthdata.Clear();
                         intensitydata.Clear();
@@ -531,6 +535,7 @@ namespace MPhys.GUI
                     }
                     string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 +"_"+power +"_" + ce +"_"+ct+"K.csv";
 
+                    myfunctions.add_to_log("auto_run()", "Saving " + fullPath);
                     myfunctions.ToCSV(DataToBeSaved, fullPath);
                     DataToBeSaved.Dispose();
                     //MonoSpec.GoStream(path, count, 2);
