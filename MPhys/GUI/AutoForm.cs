@@ -363,10 +363,14 @@ namespace MPhys.GUI
         {
             bool dev = connect_devices();
             MessageBox.Show(dev.ToString());
-            if (dev)
+            if (dev && MonoSpec.ReadForAcq())
             {
                 Console.WriteLine("Go on");
                 auto_run();
+            }
+            else
+            {
+                MessageBox.Show("Not ready to start the acquisition");
             }
 
         }

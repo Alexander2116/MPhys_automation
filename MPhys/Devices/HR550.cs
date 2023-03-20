@@ -40,6 +40,25 @@ namespace MPhys.Devices
         }
     }
 
+    public class ADCStringType
+    {
+        public String sVal;
+        public JYSYSTEMLIBLib.jyADCType adcType;
+        public override String ToString()
+        {
+            return sVal.ToString();
+        }
+    }
+    public class PairStringInt
+    {
+        public String sVal;
+        public int iVal;
+        public override String ToString()
+        {
+            return sVal.ToString();
+        }
+    }
+
     class HR550
     {
         private Boolean mbEmulate;
@@ -78,6 +97,8 @@ namespace MPhys.Devices
         public List<SCDid> combobox_Mono = new List<SCDid>(); // Upload list to ComboBox in the form
         public List<SCDid> combobox_CCD = new List<SCDid>(); // Upload list to ComboBox in the form
         public List<double> combobox_Grating = new List<double>(); // List of gratings
+        public List<ADCStringType> combobox_ADC = new List<ADCStringType>(); // List of available ADC
+        public List<PairStringInt> combobox_Gain = new List<PairStringInt>(); // List of available ADC
 
         //
         public String Text_CurrentWavelength;
@@ -237,7 +258,7 @@ namespace MPhys.Devices
                 GetSlits();
                 GetGratings();
                 GetMirrors();*/
-
+                GetGratings();
 
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
@@ -290,6 +311,7 @@ namespace MPhys.Devices
                 // device to be emulated in software.
                 mCCD.OpenCommunications();
 
+                InitializeADCSelect();
 
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
@@ -797,7 +819,93 @@ namespace MPhys.Devices
             mMono.MovetoTurret(nSelectedTurr);
         }
 
+        public void SetParameters(ADCStringType ADC, PairStringInt Gain, int XStart=1, int YStart=1, int XEnd=1024, int YEnd=256, int XBin=1, int YBin=256, bool image_format = false)
+        {
+            mCCD.SelectADC(ADC.adcType);
+
+            // Define format: m=0: Spectra mode
+            jyCCDDataType mode;
+            mode = jyCCDDataType.JYMCD_ACQ_FORMAT_SCAN; // Spectra
+            if (image_format)
+            {
+                mode = jyCCDDataType.JYMCD_ACQ_FORMAT_IMAGE;
+            }
+            mCCD.DefineAcquisitionFormat(mode, 1);
+            mCCD.DefineArea(1, XStart, YStart, XEnd - XStart + 1, YEnd - YStart + 1, XBin, YBin);
+
+        }
+
+        public bool ReadForAcq()
+        {
+            return mCCD.ReadyForAcquisition;
+        }
 
 
+        private void InitializeADCSelect()
+        {
+            int token, lastToken;
+            String sName;
+            int currentADC;
+            ADCStringType ADC;
+
+            // Enumerate all the available ADC's and allow user selection via the combo box
+            combobox_ADC.Clear();
+
+            // Get the currently selected ADC so we can select it programmatically when we come
+            // across it in the enumeration
+            currentADC = mCCD.CurrentADC;
+            token = mCCD.GetFirstADC(out sName);
+            lastToken = 0;
+            if (token == -1)
+            {
+                ADC = new ADCStringType();
+                ADC.sVal = "NONE";
+                ADC.adcType = (jyADCType)token;
+                combobox_ADC.Add(ADC);
+            }
+            else
+            {
+                while (token != -1)
+                {
+                    ADC = new ADCStringType();
+                    ADC.sVal = sName;
+                    ADC.adcType = (jyADCType)token;
+                    combobox_ADC.Add(ADC);
+                    token = mCCD.GetNextADC(out sName);
+                }
+            }
+
+        }
+        private void InitializeGainSelect()
+        {
+            int token;
+            String sName;
+            int lastGain;
+            PairStringInt Gain;
+
+            lastGain = mCCD.Gain;
+
+            combobox_Gain.Clear();
+
+            token = mCCD.GetFirstGain(out sName);
+            if (token == -1)
+            {
+                Gain = new PairStringInt();
+                Gain.sVal = "NONE";
+                Gain.iVal = token;
+                combobox_Gain.Add(Gain);
+            }
+            else
+            {
+                while (token != -1)
+                {
+                    Gain = new PairStringInt();
+                    Gain.sVal = sName;
+                    Gain.iVal = token;
+                    combobox_Gain.Add(Gain);
+                    token = mCCD.GetNextGain(out sName);
+                }
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ using MPhys.Devices;
 using System.Configuration;
 using System.Diagnostics;
 using System.Timers;
+using MPhys.MyFunctions;
 
 namespace MPhys.GUI
 {
@@ -20,7 +21,7 @@ namespace MPhys.GUI
         HR550 MonoSpec;
         private Boolean m_bSyncAcq;
         private Boolean m_bStopAcq;
-
+        private MyFunctions.MyFunctionsClass myFunction = new MyFunctionsClass();
 
         public SpecForm()
         {
@@ -401,33 +402,45 @@ namespace MPhys.GUI
         //==================== STREAM ACQ =====================
         private void GoBtn_Click(object sender, EventArgs e)
         {
-            int streaming = 2;
-            int local_count;
 
-            try 
-            {
-                local_count = Int32.Parse(Count.Text);
-            } 
-            catch 
-            {
-                local_count = 1;
-                Console.WriteLine("Unable to convert to (int), count = 1");
-            }
+            ADCStringType adc = myFunction.ReadFromXmlFile<ADCStringType>("./ADC_settings.xml");
+            PairStringInt gain = myFunction.ReadFromXmlFile<PairStringInt>("./Gain_settings.xml");
+            MonoSpec.SetParameters(adc,gain);
 
-            if (Option1.Checked)
+            if (MonoSpec.ReadForAcq())
             {
-                // Don't use yet
+                int streaming = 2;
+                int local_count;
+
+                try
+                {
+                    local_count = Int32.Parse(Count.Text);
+                }
+                catch
+                {
+                    local_count = 1;
+                    Console.WriteLine("Unable to convert to (int), count = 1");
+                }
+
+                if (Option1.Checked)
+                {
+                    // Don't use yet
+                }
+                else if (Option2.Checked)
+                {
+                    streaming = 2;
+                }
+                else if (Option3.Checked)
+                {
+                    streaming = 3;
+                }
+                string path = FileName.Text;
+                MonoSpec.GoStream(path, local_count, streaming);
             }
-            else if (Option2.Checked)
+            else
             {
-                streaming = 2;
+                MessageBox.Show("Not ready for acquisition");
             }
-            else if (Option3.Checked)
-            {
-                streaming = 3;
-            }
-            string path = FileName.Text;
-            MonoSpec.GoStream(path, local_count, streaming);
         }
 
         private void OpenPathDialog_Click(object sender, EventArgs e)
@@ -465,6 +478,22 @@ namespace MPhys.GUI
                 UpdateAppSettings("iCCD_sID", CCD.sID);
                 labelCCDID.Text = CCD.sID;
                 labelCCDName.Text = CCD.sName;
+            }
+        }
+
+        private void buttonSaveGainADC_Click(object sender, EventArgs e)
+        {
+            if(GainList.Text != "" && ADCSelect.Text != "")
+            {
+                myFunction.add_to_log("buttonSaveGainADC_Click", "Started");
+
+                ADCStringType adc = (ADCStringType)ADCSelect.SelectedItem;
+                PairStringInt gain = (PairStringInt)GainList.SelectedItem;
+
+                myFunction.WriteToXmlFile<ADCStringType>("./ADC_settings.xml", adc);
+                myFunction.WriteToXmlFile<PairStringInt>("./Gain_settings.xml", gain);
+
+                myFunction.add_to_log("buttonSaveGainADC_Click", "Finished");
             }
         }
         //=============================================

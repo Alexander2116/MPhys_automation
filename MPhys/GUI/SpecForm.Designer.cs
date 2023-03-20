@@ -81,6 +81,11 @@ namespace MPhys.GUI
             this.labelMonoName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ADCSelect = new System.Windows.Forms.ComboBox();
+            this.GainList = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonSaveGainADC = new System.Windows.Forms.Button();
             this.groupboxWlCtrl.SuspendLayout();
             this.GroupBoxAcquire.SuspendLayout();
             this.GroupBoxStreamAcq.SuspendLayout();
@@ -304,7 +309,7 @@ namespace MPhys.GUI
             this.GroupBoxStreamAcq.Controls.Add(this.Option2);
             this.GroupBoxStreamAcq.Controls.Add(this.Option1);
             this.GroupBoxStreamAcq.Enabled = false;
-            this.GroupBoxStreamAcq.Location = new System.Drawing.Point(26, 184);
+            this.GroupBoxStreamAcq.Location = new System.Drawing.Point(27, 276);
             this.GroupBoxStreamAcq.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxStreamAcq.Name = "GroupBoxStreamAcq";
             this.GroupBoxStreamAcq.Padding = new System.Windows.Forms.Padding(2);
@@ -631,12 +636,68 @@ namespace MPhys.GUI
             this.label2.TabIndex = 41;
             this.label2.Text = "Mono ID";
             // 
+            // ADCSelect
+            // 
+            this.ADCSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ADCSelect.FormattingEnabled = true;
+            this.ADCSelect.Location = new System.Drawing.Point(54, 211);
+            this.ADCSelect.Margin = new System.Windows.Forms.Padding(2);
+            this.ADCSelect.Name = "ADCSelect";
+            this.ADCSelect.Size = new System.Drawing.Size(99, 21);
+            this.ADCSelect.TabIndex = 44;
+            // 
+            // GainList
+            // 
+            this.GainList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GainList.FormattingEnabled = true;
+            this.GainList.Location = new System.Drawing.Point(54, 187);
+            this.GainList.Margin = new System.Windows.Forms.Padding(2);
+            this.GainList.Name = "GainList";
+            this.GainList.Size = new System.Drawing.Size(122, 21);
+            this.GainList.TabIndex = 43;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 214);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "ADC";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 189);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Gain";
+            // 
+            // buttonSaveGainADC
+            // 
+            this.buttonSaveGainADC.Location = new System.Drawing.Point(188, 199);
+            this.buttonSaveGainADC.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSaveGainADC.Name = "buttonSaveGainADC";
+            this.buttonSaveGainADC.Size = new System.Drawing.Size(53, 25);
+            this.buttonSaveGainADC.TabIndex = 11;
+            this.buttonSaveGainADC.Text = "Save";
+            this.buttonSaveGainADC.UseVisualStyleBackColor = true;
+            this.buttonSaveGainADC.Click += new System.EventHandler(this.buttonSaveGainADC_Click);
+            // 
             // SpecForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonSaveGainADC);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.ADCSelect);
+            this.Controls.Add(this.GainList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelCCDName);
@@ -729,5 +790,10 @@ namespace MPhys.GUI
         private System.Windows.Forms.Label labelMonoName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox ADCSelect;
+        private System.Windows.Forms.ComboBox GainList;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonSaveGainADC;
     }
 }
