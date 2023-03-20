@@ -253,6 +253,7 @@ namespace MPhys.GUI
                 MonoSpec.InitializeCCD(CCD);
                 StatusLabelCCD.Text = "Connected";
                 StatusLabelCCD.ForeColor = Color.Green;
+                Load_ADC_Gain();
 
             }
             else
@@ -261,7 +262,6 @@ namespace MPhys.GUI
                 StatusLabelCCD.ForeColor = Color.Red;
                 MessageBox.Show("Mono ID and Name fields are empty");
             }
-
             Activate_buttonsCCD();
         }
 
@@ -279,6 +279,18 @@ namespace MPhys.GUI
             else
             {
                 comboBoxCCDs.Enabled = false;
+            }
+        }
+
+        private void Load_ADC_Gain()
+        {
+            foreach(MPhys.Devices.ADCStringType a in MonoSpec.combobox_ADC)
+            {
+                ADCSelect.Items.Add(a);
+            }
+            foreach(MPhys.Devices.PairStringInt g in MonoSpec.combobox_Gain)
+            {
+                GainList.Items.Add(g);
             }
         }
 
