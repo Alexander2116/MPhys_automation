@@ -12,6 +12,7 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Timers;
 using MPhys.MyFunctions;
+using JYSYSTEMLIBLib;
 
 namespace MPhys.GUI
 {
@@ -422,8 +423,8 @@ namespace MPhys.GUI
         private void GoBtn_Click(object sender, EventArgs e)
         {
 
-            ADCStringType adc = myFunction.ReadFromXmlFile<ADCStringType>("./ADC_settings.xml");
-            PairStringInt gain = myFunction.ReadFromXmlFile<PairStringInt>("./Gain_settings.xml");
+            ADCStringType adc = myFunction.ReadFromBinaryFile<ADCStringType>("ADC_settings.xml");
+            PairStringInt gain = myFunction.ReadFromBinaryFile<PairStringInt>("Gain_settings.xml");
             MonoSpec.SetParameters(adc,gain);
 
             if (MonoSpec.ReadForAcq())
@@ -509,10 +510,11 @@ namespace MPhys.GUI
                 ADCStringType adc = (ADCStringType)ADCSelect.SelectedItem;
                 PairStringInt gain = (PairStringInt)GainList.SelectedItem;
 
-                myFunction.WriteToXmlFile<ADCStringType>("./ADC_settings.xml", adc);
-                myFunction.WriteToXmlFile<PairStringInt>("./Gain_settings.xml", gain);
+                myFunction.WriteToBinaryFile<ADCStringType>("ADC_settings.dat", adc);
+                myFunction.WriteToBinaryFile<PairStringInt>("Gain_settings.dat", gain);
 
                 myFunction.add_to_log("buttonSaveGainADC_Click", "Finished");
+
             }
         }
         //=============================================

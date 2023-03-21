@@ -363,8 +363,8 @@ namespace MPhys.GUI
         {
             bool dev = connect_devices();
             MessageBox.Show(dev.ToString());
-            ADCStringType adc = myfunctions.ReadFromXmlFile<ADCStringType>("./ADC_settings.xml");
-            PairStringInt gain = myfunctions.ReadFromXmlFile<PairStringInt>("./Gain_settings.xml");
+            ADCStringType adc = myfunctions.ReadFromBinaryFile<ADCStringType>("ADC_settings.xml");
+            PairStringInt gain = myfunctions.ReadFromBinaryFile<PairStringInt>("Gain_settings.xml");
             MonoSpec.SetParameters(adc, gain);
 
             if (dev && MonoSpec.ReadForAcq())

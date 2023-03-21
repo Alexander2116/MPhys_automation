@@ -7,6 +7,7 @@ using System.Data;
 using System.IO;
 using System.Reflection;
 using System.Xml.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace MPhys.MyFunctions
 {
@@ -104,13 +105,17 @@ namespace MPhys.MyFunctions
 
         public void add_to_log(string function_name, string text_message)
         {
-            string path = ".\\log.txt";
-            System.IO.Directory.CreateDirectory(path);
-            DateTime aDate = DateTime.Now;
-            string temp = aDate.ToString("HH:mm");
+            string path = "./LogFolder\\log.txt";
+            System.IO.Directory.CreateDirectory("./LogFolder");
+            if (!System.IO.File.Exists(path))
+            {
+                var a = System.IO.File.Create(path);
+                a.Close();
+            }
+            string temp = DateTime.Now.ToString("HH:mm");
 
             string mes = temp + " : " + function_name + " :  " + text_message;
-            File.AppendAllText(path, function_name + " " + text_message + Environment.NewLine);
+            File.AppendAllText(path, mes + Environment.NewLine);
         }
 
 
@@ -125,20 +130,13 @@ namespace MPhys.MyFunctions
         /// <param name="filePath">The file path to write the object instance to.</param>
         /// <param name="objectToWrite">The object instance to write to the file.</param>
         /// <param name="append">If false the file will be overwritten if it already exists. If true the contents will be appended to the file.</param>
-        public void WriteToXmlFile<T>(string filePath, T objectToWrite, bool append = false) where T : new()
+        public void WriteToBinaryFile<T>(string fileName, T objectToWrite, bool append = false) where T : new()
         {
-            TextWriter writer = null;
-            try
-            {
-                var serializer = new XmlSerializer(typeof(T));
-                writer = new StreamWriter(filePath, append);
-                serializer.Serialize(writer, objectToWrite);
-            }
-            finally
-            {
-                if (writer != null)
-                    writer.Close();
-            }
+            System.IO.Directory.CreateDirectory("./SaveObjects");
+            var f = System.IO.File.Create("./SaveObjects\\" + fileName);
+            BinaryFormatter b = new BinaryFormatter();
+            b.Serialize(f, objectToWrite);
+            f.Close();
         }
 
         /// <summary>
@@ -148,20 +146,13 @@ namespace MPhys.MyFunctions
         /// <typeparam name="T">The type of object to read from the file.</typeparam>
         /// <param name="filePath">The file path to read the object instance from.</param>
         /// <returns>Returns a new instance of the object read from the XML file.</returns>
-        public T ReadFromXmlFile<T>(string filePath) where T : new()
+        public T ReadFromBinaryFile<T>(string fileName) where T : new()
         {
-            TextReader reader = null;
-            try
-            {
-                var serializer = new XmlSerializer(typeof(T));
-                reader = new StreamReader(filePath);
-                return (T)serializer.Deserialize(reader);
-            }
-            finally
-            {
-                if (reader != null)
-                    reader.Close();
-            }
+            var f = File.Open("./SaveObjects\\" + fileName, FileMode.Open);
+            BinaryFormatter b = new BinaryFormatter();
+            var obj = (T)b.Deserialize(f);
+            f.Close();
+            return obj;
         }
     }
 }

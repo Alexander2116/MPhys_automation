@@ -1,0 +1,13 @@
+15:02 : buttonSaveGainADC_Click :  Started
+15:19 : buttonSaveGainADC_Click :  Started
+15:19 : buttonSaveGainADC_Click :  Finished
+15:19 : buttonSaveGainADC_Click :  Started
+15:19 : buttonSaveGainADC_Click :  Finished
+15:20 : buttonSaveGainADC_Click :  Started
+15:20 : buttonSaveGainADC_Click :  Finished
+15:22 : buttonSaveGainADC_Click :  Started
+15:22 : buttonSaveGainADC_Click :  Started
+15:22 : buttonSaveGainADC_Click :  Started
+15:22 : buttonSaveGainADC_Click :  Finished
+15:29 : buttonSaveGainADC_Click :  Started
+15:29 : buttonSaveGainADC_Click :  Finished

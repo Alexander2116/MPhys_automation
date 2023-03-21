@@ -40,6 +40,7 @@ namespace MPhys.Devices
         }
     }
 
+    [Serializable]
     public class ADCStringType
     {
         public String sVal;
@@ -49,6 +50,7 @@ namespace MPhys.Devices
             return sVal.ToString();
         }
     }
+    [Serializable]
     public class PairStringInt
     {
         public String sVal;
