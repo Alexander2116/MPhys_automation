@@ -158,7 +158,7 @@ namespace MPhys.GUI
                 StatusLabel.Text = "Connected";
                 StatusLabel.ForeColor = Color.Green;
                 textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
-
+                Load_Grating();
             }
             else
             {
@@ -169,6 +169,13 @@ namespace MPhys.GUI
 
             Activate_buttonsMono();
 
+        }
+        private void Load_Grating()
+        {
+            foreach (double a in MonoSpec.combobox_Grating)
+            {
+                comboboxGrating.Items.Add(a);
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
