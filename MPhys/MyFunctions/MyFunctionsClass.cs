@@ -121,13 +121,12 @@ namespace MPhys.MyFunctions
 
 
         /// <summary>
-        /// Writes the given object instance to an XML file.
-        /// <para>Only Public properties and variables will be written to the file. These can be any type though, even other classes.</para>
-        /// <para>If there are public properties/variables that you do not want written to the file, decorate them with the [XmlIgnore] attribute.</para>
-        /// <para>Object type must have a parameterless constructor.</para>
+        /// Writes the given object instance to a binary file.
+        /// <para>Object type (and all child types) must be decorated with the [Serializable] attribute.</para>
+        /// <para>To prevent a variable from being serialized, decorate it with the [NonSerialized] attribute; cannot be applied to properties.</para>
         /// </summary>
         /// <typeparam name="T">The type of object being written to the file.</typeparam>
-        /// <param name="filePath">The file path to write the object instance to.</param>
+        /// <param name="fileName">The name of the file + extension.</param>
         /// <param name="objectToWrite">The object instance to write to the file.</param>
         /// <param name="append">If false the file will be overwritten if it already exists. If true the contents will be appended to the file.</param>
         public void WriteToBinaryFile<T>(string fileName, T objectToWrite, bool append = false) where T : new()
@@ -140,12 +139,12 @@ namespace MPhys.MyFunctions
         }
 
         /// <summary>
-        /// Reads an object instance from an XML file.
+        /// Reads an object instance from a binary file.
         /// <para>Object type must have a parameterless constructor.</para>
         /// </summary>
         /// <typeparam name="T">The type of object to read from the file.</typeparam>
-        /// <param name="filePath">The file path to read the object instance from.</param>
-        /// <returns>Returns a new instance of the object read from the XML file.</returns>
+        /// <param name="fileName">The name of the file + extension.</param>
+        /// <returns>Returns a new instance of the object read from the binary file.</returns>
         public T ReadFromBinaryFile<T>(string fileName) where T : new()
         {
             var f = File.Open("./SaveObjects\\" + fileName, FileMode.Open);
