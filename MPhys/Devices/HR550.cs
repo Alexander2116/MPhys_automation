@@ -314,6 +314,7 @@ namespace MPhys.Devices
                 mCCD.OpenCommunications();
 
                 InitializeADCSelect();
+                InitializeGainSelect();
 
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
