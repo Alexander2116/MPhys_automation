@@ -60,7 +60,7 @@ namespace MPhys.GUI
             }
             if (sName != "")
             {
-                labelCCDID.Text = sName;
+                labelCCDName.Text = sName;
             }
             sID = null;
             sName = null;
@@ -484,7 +484,7 @@ namespace MPhys.GUI
                 UpdateAppSettings("iHR550_sName", sMono.sName);
                 UpdateAppSettings("iHR550_sID", sMono.sID);
                 labelMonoID.Text = sMono.sID;
-                labelMonoID.Text = sMono.sName;
+                labelMonoName.Text = sMono.sName;
             }
         }
 
