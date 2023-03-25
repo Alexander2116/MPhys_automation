@@ -60,6 +60,10 @@ namespace MPhys.GUI
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxInc = new System.Windows.Forms.TextBox();
             this.checkBoxInc = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.Image = new System.Windows.Forms.RadioButton();
+            this.Spectra = new System.Windows.Forms.RadioButton();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBoxTasks
@@ -365,12 +369,50 @@ namespace MPhys.GUI
             this.checkBoxInc.UseVisualStyleBackColor = true;
             this.checkBoxInc.CheckedChanged += new System.EventHandler(this.checkBoxInc_CheckedChanged);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.Image);
+            this.groupBox4.Controls.Add(this.Spectra);
+            this.groupBox4.Location = new System.Drawing.Point(28, 136);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(136, 54);
+            this.groupBox4.TabIndex = 49;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Acq Format";
+            // 
+            // Image
+            // 
+            this.Image.AutoSize = true;
+            this.Image.Location = new System.Drawing.Point(74, 23);
+            this.Image.Margin = new System.Windows.Forms.Padding(2);
+            this.Image.Name = "Image";
+            this.Image.Size = new System.Drawing.Size(54, 17);
+            this.Image.TabIndex = 1;
+            this.Image.Text = "Image";
+            this.Image.UseVisualStyleBackColor = true;
+            // 
+            // Spectra
+            // 
+            this.Spectra.AutoSize = true;
+            this.Spectra.Checked = true;
+            this.Spectra.Location = new System.Drawing.Point(8, 23);
+            this.Spectra.Margin = new System.Windows.Forms.Padding(2);
+            this.Spectra.Name = "Spectra";
+            this.Spectra.Size = new System.Drawing.Size(62, 17);
+            this.Spectra.TabIndex = 0;
+            this.Spectra.TabStop = true;
+            this.Spectra.Text = "Spectra";
+            this.Spectra.UseVisualStyleBackColor = true;
+            // 
             // AutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.checkBoxInc);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBoxInc);
@@ -405,6 +447,8 @@ namespace MPhys.GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AutoForm";
             this.Text = "AutoForm";
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,5 +487,8 @@ namespace MPhys.GUI
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxInc;
         private System.Windows.Forms.CheckBox checkBoxInc;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton Image;
+        private System.Windows.Forms.RadioButton Spectra;
     }
 }

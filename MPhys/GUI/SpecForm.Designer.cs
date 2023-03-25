@@ -86,10 +86,14 @@ namespace MPhys.GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSaveGainADC = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.Image = new System.Windows.Forms.RadioButton();
+            this.Spectra = new System.Windows.Forms.RadioButton();
             this.groupboxWlCtrl.SuspendLayout();
             this.GroupBoxAcquire.SuspendLayout();
             this.GroupBoxStreamAcq.SuspendLayout();
             this.groupBoxCollect.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -687,12 +691,50 @@ namespace MPhys.GUI
             this.buttonSaveGainADC.UseVisualStyleBackColor = true;
             this.buttonSaveGainADC.Click += new System.EventHandler(this.buttonSaveGainADC_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.Image);
+            this.groupBox4.Controls.Add(this.Spectra);
+            this.groupBox4.Location = new System.Drawing.Point(278, 281);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(136, 54);
+            this.groupBox4.TabIndex = 47;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Acq Format";
+            // 
+            // Image
+            // 
+            this.Image.AutoSize = true;
+            this.Image.Location = new System.Drawing.Point(74, 23);
+            this.Image.Margin = new System.Windows.Forms.Padding(2);
+            this.Image.Name = "Image";
+            this.Image.Size = new System.Drawing.Size(54, 17);
+            this.Image.TabIndex = 1;
+            this.Image.Text = "Image";
+            this.Image.UseVisualStyleBackColor = true;
+            // 
+            // Spectra
+            // 
+            this.Spectra.AutoSize = true;
+            this.Spectra.Checked = true;
+            this.Spectra.Location = new System.Drawing.Point(8, 23);
+            this.Spectra.Margin = new System.Windows.Forms.Padding(2);
+            this.Spectra.Name = "Spectra";
+            this.Spectra.Size = new System.Drawing.Size(62, 17);
+            this.Spectra.TabIndex = 0;
+            this.Spectra.TabStop = true;
+            this.Spectra.Text = "Spectra";
+            this.Spectra.UseVisualStyleBackColor = true;
+            // 
             // SpecForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.buttonSaveGainADC);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -732,6 +774,8 @@ namespace MPhys.GUI
             this.GroupBoxStreamAcq.PerformLayout();
             this.groupBoxCollect.ResumeLayout(false);
             this.groupBoxCollect.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -795,5 +839,8 @@ namespace MPhys.GUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonSaveGainADC;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton Image;
+        private System.Windows.Forms.RadioButton Spectra;
     }
 }

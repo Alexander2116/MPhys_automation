@@ -365,7 +365,15 @@ namespace MPhys.GUI
             MessageBox.Show(dev.ToString());
             ADCStringType adc = myfunctions.ReadFromBinaryFile<ADCStringType>("ADC_settings.xml");
             PairStringInt gain = myfunctions.ReadFromBinaryFile<PairStringInt>("Gain_settings.xml");
-            MonoSpec.SetParameters(adc, gain);
+
+            if (Spectra.Checked)
+            {
+                MonoSpec.SetParameters(adc, gain);
+            }
+            else
+            {
+                MonoSpec.SetParameters(adc, gain, true);
+            }
 
             if (dev && MonoSpec.ReadForAcq())
             {
