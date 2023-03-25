@@ -147,9 +147,9 @@ namespace MPhys.GUI
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(233, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 26);
+            this.label4.Size = new System.Drawing.Size(57, 26);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Exposure\r\nTime (s)";
+            this.label4.Text = "Integration\r\nTime (ns)";
             // 
             // buttonAdd
             // 

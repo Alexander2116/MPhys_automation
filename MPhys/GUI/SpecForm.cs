@@ -262,6 +262,7 @@ namespace MPhys.GUI
                 StatusLabelCCD.Text = "Connected";
                 StatusLabelCCD.ForeColor = Color.Green;
                 Load_ADC_Gain();
+                MonoSpec.SetIntegrationTime();
 
             }
             else

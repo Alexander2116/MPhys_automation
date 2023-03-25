@@ -292,7 +292,7 @@ namespace MPhys.Devices
 
             // OPEN COMMUNICATIONS
 
-                sMonoName = CurrCCD.sName;
+            sMonoName = CurrCCD.sName;
             if (sMonoName != "")
             {
                 // Create New Single Channel Detector
@@ -318,25 +318,6 @@ namespace MPhys.Devices
 
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
-
-
-
-                // INITIALIZE
-                try
-                {
-                    sStatus = String.Format("Initializing Mono ... ");
-                    Console.WriteLine(sStatus);
-
-                    //if (mbInitialized == true)
-                    mbForceInit = true;
-
-                    mMono.Initialize(mbForceInit, false, false);
-                }
-                catch (Exception ex)
-                {
-                    sStatus = String.Format("{0} Initialize Failed.{1}", sMonoName, Environment.NewLine);
-                    Console.WriteLine(sStatus);
-                }
             }
         }
 
@@ -419,7 +400,7 @@ namespace MPhys.Devices
             return mMono.IsBusy();
         }
 
-        public void SetIntegrationTime(double IntTime)
+        public void SetIntegrationTime(double IntTime = 10)
         {
             mCCD.IntegrationTime = IntTime;
         }
@@ -822,9 +803,13 @@ namespace MPhys.Devices
             mMono.MovetoTurret(nSelectedTurr);
         }
 
-        public void SetParameters(ADCStringType ADC, PairStringInt Gain, int XStart=1, int YStart=1, int XEnd=1024, int YEnd=256, int XBin=1, int YBin=256, bool image_format = false)
+        public void SetParameters(ADCStringType ADC, PairStringInt Gain, bool image_format = false)
         {
             mCCD.SelectADC(ADC.adcType);
+            mCCD.Gain = Gain.iVal;
+
+            int XStart = 1; int YStart = 1; int XEnd = 1024; int YEnd = 256; int XBin = 1;
+            int YBin = 256;
 
             // Define format: m=0: Spectra mode
             jyCCDDataType mode;
@@ -832,6 +817,7 @@ namespace MPhys.Devices
             if (image_format)
             {
                 mode = jyCCDDataType.JYMCD_ACQ_FORMAT_IMAGE;
+                YBin = 1;
             }
             mCCD.DefineAcquisitionFormat(mode, 1);
             mCCD.DefineArea(1, XStart, YStart, XEnd - XStart + 1, YEnd - YStart + 1, XBin, YBin);
@@ -858,7 +844,6 @@ namespace MPhys.Devices
             // across it in the enumeration
             currentADC = mCCD.CurrentADC;
             token = mCCD.GetFirstADC(out sName);
-            lastToken = 0;
             if (token == -1)
             {
                 ADC = new ADCStringType();
