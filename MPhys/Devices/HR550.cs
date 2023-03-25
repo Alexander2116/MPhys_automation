@@ -300,8 +300,9 @@ namespace MPhys.Devices
 
                 mCCD.Uniqueid = CurrCCD.sID;
 
+
                 // Set Mono Initialize event handler
-                // NO
+                mCCD._IJYDeviceReqdEvents_Event_Initialize += OnCCDEvent_Initialized;
 
                 // Loads up the device with the specified configuration
                 mCCD.Load();
@@ -312,6 +313,7 @@ namespace MPhys.Devices
                 // settings (in the configuration). If it fails, the catch allows the
                 // device to be emulated in software.
                 mCCD.OpenCommunications();
+                mCCD.Initialize(true);
 
                 InitializeADCSelect();
                 InitializeGainSelect();
@@ -319,6 +321,12 @@ namespace MPhys.Devices
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
             }
+        }
+
+        public void OnCCDEvent_Initialized(int status, JYSYSTEMLIBLib.IJYEventInfo eventInfo)
+        {
+            InitializeGainSelect();
+            InitializeADCSelect();
         }
 
 
