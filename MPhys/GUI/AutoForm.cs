@@ -24,6 +24,7 @@ namespace MPhys.GUI
         M9700 TempDev;
         PM100A PMDev;
         MyFunctionsClass myfunctions;
+        private bool DeviceInitialized = false;
 
         public AutoForm()
         {
@@ -142,7 +143,7 @@ namespace MPhys.GUI
                 all_good = false;
                 MessageBox.Show("Issues with connecting with iHR550");
             }
-
+            DeviceInitialized = all_good;
             return all_good;
 
         }
@@ -363,8 +364,8 @@ namespace MPhys.GUI
         {
             bool dev = connect_devices();
             MessageBox.Show(dev.ToString());
-            ADCStringType adc = myfunctions.ReadFromBinaryFile<ADCStringType>("ADC_settings.xml");
-            PairStringInt gain = myfunctions.ReadFromBinaryFile<PairStringInt>("Gain_settings.xml");
+            ADCStringType adc = myfunctions.ReadFromBinaryFile<ADCStringType>("ADC_settings.dat");
+            PairStringInt gain = myfunctions.ReadFromBinaryFile<PairStringInt>("Gain_settings.dat");
 
             if (Spectra.Checked)
             {

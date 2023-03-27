@@ -27,6 +27,8 @@ using JYCONFIGBROWSERCOMPONENTLib;
 using JYSYSTEMLIBLib;
 using JYCCDLib;
 using System.Drawing;
+using MPhys.MyFunctions;
+using System.Windows.Forms;
 
 namespace MPhys.Devices
 {
@@ -99,8 +101,11 @@ namespace MPhys.Devices
         public List<SCDid> combobox_Mono = new List<SCDid>(); // Upload list to ComboBox in the form
         public List<SCDid> combobox_CCD = new List<SCDid>(); // Upload list to ComboBox in the form
         public List<double> combobox_Grating = new List<double>(); // List of gratings
-        public List<ADCStringType> combobox_ADC = new List<ADCStringType>(); // List of available ADC
-        public List<PairStringInt> combobox_Gain = new List<PairStringInt>(); // List of available ADC
+        public List<ADCStringType> combobox_ADC; // List of available ADC
+        public List<PairStringInt> combobox_Gain; // List of available ADC
+        /*
+                 public List<ADCStringType> combobox_ADC = new List<ADCStringType>(); // List of available ADC
+        public List<PairStringInt> combobox_Gain = new List<PairStringInt>(); // List of available ADC*/
 
         //
         public String Text_CurrentWavelength;
@@ -116,6 +121,8 @@ namespace MPhys.Devices
         public Boolean Radio_Entrance_Lateral = false;
         public Boolean Radio_Exit_Axial = false;
         public Boolean Radio_Exit_Lateral = false;
+
+        MyFunctionsClass myFunc = new MyFunctionsClass();
 
         // Initilize, adding all available objects to combobox_list (all available SCDs)
         public HR550()
@@ -300,10 +307,13 @@ namespace MPhys.Devices
 
                 mCCD.Uniqueid = CurrCCD.sID;
 
-
-                // Set Mono Initialize event handler
+                myFunc.add_to_log("InitializeCCD", "CCD Event");
+                // Set Mono Initialize event handler - apparently very important 
                 mCCD._IJYDeviceReqdEvents_Event_Initialize += OnCCDEvent_Initialized;
+                mCCD.OperationStatus += OnCCDEvent_OperationStatus;
+                mCCD.Update += OnCCDEvent_Update;
 
+                myFunc.add_to_log("InitializeCCD", "CCD Load");
                 // Loads up the device with the specified configuration
                 mCCD.Load();
 
@@ -312,21 +322,35 @@ namespace MPhys.Devices
                 // Attempts to communicate with a device on the specified communication 
                 // settings (in the configuration). If it fails, the catch allows the
                 // device to be emulated in software.
+                myFunc.add_to_log("InitializeCCD", "CCD Open");
                 mCCD.OpenCommunications();
-                mCCD.Initialize(true);
+                myFunc.add_to_log("InitializeCCD", "CCD Initialize");
+                mCCD.Initialize();
 
+                myFunc.add_to_log("InitializeCCD", "Load ADC and Gain");
                 //InitializeADCSelect();
                 //InitializeGainSelect();
 
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
-                Console.WriteLine(sStatus);
+                myFunc.add_to_log("InitializeCCD", sStatus);
+                //Console.WriteLine(sStatus);
             }
         }
 
-        public void OnCCDEvent_Initialized(int status, JYSYSTEMLIBLib.IJYEventInfo eventInfo)
+        public void OnCCDEvent_Initialized(int status, JYSYSTEMLIBLib.IJYEventInfo myEvent)
         {
-            InitializeGainSelect();
-            InitializeADCSelect();
+            if(status == 0)
+            {
+                myFunc.add_to_log("OnCCDEvent_Initialized", "Adding Gain and ADC");
+                combobox_Gain = InitializeGainSelect();
+                combobox_ADC = InitializeADCSelect();
+                myFunc.add_to_log("OnCCDEvent_Initialized", "Gain and ADC Added");
+            }
+            else
+            {
+               myFunc.add_to_log("OnCCDEvent_Initialized", String.Format("Failed{0}", Environment.NewLine));
+            }
+
         }
 
 
@@ -424,15 +448,18 @@ namespace MPhys.Devices
             int counter;
             String fname;
             Boolean busy;
+            Object dataArray;
 
             counter = 1;
-
+            myFunc.add_to_log("GoStream", "GoStream() Called");
+            myFunc.add_to_log("GoStream", "Creating arrays");
             JYSYSTEMLIBLib.IJYDataObject[] dataarray;
             dataarray = new JYSYSTEMLIBLib.IJYDataObject[total_count];
+            myFunc.add_to_log("GoStream", "Arrays created");
 
             do
             {
-
+                myFunc.add_to_log("GoStream", "Starting acquisition");
                 // Start data Acquisition
                 mCCD.StartAcquisition(true);
                 // wait for data to come in (busy = False)
@@ -441,11 +468,13 @@ namespace MPhys.Devices
                 while (busy == true);
 
                 // Get result of data acquisition
-                //ccdResult = mCCD.GetResult();
-                mCCD.GetData(ccdResult);
+                myFunc.add_to_log("GoStream", "Get result");
+                ccdResult = mCCD.GetResult();
                 // pull off as data object
+                myFunc.add_to_log("GoStream", "Get data");
                 ccdData = ccdResult.GetFirstDataObject();
 
+                myFunc.add_to_log("GoStream", "Data taken");
                 if (streaming == 1)
                 {
                     // pull of number of dimensions
@@ -477,11 +506,14 @@ namespace MPhys.Devices
                     try
                     {
                         // Save each Collection into a unique file
+                        ccdData.FileType = JYSYSTEMLIBLib.jySupportedFileType.jyTabDelimitted;
+                        myFunc.add_to_log("GoStream", "Saving the data");
                         ccdData.Save(fname);
+                        myFunc.add_to_log("GoStream", "The data is saved");
                     }
                     catch
                     {
-                        Console.WriteLine("Couldn't open data file, make sure folder exists", "Error");
+                        myFunc.add_to_log("GoStream","Failed to save the data");
                     }
                 }
 
@@ -513,7 +545,9 @@ namespace MPhys.Devices
                 }
             }
         }
-
+        public void OnCCDEvent_OperationStatus(int status, JYSYSTEMLIBLib.IJYEventInfo eventInfo)
+        {
+        }
 
         //=====================================================
         // save data from ccd as either spc or tab delimited.
@@ -838,26 +872,26 @@ namespace MPhys.Devices
         }
 
 
-        private void InitializeADCSelect()
+        private List<ADCStringType> InitializeADCSelect()
         {
             int token, lastToken;
             String sName;
             int currentADC;
             ADCStringType ADC;
+            List<ADCStringType> temp = new List<ADCStringType>();
 
-            // Enumerate all the available ADC's and allow user selection via the combo box
-            combobox_ADC.Clear();
-
-            // Get the currently selected ADC so we can select it programmatically when we come
-            // across it in the enumeration
+        // Get the currently selected ADC so we can select it programmatically when we come
+        // across it in the enumeration
             currentADC = mCCD.CurrentADC;
             token = mCCD.GetFirstADC(out sName);
+            //myFunc.add_to_log("InitializeADCSelect", sName);
+            myFunc.add_to_log("InitializeADCSelect", token.ToString());
             if (token == -1)
             {
                 ADC = new ADCStringType();
                 ADC.sVal = "NONE";
                 ADC.adcType = (jyADCType)token;
-                combobox_ADC.Add(ADC);
+                temp.Add(ADC);
             }
             else
             {
@@ -866,13 +900,15 @@ namespace MPhys.Devices
                     ADC = new ADCStringType();
                     ADC.sVal = sName;
                     ADC.adcType = (jyADCType)token;
-                    combobox_ADC.Add(ADC);
+                    //myFunc.add_to_log("InitializeADCSelect", sName);
+                    temp.Add(ADC);
                     token = mCCD.GetNextADC(out sName);
                 }
             }
+            return temp;
 
         }
-        private void InitializeGainSelect()
+        private List<PairStringInt> InitializeGainSelect()
         {
             int token;
             String sName;
@@ -880,16 +916,17 @@ namespace MPhys.Devices
             PairStringInt Gain;
 
             lastGain = mCCD.Gain;
-
-            combobox_Gain.Clear();
+            List<PairStringInt> temp = new List<PairStringInt>();
 
             token = mCCD.GetFirstGain(out sName);
+            //myFunc.add_to_log("InitializeGainSelect", sName);
+            myFunc.add_to_log("InitializeGainSelect", token.ToString());
             if (token == -1)
             {
                 Gain = new PairStringInt();
                 Gain.sVal = "NONE";
                 Gain.iVal = token;
-                combobox_Gain.Add(Gain);
+                temp.Add(Gain);
             }
             else
             {
@@ -898,10 +935,126 @@ namespace MPhys.Devices
                     Gain = new PairStringInt();
                     Gain.sVal = sName;
                     Gain.iVal = token;
-                    combobox_Gain.Add(Gain);
+                    //myFunc.add_to_log("InitializeGainSelect", sName);
+                    temp.Add(Gain);
                     token = mCCD.GetNextGain(out sName);
                 }
             }
+            return temp;
         }
+
+
+
+        //=============================================
+        public void OnCCDEvent_Update(int updateType, JYSYSTEMLIBLib.IJYEventInfo eventInfo)
+        {
+            string msg;
+            Object dataArray;
+
+            // Update type 100 indicates that this is a data update. Currently the 
+            // only type of update event fired by the ccd object
+            if (updateType != 100)
+                return;
+
+            try
+            {
+                ccdResult = eventInfo.GetResult();
+            }
+            catch (Exception ex)
+            {
+                string sErr = string.Copy("Failed During Acquistion: Get Result Obj Failed");
+                msg = string.Format("{0}\r\n{1}", sErr, ex.Message);
+                MessageBox.Show(msg, "Acquistion Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                // Process the data. The following simply retrieves the dataObject 
+                // from the result that carries it. This data object will be used in 
+                // the event an attempt is made to save the data.
+                ccdData = ccdResult.GetFirstDataObject();
+                if (ccdData == null)
+                {
+                    string sErr = string.Copy("GetFirstDataObject() Failed: Did notGet Data Object");
+                    MessageBox.Show(sErr, "Failed To Get Data Object", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                ccdData.GetDataAsArray(out dataArray, true, 1);
+                int yyy = 0;
+
+                int numDims = ccdData.NumberOfDimensions;
+                int xdim = ccdData.GetDimension(1);
+                int ydim = 1;
+                if (numDims > 1)
+                {
+                    ydim = ccdData.GetDimension(2);
+                }
+
+                if (JYSYSTEMLIBLib.jyDataObjectDataFormat.jyDFInt32 == ccdData.DataFormat)
+                {
+                    // 3 ways (at least) to get the data collected.
+                    Int32 firstpt, lastpt;
+                    Array aa;
+
+                    if (ydim > 1)
+                    {
+                        // 1st way is to pull each value out using GetValue (slowest way)
+                        aa = (Array)dataArray;
+                        firstpt = (Int32)aa.GetValue(0, 0);
+                        lastpt = (Int32)aa.GetValue(xdim - 1, ydim - 1);
+
+                        // 2nd way is to copy two-dimensional array
+                        Int32[,] I_arrptr = new Int32[xdim, ydim];
+                        // copy aa array starting at first element to arrptr array starting at it's first element. copy Length elements
+                        Array.Copy(aa, 0, I_arrptr, 0, aa.Length);
+                        firstpt = I_arrptr[0, 0];
+                        lastpt = I_arrptr[xdim - 1, ydim - 1];
+
+                        // 3rd way is to copy array as block copy (fastest way)
+                        Int32[,] I_arrptr2 = new Int32[xdim, ydim];
+                        // copy Length * size of data type bytes to array 
+                        Buffer.BlockCopy(aa, 0, I_arrptr2, 0, aa.Length * sizeof(Int32));
+                        firstpt = I_arrptr2[0, 0];
+                        lastpt = I_arrptr2[xdim - 1, ydim - 1];
+                    }
+                    else
+                    {
+                        // 1st way is to pull each value out using GetValue (slowest way)
+                        aa = (Array)dataArray;
+                        firstpt = (Int32)aa.GetValue(0);
+                        lastpt = (Int32)aa.GetValue(xdim - 1);
+
+                        // 2nd way is to copy two-dimensional array
+                        Int32[] S_arrptr = new Int32[xdim];
+                        // copy aa array starting at first element to arrptr array starting at it's first element. copy Length elements
+                        Array.Copy(aa, 0, S_arrptr, 0, aa.Length);
+                        firstpt = S_arrptr[0];
+                        lastpt = S_arrptr[xdim - 1];
+
+                        // 3rd way is to copy array as block copy (fastest way)
+                        Int32[] S_arrptr2 = new Int32[xdim];
+                        // copy Length * size of data type bytes to array 
+                        Buffer.BlockCopy(aa, 0, S_arrptr2, 0, aa.Length * sizeof(Int32));
+                        firstpt = S_arrptr2[0];
+                        lastpt = S_arrptr2[xdim - 1];
+                    }
+                }
+
+                // Do something with data array...
+
+            }
+            catch (Exception ex)
+            {
+                string sErr = string.Copy("Failed During Acquistion: Get Data Obj Failed");
+                msg = string.Format("{0}\r\n{1}", sErr, ex.Message);
+                MessageBox.Show(msg, "Acquistion Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Make Sure To Click 'Set Params' Button After Changing Any Items In Setup", "Acquistion Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
     }
 }

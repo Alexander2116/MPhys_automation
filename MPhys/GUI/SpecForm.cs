@@ -259,10 +259,11 @@ namespace MPhys.GUI
             if (sName != "")
             {
                 MonoSpec.InitializeCCD(CCD);
+                MessageBox.Show("Initialized");
                 StatusLabelCCD.Text = "Connected";
                 StatusLabelCCD.ForeColor = Color.Green;
                 Load_ADC_Gain();
-                MonoSpec.SetIntegrationTime();
+                MonoSpec.SetIntegrationTime(0.2);
 
             }
             else
@@ -424,8 +425,8 @@ namespace MPhys.GUI
         private void GoBtn_Click(object sender, EventArgs e)
         {
 
-            ADCStringType adc = myFunction.ReadFromBinaryFile<ADCStringType>("ADC_settings.xml");
-            PairStringInt gain = myFunction.ReadFromBinaryFile<PairStringInt>("Gain_settings.xml");
+            ADCStringType adc = myFunction.ReadFromBinaryFile<ADCStringType>("ADC_settings.dat");
+            PairStringInt gain = myFunction.ReadFromBinaryFile<PairStringInt>("Gain_settings.dat");
             if (Spectra.Checked)
             {
                 MonoSpec.SetParameters(adc, gain);
@@ -435,6 +436,7 @@ namespace MPhys.GUI
                 MonoSpec.SetParameters(adc, gain, true);
             }
 
+            myFunction.add_to_log("StartBtn_Click","Check if ready for acquisition");
             if (MonoSpec.ReadForAcq())
             {
                 int streaming = 2;
@@ -462,11 +464,15 @@ namespace MPhys.GUI
                 {
                     streaming = 3;
                 }
-                string path = FileName.Text;
+                string path = FileName.Text + "\\Test.txt";
+                myFunction.add_to_log("StartBtn_Click", "Saving in: " + path);
+                myFunction.add_to_log("StartBtn_Click", "Call GoStream");
+                myFunction.add_to_log("StartBtn_Click", "GoStream("+ path+","+local_count+","+streaming+")");
                 MonoSpec.GoStream(path, local_count, streaming);
             }
             else
             {
+                myFunction.add_to_log("StartBtn_Click", "Not ready for acquisition");
                 MessageBox.Show("Not ready for acquisition");
             }
         }
