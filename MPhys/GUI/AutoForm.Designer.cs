@@ -63,6 +63,8 @@ namespace MPhys.GUI
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Image = new System.Windows.Forms.RadioButton();
             this.Spectra = new System.Windows.Forms.RadioButton();
+            this.buttonInit = new System.Windows.Forms.Button();
+            this.labelInit = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -406,12 +408,36 @@ namespace MPhys.GUI
             this.Spectra.Text = "Spectra";
             this.Spectra.UseVisualStyleBackColor = true;
             // 
+            // buttonInit
+            // 
+            this.buttonInit.Enabled = false;
+            this.buttonInit.Location = new System.Drawing.Point(540, 119);
+            this.buttonInit.Name = "buttonInit";
+            this.buttonInit.Size = new System.Drawing.Size(75, 23);
+            this.buttonInit.TabIndex = 50;
+            this.buttonInit.Text = "Run";
+            this.buttonInit.UseVisualStyleBackColor = true;
+            this.buttonInit.Click += new System.EventHandler(this.buttonInit_Click);
+            // 
+            // labelInit
+            // 
+            this.labelInit.AutoSize = true;
+            this.labelInit.ForeColor = System.Drawing.Color.Red;
+            this.labelInit.Location = new System.Drawing.Point(628, 124);
+            this.labelInit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelInit.Name = "labelInit";
+            this.labelInit.Size = new System.Drawing.Size(50, 13);
+            this.labelInit.TabIndex = 51;
+            this.labelInit.Text = "Initialized";
+            // 
             // AutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelInit);
+            this.Controls.Add(this.buttonInit);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.checkBoxInc);
             this.Controls.Add(this.label11);
@@ -490,5 +516,7 @@ namespace MPhys.GUI
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton Image;
         private System.Windows.Forms.RadioButton Spectra;
+        private System.Windows.Forms.Button buttonInit;
+        private System.Windows.Forms.Label labelInit;
     }
 }

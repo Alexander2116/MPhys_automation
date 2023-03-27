@@ -46,6 +46,20 @@ namespace MPhys.GUI
             Create_DataSet();
         }
 
+        private void buttonInit_Click(object sender, EventArgs e)
+        {
+            connect_devices();
+            if (DeviceInitialized)
+            {
+                labelInit.ForeColor = Color.Green;
+                labelInit.Text = "Initialized - ready";
+            }
+            else
+            {
+                labelInit.ForeColor = Color.Red;
+                labelInit.Text = "Not ready";
+            }
+        }
         private bool connect_devices()
         {
             bool all_good = true;
@@ -362,8 +376,7 @@ namespace MPhys.GUI
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            bool dev = connect_devices();
-            MessageBox.Show(dev.ToString());
+            MessageBox.Show(DeviceInitialized.ToString());
             ADCStringType adc = myfunctions.ReadFromBinaryFile<ADCStringType>("ADC_settings.dat");
             PairStringInt gain = myfunctions.ReadFromBinaryFile<PairStringInt>("Gain_settings.dat");
 
@@ -376,7 +389,7 @@ namespace MPhys.GUI
                 MonoSpec.SetParameters(adc, gain, true);
             }
 
-            if (dev && MonoSpec.ReadForAcq())
+            if (DeviceInitialized && MonoSpec.ReadForAcq())
             {
                 Console.WriteLine("Go on");
                 auto_run();
