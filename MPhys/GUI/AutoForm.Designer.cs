@@ -415,7 +415,7 @@ namespace MPhys.GUI
             this.buttonInit.Name = "buttonInit";
             this.buttonInit.Size = new System.Drawing.Size(75, 23);
             this.buttonInit.TabIndex = 50;
-            this.buttonInit.Text = "Run";
+            this.buttonInit.Text = "Initialize";
             this.buttonInit.UseVisualStyleBackColor = true;
             this.buttonInit.Click += new System.EventHandler(this.buttonInit_Click);
             // 

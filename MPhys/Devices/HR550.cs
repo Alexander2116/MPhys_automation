@@ -311,7 +311,7 @@ namespace MPhys.Devices
                 myFunc.add_to_log("InitializeCCD", "CCD Event");
                 // Set Mono Initialize event handler - apparently very important 
                 mCCD._IJYDeviceReqdEvents_Event_Initialize += OnCCDEvent_Initialized;
-                mCCD.OperationStatus += OnCCDEvent_OperationStatus;
+                mCCD.OperationStatus += OnCCDEvent_OperationStatus; // empty, but must be present for some reason
                 mCCD.Update += OnCCDEvent_Update;
 
                 myFunc.add_to_log("InitializeCCD", "CCD Load");
@@ -540,7 +540,6 @@ namespace MPhys.Devices
                     try
                     {
                         // Save each Collection into a unique file
-                        ccdData.FileType = JYSYSTEMLIBLib.jySupportedFileType.jyTabDelimitted;
                         myFunc.add_to_log("GoStream", "Saving the data");
                         ccdData.Save(fname);
                         myFunc.add_to_log("GoStream", "The data is saved");
@@ -644,7 +643,7 @@ namespace MPhys.Devices
         {
             Double dPos, dValue;
             String sMsg, sPos, sDisplay;
-            Boolean isMonoBusy, isSCDBusy;
+            Boolean isMonoBusy, isCCDBusy;
             System.Object oData = null;
             bool m_bSyncAcq, m_bStopAcq;
             int m_loopCount;
@@ -692,12 +691,12 @@ namespace MPhys.Devices
                     dPos = mMono.GetCurrentWavelength();
 
                     // Start the acquisition
-                    isSCDBusy = true;
+                    isCCDBusy = true;
                     mCCD.StartAcquisition(true);
-                    while ((isSCDBusy == true) && (m_bStopAcq == false))
+                    while ((isCCDBusy == true) && (m_bStopAcq == false))
                     {
                         // Poll Busy
-                        isSCDBusy = mCCD.AcquisitionBusy();
+                        isCCDBusy = mCCD.AcquisitionBusy();
                     }
 
                     // Retrieve the data
