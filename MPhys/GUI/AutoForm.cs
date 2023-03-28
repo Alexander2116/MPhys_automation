@@ -147,8 +147,13 @@ namespace MPhys.GUI
             // Mono & CCD
             try
             {
+                bool Bmono = true;
                 MonoSpec = new HR550();
                 MonoSpec.InitializeMono(Mono);
+                while (Bmono == true)
+                {
+                    Bmono = MonoSpec.MonoIsBusy();
+                }
                 MonoSpec.InitializeCCD(CCD);
                 myfunctions.add_to_log("bool connect_devices()", "Mono and CCD connected");
             }
@@ -389,9 +394,9 @@ namespace MPhys.GUI
                 MonoSpec.SetParameters(adc, gain, true);
             }
 
-            if (DeviceInitialized && MonoSpec.ReadForAcq())
+            if (DeviceInitialized && MonoSpec.ReadForAcq() && !MonoSpec.MonoIsBusy())
             {
-                Console.WriteLine("Go on");
+                myfunctions.add_to_log("buttonRun_Clic", "auto_run() started");
                 auto_run();
             }
             else

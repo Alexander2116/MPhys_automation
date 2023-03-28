@@ -155,7 +155,12 @@ namespace MPhys.GUI
 
             if (sName != "")
             {
+                bool bBusy = true;
                 MonoSpec.InitializeMono(sMono);
+                while (bBusy == true)
+                {
+                    bBusy = MonoSpec.MonoIsBusy();
+                }
                 StatusLabel.Text = "Connected";
                 StatusLabel.ForeColor = Color.Green;
                 textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
@@ -234,7 +239,7 @@ namespace MPhys.GUI
                 bBusy = true;
                 while (bBusy == true)
                 {
-                    bBusy = MonoSpec.IsBusy();
+                    bBusy = MonoSpec.MonoIsBusy();
                 }
 
                 MonoSpec.GetPosition();

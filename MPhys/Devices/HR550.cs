@@ -299,9 +299,10 @@ namespace MPhys.Devices
 
             // OPEN COMMUNICATIONS
 
-            sMonoName = CurrCCD.sName;
-            if (sMonoName != "")
+            sCCDName = CurrCCD.sName;
+            if (sCCDName != "")
             {
+                // *** Connect ***
                 // Create New Single Channel Detector
                 mCCD = new JYCCDLib.JYMCDClass();
 
@@ -317,15 +318,16 @@ namespace MPhys.Devices
                 // Loads up the device with the specified configuration
                 mCCD.Load();
 
-                sStatus = String.Format("Opening Communications ... ");
-                Console.WriteLine(sStatus);
+                //sStatus = String.Format("Opening Communications ... ");
+                //Console.WriteLine(sStatus);
                 // Attempts to communicate with a device on the specified communication 
                 // settings (in the configuration). If it fails, the catch allows the
                 // device to be emulated in software.
                 myFunc.add_to_log("InitializeCCD", "CCD Open");
                 mCCD.OpenCommunications();
+                // *** Initialized ***
                 myFunc.add_to_log("InitializeCCD", "CCD Initialize");
-                mCCD.Initialize();
+                mCCD.Initialize(); // mCCD.Initialize(true)
 
                 myFunc.add_to_log("InitializeCCD", "Load ADC and Gain");
                 //InitializeADCSelect();
@@ -344,6 +346,7 @@ namespace MPhys.Devices
                 myFunc.add_to_log("OnCCDEvent_Initialized", "Adding Gain and ADC");
                 combobox_Gain = InitializeGainSelect();
                 combobox_ADC = InitializeADCSelect();
+                InitializeInitIntegration();
                 myFunc.add_to_log("OnCCDEvent_Initialized", "Gain and ADC Added");
             }
             else
@@ -353,6 +356,37 @@ namespace MPhys.Devices
 
         }
 
+        private void InitializeInitIntegration()
+        {
+            double dVal;
+            Object oUnits;
+            string timeUnits = "";
+            jyUnits units = jyUnits.jyuMilliseconds;
+
+            try
+            {
+                units = jyUnits.jyuUndefined;
+                mCCD.GetDefaultUnits(jyUnitsType.jyutTime, out units, out oUnits);
+                timeUnits = (String)oUnits;
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                timeUnits = "?";
+            }
+
+            try
+            {
+                dVal = mCCD.IntegrationTime;
+                if (dVal <= 0)
+                    dVal = 10;
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                dVal = 10;
+            }
+        }
 
         // Declaration of an event handler for HJY Mono
         public void OnReceivedInitMono(int status, JYSYSTEMLIBLib.IJYEventInfo myEvent)
@@ -427,12 +461,12 @@ namespace MPhys.Devices
             }
         }
 
-        public bool IsBusy()
+        public bool MonoIsBusy()
         {
             return mMono.IsBusy();
         }
 
-        public void SetIntegrationTime(double IntTime = 10)
+        public void SetIntegrationTime(double IntTime = 2)
         {
             mCCD.IntegrationTime = IntTime;
         }
