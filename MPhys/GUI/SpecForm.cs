@@ -408,7 +408,7 @@ namespace MPhys.GUI
         {
             String saveFileName;
 
-            saveFileName = FileName.Text;
+            saveFileName = FileName.Text + "\\SavedData.txt";
             try
             {
                 MonoSpec.ccdData.FileType = JYSYSTEMLIBLib.jySupportedFileType.jySPC;
