@@ -410,7 +410,6 @@ namespace MPhys.GUI
             // 
             // buttonInit
             // 
-            this.buttonInit.Enabled = false;
             this.buttonInit.Location = new System.Drawing.Point(540, 119);
             this.buttonInit.Name = "buttonInit";
             this.buttonInit.Size = new System.Drawing.Size(75, 23);

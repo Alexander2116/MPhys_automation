@@ -498,7 +498,10 @@ namespace MPhys.Devices
                 mCCD.StartAcquisition(true);
                 // wait for data to come in (busy = False)
                 do
+                {
                     busy = mCCD.AcquisitionBusy();
+                    myFunc.add_to_log("GoStream", "AcquisitionBusy"); // Only for testing
+                }
                 while (busy == true);
 
                 // Get result of data acquisition
