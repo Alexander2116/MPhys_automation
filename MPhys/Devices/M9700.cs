@@ -38,6 +38,9 @@ namespace MPhys.Devices
             _port = new SerialPort(COM, _Baud_Rate, Parity.None, 8, StopBits.One);
             _sleep_time = 10000/Baud; //ms
         }
+        ~M9700() { 
+            //Close(); 
+        }
 
         public void Open()
         {

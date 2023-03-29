@@ -19,11 +19,11 @@ namespace MPhys.GUI
         private System.Data.DataTable dataTable; // Current loaded dataTable (Tasks to perform)
 
         //Devices
-        FC102C NDF1, NDF2;
+        FC102C NDF1; FC102C NDF2;
         HR550 MonoSpec;
         M9700 TempDev;
         PM100A PMDev;
-        MyFunctionsClass myfunctions;
+        MyFunctionsClass myfunctions = new MyFunctionsClass();
         private bool DeviceInitialized = false;
 
         public AutoForm()
@@ -48,8 +48,8 @@ namespace MPhys.GUI
 
         private void buttonInit_Click(object sender, EventArgs e)
         {
-            connect_devices();
-            if (DeviceInitialized)
+            bool ok = connect_devices();
+            if (ok)
             {
                 labelInit.ForeColor = Color.Green;
                 labelInit.Text = "Initialized - ready";
@@ -82,6 +82,7 @@ namespace MPhys.GUI
             CCD.sName = sNameC;
 
             // NDF1
+            /*
             try
             {
                 NDF1 = new FC102C(NDF1port);
@@ -94,6 +95,7 @@ namespace MPhys.GUI
                     //all_good = false;
                     MessageBox.Show("NDF1 connection cannot be opened");
                 }
+                myfunctions.add_to_log("bool connect_devices()", "NDF1 connected");
             }
             catch
             {
@@ -118,12 +120,12 @@ namespace MPhys.GUI
             {
                 //all_good = false;
                 MessageBox.Show("NDF2 not connected");
-            }
+            }*/
             // PM
             try
             {
-                PMDev = new PM100A(PMport);
-                PMDev.Get_power();
+                //PMDev = new PM100A(PMport);
+                //PMDev.Get_power();
                 myfunctions.add_to_log("bool connect_devices()", "PM100A connected");
             }
             catch
@@ -141,19 +143,19 @@ namespace MPhys.GUI
             }
             catch
             {
-                //all_good = false;
+                all_good = false;
                 MessageBox.Show("Temperature controller not connected");
             }
             // Mono & CCD
             try
             {
-                bool Bmono = true;
+                //bool Bmono = true;
                 MonoSpec = new HR550();
                 MonoSpec.InitializeMono(Mono);
-                while (Bmono == true)
+                /*while (Bmono == true)
                 {
                     Bmono = MonoSpec.MonoIsBusy();
-                }
+                }*/
                 MonoSpec.InitializeCCD(CCD);
                 myfunctions.add_to_log("bool connect_devices()", "Mono and CCD connected");
             }
@@ -381,7 +383,6 @@ namespace MPhys.GUI
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(DeviceInitialized.ToString());
             ADCStringType adc = myfunctions.ReadFromBinaryFile<ADCStringType>("ADC_settings.dat");
             PairStringInt gain = myfunctions.ReadFromBinaryFile<PairStringInt>("Gain_settings.dat");
 
@@ -408,8 +409,8 @@ namespace MPhys.GUI
 
         private void auto_run()
         {
-            double ct = 0.0, ce = 0.0; // current temperature ; current exposure time
-            int cp1 = 0, cp2 = 0; // current possition 1, 2
+            double ct = 0.0; double ce = 0.0; // current temperature ; current exposure time
+            Int32 cp1 = 0; Int32 cp2 = 0; // current possition 1, 2
             int count = 0;
             double mStart, mEnd;
             bool all_good = false;
@@ -440,8 +441,8 @@ namespace MPhys.GUI
 
             try
             {
-                mStart = double.Parse(Count.Text.ToString());
-                mEnd = double.Parse(Count.Text.ToString());
+                mStart = double.Parse(textBoxStart.Text.ToString());
+                mEnd = double.Parse(textBoxEnd.Text.ToString());
                 if (mStart < mEnd && mStart>0)
                 {
                     all_good = true;
@@ -466,26 +467,29 @@ namespace MPhys.GUI
                     myfunctions.add_to_log("auto_run()", "Task"+i.ToString());
                     DataRow lastRow = dataTable.Rows[i];
 
-                    //double temp = double.Parse(lastRow["temperature"].ToString());
-                    //int pos1 = int.Parse(lastRow["NDF1pos"].ToString());
+                    double temp = double.Parse(lastRow["temperature"].ToString());
+                    //Int32 pos1 = Int32.Parse(lastRow["NDF1pos"].ToString());
+                    myfunctions.add_to_log("auto_run()", lastRow["NDF1pos"].ToString());
                     //int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
                     double expt = double.Parse(lastRow["ExpTime"].ToString());
                     int wait_few = 0;
+                    myfunctions.add_to_log("auto_run()", "Setting devices...");
                     // Statements to avoid unecessary commands to be send
-                    /*
+                    
                     if (ct != temp)
                     {
                         ct = temp;
                         // Set temp
                         TempDev.Set_temperature(ct);
-                    }
+                    }/*
                     if (cp1 != pos1)
                     {
                         wait_few = Math.Abs(cp1 - pos1);
                         cp1 = pos1;
                         // Set pos1
+                        myfunctions.add_to_log("auto_run()", "Setting NDF1 position...");
                         NDF1.SetPostion(cp1);
-                    }
+                    }/*
                     if (cp2 != pos2)
                     {
                         if(Math.Abs(cp2-pos2) > wait_few)
@@ -507,7 +511,7 @@ namespace MPhys.GUI
                     /*if (wait_few > 0)
                     {
                         Thread.Sleep(1000 *wait_few);
-                    }
+                    }/*
 
                     // Wait for pos to change
 
@@ -522,6 +526,7 @@ namespace MPhys.GUI
 
                     // Take power
                     //double power = PMDev.Get_power();
+                    //MessageBox.Show(power.ToString());
                     double power = 0;
 
                     List<double> wavelengthdata = new List<double>();
@@ -531,21 +536,23 @@ namespace MPhys.GUI
                     // Save data
                     myfunctions.add_to_log("auto_run()", "Getting data...");
                     MonoSpec.GetData(mStart, mEnd, Inc);
-
+                    myfunctions.add_to_log("auto_run()", "Data taken...");
                     wavelengthdata = MonoSpec.GetWavelengthDataColumn();
                     intensitydata = MonoSpec.GetIntensityDataColumn();
 
                     string intensityName = "Intensity0";
-
+                    myfunctions.add_to_log("auto_run()", "Adding data to DataSet...");
                     myfunctions.DataAddColumn(ref DataToBeSaved, wavelengthdata, "Wavelength");
                     myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, intensityName);
 
                     wavelengthdata.Clear();
                     intensitydata.Clear();
+                    myfunctions.add_to_log("auto_run()", "Taking N-1 times...");
 
+                    // Getting data count-1 times
                     for (int j=1; j < count; j++)
                     {
-
+                        myfunctions.add_to_log("auto_run()", "Getting data...");
                         MonoSpec.GetData(mStart, mEnd, Inc);
                         intensitydata = MonoSpec.GetIntensityDataColumn();
 
@@ -562,7 +569,7 @@ namespace MPhys.GUI
                     // Only for testing
                     cp1 = 0;
                     cp2 = 0;
-                    ct = 0;
+                    //ct = 0;
 
                     if(path == "")
                     {

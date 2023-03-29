@@ -147,6 +147,10 @@ namespace MPhys.Devices
             // _hdl = Open(port);
             Open(port);
         }
+        /*
+        ~FC102C() {
+            //Close();
+        }*/
 
 
         public void GetPorts()

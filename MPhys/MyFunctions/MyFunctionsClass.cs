@@ -26,8 +26,11 @@ namespace MPhys.MyFunctions
             dtData.Columns.Add(column);
 
             DataRow row;
+            add_to_log("DataAddColumn", lis.Count.ToString());
+            add_to_log("DataAddColumn", dtData.Rows.Count.ToString());
             for (int i = 0; i < lis.Count; i++)
             {
+                add_to_log("DataAddColumn", i.ToString());
                 if (i >= dtData.Rows.Count)
                 {
                     row = dtData.NewRow();

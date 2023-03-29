@@ -53,8 +53,8 @@ namespace MPhys.GUI
             this.OpenPathDialog = new System.Windows.Forms.Button();
             this.FileName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxStart = new System.Windows.Forms.TextBox();
+            this.textBoxEnd = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -241,7 +241,7 @@ namespace MPhys.GUI
             this.Count.Name = "Count";
             this.Count.Size = new System.Drawing.Size(39, 20);
             this.Count.TabIndex = 36;
-            this.Count.Text = "0";
+            this.Count.Text = "1";
             // 
             // label10
             // 
@@ -302,23 +302,23 @@ namespace MPhys.GUI
             this.label13.TabIndex = 39;
             this.label13.Text = "File Path:";
             // 
-            // textBox1
+            // textBoxStart
             // 
-            this.textBox1.Location = new System.Drawing.Point(551, 305);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(57, 20);
-            this.textBox1.TabIndex = 42;
-            this.textBox1.Text = "300";
+            this.textBoxStart.Location = new System.Drawing.Point(551, 305);
+            this.textBoxStart.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxStart.Name = "textBoxStart";
+            this.textBoxStart.Size = new System.Drawing.Size(57, 20);
+            this.textBoxStart.TabIndex = 42;
+            this.textBoxStart.Text = "300";
             // 
-            // textBox2
+            // textBoxEnd
             // 
-            this.textBox2.Location = new System.Drawing.Point(676, 305);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(62, 20);
-            this.textBox2.TabIndex = 43;
-            this.textBox2.Text = "500";
+            this.textBoxEnd.Location = new System.Drawing.Point(676, 305);
+            this.textBoxEnd.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEnd.Name = "textBoxEnd";
+            this.textBoxEnd.Size = new System.Drawing.Size(62, 20);
+            this.textBoxEnd.TabIndex = 43;
+            this.textBoxEnd.Text = "500";
             // 
             // label8
             // 
@@ -443,8 +443,8 @@ namespace MPhys.GUI
             this.Controls.Add(this.textBoxInc);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxEnd);
+            this.Controls.Add(this.textBoxStart);
             this.Controls.Add(this.OpenPathDialog);
             this.Controls.Add(this.FileName);
             this.Controls.Add(this.label13);
@@ -505,8 +505,8 @@ namespace MPhys.GUI
         private System.Windows.Forms.Button OpenPathDialog;
         private System.Windows.Forms.TextBox FileName;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxStart;
+        private System.Windows.Forms.TextBox textBoxEnd;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;

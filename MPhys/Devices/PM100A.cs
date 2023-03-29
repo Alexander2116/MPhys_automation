@@ -32,6 +32,9 @@ namespace MPhys.Devices
         {
             pm = new PM100D(Resource_Name, ID_Query, Reset_Device);
         }
+        ~PM100A() { 
+            //Remove();
+        }
 
         // Int value, lambda given in nm
         public void Change_wavelength_correction(double lambda)

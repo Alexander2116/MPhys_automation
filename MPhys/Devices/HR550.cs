@@ -201,7 +201,7 @@ namespace MPhys.Devices
         public List<double> GetWavelengthDataColumn()
         {
             List<double> list = new List<double>();
-            for (int i = 0; i <= dData.Rows.Count; i++)
+            for (int i = 0; i < dData.Rows.Count; i++)
             {
                 list.Add((double)dData.Rows[i]["Wavelength"]);
             }
@@ -210,7 +210,7 @@ namespace MPhys.Devices
         public List<double> GetIntensityDataColumn()
         {
             List<double> list = new List<double>();
-            for(int i = 0; i <= dData.Rows.Count; i++)
+            for(int i = 0; i < dData.Rows.Count; i++)
             {
                 list.Add((double)dData.Rows[i]["Intensity"]);
             }
@@ -681,6 +681,7 @@ namespace MPhys.Devices
                 // in the main UI thread, then you'd want to consider using the Asynchronous method of acquisition...
                 dPos = ScanStart;
                 dData.Clear();
+            myFunc.add_to_log("GetData()", "Loop Started");
                 while (dPos <= ScanEnd)
                 {
                     // move mono
@@ -692,9 +693,9 @@ namespace MPhys.Devices
                         isMonoBusy = mMono.IsBusy();
                     }
                     dPos = mMono.GetCurrentWavelength();
-
-                    // Start the acquisition
-                    isCCDBusy = true;
+                myFunc.add_to_log("GetData()", dPos.ToString());
+                // Start the acquisition
+                isCCDBusy = true;
                     mCCD.StartAcquisition(true);
                     while ((isCCDBusy == true) && (m_bStopAcq == false))
                     {
