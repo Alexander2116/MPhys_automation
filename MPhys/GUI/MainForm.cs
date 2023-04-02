@@ -191,14 +191,14 @@ namespace MPhys.GUI
                 Aft = new AutoFormTest();
                 this.Controls.Add(Aft);
 
-                buttonAuto.Enabled = false;
+                buttonTest.Enabled = false;
                 Aft.Show();
                 Aft.BringToFront();
             }
             else
             {
                 Aft.TopMost = true;
-                buttonAuto.Enabled = false;
+                buttonTest.Enabled = false;
                 Aft.BringToFront();
             }
         }
