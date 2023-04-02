@@ -19,16 +19,16 @@ namespace MPhys.GUI
         private TempForm Tf;
         private SpecForm Sf;
         private AutoForm Af;
-        private TestForm TestF;
+        private AutoFormTest Aft;
 
         public MainForm()
         {
             InitializeComponent();
-            NDFf = new NDFForm();
-            this.Controls.Add(NDFf);
-            buttonNDF.Enabled = false;
-            NDFf.Show();
-            NDFf.BringToFront();
+            Af = new AutoForm();
+            this.Controls.Add(Af);
+            buttonAuto.Enabled = false;
+            Af.Show();
+            Af.BringToFront();
         }
 
         private void enable_buttons()
@@ -67,10 +67,10 @@ namespace MPhys.GUI
                 Af.Dispose();
                 Af = null;
             }
-            if (TestF != null)
+            if (Aft != null)
             {
-                TestF.Dispose();
-                TestF = null;
+                Aft.Dispose();
+                Aft = null;
             }
 
         }
@@ -186,20 +186,20 @@ namespace MPhys.GUI
         {
             enable_buttons();
             make_inactive();
-            if (TestF == null)
+            if (Aft == null)
             {
-                TestF = new TestForm();
-                this.Controls.Add(TestF);
+                Aft = new AutoFormTest();
+                this.Controls.Add(Aft);
 
-                buttonTest.Enabled = false;
-                TestF.Show();
-                TestF.BringToFront();
+                buttonAuto.Enabled = false;
+                Aft.Show();
+                Aft.BringToFront();
             }
             else
             {
-                TestF.TopMost = true;
-                buttonTest.Enabled = false;
-                TestF.BringToFront();
+                Aft.TopMost = true;
+                buttonAuto.Enabled = false;
+                Aft.BringToFront();
             }
         }
     }

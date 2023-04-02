@@ -102,9 +102,16 @@
   <ItemGroup>
     <Compile Include="Devices\FC102C.cs" />
     <Compile Include="Devices\HR550.cs" />
+    <Compile Include="Devices\HR550_copy_modified.cs" />
     <Compile Include="Devices\PM100A.cs" />
     <Compile Include="Devices\M9700.cs" />
     <Compile Include="Devices\TestClass.cs" />
+    <Compile Include="GUI\AutoFormTest - Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AutoFormTest - Copy.Designer.cs">
+      <DependentUpon>AutoFormTest - Copy.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\AutoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,12 +148,6 @@
     <Compile Include="GUI\TempForm.Designer.cs">
       <DependentUpon>TempForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyFunctions\MyFunctionsClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,6 +165,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\AutoFormTest - Copy.resx">
+      <DependentUpon>AutoFormTest - Copy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\AutoForm.resx">
       <DependentUpon>AutoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,9 +185,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TempForm.resx">
       <DependentUpon>TempForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

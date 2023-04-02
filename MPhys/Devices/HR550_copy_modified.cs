@@ -29,41 +29,12 @@ using JYCCDLib;
 using System.Drawing;
 using MPhys.MyFunctions;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MPhys.Devices
 {
-    public class SCDid
-    {
-        public string sName;
-        public string sID;
-        public override string ToString()
-        {
-            return sName.ToString();
-        }
-    }
 
-    [Serializable]
-    public class ADCStringType
-    {
-        public String sVal;
-        public JYSYSTEMLIBLib.jyADCType adcType;
-        public override String ToString()
-        {
-            return sVal.ToString();
-        }
-    }
-    [Serializable]
-    public class PairStringInt
-    {
-        public String sVal;
-        public int iVal;
-        public override String ToString()
-        {
-            return sVal.ToString();
-        }
-    }
-
-    class HR550
+    class HR550_c
     {
         private Boolean mbEmulate;
         private Boolean mbForceInit;
@@ -125,7 +96,7 @@ namespace MPhys.Devices
         MyFunctionsClass myFunc = new MyFunctionsClass();
 
         // Initilize, adding all available objects to combobox_list (all available SCDs)
-        public HR550()
+        public HR550_c()
         {
             String sDevId;
             String sDevName;
@@ -223,7 +194,7 @@ namespace MPhys.Devices
         public List<double> GetIntensityDataColumn()
         {
             List<double> list = new List<double>();
-            for(int i = 0; i < dData.Rows.Count; i++)
+            for (int i = 0; i < dData.Rows.Count; i++)
             {
                 list.Add((double)dData.Rows[i]["Intensity"]);
             }
@@ -245,7 +216,7 @@ namespace MPhys.Devices
             {
                 return false;
             }
-            
+
         }
 
         public void InitializeMono(SCDid CurrMono)
@@ -284,10 +255,10 @@ namespace MPhys.Devices
 
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
-            
 
 
-            // INITIALIZE
+
+                // INITIALIZE
                 try
                 {
                     sStatus = String.Format("Initializing Mono ... ");
@@ -325,7 +296,7 @@ namespace MPhys.Devices
                 // Set Mono Initialize event handler - apparently very important 
                 mCCD._IJYDeviceReqdEvents_Event_Initialize += OnCCDEvent_Initialized;
                 mCCD.OperationStatus += OnCCDEvent_OperationStatus; // empty, but must be present for some reason
-                mCCD.Update += OnCCDEvent_Update;
+                //mCCD.Update += OnCCDEvent_Update;
 
                 myFunc.add_to_log("InitializeCCD", "CCD Load");
                 // Loads up the device with the specified configuration
@@ -354,7 +325,7 @@ namespace MPhys.Devices
 
         public void OnCCDEvent_Initialized(int status, JYSYSTEMLIBLib.IJYEventInfo myEvent)
         {
-            if(status == 0)
+            if (status == 0)
             {
                 myFunc.add_to_log("OnCCDEvent_Initialized", "Adding Gain and ADC");
                 combobox_Gain = InitializeGainSelect();
@@ -364,7 +335,7 @@ namespace MPhys.Devices
             }
             else
             {
-               myFunc.add_to_log("OnCCDEvent_Initialized", String.Format("Failed{0}", Environment.NewLine));
+                myFunc.add_to_log("OnCCDEvent_Initialized", String.Format("Failed{0}", Environment.NewLine));
             }
 
         }
@@ -562,7 +533,7 @@ namespace MPhys.Devices
                     }
                     catch
                     {
-                        myFunc.add_to_log("GoStream","Failed to save the data");
+                        myFunc.add_to_log("GoStream", "Failed to save the data");
                     }
                 }
 
@@ -684,16 +655,16 @@ namespace MPhys.Devices
             }
             Object positions = new Object();
             int numCovers = 0;
-            mCCD.CalculateRangeModePositions(ScanStart,ScanEnd,2, out numCovers, out positions);
+            mCCD.CalculateRangeModePositions(ScanStart, ScanEnd, 2, out numCovers, out positions);
 
             m_bSyncAcq = true;
             m_bStopAcq = false;
 
-                // A Synchronous (or Serial) acquisition method will loop through the positions requested, moving 
-                // the mono and taking data at every point.  NOTE: this method will not relinquish control to the 
-                // UI thread (i.e. - the UI will appear hung) until it has completed.  If this operation is 
-                // already taking place on a non-ui thread, then this is not an issue.  If your scan is happening 
-                // in the main UI thread, then you'd want to consider using the Asynchronous method of acquisition...
+            // A Synchronous (or Serial) acquisition method will loop through the positions requested, moving 
+            // the mono and taking data at every point.  NOTE: this method will not relinquish control to the 
+            // UI thread (i.e. - the UI will appear hung) until it has completed.  If this operation is 
+            // already taking place on a non-ui thread, then this is not an issue.  If your scan is happening 
+            // in the main UI thread, then you'd want to consider using the Asynchronous method of acquisition...
             dPos = ScanStart;
             dData.Clear();
             myFunc.add_to_log("GetData()", "Loop Started");
@@ -720,13 +691,13 @@ namespace MPhys.Devices
 
                 // Retrieve the data
                 mCCD.GetData(ref oData);
-        
+
                 IConvertible convert = oData as IConvertible;
                 if (convert != null)
                     dValue = convert.ToDouble(null);
                 else
                     dValue = 0d;
-        
+
                 row = dData.NewRow();
 
                 row["Wavelength"] = dPos;
@@ -738,9 +709,9 @@ namespace MPhys.Devices
 
                 dPos += ScanInc;
 
-                }          // end of loop
-            
-            
+            }          // end of loop
+
+
 
         }
 
@@ -795,7 +766,7 @@ namespace MPhys.Devices
                         break;
 
                     case MirrorLocation.Side:
-                        Radio_Exit_Lateral= true;
+                        Radio_Exit_Lateral = true;
                         break;
 
                     default:
@@ -933,8 +904,8 @@ namespace MPhys.Devices
             ADCStringType ADC;
             List<ADCStringType> temp = new List<ADCStringType>();
 
-        // Get the currently selected ADC so we can select it programmatically when we come
-        // across it in the enumeration
+            // Get the currently selected ADC so we can select it programmatically when we come
+            // across it in the enumeration
             currentADC = mCCD.CurrentADC;
             token = mCCD.GetFirstADC(out sName);
             //myFunc.add_to_log("InitializeADCSelect", sName);
@@ -999,6 +970,82 @@ namespace MPhys.Devices
 
 
         //=============================================
+        public void Test_GetData(double ScanStart, double ScanEnd, double ScanInc = 1)
+        {
+            Double dPos, dValue;
+            String sMsg, sPos, sDisplay;
+            Boolean isMonoBusy, isCCDBusy;
+            System.Object oData = null;
+            int m_loopCount;
+            DataRow row;
+
+            JYSYSTEMLIBLib.IJYResultsObject ccdResult = mCCD.GetResult();
+
+            myFunc.add_to_log("Test", "Initial AcqShutterMode " + mCCD.MultiAcqShutterMode.ToString());
+            mCCD.MultiAcqShutterMode = jyMultiAcqState.jyMultiAcqStateBeforeFirstOnly;
+            myFunc.add_to_log("Test", "New AcqShutterMode " + mCCD.MultiAcqShutterMode.ToString());
+
+            int ac = mCCD.AcquisitionCount;
+            myFunc.add_to_log("Test", "Acquisiton Count " + ac.ToString());
+
+            Int32 numCov = 0;
+            Object positions = new Object();
+            mCCD.CalculateRangeModePositions(ScanStart, ScanEnd, 1, out numCov, out positions);
+            myFunc.add_to_log("Test", "Number Covers " + numCov.ToString());
+            myFunc.add_to_log("Test", "Positions " + positions.ToString());
+
+
+            JYSYSTEMLIBLib.IJYDataObject ccdData = ccdResult.GetFirstDataObject();
+
+            if (mCCD == null || mMono == null)
+            {
+                Console.WriteLine("Monochromator Must Be Selected and Initialized Before Collecting Data");
+                return;
+            }
+
+            //mCCD.IntegrationTime = mCCD.IntegrationTime * (ScanEnd - ScanStart) / (ScanInc * 1000);
+
+            dPos = ScanStart;
+            dData.Clear();
+            myFunc.add_to_log("GetData()", "Loop Started");
+            mMono.MovetoWavelength(dPos);
+            mCCD.StartAcquisition(true); // Open shutter once
+            while (dPos <= ScanEnd)
+            {
+                // move mono
+                mMono.MovetoWavelength(dPos);
+
+                isMonoBusy = true;
+                while (isMonoBusy == true)
+                {
+                    isMonoBusy = mMono.IsBusy();
+                }
+                dPos = mMono.GetCurrentWavelength();
+                myFunc.add_to_log("GetData()", dPos.ToString());
+                // Start the acquisition
+                
+                // Retrieve the data
+                ccdResult = mCCD.GetResult();
+                ccdData = ccdResult.GetFirstDataObject();
+
+                IConvertible convert = ccdData as IConvertible;
+                if (convert != null)
+                    dValue = convert.ToDouble(null);
+                else
+                    dValue = 0d;
+
+                row = dData.NewRow();
+
+                row["Wavelength"] = dPos;
+                row["Intensity"] = dValue;
+                dData.Rows.Add(row);
+
+                dPos += ScanInc;
+
+            }          // end of loop
+
+
+        }
         public void OnCCDEvent_Update(int updateType, JYSYSTEMLIBLib.IJYEventInfo eventInfo)
         {
             string msg;
@@ -1009,6 +1056,8 @@ namespace MPhys.Devices
             if (updateType != 100)
                 return;
 
+            // JYSYSTEMLIBLib.IJYResultsObject ccdResult = eventInfo.GetResult();
+            // JYSYSTEMLIBLib.IJYDataObject ccdData = ccdResult.GetFirstDataObject();
             try
             {
                 ccdResult = eventInfo.GetResult();

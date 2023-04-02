@@ -14,19 +14,19 @@ using MPhys.MyFunctions;
 
 namespace MPhys.GUI
 {
-    public partial class AutoForm : Form
+    public partial class AutoFormTest : Form
     {
         private System.Data.DataTable dataTable; // Current loaded dataTable (Tasks to perform)
 
         //Devices
         FC102C NDF1; FC102C NDF2;
-        HR550 MonoSpec;
+        HR550_c MonoSpec;
         M9700 TempDev;
         PM100A PMDev;
         MyFunctionsClass myfunctions = new MyFunctionsClass();
         private bool DeviceInitialized = false;
 
-        public AutoForm()
+        public AutoFormTest()
         {
             InitializeComponent();
             this.Location = new Point(60, 26);
@@ -64,10 +64,6 @@ namespace MPhys.GUI
         {
             bool all_good = true;
 
-            string NDF1port = ConfigurationManager.AppSettings.Get("NDF1");
-            string NDF2port = ConfigurationManager.AppSettings.Get("NDF2");
-            string PMport = ConfigurationManager.AppSettings.Get("PM100A");
-            string M9700port = ConfigurationManager.AppSettings.Get("M9700");
 
             MPhys.Devices.SCDid Mono = new MPhys.Devices.SCDid();
             string sNameM = ConfigurationManager.AppSettings.Get("iHR550_sName");
@@ -81,76 +77,11 @@ namespace MPhys.GUI
             CCD.sID = sIDC;
             CCD.sName = sNameC;
 
-            // NDF1
-            /*
-            try
-            {
-                NDF1 = new FC102C(NDF1port);
-                if (NDF1.IsOpen() == 1)
-                {
-                    myfunctions.add_to_log("bool connect_devices()","NDF1 connected");
-                }
-                else
-                {
-                    //all_good = false;
-                    MessageBox.Show("NDF1 connection cannot be opened");
-                }
-                myfunctions.add_to_log("bool connect_devices()", "NDF1 connected");
-            }
-            catch
-            {
-                //all_good = false;
-                MessageBox.Show("NDF1 not connected");
-            }
-            // NDF2
-            try
-            {
-                NDF2 = new FC102C(NDF2port);
-                if (NDF2.IsOpen() == 1)
-                {
-                    myfunctions.add_to_log("bool connect_devices()", "NDF2 connected");
-                }
-                else
-                {
-                    //all_good = false;
-                    MessageBox.Show("NDF2 connection cannot be opened");
-                }
-            }
-            catch
-            {
-                //all_good = false;
-                MessageBox.Show("NDF2 not connected");
-            }*/
-            // PM
-            try
-            {
-                //PMDev = new PM100A(PMport);
-                //PMDev.Get_power();
-                myfunctions.add_to_log("bool connect_devices()", "PM100A connected");
-            }
-            catch
-            {
-                //all_good = false;
-                MessageBox.Show("PM100A not connected");
-            }
-            // TEMP
-            try
-            {
-                TempDev = new M9700(M9700port);
-                TempDev.Open();
-                TempDev.Close();
-                myfunctions.add_to_log("bool connect_devices()", "M9700 connected");
-            }
-            catch
-            {
-                all_good = false;
-                MessageBox.Show("Temperature controller not connected");
-            }
             // Mono & CCD
             try
             {
                 //bool Bmono = true;
-                MonoSpec = new HR550();
+                MonoSpec = new HR550_c();
                 MonoSpec.InitializeMono(Mono);
                 /*while (Bmono == true)
                 {
@@ -414,7 +345,7 @@ namespace MPhys.GUI
             int count = 0;
             double mStart, mEnd;
             bool all_good = false;
-            double Inc = 0.036; // nm
+            double Inc = 1; // nm
 
             if (checkBoxInc.Enabled)
             {
@@ -468,38 +399,14 @@ namespace MPhys.GUI
                     DataRow lastRow = dataTable.Rows[i];
 
                     double temp = double.Parse(lastRow["temperature"].ToString());
-                    //Int32 pos1 = Int32.Parse(lastRow["NDF1pos"].ToString());
+                    Int32 pos1 = Int32.Parse(lastRow["NDF1pos"].ToString());
                     myfunctions.add_to_log("auto_run()", lastRow["NDF1pos"].ToString());
                     //int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
                     double expt = double.Parse(lastRow["ExpTime"].ToString());
-                    int wait_few = 0;
+
                     myfunctions.add_to_log("auto_run()", "Setting devices...");
                     // Statements to avoid unecessary commands to be send
                     
-                    if (ct != temp)
-                    {
-                        ct = temp;
-                        // Set temp
-                        TempDev.Set_temperature(ct);
-                    }/*
-                    if (cp1 != pos1)
-                    {
-                        wait_few = Math.Abs(cp1 - pos1);
-                        cp1 = pos1;
-                        // Set pos1
-                        myfunctions.add_to_log("auto_run()", "Setting NDF1 position...");
-                        NDF1.SetPostion(cp1);
-                    }/*
-                    if (cp2 != pos2)
-                    {
-                        if(Math.Abs(cp2-pos2) > wait_few)
-                        {
-                            wait_few = Math.Abs(cp2 - pos2);
-                        }
-                        cp2 = pos2;
-                        // Set pos2
-                        NDF2.SetPostion(cp2);
-                    }*/
                     if (ce != expt)
                     {
                         ce = expt;
@@ -507,26 +414,6 @@ namespace MPhys.GUI
                         // Set exp time
                     }
 
-                    // Wait 2s to make sure wheel is set
-                    /*if (wait_few > 0)
-                    {
-                        Thread.Sleep(1000 *wait_few);
-                    }/*
-
-                    // Wait for pos to change
-
-                    // Wait for temp to change
-                    // Wait additional 20s for stability
-                    int cont = 1;
-                    while (!TempDev.is_temp_good(ct) && cont>5)
-                    {
-                        Thread.Sleep(4000);
-                        cont += 1;
-                    }*/
-
-                    // Take power
-                    //double power = PMDev.Get_power();
-                    //MessageBox.Show(power.ToString());
                     double power = 0;
 
                     List<double> wavelengthdata;
@@ -535,7 +422,7 @@ namespace MPhys.GUI
 
                     // Save data
                     myfunctions.add_to_log("auto_run()", "Getting data...");
-                    MonoSpec.GetData(mStart, mEnd, Inc);
+                    MonoSpec.Test_GetData(mStart, mEnd, Inc);
                     myfunctions.add_to_log("auto_run()", "Data taken...");
                     wavelengthdata = MonoSpec.GetWavelengthDataColumn();
                     intensitydata = MonoSpec.GetIntensityDataColumn();
@@ -553,7 +440,7 @@ namespace MPhys.GUI
                     for (int j=1; j < count; j++)
                     {
                         myfunctions.add_to_log("auto_run()", "Getting data...");
-                        MonoSpec.GetData(mStart, mEnd, Inc);
+                        MonoSpec.Test_GetData(mStart, mEnd, Inc);
                         intensitydata = MonoSpec.GetIntensityDataColumn();
 
                         intensityName = "Intensity" + j.ToString();
@@ -569,7 +456,7 @@ namespace MPhys.GUI
                     // Only for testing
                     cp1 = 0;
                     cp2 = 0;
-                    //ct = 0;
+                    ct = 0;
 
                     if(path == "")
                     {
