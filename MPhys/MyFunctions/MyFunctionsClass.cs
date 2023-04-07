@@ -44,6 +44,37 @@ namespace MPhys.MyFunctions
             }
 
         }
+        public void DataAddColumn(ref DataTable dtData, List<int> lis, string columnname)
+        {
+            DataColumn column;
+
+            // Add column
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = columnname;
+            column.ReadOnly = false;
+            column.Unique = false;
+            dtData.Columns.Add(column);
+
+            DataRow row;
+            add_to_log("DataAddColumn", lis.Count.ToString());
+            add_to_log("DataAddColumn", dtData.Rows.Count.ToString());
+            for (int i = 0; i < lis.Count; i++)
+            {
+                add_to_log("DataAddColumn", i.ToString());
+                if (i >= dtData.Rows.Count)
+                {
+                    row = dtData.NewRow();
+                    row[columnname] = lis[i];
+                    dtData.Rows.Add(row);
+                }
+                else
+                {
+                    dtData.Rows[i][columnname] = lis[i];
+                }
+            }
+
+        }
 
         public static DataTable ListToDataTable<T>(List<T> list, string _tableName)
         {

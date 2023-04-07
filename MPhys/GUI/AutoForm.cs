@@ -44,6 +44,8 @@ namespace MPhys.GUI
             dataTable = new DataTable();
             dataTable.TableName = "PendingTask";
             Create_DataSet();
+            MonoSpec = new HR550();
+            Console.WriteLine(MonoSpec.Get_Wavelength_Range(400, 1200)[0]);
         }
 
         private void buttonInit_Click(object sender, EventArgs e)
@@ -530,7 +532,7 @@ namespace MPhys.GUI
                     double power = 0;
 
                     List<double> wavelengthdata;
-                    List<double> intensitydata;
+                    List<Int32> intensitydata;
                     DataTable DataToBeSaved = new DataTable();
 
                     // Save data

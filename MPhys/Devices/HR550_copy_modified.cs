@@ -619,9 +619,22 @@ namespace MPhys.Devices
             */
         }
 
-        public void Start_acquisition()
+        public Object Acquire_data(bool state)
         {
-            mCCD.DoAcquisition(true);
+            IJYResultsObject result;
+            Object Array;
+
+            mCCD.StartAcquisition(state);
+            int i = 0;
+            while(i<100 && mCCD.AcquisitionBusy())
+            {
+                System.Threading.Thread.Sleep(1);
+                i++;
+            }
+            result = mCCD.GetResult();
+            result.GetFirstDataObject().GetDataAsArray(out Array);
+
+            return Array;
         }
 
 
@@ -887,7 +900,9 @@ namespace MPhys.Devices
             }
             mCCD.DefineAcquisitionFormat(mode, 1);
             mCCD.DefineArea(1, XStart, YStart, XEnd - XStart + 1, YEnd - YStart + 1, XBin, YBin);
-
+            mCCD.DisableAllInputTriggers();
+            mCCD.SetOperatingModeValue(0, false);
+            mCCD.AcquisitionCount = 1;
         }
 
         public bool ReadForAcq()
@@ -967,6 +982,72 @@ namespace MPhys.Devices
             return temp;
         }
 
+        /// <summary>
+        /// Return true if width moved correctly
+        /// </summary>
+        /// <param name="slitloc">0: Front Entrance, 1: Side Entrance, 2: Front Exit,
+        /// 3: Side Exit, 4: First Intermediate, 5: Second Intermediate</param>
+        /// <param name="width"></param>
+        public bool SetWidth(int slitloc,  double width)
+        {
+            if(width < 0 || width > 2.2) { return false; }
+            if(slitloc == 0)
+            {
+                mMono.MovetoSlitWidth(SlitLocation.Front_Entrance, width);
+            }
+            else if(slitloc == 1) 
+            {
+                mMono.MovetoSlitWidth(SlitLocation.Side_Entrance, width);
+            }
+            else if (slitloc == 2)
+            {
+                mMono.MovetoSlitWidth(SlitLocation.Front_Exit, width);
+            }
+            else if (slitloc == 3)
+            {
+                mMono.MovetoSlitWidth(SlitLocation.Side_Exit, width);
+            }
+            else if (slitloc == 4)
+            {
+                mMono.MovetoSlitWidth(SlitLocation.First_Intermediate, width);
+            }
+            else if (slitloc == 5)
+            {
+                mMono.MovetoSlitWidth(SlitLocation.Second_Intermediate, width);
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Moves to Mirror Position
+        /// </summary>
+        /// <param name="entrance"> true: entrance, false: exit</param>
+        /// <param name="front"> true: front, false: side</param>
+        public void SetMirror(bool entrance, bool front)
+        {
+            if(entrance && front)
+            {
+                mMono.MovetoMirrorPosition(MirrorLocation.EntranceMirror, MirrorLocation.Front);
+            }
+            else if(entrance && !front)
+            {
+                mMono.MovetoMirrorPosition(MirrorLocation.EntranceMirror, MirrorLocation.Side);
+            }
+            else if (!entrance && front)
+            {
+                mMono.MovetoMirrorPosition(MirrorLocation.ExitMirror, MirrorLocation.Front);
+            }
+            else if (!entrance && !front)
+            {
+                mMono.MovetoMirrorPosition(MirrorLocation.ExitMirror, MirrorLocation.Side);
+            }
+
+            
+        }
 
 
         //=============================================
@@ -979,7 +1060,16 @@ namespace MPhys.Devices
             int m_loopCount;
             DataRow row;
 
-            JYSYSTEMLIBLib.IJYResultsObject ccdResult = mCCD.GetResult();
+            double[] wavelength_array = { };
+            double[] intensities_array = { };
+
+            myFunc.add_to_log("Test", "Calibration coefficients " + (mCCD.GetFirstCalibrationCoefficient()).ToString());
+            myFunc.add_to_log("Test", "Next Calibration coefficients " + (mCCD.GetNextCalibrationCoefficient()).ToString());
+            myFunc.add_to_log("Test", "Next Calibration coefficients " + (mCCD.GetNextCalibrationCoefficient()).ToString());
+
+            SetWidth(0, 1);
+
+            //JYSYSTEMLIBLib.IJYResultsObject ccdResult = mCCD.GetResult();
 
             myFunc.add_to_log("Test", "Initial AcqShutterMode " + mCCD.MultiAcqShutterMode.ToString());
             mCCD.MultiAcqShutterMode = jyMultiAcqState.jyMultiAcqStateBeforeFirstOnly;
@@ -988,14 +1078,27 @@ namespace MPhys.Devices
             int ac = mCCD.AcquisitionCount;
             myFunc.add_to_log("Test", "Acquisiton Count " + ac.ToString());
 
-            Int32 numCov = 0;
+            Int32 numCov;
             Object positions = new Object();
+
+            Object param;
+            //double[] param = { 0.033, 649.7961 };
+            //mCCD.SetLinearizationParams(param);
+            //myFunc.add_to_log("Test", "Linearization param set");
+            mCCD.GetLinearizationParams(out param);
+            myFunc.add_to_log("Test", "Linearization param set");
+            myFunc.add_to_log("Test", "Linearization param set: " + string.Join(",", ((Array)param)));
+            myFunc.add_to_log("Test", "Linearization param set: " + string.Join(",", ((Array)param).GetLength(0)));
             mCCD.CalculateRangeModePositions(ScanStart, ScanEnd, 1, out numCov, out positions);
+            
             myFunc.add_to_log("Test", "Number Covers " + numCov.ToString());
-            myFunc.add_to_log("Test", "Positions " + positions.ToString());
+            //myFunc.add_to_log("Test", "Positions " + positions.ToString());
+            myFunc.add_to_log("Test", "Positions " + string.Join(",", ((Array)positions)));
+            
+            double[] pos_array = { (ScanEnd + ScanStart) / 2 };
+                //(double[])positions;
 
-
-            JYSYSTEMLIBLib.IJYDataObject ccdData = ccdResult.GetFirstDataObject();
+            //JYSYSTEMLIBLib.IJYDataObject ccdData = ccdResult.GetFirstDataObject();
 
             if (mCCD == null || mMono == null)
             {
@@ -1009,11 +1112,12 @@ namespace MPhys.Devices
             dData.Clear();
             myFunc.add_to_log("GetData()", "Loop Started");
             mMono.MovetoWavelength(dPos);
-            mCCD.StartAcquisition(true); // Open shutter once
-            while (dPos <= ScanEnd)
+            //mCCD.StartAcquisition(true); // Open shutter once
+            for(int i = 0; i < 1; i++) 
             {
                 // move mono
-                mMono.MovetoWavelength(dPos);
+                myFunc.add_to_log("Test", "Move to wavelength " + (pos_array[i].ToString()));
+                mMono.MovetoWavelength(pos_array[i]);
 
                 isMonoBusy = true;
                 while (isMonoBusy == true)
@@ -1023,29 +1127,40 @@ namespace MPhys.Devices
                 dPos = mMono.GetCurrentWavelength();
                 myFunc.add_to_log("GetData()", dPos.ToString());
                 // Start the acquisition
-                
+                mCCD.StartAcquisition(true);
                 // Retrieve the data
                 ccdResult = mCCD.GetResult();
                 ccdData = ccdResult.GetFirstDataObject();
+                Object temp;
+                ccdData.GetDataAsArray(out temp);
 
+                /*
                 IConvertible convert = ccdData as IConvertible;
                 if (convert != null)
                     dValue = convert.ToDouble(null);
                 else
                     dValue = 0d;
+                */
+                foreach(var a in (Array)temp)
+                {
+                    intensities_array.Append<double>((double)a);
+                }
 
+                /*
                 row = dData.NewRow();
 
                 row["Wavelength"] = dPos;
                 row["Intensity"] = dValue;
                 dData.Rows.Add(row);
-
-                dPos += ScanInc;
+                */
 
             }          // end of loop
 
 
         }
+        
+        
+        
         public void OnCCDEvent_Update(int updateType, JYSYSTEMLIBLib.IJYEventInfo eventInfo)
         {
             string msg;

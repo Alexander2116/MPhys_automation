@@ -83,6 +83,7 @@ namespace MPhys.Devices
         // Should be private, may change it later
         public JYConfigBrowerInterface mConfigBrowser;
         public JYMONOLib.MonochromatorClass mMono;
+        public double current_grating = 1200;
 
         // CCD
         //public JYCCDLib.JYMCDClass mCCD;
@@ -204,7 +205,7 @@ namespace MPhys.Devices
 
             // Intensity [count]
             column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Double");
+            column.DataType = System.Type.GetType("System.Int32");
             column.ColumnName = "Intensity";
             column.ReadOnly = false;
             column.Unique = false;
@@ -220,12 +221,12 @@ namespace MPhys.Devices
             }
             return list;
         }
-        public List<double> GetIntensityDataColumn()
+        public List<Int32> GetIntensityDataColumn()
         {
-            List<double> list = new List<double>();
+            List<Int32> list = new List<Int32>();
             for(int i = 0; i < dData.Rows.Count; i++)
             {
-                list.Add((double)dData.Rows[i]["Intensity"]);
+                list.Add((int)dData.Rows[i]["Intensity"]);
             }
             return list;
         }
@@ -282,6 +283,8 @@ namespace MPhys.Devices
                 GetMirrors();*/
                 GetGratings();
 
+                object temp;
+                mMono.GetCurrentGrating(out current_grating, out temp);
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
                 Console.WriteLine(sStatus);
             
@@ -655,7 +658,84 @@ namespace MPhys.Devices
 
 
         // Synchronus data acquisition
-        public void GetData(double ScanStart, double ScanEnd, double ScanInc = 0.036)
+        public void GetDataRange(double[] positions)
+        {
+            Double dPos, dValue;
+            String sMsg, sPos, sDisplay;
+            Boolean isMonoBusy, isCCDBusy;
+            System.Object oData = null;
+            bool m_bSyncAcq, m_bStopAcq;
+            int m_loopCount;
+            DataRow row;
+
+            List<int> intensity = new List<int>();
+            List<double> wavelength = new List<double>();
+
+            if (mCCD == null)
+            {
+                Console.WriteLine("Monochromator Must Be Selected and Initialized Before Collecting Data");
+                return;
+            }
+
+
+
+                // A Synchronous (or Serial) acquisition method will loop through the positions requested, moving 
+                // the mono and taking data at every point.  NOTE: this method will not relinquish control to the 
+                // UI thread (i.e. - the UI will appear hung) until it has completed.  If this operation is 
+                // already taking place on a non-ui thread, then this is not an issue.  If your scan is happening 
+                // in the main UI thread, then you'd want to consider using the Asynchronous method of acquisition...
+            dData.Clear();
+            myFunc.add_to_log("GetData()", "Loop Started");
+            foreach(double pos in positions)    
+            {
+                // move mono
+                mMono.MovetoWavelength(pos);
+
+                isMonoBusy = true;
+                while (isMonoBusy == true)
+                {
+                    isMonoBusy = mMono.IsBusy();
+                }
+                dPos = mMono.GetCurrentWavelength();
+                myFunc.add_to_log("GetData()", dPos.ToString());
+                // Start the acquisition
+                isCCDBusy = true;
+                mCCD.StartAcquisition(true);
+                while ((isCCDBusy == true))
+                {
+                    // Poll Busy
+                    isCCDBusy = mCCD.AcquisitionBusy();
+                }
+
+                // Retrieve the data
+                ccdResult = mCCD.GetResult();
+                ccdData = ccdResult.GetFirstDataObject();
+                ccdResult = null;
+                Object temp;
+                ccdData.GetDataAsArray(out temp);
+                ccdData = null;
+
+                double[,] array = (double[,])temp;
+                List<int> scan_i = new List<int>();
+                for (int i = 0; i < 1024; i++)
+                {
+                    scan_i.Add((int)array[i, 1]);
+                }
+
+                List<double> scan_w = Get_Wavelength_Range(dPos, (int)current_grating);
+
+                wavelength.AddRange(scan_w);
+                intensity.AddRange(scan_i);
+
+                }          // end of loop
+
+            myFunc.DataAddColumn(ref dData, wavelength, "Wavelength");
+            myFunc.DataAddColumn(ref dData, intensity, "Intensity");
+
+
+        }
+
+        public void GetDataPosition(double position)
         {
             Double dPos, dValue;
             String sMsg, sPos, sDisplay;
@@ -671,80 +751,164 @@ namespace MPhys.Devices
                 return;
             }
 
-            if ((ScanStart < 0) || (ScanEnd <= 0) || (ScanInc <= 0))
+            if ((position < 0))
             {
-                sMsg = String.Format("Invalid Scan Start ({0}), Stop ({1}) or Inc ({2}) Value", ScanStart, ScanEnd, ScanInc);
+                sMsg = String.Format("Invalid Scan Start ({0}) Value", position);
                 Console.WriteLine(sMsg);
                 return;
             }
-            else if (ScanStart > ScanEnd)
-            {
-                Console.WriteLine("Scan End Must Be Greater Than Scan Start.");
-                return;
-            }
-            Object positions = new Object();
-            int numCovers = 0;
-            mCCD.CalculateRangeModePositions(ScanStart,ScanEnd,2, out numCovers, out positions);
 
-            m_bSyncAcq = true;
-            m_bStopAcq = false;
 
-                // A Synchronous (or Serial) acquisition method will loop through the positions requested, moving 
-                // the mono and taking data at every point.  NOTE: this method will not relinquish control to the 
-                // UI thread (i.e. - the UI will appear hung) until it has completed.  If this operation is 
-                // already taking place on a non-ui thread, then this is not an issue.  If your scan is happening 
-                // in the main UI thread, then you'd want to consider using the Asynchronous method of acquisition...
-            dPos = ScanStart;
+            // A Synchronous (or Serial) acquisition method will loop through the positions requested, moving 
+            // the mono and taking data at every point.  NOTE: this method will not relinquish control to the 
+            // UI thread (i.e. - the UI will appear hung) until it has completed.  If this operation is 
+            // already taking place on a non-ui thread, then this is not an issue.  If your scan is happening 
+            // in the main UI thread, then you'd want to consider using the Asynchronous method of acquisition...
             dData.Clear();
             myFunc.add_to_log("GetData()", "Loop Started");
-            while (dPos <= ScanEnd)
-            {
+
                 // move mono
-                mMono.MovetoWavelength(dPos);
+            mMono.MovetoWavelength(position);
 
-                isMonoBusy = true;
-                while (isMonoBusy == true)
-                {
-                    isMonoBusy = mMono.IsBusy();
-                }
-                dPos = mMono.GetCurrentWavelength();
-                myFunc.add_to_log("GetData()", dPos.ToString());
-                // Start the acquisition
-                isCCDBusy = true;
-                mCCD.StartAcquisition(true);
-                while ((isCCDBusy == true) && (m_bStopAcq == false))
-                {
-                    // Poll Busy
-                    isCCDBusy = mCCD.AcquisitionBusy();
-                }
+            isMonoBusy = true;
+            while (isMonoBusy == true)
+            {
+                isMonoBusy = mMono.IsBusy();
+            }
+            dPos = mMono.GetCurrentWavelength();
+            myFunc.add_to_log("GetData()", dPos.ToString());
+            // Start the acquisition
+            isCCDBusy = true;
+            mCCD.StartAcquisition(true);
+            while ((isCCDBusy == true))
+            {
+                // Poll Busy
+                isCCDBusy = mCCD.AcquisitionBusy();
+            }
 
-                // Retrieve the data
-                mCCD.GetData(ref oData);
-        
-                IConvertible convert = oData as IConvertible;
-                if (convert != null)
-                    dValue = convert.ToDouble(null);
-                else
-                    dValue = 0d;
-        
-                row = dData.NewRow();
+            // Retrieve the data
+            ccdResult = mCCD.GetResult();
+            ccdData = ccdResult.GetFirstDataObject();
+            ccdResult = null;
+            Object temp;
+            ccdData.GetDataAsArray(out temp);
+            ccdData = null;
 
-                row["Wavelength"] = dPos;
-                row["Intensity"] = dValue;
-                dData.Rows.Add(row);
+            double[,] array = (double[,])temp;
+            List<int> intensity = new List<int>();
+            for(int i=0; i < 1024; i++)
+            {
+                intensity.Add((int)array[i, 1]);
+            }
 
-                if (m_bStopAcq == true)
-                    break;
+            List<double> wavelength = Get_Wavelength_Range(dPos,(int)current_grating);
+            myFunc.DataAddColumn(ref dData, wavelength, "Wavelength");
+            myFunc.DataAddColumn(ref dData, intensity, "Intensity");
 
-                dPos += ScanInc;
-
-                }          // end of loop
-            
-            
 
         }
 
+        public List<double> Get_Wavelength_Range(double central_wl, int grating)
+        {
+            List<double> wl_list = new List<double>();
+            double offset;
+            List<int> pixel_range = Enumerable.Range(0, 1024).ToList(); // 1024 elements
+            double[] p = new double[3];
 
+            if (grating == 1200)
+            {
+                if (central_wl > 600)
+                {
+                    double[] temp = { 0, 0.033, 649.7961 };
+                    p = temp;
+                    offset = 0.12;
+                }
+                else
+                {
+                    double[] temp = { 0, 0.0342, 549.4396 };
+                    p = temp;
+                    offset = 0.07;
+                }
+
+            }
+            else if (grating == 300)
+            {
+                //guesstimate
+                double[] temp = { -1.419e-6, 0.1502, 505.76 };
+                p = temp;
+                offset = 1;
+            }
+            else if (grating == 150)
+            {
+                //quadratic calibration fit
+                double[] temp = { 2.11514338456425e-06, 0.297079305471633, 547.3409 };
+                p = temp;
+                offset = 1.8;
+            }
+            else // option for 150
+            {
+                double[] temp = { 2.11514338456425e-06, 0.297079305471633, 547.3409 };
+                p = temp;
+                offset = 1.8;
+            }
+
+            //adjust center pixel(512) offset
+            int pix = 512;
+            double wav_c = p[0] * (pix^2) + p[1] * pix + p[2];
+            p[2] = p[2] - (wav_c - central_wl) + offset;
+
+            //calculate wavelength range
+            for(int i =0; i < 1024; i++)
+            {
+                wl_list.Add(p[0]*(i^2) + p[1]*i + p[2]);
+            }
+
+            return wl_list;
+        }
+
+        public List<double> Get_Central_Positions(double Start, double End, int grating)
+        {
+            List<double> positions = new List<double>();
+            double p;
+            double st = Start - 0.5; // extra offset for the start
+            while (st < End)
+            {
+
+                if (grating == 1200)
+                {
+                    if (st > 600)
+                    {
+                        p = 0.033;
+                    }
+                    else
+                    {
+                        p = 0.0342;
+                    }
+
+                }
+                else if (grating == 300)
+                {
+                    //guesstimate
+                    p = 0.1502;
+                }
+                else if (grating == 150)
+                {
+                    //quadratic calibration fit
+                    p = 0.297079305471633;
+                }
+                else // option for 150
+                {
+                    p=  0.297079305471633;
+                }
+
+                // Add middle position 
+                positions.Add((512 * p + st));
+                // Move by 1024 positions. 
+                st = st + 1024 * p;
+            }
+
+            return positions;
+        }
 
         public void GetPosition()
         {
@@ -896,6 +1060,7 @@ namespace MPhys.Devices
         public void MoveToTurret(int nSelectedTurr)
         {
             mMono.MovetoTurret(nSelectedTurr);
+            current_grating = nSelectedTurr;
         }
 
         public void SetParameters(ADCStringType ADC, PairStringInt Gain, bool image_format = false)
@@ -916,7 +1081,6 @@ namespace MPhys.Devices
             }
             mCCD.DefineAcquisitionFormat(mode, 1);
             mCCD.DefineArea(1, XStart, YStart, XEnd - XStart + 1, YEnd - YStart + 1, XBin, YBin);
-
         }
 
         public bool ReadForAcq()

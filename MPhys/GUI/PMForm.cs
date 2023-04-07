@@ -41,7 +41,7 @@ namespace MPhys.GUI
             }
             catch
             {
-                MessageBox.Show("Any instrument couldn't be found");
+                MessageBox.Show("Any device could not be found");
             }
             modify_com_boxes();
 
