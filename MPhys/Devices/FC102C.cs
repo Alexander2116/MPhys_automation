@@ -145,7 +145,15 @@ namespace MPhys.Devices
             _port = port;
             // Opens a connection (and keep it open till deconstructed)
             // _hdl = Open(port);
-            Open(port);
+            try
+            {
+                if(port == "COMX" || port == null)
+                {
+                    Console.WriteLine("Port not specified");
+                }
+                else { Open(port); }
+            }
+            catch(Exception e) { }
         }
         /*
         ~FC102C() {
@@ -188,7 +196,14 @@ namespace MPhys.Devices
         /// </return> 
         public int IsOpen()
         {
-            var ret = FC102C_Methods.IsOpen(_port);
+            var ret = 0;
+            if (_port == "COMX" || _port == null)
+            { // Obviously closed
+            }
+            else
+            {
+                ret = FC102C_Methods.IsOpen(_port);
+            }
             // 0: Not Opened ; 1: Opened 
             return (int)ret;
         }

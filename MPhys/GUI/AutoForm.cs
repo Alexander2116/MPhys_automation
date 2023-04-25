@@ -84,7 +84,7 @@ namespace MPhys.GUI
             CCD.sName = sNameC;
 
             // NDF1
-            /*
+            
             try
             {
                 NDF1 = new FC102C(NDF1port);
@@ -122,12 +122,12 @@ namespace MPhys.GUI
             {
                 //all_good = false;
                 MessageBox.Show("NDF2 not connected");
-            }*/
+            }
             // PM
             try
             {
-                //PMDev = new PM100A(PMport);
-                //PMDev.Get_power();
+                PMDev = new PM100A(PMport);
+                PMDev.Get_power();
                 myfunctions.add_to_log("bool connect_devices()", "PM100A connected");
             }
             catch
@@ -136,7 +136,7 @@ namespace MPhys.GUI
                 MessageBox.Show("PM100A not connected");
             }
             // TEMP
-            try
+            /*try
             {
                 TempDev = new M9700(M9700port);
                 TempDev.Open();
@@ -147,7 +147,7 @@ namespace MPhys.GUI
             {
                 all_good = false;
                 MessageBox.Show("Temperature controller not connected");
-            }
+            }*/
             // Mono & CCD
             try
             {
@@ -469,21 +469,21 @@ namespace MPhys.GUI
                     myfunctions.add_to_log("auto_run()", "Task"+i.ToString());
                     DataRow lastRow = dataTable.Rows[i];
 
-                    double temp = double.Parse(lastRow["temperature"].ToString());
-                    //Int32 pos1 = Int32.Parse(lastRow["NDF1pos"].ToString());
+                    //double temp = double.Parse(lastRow["temperature"].ToString());
+                    Int32 pos1 = Int32.Parse(lastRow["NDF1pos"].ToString());
                     myfunctions.add_to_log("auto_run()", lastRow["NDF1pos"].ToString());
-                    //int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
+                    int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
                     double expt = double.Parse(lastRow["ExpTime"].ToString());
                     int wait_few = 0;
                     myfunctions.add_to_log("auto_run()", "Setting devices...");
                     // Statements to avoid unecessary commands to be send
                     
-                    if (ct != temp)
+                    /*if (ct != temp)
                     {
                         ct = temp;
                         // Set temp
                         TempDev.Set_temperature(ct);
-                    }/*
+                    }*/
                     if (cp1 != pos1)
                     {
                         wait_few = Math.Abs(cp1 - pos1);
@@ -491,7 +491,7 @@ namespace MPhys.GUI
                         // Set pos1
                         myfunctions.add_to_log("auto_run()", "Setting NDF1 position...");
                         NDF1.SetPostion(cp1);
-                    }/*
+                    }
                     if (cp2 != pos2)
                     {
                         if(Math.Abs(cp2-pos2) > wait_few)
@@ -501,7 +501,7 @@ namespace MPhys.GUI
                         cp2 = pos2;
                         // Set pos2
                         NDF2.SetPostion(cp2);
-                    }*/
+                    }
                     if (ce != expt)
                     {
                         ce = expt;
@@ -510,16 +510,17 @@ namespace MPhys.GUI
                     }
 
                     // Wait 2s to make sure wheel is set
-                    /*if (wait_few > 0)
+                    if (wait_few > 0)
                     {
                         Thread.Sleep(1000 *wait_few);
-                    }/*
+                    }
 
                     // Wait for pos to change
 
                     // Wait for temp to change
                     // Wait additional 20s for stability
                     int cont = 1;
+                    /*
                     while (!TempDev.is_temp_good(ct) && cont>5)
                     {
                         Thread.Sleep(4000);
@@ -527,9 +528,8 @@ namespace MPhys.GUI
                     }*/
 
                     // Take power
-                    //double power = PMDev.Get_power();
-                    //MessageBox.Show(power.ToString());
-                    double power = 0;
+                    double power = PMDev.Get_power();
+                    //double power = 0;
 
                     List<double> wavelengthdata;
                     List<Int32> intensitydata;
@@ -537,15 +537,15 @@ namespace MPhys.GUI
 
                     // Save data
                     myfunctions.add_to_log("auto_run()", "Getting data...");
-                    MonoSpec.GetData(mStart, mEnd, Inc);
+                    List<double> testList = MonoSpec.Get_Central_Positions(mStart, mEnd, (int)MonoSpec.current_grating);
+                    MonoSpec.GetDataRange(testList);
                     myfunctions.add_to_log("auto_run()", "Data taken...");
                     wavelengthdata = MonoSpec.GetWavelengthDataColumn();
                     intensitydata = MonoSpec.GetIntensityDataColumn();
 
-                    string intensityName = "Intensity0";
                     myfunctions.add_to_log("auto_run()", "Adding data to DataSet...");
                     myfunctions.DataAddColumn(ref DataToBeSaved, wavelengthdata, "Wavelength");
-                    myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, intensityName);
+                    myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, "Intensity0");
 
                     wavelengthdata.Clear();
                     intensitydata.Clear();
@@ -555,10 +555,12 @@ namespace MPhys.GUI
                     for (int j=1; j < count; j++)
                     {
                         myfunctions.add_to_log("auto_run()", "Getting data...");
-                        MonoSpec.GetData(mStart, mEnd, Inc);
+                        MonoSpec.GetDataRange(testList);
                         intensitydata = MonoSpec.GetIntensityDataColumn();
 
-                        intensityName = "Intensity" + j.ToString();
+                        string intensityName = "Intensity" + j.ToString();
+                        Console.WriteLine(i);
+                        Console.WriteLine(intensityName);
                         myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, intensityName);
                         wavelengthdata.Clear();
                         intensitydata.Clear();
@@ -568,20 +570,28 @@ namespace MPhys.GUI
                     // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K
                     string path;
                     path = default_path();
+                    Console.WriteLine(path);
                     // Only for testing
-                    cp1 = 0;
-                    cp2 = 0;
-                    //ct = 0;
-
+                    //cp1 = 0;
+                    //cp2 = 0;
+                    ct = 0;
+                    Console.WriteLine("Aaa");
                     if(path == "")
                     {
                         path = FileName.Text.ToString();
                     }
-                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 +"_"+power +"_" + ce +"_"+ct+"K.csv";
+                    Console.WriteLine(cp1);
+                    Console.WriteLine(cp2);
+                    Console.WriteLine(power);
+                    Console.WriteLine(Math.Round(power, 4));
 
+                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 +"_"+ Math.Round(power,4) +"_" + ce +"_"+ct+"K.csv";
+
+                    Console.WriteLine(fullPath);
                     myfunctions.add_to_log("auto_run()", "Saving " + fullPath);
                     myfunctions.ToCSV(DataToBeSaved, fullPath);
                     DataToBeSaved.Dispose();
+                    DataToBeSaved = null;
                     //MonoSpec.GoStream(path, count, 2);
 
                 }

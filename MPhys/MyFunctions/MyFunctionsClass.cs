@@ -18,19 +18,21 @@ namespace MPhys.MyFunctions
             DataColumn column;
 
             // Add column
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Double");
-            column.ColumnName = columnname;
-            column.ReadOnly = false;
-            column.Unique = false;
-            dtData.Columns.Add(column);
+            if (!dtData.Columns.Contains(columnname))
+            {
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Double");
+                column.ColumnName = columnname;
+                column.ReadOnly = false;
+                column.Unique = false;
+                dtData.Columns.Add(column);
+            }
 
             DataRow row;
             add_to_log("DataAddColumn", lis.Count.ToString());
             add_to_log("DataAddColumn", dtData.Rows.Count.ToString());
             for (int i = 0; i < lis.Count; i++)
             {
-                add_to_log("DataAddColumn", i.ToString());
                 if (i >= dtData.Rows.Count)
                 {
                     row = dtData.NewRow();
@@ -46,22 +48,24 @@ namespace MPhys.MyFunctions
         }
         public void DataAddColumn(ref DataTable dtData, List<int> lis, string columnname)
         {
-            DataColumn column;
 
-            // Add column
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = columnname;
-            column.ReadOnly = false;
-            column.Unique = false;
-            dtData.Columns.Add(column);
+            if (!dtData.Columns.Contains(columnname))
+            {
+                DataColumn column;
+                // Add column
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Int32");
+                column.ColumnName = columnname;
+                column.ReadOnly = false;
+                column.Unique = false;
+                dtData.Columns.Add(column);
+            }
 
             DataRow row;
             add_to_log("DataAddColumn", lis.Count.ToString());
             add_to_log("DataAddColumn", dtData.Rows.Count.ToString());
             for (int i = 0; i < lis.Count; i++)
             {
-                add_to_log("DataAddColumn", i.ToString());
                 if (i >= dtData.Rows.Count)
                 {
                     row = dtData.NewRow();

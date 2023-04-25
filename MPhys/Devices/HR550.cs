@@ -658,7 +658,7 @@ namespace MPhys.Devices
 
 
         // Synchronus data acquisition
-        public void GetDataRange(double[] positions)
+        public void GetDataRange(List<double> positions)
         {
             Double dPos, dValue;
             String sMsg, sPos, sDisplay;
@@ -685,27 +685,32 @@ namespace MPhys.Devices
                 // already taking place on a non-ui thread, then this is not an issue.  If your scan is happening 
                 // in the main UI thread, then you'd want to consider using the Asynchronous method of acquisition...
             dData.Clear();
+
             myFunc.add_to_log("GetData()", "Loop Started");
             foreach(double pos in positions)    
             {
                 // move mono
                 mMono.MovetoWavelength(pos);
-
+                Console.WriteLine("a");
                 isMonoBusy = true;
                 while (isMonoBusy == true)
                 {
                     isMonoBusy = mMono.IsBusy();
                 }
+                Console.WriteLine("b");
                 dPos = mMono.GetCurrentWavelength();
-                myFunc.add_to_log("GetData()", dPos.ToString());
+                //myFunc.add_to_log("GetData()", dPos.ToString()); // works
                 // Start the acquisition
                 isCCDBusy = true;
+                Console.WriteLine("c");
                 mCCD.StartAcquisition(true);
+                Console.WriteLine("d");
                 while ((isCCDBusy == true))
                 {
                     // Poll Busy
                     isCCDBusy = mCCD.AcquisitionBusy();
                 }
+                Console.WriteLine("e");
 
                 // Retrieve the data
                 ccdResult = mCCD.GetResult();
@@ -714,24 +719,25 @@ namespace MPhys.Devices
                 Object temp;
                 ccdData.GetDataAsArray(out temp);
                 ccdData = null;
-
-                double[,] array = (double[,])temp;
+                Console.WriteLine("f");
+                Int32[] array = (Int32[])temp;
                 List<int> scan_i = new List<int>();
                 for (int i = 0; i < 1024; i++)
                 {
-                    scan_i.Add((int)array[i, 1]);
+                    scan_i.Add((int)array[i]);
                 }
-
+                Console.WriteLine("g");
                 List<double> scan_w = Get_Wavelength_Range(dPos, (int)current_grating);
-
+                Console.WriteLine("h");
                 wavelength.AddRange(scan_w);
                 intensity.AddRange(scan_i);
+                Console.WriteLine("i");
 
-                }          // end of loop
-
+            }          // end of loop
+            Console.WriteLine("j");
             myFunc.DataAddColumn(ref dData, wavelength, "Wavelength");
             myFunc.DataAddColumn(ref dData, intensity, "Intensity");
-
+            Console.WriteLine("k");
 
         }
 
@@ -898,7 +904,7 @@ namespace MPhys.Devices
                 }
                 else // option for 150
                 {
-                    p=  0.297079305471633;
+                    p =  0.297079305471633;
                 }
 
                 // Add middle position 
