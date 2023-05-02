@@ -446,6 +446,7 @@ namespace MPhys.GUI
             // 
             // buttonRemove
             // 
+            this.buttonRemove.Enabled = false;
             this.buttonRemove.Location = new System.Drawing.Point(312, 316);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(75, 23);

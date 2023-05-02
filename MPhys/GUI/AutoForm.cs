@@ -832,7 +832,8 @@ namespace MPhys.GUI
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            listBoxTasks.Text = listBoxTasks.Text.Remove(listBoxTasks.SelectedIndex, listBoxTasks.Items.Count-1);
+            MessageBox.Show(listBoxTasks.SelectedIndex.ToString());
+            listBoxTasks.Text = listBoxTasks.Text.Remove(listBoxTasks.SelectedIndex);
         }
     }
 }
