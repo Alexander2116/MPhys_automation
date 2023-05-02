@@ -19,7 +19,6 @@ namespace MPhys.GUI
         private TempForm Tf;
         private SpecForm Sf;
         private AutoForm Af;
-        private AutoFormTest Aft;
 
         public MainForm()
         {
@@ -38,7 +37,6 @@ namespace MPhys.GUI
             buttonTemp.Enabled = true;
             buttonSpec.Enabled = true;
             buttonAuto.Enabled = true;
-            buttonTest.Enabled = true;
         }
         private void make_inactive()
         {
@@ -66,11 +64,6 @@ namespace MPhys.GUI
             {
                 Af.Dispose();
                 Af = null;
-            }
-            if (Aft != null)
-            {
-                Aft.Dispose();
-                Aft = null;
             }
 
         }
@@ -179,27 +172,6 @@ namespace MPhys.GUI
                 Af.TopMost = true;
                 buttonAuto.Enabled = false;
                 Af.BringToFront();
-            }
-        }
-
-        private void buttonTest_Click(object sender, EventArgs e)
-        {
-            enable_buttons();
-            make_inactive();
-            if (Aft == null)
-            {
-                Aft = new AutoFormTest();
-                this.Controls.Add(Aft);
-
-                buttonTest.Enabled = false;
-                Aft.Show();
-                Aft.BringToFront();
-            }
-            else
-            {
-                Aft.TopMost = true;
-                buttonTest.Enabled = false;
-                Aft.BringToFront();
             }
         }
     }

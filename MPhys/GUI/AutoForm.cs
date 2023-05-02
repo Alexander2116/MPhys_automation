@@ -46,7 +46,6 @@ namespace MPhys.GUI
             dataTable.TableName = "PendingTask";
             Create_DataSet();
             MonoSpec = new HR550();
-            Console.WriteLine(MonoSpec.Get_Wavelength_Range(400, 1200)[0]);
         }
 
         private void buttonInit_Click(object sender, EventArgs e)
@@ -176,7 +175,7 @@ namespace MPhys.GUI
         private bool Check_unique_rows()
         {
             DataView view = new DataView(dataTable);
-            DataTable distinctValues = view.ToTable(true, "temperature", "NDF1pos", "NDF2pos", "ExpTime");
+            DataTable distinctValues = view.ToTable(true, "temperature", "NDF1pos", "NDF2pos", "ExpTime", "Slit");
             if(distinctValues.Rows.Count == dataTable.Rows.Count)
             {
                 return true;
@@ -277,7 +276,7 @@ namespace MPhys.GUI
                     MessageBox.Show("Exposure time is too small");
                     return;
                 }
-                if(slit > 2.2 && slit < 0)
+                if(slit > 2.2 || slit < 0)
                 {
                     MessageBox.Show("Slit is out of range");
                     return;
@@ -416,8 +415,16 @@ namespace MPhys.GUI
 
             if (DeviceInitialized && MonoSpec.ReadForAcq() && !MonoSpec.MonoIsBusy())
             {
-                myfunctions.add_to_log("buttonRun_Clic", "auto_run() started");
-                auto_run();
+                if(RangeMode.Enabled)
+                {
+                    myfunctions.add_to_log("buttonRun_Click", "auto_run() started");
+                    auto_run();
+                }
+                if (PositionMode.Enabled)
+                {
+                    myfunctions.add_to_log("buttonRun_Click", "auto_run_central() started");
+                    auto_run_central();
+                }
             }
             else
             {
@@ -436,18 +443,6 @@ namespace MPhys.GUI
             bool all_good = false;
             double Inc = 0.036; // nm
 
-            if (checkBoxInc.Enabled)
-            {
-                try
-                {
-                    Inc = double.Parse(textBoxInc.Text.ToString());
-                }
-                catch
-                {
-                    MessageBox.Show("Unable to change Increment");
-                    return;
-                }
-            }
 
             try
             {
@@ -489,7 +484,6 @@ namespace MPhys.GUI
 
                     double temp = double.Parse(lastRow["temperature"].ToString());
                     Int32 pos1 = Int32.Parse(lastRow["NDF1pos"].ToString());
-                    myfunctions.add_to_log("auto_run()", lastRow["NDF1pos"].ToString());
                     int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
                     double expt = double.Parse(lastRow["ExpTime"].ToString());
                     double slit = double.Parse(lastRow["Slit"].ToString());
@@ -544,12 +538,12 @@ namespace MPhys.GUI
                     // Wait for temp to change
                     // Wait additional 20s for stability
                     int cont = 1;
-                    /*
+                    
                     while (!TempDev.is_temp_good(ct) && cont>5)
                     {
                         Thread.Sleep(4000);
                         cont += 1;
-                    }*/
+                    }
 
                     // Take power
                     double power = PMDev.Get_power();
@@ -560,31 +554,29 @@ namespace MPhys.GUI
                     DataTable DataToBeSaved = new DataTable();
 
                     // Save data
-                    myfunctions.add_to_log("auto_run()", "Getting data...");
+                    myfunctions.add_to_log("auto_run_central()", "Getting data...");
                     List<double> testList = MonoSpec.Get_Central_Positions(mStart, mEnd, (int)MonoSpec.current_grating);
                     MonoSpec.GetDataRange(testList);
-                    myfunctions.add_to_log("auto_run()", "Data taken...");
+                    myfunctions.add_to_log("auto_run_central()", "Data taken...");
                     wavelengthdata = MonoSpec.GetWavelengthDataColumn();
                     intensitydata = MonoSpec.GetIntensityDataColumn();
 
-                    myfunctions.add_to_log("auto_run()", "Adding data to DataSet...");
+                    myfunctions.add_to_log("auto_run_central()", "Adding data to DataSet...");
                     myfunctions.DataAddColumn(ref DataToBeSaved, wavelengthdata, "Wavelength");
                     myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, "Intensity0");
 
                     wavelengthdata.Clear();
                     intensitydata.Clear();
-                    myfunctions.add_to_log("auto_run()", "Taking N-1 times...");
+                    myfunctions.add_to_log("auto_run_central()", "Taking N-1 times...");
 
                     // Getting data count-1 times
                     for (int j=1; j < count; j++)
                     {
-                        myfunctions.add_to_log("auto_run()", "Getting data...");
+                        myfunctions.add_to_log("auto_run_central()", "Getting data...");
                         MonoSpec.GetDataRange(testList);
                         intensitydata = MonoSpec.GetIntensityDataColumn();
 
                         string intensityName = "Intensity" + j.ToString();
-                        Console.WriteLine(i);
-                        Console.WriteLine(intensityName);
                         myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, intensityName);
                         wavelengthdata.Clear();
                         intensitydata.Clear();
@@ -594,24 +586,17 @@ namespace MPhys.GUI
                     // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K_[slit width]
                     string path;
                     path = default_path();
-                    Console.WriteLine(path);
                     // Only for testing
                     //cp1 = 0;
                     //cp2 = 0;
                     //ct = 0;
-                    Console.WriteLine("Aaa");
                     if(path == "")
                     {
                         path = FileName.Text.ToString();
                     }
-                    Console.WriteLine(cp1);
-                    Console.WriteLine(cp2);
-                    Console.WriteLine(power);
-                    Console.WriteLine(Math.Round(power, 4));
 
                     string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 +"_"+ Math.Round(power,4) +"_" + ce +"_"+ct+"K" +"_"+cs+".csv";
 
-                    Console.WriteLine(fullPath);
                     myfunctions.add_to_log("auto_run()", "Saving " + fullPath);
                     myfunctions.ToCSV(DataToBeSaved, fullPath);
                     DataToBeSaved.Dispose();
@@ -627,6 +612,183 @@ namespace MPhys.GUI
            
         }
 
+
+        private void auto_run_central()
+        {
+            double ct = 0.0; double ce = 0.0; // current temperature ; current exposure time
+            double cs = 1.0; // current slit width
+            Int32 cp1 = 0; Int32 cp2 = 0; // current possition 1, 2
+            int count = 0;
+            double mCentral;
+            bool all_good = false;
+            double Inc = 0.036; // nm
+
+
+            try
+            {
+                count = int.Parse(Count.Text.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Count is not set correctly");
+                return;
+            }
+
+            try
+            {
+                mCentral = double.Parse(textBoxCentral.Text.ToString());
+                if (mCentral > 0)
+                {
+                    all_good = true;
+                }
+                else
+                {
+                    MessageBox.Show("Start and End are not set correctly");
+                    return;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Start and End are not set correctly");
+                return;
+            }
+
+            if (count > 0 && all_good)
+            {
+                myfunctions.add_to_log("auto_run_central()", "Starting data acquisition");
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    DataRow lastRow = dataTable.Rows[i];
+
+                    double temp = double.Parse(lastRow["temperature"].ToString());
+                    Int32 pos1 = Int32.Parse(lastRow["NDF1pos"].ToString());
+                    int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
+                    double expt = double.Parse(lastRow["ExpTime"].ToString());
+                    double slit = double.Parse(lastRow["Slit"].ToString());
+                    int wait_few = 0;
+                    myfunctions.add_to_log("auto_run_central()", "Setting devices...");
+                    // Statements to avoid unecessary commands to be send
+
+                    if (ct != temp)
+                    {
+                        ct = temp;
+                        // Set temp
+                        TempDev.Set_temperature(ct);
+                    }
+                    if (cp1 != pos1)
+                    {
+                        wait_few = Math.Abs(cp1 - pos1);
+                        cp1 = pos1;
+                        // Set pos1
+                        NDF1.SetPostion(cp1);
+                    }
+                    if (cp2 != pos2)
+                    {
+                        if (Math.Abs(cp2 - pos2) > wait_few)
+                        {
+                            wait_few = Math.Abs(cp2 - pos2);
+                        }
+                        cp2 = pos2;
+                        // Set pos2
+                        NDF2.SetPostion(cp2);
+                    }
+                    if (ce != expt)
+                    {
+                        ce = expt;
+                        MonoSpec.SetIntegrationTime(ce);
+                        // Set exp time
+                    }
+                    if (cs != slit)
+                    {
+                        cs = slit;
+                        MonoSpec.SetSlit(cs);
+                    }
+
+                    // Wait 2s to make sure wheel is set
+                    if (wait_few > 0)
+                    {
+                        Thread.Sleep(1000 * wait_few);
+                    }
+
+                    // Wait for pos to change
+
+                    // Wait for temp to change
+                    // Wait additional 20s for stability
+                    int cont = 1;
+                    
+                    while (!TempDev.is_temp_good(ct) && cont>5)
+                    {
+                        Thread.Sleep(4000);
+                        cont += 1;
+                    }
+
+                    // Take power
+                    double power = PMDev.Get_power();
+                    //double power = 0;
+
+                    List<double> wavelengthdata;
+                    List<Int32> intensitydata;
+                    DataTable DataToBeSaved = new DataTable();
+
+                    // Save data
+                    myfunctions.add_to_log("auto_run_central()", "Getting data...");
+                    MonoSpec.GetDataPosition(mCentral);
+                    myfunctions.add_to_log("auto_run_central()", "Data taken...");
+                    wavelengthdata = MonoSpec.GetWavelengthDataColumn();
+                    intensitydata = MonoSpec.GetIntensityDataColumn();
+
+                    myfunctions.add_to_log("auto_run_central()", "Adding data to DataSet...");
+                    myfunctions.DataAddColumn(ref DataToBeSaved, wavelengthdata, "Wavelength");
+                    myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, "Intensity0");
+
+                    wavelengthdata.Clear();
+                    intensitydata.Clear();
+
+                    // Getting data count-1 times
+                    for (int j = 1; j < count; j++)
+                    {
+                        myfunctions.add_to_log("auto_run()", "Getting data...");
+                        MonoSpec.GetDataPosition(mCentral);
+                        intensitydata = MonoSpec.GetIntensityDataColumn();
+
+                        string intensityName = "Intensity" + j.ToString();
+                        myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, intensityName);
+                        wavelengthdata.Clear();
+                        intensitydata.Clear();
+                    }
+
+
+                    // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K_[slit width]
+                    string path;
+                    path = default_path();
+                    // Only for testing
+                    //cp1 = 0;
+                    //cp2 = 0;
+                    //ct = 0;
+                    if (path == "")
+                    {
+                        path = FileName.Text.ToString();
+                    }
+
+                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 + "_" + Math.Round(power, 4) + "_" + ce + "_" + ct + "K" + "_" + cs + ".csv";
+
+                    myfunctions.add_to_log("auto_run()", "Saving " + fullPath);
+                    myfunctions.ToCSV(DataToBeSaved, fullPath);
+                    DataToBeSaved.Dispose();
+                    DataToBeSaved = null;
+                    //MonoSpec.GoStream(path, count, 2);
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Count is not set. It's current value is: 0 (must be greater than that)");
+            }
+
+        }
+
+
+
         private void OpenPathDialog_Click(object sender, EventArgs e)
         {
             var dlg = new FolderBrowserDialog();
@@ -638,17 +800,6 @@ namespace MPhys.GUI
             }
         }
 
-        private void checkBoxInc_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxInc.Checked)
-            {
-                textBoxInc.Enabled = true;
-            }
-            else
-            {
-                textBoxInc.Enabled = false;
-            }
-        }
 
         private string default_path()
         {
@@ -661,12 +812,27 @@ namespace MPhys.GUI
                 DateTime aDate = DateTime.Now;
                 temp = aDate.ToString("dd MMMM yyyy HH:mm").Replace(" ", "").Replace(":","");
                 path = path + "\\" + temp;
-                Console.WriteLine(temp);
 
                 System.IO.Directory.CreateDirectory(path);
             }
 
             return path;
+        }
+
+        private void PositionMode_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxStart.Enabled = false; textBoxEnd.Enabled = false; textBoxCentral.Enabled = true;
+
+        }
+
+        private void RangeMode_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxStart.Enabled = true; textBoxEnd.Enabled = true; textBoxCentral.Enabled = false;
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            listBoxTasks.Text = listBoxTasks.Text.Remove(listBoxTasks.SelectedIndex, listBoxTasks.Items.Count-1);
         }
     }
 }

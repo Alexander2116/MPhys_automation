@@ -270,7 +270,7 @@ namespace MPhys.Devices
                 mMono.Load();
 
                 sStatus = String.Format("Opening Communications ... ");
-                Console.WriteLine(sStatus);
+                
                 // Attempts to communicate with a device on the specified communication 
                 // settings (in the configuration). If it fails, the catch allows the
                 // device to be emulated in software.
@@ -286,7 +286,7 @@ namespace MPhys.Devices
                 object temp;
                 mMono.GetCurrentGrating(out current_grating, out temp);
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
-                Console.WriteLine(sStatus);
+                
             
 
 
@@ -294,7 +294,7 @@ namespace MPhys.Devices
                 try
                 {
                     sStatus = String.Format("Initializing Mono ... ");
-                    Console.WriteLine(sStatus);
+                    //Console.WriteLine(sStatus);
 
                     //if (mbInitialized == true)
                     mbForceInit = true;
@@ -304,7 +304,7 @@ namespace MPhys.Devices
                 catch (Exception ex)
                 {
                     sStatus = String.Format("{0} Initialize Failed.{1}", sMonoName, Environment.NewLine);
-                    Console.WriteLine(sStatus);
+                    //Console.WriteLine(sStatus);
                 }
             }
         }
@@ -417,7 +417,7 @@ namespace MPhys.Devices
                 mbInitialized = true;
 
                 sStatus = String.Format("Complete{0}", Environment.NewLine);
-                Console.WriteLine(sStatus);
+                //Console.WriteLine(sStatus);
 
                 GetPosition();
 
@@ -433,7 +433,7 @@ namespace MPhys.Devices
             else
             {
                 sStatus = String.Format("Failed{0}", Environment.NewLine);
-                Console.WriteLine(sStatus);
+                //Console.WriteLine(sStatus);
             }
 
         }
@@ -1072,6 +1072,7 @@ namespace MPhys.Devices
             mMono.MovetoSlitWidth(SlitLocation.Front_Entrance, slit);
             mMono.CalibrateSlitWidth(SlitLocation.Front_Entrance);
         }
+
         public void MoveToTurret(int nSelectedTurr)
         {
             mMono.MovetoTurret(nSelectedTurr);

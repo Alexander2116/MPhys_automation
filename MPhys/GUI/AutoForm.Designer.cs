@@ -57,9 +57,6 @@ namespace MPhys.GUI
             this.textBoxEnd = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxInc = new System.Windows.Forms.TextBox();
-            this.checkBoxInc = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Image = new System.Windows.Forms.RadioButton();
             this.Spectra = new System.Windows.Forms.RadioButton();
@@ -67,6 +64,11 @@ namespace MPhys.GUI
             this.labelInit = new System.Windows.Forms.Label();
             this.textBoxSlit = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.PositionMode = new System.Windows.Forms.RadioButton();
+            this.RangeMode = new System.Windows.Forms.RadioButton();
+            this.buttonRemove = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxCentral = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,9 +186,9 @@ namespace MPhys.GUI
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 290);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(249, 13);
+            this.label5.Size = new System.Drawing.Size(300, 13);
             this.label5.TabIndex = 29;
-            this.label5.Text = "No.  |  Temp  |  pos1  |  pos2  |  Integration Time (ns)";
+            this.label5.Text = "No.  |  Temp  |  pos1  |  pos2  |  Integration Time (ns)  |  Slit (nm)";
             // 
             // buttonSaveProfile
             // 
@@ -306,7 +308,7 @@ namespace MPhys.GUI
             // 
             // textBoxStart
             // 
-            this.textBoxStart.Location = new System.Drawing.Point(551, 305);
+            this.textBoxStart.Location = new System.Drawing.Point(554, 339);
             this.textBoxStart.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxStart.Name = "textBoxStart";
             this.textBoxStart.Size = new System.Drawing.Size(57, 20);
@@ -315,7 +317,7 @@ namespace MPhys.GUI
             // 
             // textBoxEnd
             // 
-            this.textBoxEnd.Location = new System.Drawing.Point(676, 305);
+            this.textBoxEnd.Location = new System.Drawing.Point(679, 339);
             this.textBoxEnd.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEnd.Name = "textBoxEnd";
             this.textBoxEnd.Size = new System.Drawing.Size(62, 20);
@@ -325,7 +327,7 @@ namespace MPhys.GUI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(495, 299);
+            this.label8.Location = new System.Drawing.Point(498, 333);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 26);
@@ -335,43 +337,12 @@ namespace MPhys.GUI
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(628, 299);
+            this.label9.Location = new System.Drawing.Point(631, 333);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 26);
             this.label9.TabIndex = 45;
             this.label9.Text = "Spectra\r\nEnd (nm)";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(595, 347);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 13);
-            this.label11.TabIndex = 47;
-            this.label11.Text = "Increment (nm)";
-            // 
-            // textBoxInc
-            // 
-            this.textBoxInc.Enabled = false;
-            this.textBoxInc.Location = new System.Drawing.Point(676, 344);
-            this.textBoxInc.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxInc.Name = "textBoxInc";
-            this.textBoxInc.Size = new System.Drawing.Size(62, 20);
-            this.textBoxInc.TabIndex = 46;
-            this.textBoxInc.Text = "0.036";
-            // 
-            // checkBoxInc
-            // 
-            this.checkBoxInc.AutoSize = true;
-            this.checkBoxInc.Location = new System.Drawing.Point(477, 346);
-            this.checkBoxInc.Name = "checkBoxInc";
-            this.checkBoxInc.Size = new System.Drawing.Size(113, 17);
-            this.checkBoxInc.TabIndex = 48;
-            this.checkBoxInc.Text = "Change Increment";
-            this.checkBoxInc.UseVisualStyleBackColor = true;
-            this.checkBoxInc.CheckedChanged += new System.EventHandler(this.checkBoxInc_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -447,20 +418,78 @@ namespace MPhys.GUI
             this.label12.TabIndex = 53;
             this.label12.Text = "Slit width\r\n (nm)";
             // 
+            // PositionMode
+            // 
+            this.PositionMode.AutoSize = true;
+            this.PositionMode.Location = new System.Drawing.Point(420, 305);
+            this.PositionMode.Margin = new System.Windows.Forms.Padding(2);
+            this.PositionMode.Name = "PositionMode";
+            this.PositionMode.Size = new System.Drawing.Size(62, 17);
+            this.PositionMode.TabIndex = 2;
+            this.PositionMode.Text = "Position";
+            this.PositionMode.UseVisualStyleBackColor = true;
+            this.PositionMode.CheckedChanged += new System.EventHandler(this.PositionMode_CheckedChanged);
+            // 
+            // RangeMode
+            // 
+            this.RangeMode.AutoSize = true;
+            this.RangeMode.Checked = true;
+            this.RangeMode.Location = new System.Drawing.Point(420, 340);
+            this.RangeMode.Margin = new System.Windows.Forms.Padding(2);
+            this.RangeMode.Name = "RangeMode";
+            this.RangeMode.Size = new System.Drawing.Size(57, 17);
+            this.RangeMode.TabIndex = 2;
+            this.RangeMode.TabStop = true;
+            this.RangeMode.Text = "Range";
+            this.RangeMode.UseVisualStyleBackColor = true;
+            this.RangeMode.CheckedChanged += new System.EventHandler(this.RangeMode_CheckedChanged);
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.Location = new System.Drawing.Point(312, 316);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(75, 23);
+            this.buttonRemove.TabIndex = 54;
+            this.buttonRemove.Text = "Remove";
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(498, 305);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 13);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "Central Position (nm)";
+            // 
+            // textBoxCentral
+            // 
+            this.textBoxCentral.Enabled = false;
+            this.textBoxCentral.Location = new System.Drawing.Point(606, 302);
+            this.textBoxCentral.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCentral.Name = "textBoxCentral";
+            this.textBoxCentral.Size = new System.Drawing.Size(57, 20);
+            this.textBoxCentral.TabIndex = 56;
+            this.textBoxCentral.Text = "300";
+            // 
             // AutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxCentral);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.buttonRemove);
+            this.Controls.Add(this.RangeMode);
+            this.Controls.Add(this.PositionMode);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBoxSlit);
             this.Controls.Add(this.labelInit);
             this.Controls.Add(this.buttonInit);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.checkBoxInc);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBoxInc);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxEnd);
@@ -529,9 +558,6 @@ namespace MPhys.GUI
         private System.Windows.Forms.TextBox textBoxEnd;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxInc;
-        private System.Windows.Forms.CheckBox checkBoxInc;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton Image;
         private System.Windows.Forms.RadioButton Spectra;
@@ -539,5 +565,10 @@ namespace MPhys.GUI
         private System.Windows.Forms.Label labelInit;
         private System.Windows.Forms.TextBox textBoxSlit;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RadioButton PositionMode;
+        private System.Windows.Forms.RadioButton RangeMode;
+        private System.Windows.Forms.Button buttonRemove;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxCentral;
     }
 }

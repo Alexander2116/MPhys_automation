@@ -34,7 +34,6 @@ namespace MPhys.GUI
             this.buttonTemp = new System.Windows.Forms.Button();
             this.buttonSpec = new System.Windows.Forms.Button();
             this.buttonAuto = new System.Windows.Forms.Button();
-            this.buttonTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonNDF
@@ -88,22 +87,11 @@ namespace MPhys.GUI
             this.buttonAuto.UseVisualStyleBackColor = true;
             this.buttonAuto.Click += new System.EventHandler(this.buttonAuto_Click);
             // 
-            // buttonTest
-            // 
-            this.buttonTest.Location = new System.Drawing.Point(0, 237);
-            this.buttonTest.Name = "buttonTest";
-            this.buttonTest.Size = new System.Drawing.Size(60, 39);
-            this.buttonTest.TabIndex = 5;
-            this.buttonTest.Text = "Test";
-            this.buttonTest.UseVisualStyleBackColor = true;
-            this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 921);
-            this.Controls.Add(this.buttonTest);
             this.Controls.Add(this.buttonAuto);
             this.Controls.Add(this.buttonSpec);
             this.Controls.Add(this.buttonTemp);
@@ -122,6 +110,5 @@ namespace MPhys.GUI
         private System.Windows.Forms.Button buttonTemp;
         private System.Windows.Forms.Button buttonSpec;
         private System.Windows.Forms.Button buttonAuto;
-        private System.Windows.Forms.Button buttonTest;
     }
 }

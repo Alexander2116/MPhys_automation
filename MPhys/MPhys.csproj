@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4686BB16-CC57-477E-8452-2F662B12DA6F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>MPhys</RootNamespace>
     <AssemblyName>MPhys</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -102,16 +102,8 @@
   <ItemGroup>
     <Compile Include="Devices\FC102C.cs" />
     <Compile Include="Devices\HR550.cs" />
-    <Compile Include="Devices\HR550_copy_modified.cs" />
     <Compile Include="Devices\PM100A.cs" />
     <Compile Include="Devices\M9700.cs" />
-    <Compile Include="Devices\TestClass.cs" />
-    <Compile Include="GUI\AutoFormTest - Copy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\AutoFormTest - Copy.Designer.cs">
-      <DependentUpon>AutoFormTest - Copy.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\AutoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,9 +157,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GUI\AutoFormTest - Copy.resx">
-      <DependentUpon>AutoFormTest - Copy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\AutoForm.resx">
       <DependentUpon>AutoForm.cs</DependentUpon>
     </EmbeddedResource>

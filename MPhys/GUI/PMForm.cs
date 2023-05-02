@@ -33,11 +33,11 @@ namespace MPhys.GUI
 
             NationalInstruments.Visa.ResourceManager rm = new NationalInstruments.Visa.ResourceManager();
             try { 
-            var a = rm.Find("USB?*");
-            foreach (string b in a)
-            {
-                comboBoxConnSet.Items.Add(b);
-            }
+                var a = rm.Find("USB?*");
+                foreach (string b in a)
+                {
+                    comboBoxConnSet.Items.Add(b);
+                }
             }
             catch
             {
