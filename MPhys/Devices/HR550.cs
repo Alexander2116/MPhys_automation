@@ -1063,6 +1063,15 @@ namespace MPhys.Devices
 
         }
 
+        /// <summary>
+        /// Sets front entrance slit
+        /// </summary>
+        /// <param name="slit"> </param>
+        public void SetSlit(double slit)
+        {
+            mMono.MovetoSlitWidth(SlitLocation.Front_Entrance, slit);
+            mMono.CalibrateSlitWidth(SlitLocation.Front_Entrance);
+        }
         public void MoveToTurret(int nSelectedTurr)
         {
             mMono.MovetoTurret(nSelectedTurr);

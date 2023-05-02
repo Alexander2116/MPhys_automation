@@ -65,6 +65,8 @@ namespace MPhys.GUI
             this.Spectra = new System.Windows.Forms.RadioButton();
             this.buttonInit = new System.Windows.Forms.Button();
             this.labelInit = new System.Windows.Forms.Label();
+            this.textBoxSlit = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,7 +161,7 @@ namespace MPhys.GUI
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(301, 98);
+            this.buttonAdd.Location = new System.Drawing.Point(347, 99);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 27;
@@ -429,12 +431,30 @@ namespace MPhys.GUI
             this.labelInit.TabIndex = 51;
             this.labelInit.Text = "Initialized";
             // 
+            // textBoxSlit
+            // 
+            this.textBoxSlit.Location = new System.Drawing.Point(290, 100);
+            this.textBoxSlit.Name = "textBoxSlit";
+            this.textBoxSlit.Size = new System.Drawing.Size(51, 20);
+            this.textBoxSlit.TabIndex = 52;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(294, 71);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 26);
+            this.label12.TabIndex = 53;
+            this.label12.Text = "Slit width\r\n (nm)";
+            // 
             // AutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBoxSlit);
             this.Controls.Add(this.labelInit);
             this.Controls.Add(this.buttonInit);
             this.Controls.Add(this.groupBox4);
@@ -517,5 +537,7 @@ namespace MPhys.GUI
         private System.Windows.Forms.RadioButton Spectra;
         private System.Windows.Forms.Button buttonInit;
         private System.Windows.Forms.Label labelInit;
+        private System.Windows.Forms.TextBox textBoxSlit;
+        private System.Windows.Forms.Label label12;
     }
 }

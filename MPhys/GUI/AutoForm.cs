@@ -40,6 +40,7 @@ namespace MPhys.GUI
             //comboNDF2pos.Text = "Select";
             textBoxTemp.Text = "295.55";
             textBoxExp.Text = "0.1";
+            textBoxSlit.Text = "0.1";
 
             dataTable = new DataTable();
             dataTable.TableName = "PendingTask";
@@ -136,7 +137,7 @@ namespace MPhys.GUI
                 MessageBox.Show("PM100A not connected");
             }
             // TEMP
-            /*try
+            try
             {
                 TempDev = new M9700(M9700port);
                 TempDev.Open();
@@ -147,7 +148,7 @@ namespace MPhys.GUI
             {
                 all_good = false;
                 MessageBox.Show("Temperature controller not connected");
-            }*/
+            }
             // Mono & CCD
             try
             {
@@ -223,6 +224,14 @@ namespace MPhys.GUI
             column.ReadOnly = false;
             column.Unique = false;
             dataTable.Columns.Add(column);
+
+            //Slit Width
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Double");
+            column.ColumnName = "Slit";
+            column.ReadOnly = false;
+            column.Unique = false;
+            dataTable.Columns.Add(column);
         }
 
         private void Update_TextBox()
@@ -238,8 +247,9 @@ namespace MPhys.GUI
                 string pos1 = lastRow["NDF1pos"].ToString();
                 string pos2 = lastRow["NDF2pos"].ToString();
                 string expt = lastRow["ExpTime"].ToString();
+                string slit = lastRow["Slit"].ToString();
 
-                textrow = id + "  |  " + temp + "  |  " + pos1 + "  |  " + pos2 + "  |  " + expt + "  ";
+                textrow = id + "  |  " + temp + "  |  " + pos1 + "  |  " + pos2 + "  |  " + expt + "  |  " + slit + "  ";
                 listBoxTasks.Items.Add(textrow);
             }
         }
@@ -255,6 +265,7 @@ namespace MPhys.GUI
                 int pos1 = int.Parse(comboNDF1pos.SelectedItem.ToString());
                 int pos2 = int.Parse(comboNDF2pos.SelectedItem.ToString());
                 int id;
+                double slit = double.Parse(textBoxSlit.Text);
 
                 if (temp < 5.0 || temp > 400)
                 {
@@ -266,6 +277,11 @@ namespace MPhys.GUI
                     MessageBox.Show("Exposure time is too small");
                     return;
                 }
+                if(slit > 2.2 && slit < 0)
+                {
+                    MessageBox.Show("Slit is out of range");
+                    return;
+                }
 
                 row = dataTable.NewRow();
 
@@ -274,9 +290,10 @@ namespace MPhys.GUI
                 row["NDF1pos"] = pos1;
                 row["NDF2pos"] = pos2; 
                 row["ExpTime"] = expt;
+                row["Slit"] = slit;
                 dataTable.Rows.Add(row);
 
-                string text = id + "  |  " + temp + "  |  " + pos1 + "  |  " + pos2 + "  |  " + expt + "  ";
+                string text = id + "  |  " + temp + "  |  " + pos1 + "  |  " + pos2 + "  |  " + expt + "  |  " + slit + "  ";
                 if (Check_unique_rows())
                 {
                     listBoxTasks.Items.Add(text);
@@ -412,6 +429,7 @@ namespace MPhys.GUI
         private void auto_run()
         {
             double ct = 0.0; double ce = 0.0; // current temperature ; current exposure time
+            double cs = 1.0; // current slit width
             Int32 cp1 = 0; Int32 cp2 = 0; // current possition 1, 2
             int count = 0;
             double mStart, mEnd;
@@ -469,21 +487,22 @@ namespace MPhys.GUI
                     myfunctions.add_to_log("auto_run()", "Task"+i.ToString());
                     DataRow lastRow = dataTable.Rows[i];
 
-                    //double temp = double.Parse(lastRow["temperature"].ToString());
+                    double temp = double.Parse(lastRow["temperature"].ToString());
                     Int32 pos1 = Int32.Parse(lastRow["NDF1pos"].ToString());
                     myfunctions.add_to_log("auto_run()", lastRow["NDF1pos"].ToString());
                     int pos2 = int.Parse(lastRow["NDF2pos"].ToString());
                     double expt = double.Parse(lastRow["ExpTime"].ToString());
+                    double slit = double.Parse(lastRow["Slit"].ToString());
                     int wait_few = 0;
                     myfunctions.add_to_log("auto_run()", "Setting devices...");
                     // Statements to avoid unecessary commands to be send
                     
-                    /*if (ct != temp)
+                    if (ct != temp)
                     {
                         ct = temp;
                         // Set temp
                         TempDev.Set_temperature(ct);
-                    }*/
+                    }
                     if (cp1 != pos1)
                     {
                         wait_few = Math.Abs(cp1 - pos1);
@@ -507,6 +526,11 @@ namespace MPhys.GUI
                         ce = expt;
                         MonoSpec.SetIntegrationTime(ce);
                         // Set exp time
+                    }
+                    if(cs != slit)
+                    {
+                        cs = slit;
+                        MonoSpec.SetSlit(cs);
                     }
 
                     // Wait 2s to make sure wheel is set
@@ -567,14 +591,14 @@ namespace MPhys.GUI
                     }
 
 
-                    // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K
+                    // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K_[slit width]
                     string path;
                     path = default_path();
                     Console.WriteLine(path);
                     // Only for testing
                     //cp1 = 0;
                     //cp2 = 0;
-                    ct = 0;
+                    //ct = 0;
                     Console.WriteLine("Aaa");
                     if(path == "")
                     {
@@ -585,7 +609,7 @@ namespace MPhys.GUI
                     Console.WriteLine(power);
                     Console.WriteLine(Math.Round(power, 4));
 
-                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 +"_"+ Math.Round(power,4) +"_" + ce +"_"+ct+"K.csv";
+                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 +"_"+ Math.Round(power,4) +"_" + ce +"_"+ct+"K" +"_"+cs+".csv";
 
                     Console.WriteLine(fullPath);
                     myfunctions.add_to_log("auto_run()", "Saving " + fullPath);
