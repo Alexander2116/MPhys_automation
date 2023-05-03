@@ -317,7 +317,7 @@ namespace MPhys.GUI
             // 
             // textBoxEnd
             // 
-            this.textBoxEnd.Location = new System.Drawing.Point(679, 339);
+            this.textBoxEnd.Location = new System.Drawing.Point(684, 339);
             this.textBoxEnd.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEnd.Name = "textBoxEnd";
             this.textBoxEnd.Size = new System.Drawing.Size(62, 20);

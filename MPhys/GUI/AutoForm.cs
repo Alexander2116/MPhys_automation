@@ -539,9 +539,9 @@ namespace MPhys.GUI
                     // Wait additional 20s for stability
                     int cont = 1;
                     
-                    while (!TempDev.is_temp_good(ct) && cont>5)
+                    while (TempDev.is_temp_good(ct,0.75) && cont>5)
                     {
-                        Thread.Sleep(4000);
+                        Thread.Sleep(2000);
                         cont += 1;
                     }
 

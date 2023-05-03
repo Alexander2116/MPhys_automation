@@ -134,12 +134,6 @@
     <Compile Include="GUI\SpecForm.Designer.cs">
       <DependentUpon>SpecForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\TempForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\TempForm.Designer.cs">
-      <DependentUpon>TempForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyFunctions\MyFunctionsClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -171,9 +165,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SpecForm.resx">
       <DependentUpon>SpecForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\TempForm.resx">
-      <DependentUpon>TempForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
