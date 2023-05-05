@@ -8,6 +8,9 @@ using System.IO;
 using System.Reflection;
 using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Net.Mail;
+using System.Net;
+
 
 namespace MPhys.MyFunctions
 {
@@ -191,5 +194,8 @@ namespace MPhys.MyFunctions
             f.Close();
             return obj;
         }
+
+
+
     }
 }
