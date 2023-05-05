@@ -595,13 +595,16 @@ namespace MPhys.GUI
                         path = FileName.Text.ToString();
                     }
 
-                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 +"_"+ Math.Round(power,4) +"_" + ce +"_"+ct+"K" +"_"+cs+".csv";
+                    string fullPath = path + "\\" + textSample.Text.ToString() +"_"+ Math.Round(power,2) +"_" + ce + "s" +"_"+ct+"K" +"_"+cs+"nm"+".csv";
 
                     myfunctions.add_to_log("auto_run()", "Saving " + fullPath);
                     myfunctions.ToCSV(DataToBeSaved, fullPath);
                     DataToBeSaved.Dispose();
                     DataToBeSaved = null;
                     //MonoSpec.GoStream(path, count, 2);
+                    // Increase number of finished tasks
+                    labelFinishTasks.Text = (int.Parse(labelFinishTasks.Text.ToString()) + 1).ToString();
+
 
                 }
             }
@@ -770,14 +773,15 @@ namespace MPhys.GUI
                         path = FileName.Text.ToString();
                     }
 
-                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + cp1 + "_" + cp2 + "_" + Math.Round(power, 4) + "_" + ce + "_" + ct + "K" + "_" + cs + ".csv";
+                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + Math.Round(power, 4) + "_" + ce + "s_" + ct + "K" + "_" + cs + "nm" + ".csv";
 
                     myfunctions.add_to_log("auto_run()", "Saving " + fullPath);
                     myfunctions.ToCSV(DataToBeSaved, fullPath);
                     DataToBeSaved.Dispose();
                     DataToBeSaved = null;
                     //MonoSpec.GoStream(path, count, 2);
-
+                    // Increase number of finished tasks
+                    labelFinishTasks.Text = (int.Parse(labelFinishTasks.Text.ToString()) + 1).ToString();
                 }
             }
             else
@@ -810,7 +814,7 @@ namespace MPhys.GUI
             {
                 path = ".\\Data";
                 DateTime aDate = DateTime.Now;
-                temp = aDate.ToString("dd MMMM yyyy HH:mm").Replace(" ", "").Replace(":","");
+                temp = aDate.ToString("dd MMMM yyyy").Replace(" ", "").Replace(":","");
                 path = path + "\\" + temp;
 
                 System.IO.Directory.CreateDirectory(path);
