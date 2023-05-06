@@ -22,6 +22,7 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Configura
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Data.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Drawing.dll
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Security.Cryptography.Pkcs.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Windows.Forms.DataVisualization.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Windows.Forms.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Xml.dll
@@ -29,6 +30,7 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Xml.Linq.
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Thorlabs.PM100D_32.Interop.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Ivi.Visa.dll
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\NationalInstruments.Visa.xml
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\System.Security.Cryptography.Pkcs.xml
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Thorlabs.PM100D_32.Interop.xml
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\bin\Debug\Ivi.Visa.xml
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.AssemblyReference.cache
@@ -38,6 +40,7 @@ C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.MainFo
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.NDFForm.resources
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.PMForm.resources
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.SpecForm.resources
+C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.GUI.TempForm.resources
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.GenerateResource.cache
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.CoreCompileInputs.cache
 C:\Users\Alex\Documents\GitHub\MPhys_automation\MPhys\obj\Debug\MPhys.csproj.CopyComplete

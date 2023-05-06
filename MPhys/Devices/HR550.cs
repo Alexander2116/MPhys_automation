@@ -1070,7 +1070,8 @@ namespace MPhys.Devices
         public void SetSlit(double slit)
         {
             mMono.MovetoSlitWidth(SlitLocation.Front_Entrance, slit);
-            mMono.CalibrateSlitWidth(SlitLocation.Front_Entrance);
+            double slitWidthFE = mMono.GetCurrentSlitWidth(SlitLocation.Front_Entrance);
+            myFunc.add_to_log("SetSlit", slitWidthFE.ToString());
         }
 
         public void MoveToTurret(int nSelectedTurr)
