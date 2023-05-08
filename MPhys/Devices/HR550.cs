@@ -831,7 +831,7 @@ namespace MPhys.Devices
                 }
                 else
                 {
-                    double[] temp = { 0, 0.0342, 549.4396 };
+                    double[] temp = { 0, 0.03642, 549.4396 }; // initial 0, 0.0342 - too small
                     p = temp;
                     offset = 0.07;
                 }
@@ -884,11 +884,11 @@ namespace MPhys.Devices
                 {
                     if (st > 600)
                     {
-                        p = 0.033;
+                        p = 0.033; // correct
                     }
                     else
                     {
-                        p = 0.0342;
+                        p = 0.03642; // below it is 0.036 or 0.037
                     }
 
                 }

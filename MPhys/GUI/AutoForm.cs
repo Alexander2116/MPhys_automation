@@ -442,6 +442,7 @@ namespace MPhys.GUI
             double mStart, mEnd;
             bool all_good = false;
             double Inc = 0.036; // nm
+            bool temp_changed = false;
 
 
             try
@@ -496,6 +497,7 @@ namespace MPhys.GUI
                         ct = temp;
                         // Set temp
                         TempDev.Set_temperature(ct);
+                        temp_changed = true;
                     }
                     if (cp1 != pos1)
                     {
@@ -537,13 +539,20 @@ namespace MPhys.GUI
 
                     // Wait for temp to change
                     // Wait additional 20s for stability
-                    int cont = 1;
-                    
-                    while (TempDev.is_temp_good(ct,0.75) && cont>5)
+                    if (temp_changed)
                     {
-                        Thread.Sleep(2000);
-                        cont += 1;
+                        int cont = 1;
+                        bool temp_good = TempDev.is_temp_good(ct, 0.5);
+
+                        while (temp_good && cont > 5)
+                        {
+                            temp_good = TempDev.is_temp_good(ct, 0.5);
+                            Thread.Sleep(2000);
+                            cont += 1;
+                        }
                     }
+
+                    temp_changed = false;
 
                     // Take power
                     double power = PMDev.Get_power();
