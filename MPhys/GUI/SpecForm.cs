@@ -76,6 +76,7 @@ namespace MPhys.GUI
             {
                 button_shutter.Enabled = true;
                 groupboxWlCtrl.Enabled = true;
+                groupBoxSlit.Enabled = true;
                 foreach(double s in MonoSpec.combobox_Grating)
                 {
                     comboboxGrating.Items.Add(s);
@@ -86,6 +87,7 @@ namespace MPhys.GUI
             {
                 button_shutter.Enabled = false;
                 groupboxWlCtrl.Enabled = false;
+                groupBoxSlit.Enabled = false;
             }
         }
         private void Activate_buttonsCCD()
@@ -535,6 +537,16 @@ namespace MPhys.GUI
                 myFunction.add_to_log("buttonSaveGainADC_Click", "Finished");
 
             }
+        }
+
+        private void buttonSetSlit_Click(object sender, EventArgs e)
+        {
+            double a = double.Parse(Slit.Text.ToString());
+            if(a < 2.2 && a > 0)
+            {
+                MonoSpec.SetSlit(a);
+            }
+            Slit_pos.Text = MonoSpec.GetFrontEntranceSlit().ToString();
         }
         //=============================================
     }

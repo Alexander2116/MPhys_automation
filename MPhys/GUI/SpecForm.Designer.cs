@@ -89,11 +89,17 @@ namespace MPhys.GUI
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Image = new System.Windows.Forms.RadioButton();
             this.Spectra = new System.Windows.Forms.RadioButton();
+            this.groupBoxSlit = new System.Windows.Forms.GroupBox();
+            this.Slit_pos = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Slit = new System.Windows.Forms.TextBox();
+            this.buttonSetSlit = new System.Windows.Forms.Button();
             this.groupboxWlCtrl.SuspendLayout();
             this.GroupBoxAcquire.SuspendLayout();
             this.GroupBoxStreamAcq.SuspendLayout();
             this.groupBoxCollect.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBoxSlit.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -728,12 +734,62 @@ namespace MPhys.GUI
             this.Spectra.Text = "Spectra";
             this.Spectra.UseVisualStyleBackColor = true;
             // 
+            // groupBoxSlit
+            // 
+            this.groupBoxSlit.Controls.Add(this.buttonSetSlit);
+            this.groupBoxSlit.Controls.Add(this.Slit);
+            this.groupBoxSlit.Controls.Add(this.Slit_pos);
+            this.groupBoxSlit.Controls.Add(this.label6);
+            this.groupBoxSlit.Enabled = false;
+            this.groupBoxSlit.Location = new System.Drawing.Point(433, 284);
+            this.groupBoxSlit.Name = "groupBoxSlit";
+            this.groupBoxSlit.Size = new System.Drawing.Size(295, 78);
+            this.groupBoxSlit.TabIndex = 28;
+            this.groupBoxSlit.TabStop = false;
+            this.groupBoxSlit.Text = "Slit Change";
+            // 
+            // Slit_pos
+            // 
+            this.Slit_pos.Location = new System.Drawing.Point(6, 41);
+            this.Slit_pos.Name = "Slit_pos";
+            this.Slit_pos.ReadOnly = true;
+            this.Slit_pos.Size = new System.Drawing.Size(75, 20);
+            this.Slit_pos.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Front slit (nm)";
+            // 
+            // Slit
+            // 
+            this.Slit.Location = new System.Drawing.Point(114, 41);
+            this.Slit.Name = "Slit";
+            this.Slit.Size = new System.Drawing.Size(75, 20);
+            this.Slit.TabIndex = 2;
+            // 
+            // buttonSetSlit
+            // 
+            this.buttonSetSlit.Location = new System.Drawing.Point(194, 38);
+            this.buttonSetSlit.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSetSlit.Name = "buttonSetSlit";
+            this.buttonSetSlit.Size = new System.Drawing.Size(53, 25);
+            this.buttonSetSlit.TabIndex = 11;
+            this.buttonSetSlit.Text = "Set";
+            this.buttonSetSlit.UseVisualStyleBackColor = true;
+            this.buttonSetSlit.Click += new System.EventHandler(this.buttonSetSlit_Click);
+            // 
             // SpecForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBoxSlit);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.buttonSaveGainADC);
             this.Controls.Add(this.label3);
@@ -776,6 +832,8 @@ namespace MPhys.GUI
             this.groupBoxCollect.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBoxSlit.ResumeLayout(false);
+            this.groupBoxSlit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -842,5 +900,10 @@ namespace MPhys.GUI
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton Image;
         private System.Windows.Forms.RadioButton Spectra;
+        internal System.Windows.Forms.GroupBox groupBoxSlit;
+        private System.Windows.Forms.Button buttonSetSlit;
+        internal System.Windows.Forms.TextBox Slit;
+        internal System.Windows.Forms.TextBox Slit_pos;
+        internal System.Windows.Forms.Label label6;
     }
 }
