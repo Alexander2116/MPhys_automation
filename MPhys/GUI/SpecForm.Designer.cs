@@ -90,10 +90,10 @@ namespace MPhys.GUI
             this.Image = new System.Windows.Forms.RadioButton();
             this.Spectra = new System.Windows.Forms.RadioButton();
             this.groupBoxSlit = new System.Windows.Forms.GroupBox();
+            this.buttonSetSlit = new System.Windows.Forms.Button();
+            this.Slit = new System.Windows.Forms.TextBox();
             this.Slit_pos = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Slit = new System.Windows.Forms.TextBox();
-            this.buttonSetSlit = new System.Windows.Forms.Button();
             this.groupboxWlCtrl.SuspendLayout();
             this.GroupBoxAcquire.SuspendLayout();
             this.GroupBoxStreamAcq.SuspendLayout();
@@ -748,6 +748,24 @@ namespace MPhys.GUI
             this.groupBoxSlit.TabStop = false;
             this.groupBoxSlit.Text = "Slit Change";
             // 
+            // buttonSetSlit
+            // 
+            this.buttonSetSlit.Location = new System.Drawing.Point(194, 38);
+            this.buttonSetSlit.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSetSlit.Name = "buttonSetSlit";
+            this.buttonSetSlit.Size = new System.Drawing.Size(53, 25);
+            this.buttonSetSlit.TabIndex = 11;
+            this.buttonSetSlit.Text = "Set";
+            this.buttonSetSlit.UseVisualStyleBackColor = true;
+            this.buttonSetSlit.Click += new System.EventHandler(this.buttonSetSlit_Click);
+            // 
+            // Slit
+            // 
+            this.Slit.Location = new System.Drawing.Point(114, 41);
+            this.Slit.Name = "Slit";
+            this.Slit.Size = new System.Drawing.Size(75, 20);
+            this.Slit.TabIndex = 2;
+            // 
             // Slit_pos
             // 
             this.Slit_pos.Location = new System.Drawing.Point(6, 41);
@@ -761,27 +779,9 @@ namespace MPhys.GUI
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 23);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Front slit (nm)";
-            // 
-            // Slit
-            // 
-            this.Slit.Location = new System.Drawing.Point(114, 41);
-            this.Slit.Name = "Slit";
-            this.Slit.Size = new System.Drawing.Size(75, 20);
-            this.Slit.TabIndex = 2;
-            // 
-            // buttonSetSlit
-            // 
-            this.buttonSetSlit.Location = new System.Drawing.Point(194, 38);
-            this.buttonSetSlit.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSetSlit.Name = "buttonSetSlit";
-            this.buttonSetSlit.Size = new System.Drawing.Size(53, 25);
-            this.buttonSetSlit.TabIndex = 11;
-            this.buttonSetSlit.Text = "Set";
-            this.buttonSetSlit.UseVisualStyleBackColor = true;
-            this.buttonSetSlit.Click += new System.EventHandler(this.buttonSetSlit_Click);
+            this.label6.Text = "Front slit (mm)";
             // 
             // SpecForm
             // 

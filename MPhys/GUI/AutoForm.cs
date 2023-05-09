@@ -276,7 +276,7 @@ namespace MPhys.GUI
                     MessageBox.Show("Exposure time is too small");
                     return;
                 }
-                if(slit > 2.2 || slit < 0)
+                if(slit > 2.2 || slit < 0.0028)
                 {
                     MessageBox.Show("Slit is out of range");
                     return;

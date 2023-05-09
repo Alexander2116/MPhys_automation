@@ -159,7 +159,7 @@ namespace MPhys.GUI
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 26);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Integration\r\nTime (ns)";
+            this.label4.Text = "Integration\r\nTime (s)";
             // 
             // buttonAdd
             // 
@@ -186,9 +186,9 @@ namespace MPhys.GUI
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 290);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(300, 13);
+            this.label5.Size = new System.Drawing.Size(296, 13);
             this.label5.TabIndex = 29;
-            this.label5.Text = "No.  |  Temp  |  pos1  |  pos2  |  Integration Time (ns)  |  Slit (nm)";
+            this.label5.Text = "No.  |  Temp  |  pos1  |  pos2  |  Integration Time (s)  |  Slit (mm)";
             // 
             // buttonSaveProfile
             // 
@@ -416,7 +416,7 @@ namespace MPhys.GUI
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 26);
             this.label12.TabIndex = 53;
-            this.label12.Text = "Slit width\r\n (nm)";
+            this.label12.Text = "Slit width\r\n (mm)";
             // 
             // PositionMode
             // 
