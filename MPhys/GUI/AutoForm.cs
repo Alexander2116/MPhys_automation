@@ -477,6 +477,7 @@ namespace MPhys.GUI
 
             if (count > 0 && all_good)
             {
+                ct = 0; // for safety
                 myfunctions.add_to_log("auto_run()", "Starting data acquisition");
                 for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
@@ -528,7 +529,7 @@ namespace MPhys.GUI
                         cs = slit;
                         MonoSpec.SetSlit(cs);
                     }
-
+                      
                     // Wait 2s to make sure wheel is set
                     if (wait_few > 0)
                     {
@@ -539,16 +540,21 @@ namespace MPhys.GUI
 
                     // Wait for temp to change
                     // Wait additional 20s for stability
+                    int cont = 1;
                     if (temp_changed)
                     {
-                        int cont = 1;
-                        bool temp_good = TempDev.is_temp_good(ct, 0.5);
+                        bool temp_good = false;
 
-                        while (temp_good && cont > 5)
+                        while (cont < 4 || temp_good != true)
                         {
-                            temp_good = TempDev.is_temp_good(ct, 0.5);
-                            Thread.Sleep(2000);
-                            cont += 1;
+                            Thread.Sleep(3000);
+                            temp_good = TempDev.is_temp_good(ct, 0.7);
+                            Thread.Sleep(1000);
+                            if (temp_good)
+                            {
+                                cont++;
+                            }
+                            myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
                         }
                     }
 
@@ -563,25 +569,25 @@ namespace MPhys.GUI
                     DataTable DataToBeSaved = new DataTable();
 
                     // Save data
-                    myfunctions.add_to_log("auto_run_central()", "Getting data...");
+                    myfunctions.add_to_log("auto_run()", "Getting data...");
                     List<double> testList = MonoSpec.Get_Central_Positions(mStart, mEnd, (int)MonoSpec.current_grating);
                     MonoSpec.GetDataRange(testList);
-                    myfunctions.add_to_log("auto_run_central()", "Data taken...");
+                    myfunctions.add_to_log("auto_run()", "Data taken...");
                     wavelengthdata = MonoSpec.GetWavelengthDataColumn();
                     intensitydata = MonoSpec.GetIntensityDataColumn();
 
-                    myfunctions.add_to_log("auto_run_central()", "Adding data to DataSet...");
+                    myfunctions.add_to_log("auto_run()", "Adding data to DataSet...");
                     myfunctions.DataAddColumn(ref DataToBeSaved, wavelengthdata, "Wavelength");
                     myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, "Intensity0");
 
                     wavelengthdata.Clear();
                     intensitydata.Clear();
-                    myfunctions.add_to_log("auto_run_central()", "Taking N-1 times...");
+                    myfunctions.add_to_log("auto_run()", "Taking N-1 times...");
 
                     // Getting data count-1 times
                     for (int j=1; j < count; j++)
                     {
-                        myfunctions.add_to_log("auto_run_central()", "Getting data...");
+                        myfunctions.add_to_log("auto_run()", "Getting data...");
                         MonoSpec.GetDataRange(testList);
                         intensitydata = MonoSpec.GetIntensityDataColumn();
 
@@ -595,10 +601,7 @@ namespace MPhys.GUI
                     // Name:  [SAMPLE]_[pos1]_[pos2]_[power]_[exp time]_[temp]K_[slit width]
                     string path;
                     path = default_path();
-                    // Only for testing
-                    //cp1 = 0;
-                    //cp2 = 0;
-                    //ct = 0;
+                    
                     if(path == "")
                     {
                         path = FileName.Text.ToString();
@@ -821,7 +824,7 @@ namespace MPhys.GUI
 
             if (FileName.Text.ToString() == "Default")
             {
-                path = ".\\Data";
+                path = ".\\Data"; // .\Data
                 DateTime aDate = DateTime.Now;
                 temp = aDate.ToString("dd MMMM yyyy").Replace(" ", "").Replace(":","");
                 path = path + "\\" + temp;
