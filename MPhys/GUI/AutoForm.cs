@@ -434,15 +434,20 @@ namespace MPhys.GUI
 
             if (DeviceInitialized && MonoSpec.ReadForAcq() && !MonoSpec.MonoIsBusy())
             {
-                if(RangeMode.Enabled)
+                if(RangeMode.Checked)
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run() started");
-                    auto_run();
+                    int code = Task.Run(() => auto_run()).Result;
+                    /*Task<int> sCode = Task.Run(async () =>
+                    {
+                        int msg = await AutoRunAsync();
+                        return msg;
+                    });*/
                 }
-                if (PositionMode.Enabled)
+                if(PositionMode.Checked)
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run_central() started");
-                    auto_run_central();
+                    int code = Task.Run(() => auto_run_central()).Result;
                 }
             }
             else
@@ -451,8 +456,17 @@ namespace MPhys.GUI
             }
 
         }
+        private Task<int> AutoRunAsync()
+        {
+            return Task.Run<int>(() => auto_run());
+        }
 
-        private void auto_run()
+        private Task<int> CentralAutoRunAsync()
+        {
+            return Task.Run<int>(() => auto_run_central());
+        }
+
+        private int auto_run()
         {
             double ct = 0.0; double ce = 0.0; // current temperature ; current exposure time
             double cs = 1.0; // current slit width
@@ -471,7 +485,7 @@ namespace MPhys.GUI
             catch
             {
                 MessageBox.Show("Count is not set correctly");
-                return;
+                return -1;
             }
 
             try
@@ -485,20 +499,21 @@ namespace MPhys.GUI
                 else
                 {
                     MessageBox.Show("Start and End are not set correctly");
-                    return;
+                    return -1;
                 }
             }
             catch
             {
                 MessageBox.Show("Start and End are not set correctly");
-                return;
+                return -1;
             }
 
             if (count > 0 && all_good)
             {
                 ct = 0; // for safety
                 myfunctions.add_to_log("auto_run()", "Starting data acquisition");
-                for (int i = 0; i < dataTable.Rows.Count; i++)
+                int Loop_no = dataTable.Rows.Count;
+                for (int i = 0; i < Loop_no; i++)
                 {
                     myfunctions.add_to_log("auto_run()", "Task"+i.ToString());
                     DataRow lastRow = dataTable.Rows[i];
@@ -647,8 +662,8 @@ namespace MPhys.GUI
                     DataToBeSaved.Dispose();
                     DataToBeSaved = null;
                     //MonoSpec.GoStream(path, count, 2);
-                    // Increase number of finished tasks
-                    labelFinishTasks.Text = (int.Parse(labelFinishTasks.Text.ToString()) + 1).ToString();
+                    // Increase number of finished tasks - thread error do not uncomment
+                    //labelFinishTasks.Text = (int.Parse(labelFinishTasks.Text.ToString()) + 1).ToString();
 
 
                 }
@@ -657,11 +672,13 @@ namespace MPhys.GUI
             {
                 MessageBox.Show("Count is not set. It's current value is: 0 (must be greater than that)");
             }
+            myfunctions.add_to_log("auto_run()", "The tasks are finished");
+            return 0;
            
         }
 
 
-        private void auto_run_central()
+        private int auto_run_central()
         {
             double ct = 0.0; double ce = 0.0; // current temperature ; current exposure time
             double cs = 1.0; // current slit width
@@ -679,7 +696,7 @@ namespace MPhys.GUI
             catch
             {
                 MessageBox.Show("Count is not set correctly");
-                return;
+                return -1;
             }
 
             try
@@ -692,19 +709,20 @@ namespace MPhys.GUI
                 else
                 {
                     MessageBox.Show("Start and End are not set correctly");
-                    return;
+                    return -1;
                 }
             }
             catch
             {
                 MessageBox.Show("Start and End are not set correctly");
-                return;
+                return -1;
             }
 
             if (count > 0 && all_good)
             {
                 myfunctions.add_to_log("auto_run_central()", "Starting data acquisition");
-                for (int i = 0; i < dataTable.Rows.Count; i++)
+                int Loop_no = dataTable.Rows.Count;
+                for (int i = 0; i < Loop_no; i++)
                 {
                     DataRow lastRow = dataTable.Rows[i];
 
@@ -795,7 +813,7 @@ namespace MPhys.GUI
                     // Getting data count-1 times
                     for (int j = 1; j < count; j++)
                     {
-                        myfunctions.add_to_log("auto_run()", "Getting data...");
+                        myfunctions.add_to_log("auto_run_central()", "Getting data...");
                         MonoSpec.GetDataPosition(mCentral);
                         intensitydata = MonoSpec.GetIntensityDataColumn();
 
@@ -825,15 +843,16 @@ namespace MPhys.GUI
                     DataToBeSaved.Dispose();
                     DataToBeSaved = null;
                     //MonoSpec.GoStream(path, count, 2);
-                    // Increase number of finished tasks
-                    labelFinishTasks.Text = (int.Parse(labelFinishTasks.Text.ToString()) + 1).ToString();
+                    // Increase number of finished tasks - thread error, do not uncomment
+                    //labelFinishTasks.Text = (int.Parse(labelFinishTasks.Text.ToString()) + 1).ToString();
                 }
             }
             else
             {
                 MessageBox.Show("Count is not set. It's current value is: 0 (must be greater than that)");
             }
-
+            myfunctions.add_to_log("auto_run_central()", "The tasks are finished");
+            return 0;
         }
 
 
