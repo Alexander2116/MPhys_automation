@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <PendingTask>
+    <temperature>15</temperature>
+    <NDF1pos>6</NDF1pos>
+    <NDF2pos>6</NDF2pos>
+    <ExpTime>0.1</ExpTime>
+    <Slit>0.1</Slit>
+  </PendingTask>
+  <PendingTask>
+    <temperature>15</temperature>
+    <NDF1pos>3</NDF1pos>
+    <NDF2pos>6</NDF2pos>
+    <ExpTime>0.1</ExpTime>
+    <Slit>0.1</Slit>
+  </PendingTask>
+  <PendingTask>
+    <temperature>15</temperature>
+    <NDF1pos>3</NDF1pos>
+    <NDF2pos>3</NDF2pos>
+    <ExpTime>0.1</ExpTime>
+    <Slit>0.1</Slit>
+  </PendingTask>
+  <PendingTask>
+    <temperature>17</temperature>
+    <NDF1pos>6</NDF1pos>
+    <NDF2pos>6</NDF2pos>
+    <ExpTime>0.1</ExpTime>
+    <Slit>0.1</Slit>
+  </PendingTask>
+  <PendingTask>
+    <temperature>17</temperature>
+    <NDF1pos>3</NDF1pos>
+    <NDF2pos>6</NDF2pos>
+    <ExpTime>0.1</ExpTime>
+    <Slit>0.1</Slit>
+  </PendingTask>
+  <PendingTask>
+    <temperature>17</temperature>
+    <NDF1pos>3</NDF1pos>
+    <NDF2pos>3</NDF2pos>
+    <ExpTime>0.1</ExpTime>
+    <Slit>0.1</Slit>
+  </PendingTask>
+</DocumentElement>

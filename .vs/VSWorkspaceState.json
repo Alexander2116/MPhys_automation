@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MPhys"
   ],
-  "SelectedNode": "\\MPhys.sln",
+  "SelectedNode": "\\MPhys\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

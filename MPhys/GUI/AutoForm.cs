@@ -84,11 +84,12 @@ namespace MPhys.GUI
             CCD.sName = sNameC;
 
             // NDF1
-            
+            Thread.Sleep(1000);
             try
             {
+                //NDF1 = null;
                 NDF1 = new FC102C(NDF1port);
-                if (NDF1.IsOpen() == 1)
+                /*if (NDF1.IsOpen() == 1)
                 {
                     myfunctions.add_to_log("bool connect_devices()","NDF1 connected");
                 }
@@ -96,75 +97,93 @@ namespace MPhys.GUI
                 {
                     //all_good = false;
                     MessageBox.Show("NDF1 connection cannot be opened");
-                }
-                myfunctions.add_to_log("bool connect_devices()", "NDF1 connected");
+                }*/
             }
             catch
             {
-                //all_good = false;
+                all_good = false;
                 MessageBox.Show("NDF1 not connected");
             }
             // NDF2
-            try
+            if (all_good)
             {
-                NDF2 = new FC102C(NDF2port);
-                if (NDF2.IsOpen() == 1)
+                Thread.Sleep(1000);
+                try
                 {
-                    myfunctions.add_to_log("bool connect_devices()", "NDF2 connected");
+                    //NDF2 = null;
+                    NDF2 = new FC102C(NDF2port);
+                    /*if (NDF2.IsOpen() == 1)
+                    {
+                        myfunctions.add_to_log("bool connect_devices()", "NDF2 connected");
+                    }
+                    else
+                    {
+                        //all_good = false;
+                        MessageBox.Show("NDF2 connection cannot be opened");
+                    }*/
                 }
-                else
+                catch
                 {
-                    //all_good = false;
-                    MessageBox.Show("NDF2 connection cannot be opened");
+                    all_good = false;
+                    MessageBox.Show("NDF2 not connected");
                 }
             }
-            catch
+            if (all_good)
             {
-                //all_good = false;
-                MessageBox.Show("NDF2 not connected");
-            }
-            // PM
-            try
-            {
-                PMDev = new PM100A(PMport);
-                PMDev.Get_power();
-                myfunctions.add_to_log("bool connect_devices()", "PM100A connected");
-            }
-            catch
-            {
-                //all_good = false;
-                MessageBox.Show("PM100A not connected");
-            }
-            // TEMP
-            try
-            {
-                TempDev = new M9700(M9700port);
-                TempDev.Open();
-                TempDev.Close();
-                myfunctions.add_to_log("bool connect_devices()", "M9700 connected");
-            }
-            catch
-            {
-                all_good = false;
-                MessageBox.Show("Temperature controller not connected");
-            }
-            // Mono & CCD
-            try
-            {
-                //bool Bmono = true;
-                MonoSpec = new HR550();
-                MonoSpec.InitializeMono(Mono);
-                /*while (Bmono == true)
+                // PM
+                Thread.Sleep(1000);
+                try
                 {
-                    Bmono = MonoSpec.MonoIsBusy();
-                }*/
-                MonoSpec.InitializeCCD(CCD);
-                myfunctions.add_to_log("bool connect_devices()", "Mono and CCD connected");
+                    PMDev = new PM100A(PMport);
+                    PMDev.Get_power();
+                    myfunctions.add_to_log("bool connect_devices()", "PM100A connected");
+
+                }
+                catch
+                {
+                    all_good = false;
+                    MessageBox.Show("PM100A not connected");
+                }
             }
-            catch
+            if (all_good)
             {
-                all_good = false;
-                MessageBox.Show("Issues with connecting with iHR550");
+                Thread.Sleep(1000);
+                // TEMP
+                try
+                {
+                    TempDev = new M9700(M9700port);
+                    TempDev.Open();
+                    TempDev.Close();
+                    myfunctions.add_to_log("bool connect_devices()", "M9700 connected");
+                }
+                catch
+                {
+                    all_good = false;
+                    MessageBox.Show("Temperature controller not connected");
+                }
+            }
+            if (all_good)
+            {
+                // Mono & CCD
+                Thread.Sleep(1000);
+                try
+                {
+                    //bool Bmono = true;
+                    MonoSpec = new HR550();
+                    MonoSpec.InitializeMono(Mono);
+                    /*while (Bmono == true)
+                    {
+                        Bmono = MonoSpec.MonoIsBusy();
+                    }*/
+                    MonoSpec.InitializeCCD(CCD);
+                    myfunctions.add_to_log("bool connect_devices()", "Mono and CCD connected");
+                }
+                catch
+                {
+                    all_good = false;
+                    MessageBox.Show("Issues with connecting with iHR550");
+                }
+                Thread.Sleep(1000);
             }
             DeviceInitialized = all_good;
             return all_good;
@@ -533,13 +552,14 @@ namespace MPhys.GUI
                     // Wait 2s to make sure wheel is set
                     if (wait_few > 0)
                     {
-                        Thread.Sleep(1000 *wait_few);
+                        Thread.Sleep(500*wait_few);
                     }
 
                     // Wait for pos to change
 
                     // Wait for temp to change
                     // Wait additional 20s for stability
+                    /*
                     int cont = 1;
                     if (temp_changed)
                     {
@@ -547,14 +567,27 @@ namespace MPhys.GUI
 
                         while (cont < 4 || temp_good != true)
                         {
-                            Thread.Sleep(3000);
+                            Thread.Sleep(2500);
                             temp_good = TempDev.is_temp_good(ct, 0.7);
-                            Thread.Sleep(1000);
+                            Thread.Sleep(500);
                             if (temp_good)
                             {
                                 cont++;
                             }
+                            else
+                            {
+                                Console.WriteLine("Wait");
+                            }
                             myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
+                        }
+                    }*/
+                    if (temp_changed)
+                    {
+                        int cont = 1;
+                        while (!TempDev.is_temp_good(ct,0.7) && cont < 5)
+                        {
+                            Thread.Sleep(3000);
+                            cont += 1;
                         }
                     }
 
@@ -607,7 +640,7 @@ namespace MPhys.GUI
                         path = FileName.Text.ToString();
                     }
 
-                    string fullPath = path + "\\" + textSample.Text.ToString() +"_"+ Math.Round(power,2) +"_" + ce + "s" +"_"+ct+"K" +"_"+cs+"nm"+".csv";
+                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + Math.Round(power, 4) + "uW_n1_" + cp1 + "_n2_" + cp2 + "_" + ce + "s_" + ct + "K" + "_" + cs + "nm" + ".csv";
 
                     myfunctions.add_to_log("auto_run()", "Saving " + fullPath);
                     myfunctions.ToCSV(DataToBeSaved, fullPath);
@@ -731,9 +764,9 @@ namespace MPhys.GUI
                     // Wait additional 20s for stability
                     int cont = 1;
                     
-                    while (!TempDev.is_temp_good(ct) && cont>5)
+                    while (!TempDev.is_temp_good(ct) && cont<5)
                     {
-                        Thread.Sleep(4000);
+                        Thread.Sleep(3000);
                         cont += 1;
                     }
 
@@ -785,7 +818,7 @@ namespace MPhys.GUI
                         path = FileName.Text.ToString();
                     }
 
-                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + Math.Round(power, 4) + "_" + ce + "s_" + ct + "K" + "_" + cs + "nm" + ".csv";
+                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + Math.Round(power, 4)+ "uW_n1_" + cp1 + "_n2_" + cp2 + "_" + ce + "s_" + ct + "K" + "_" + cs + "nm" + ".csv";
 
                     myfunctions.add_to_log("auto_run()", "Saving " + fullPath);
                     myfunctions.ToCSV(DataToBeSaved, fullPath);
