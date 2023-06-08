@@ -574,15 +574,15 @@ namespace MPhys.GUI
 
                     // Wait for temp to change
                     // Wait additional 20s for stability
-                    /*
+                    
                     int cont = 1;
                     if (temp_changed)
                     {
                         bool temp_good = false;
 
-                        while (cont < 4 || temp_good != true)
+                        while (cont < 4)
                         {
-                            Thread.Sleep(2500);
+                            Thread.Sleep(2000);
                             temp_good = TempDev.is_temp_good(ct, 0.7);
                             Thread.Sleep(500);
                             if (temp_good)
@@ -595,16 +595,16 @@ namespace MPhys.GUI
                             }
                             myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
                         }
-                    }*/
+                    }/*
                     if (temp_changed)
                     {
                         int cont = 1;
-                        while (!TempDev.is_temp_good(ct,0.7) && cont < 5)
+                        while (!TempDev.is_temp_good(ct,0.7) && cont > 5)
                         {
                             Thread.Sleep(3000);
                             cont += 1;
                         }
-                    }
+                    }*/
 
                     temp_changed = false;
 
@@ -687,7 +687,7 @@ namespace MPhys.GUI
             double mCentral;
             bool all_good = false;
             double Inc = 0.036; // nm
-
+            bool temp_changed = false;
 
             try
             {
@@ -740,6 +740,7 @@ namespace MPhys.GUI
                         ct = temp;
                         // Set temp
                         TempDev.Set_temperature(ct);
+                        temp_changed = true;
                     }
                     if (cp1 != pos1)
                     {
@@ -781,12 +782,32 @@ namespace MPhys.GUI
                     // Wait for temp to change
                     // Wait additional 20s for stability
                     int cont = 1;
-                    
+                    if (temp_changed)
+                    {
+                        bool temp_good = false;
+
+                        while (cont < 4)
+                        {
+                            Thread.Sleep(2000);
+                            temp_good = TempDev.is_temp_good(ct, 0.7);
+                            Thread.Sleep(500);
+                            if (temp_good)
+                            {
+                                cont++;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Wait");
+                            }
+                            myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
+                        }
+                    }
+                    /*
                     while (!TempDev.is_temp_good(ct) && cont<5)
                     {
                         Thread.Sleep(3000);
                         cont += 1;
-                    }
+                    }*/
 
                     // Take power
                     double power = PMDev.Get_power();

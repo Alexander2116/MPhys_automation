@@ -532,3 +532,277 @@
 15:26 : DataAddColumn :  3072
 15:26 : auto_run() :  Taking N-1 times...
 15:26 : auto_run() :  Saving .\Data\08June2023\Test5_-0.0146uW_n1_6_n2_6_0.1s_15K_0.1nm.csv
+15:30 : bool connect_devices() :  PM100A connected
+15:30 : bool connect_devices() :  M9700 connected
+15:30 : InitializeCCD :  CCD Event
+15:30 : InitializeCCD :  CCD Load
+15:30 : InitializeCCD :  CCD Open
+15:30 : InitializeCCD :  CCD Initialize
+15:30 : InitializeCCD :  Load ADC and Gain
+15:30 : InitializeCCD :  Complete
+
+15:30 : bool connect_devices() :  Mono and CCD connected
+15:30 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:30 : InitializeGainSelect :  0
+15:30 : InitializeADCSelect :  0
+15:30 : OnCCDEvent_Initialized :  Gain and ADC Added
+15:31 : bool connect_devices() :  PM100A connected
+15:31 : bool connect_devices() :  M9700 connected
+15:31 : InitializeCCD :  CCD Event
+15:31 : InitializeCCD :  CCD Load
+15:31 : InitializeCCD :  CCD Open
+15:31 : InitializeCCD :  CCD Initialize
+15:31 : InitializeCCD :  Load ADC and Gain
+15:31 : InitializeCCD :  Complete
+
+15:31 : bool connect_devices() :  Mono and CCD connected
+15:31 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:31 : InitializeGainSelect :  0
+15:31 : InitializeADCSelect :  0
+15:31 : OnCCDEvent_Initialized :  Gain and ADC Added
+15:34 : bool connect_devices() :  PM100A connected
+15:34 : bool connect_devices() :  M9700 connected
+15:34 : InitializeCCD :  CCD Event
+15:34 : InitializeCCD :  CCD Load
+15:34 : InitializeCCD :  CCD Open
+15:34 : InitializeCCD :  CCD Initialize
+15:34 : InitializeCCD :  Load ADC and Gain
+15:34 : InitializeCCD :  Complete
+
+15:34 : bool connect_devices() :  Mono and CCD connected
+15:34 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:34 : InitializeGainSelect :  0
+15:34 : InitializeADCSelect :  0
+15:34 : OnCCDEvent_Initialized :  Gain and ADC Added
+15:39 : bool connect_devices() :  PM100A connected
+15:39 : bool connect_devices() :  M9700 connected
+15:39 : InitializeCCD :  CCD Event
+15:39 : InitializeCCD :  CCD Load
+15:39 : InitializeCCD :  CCD Open
+15:39 : InitializeCCD :  CCD Initialize
+15:39 : InitializeCCD :  Load ADC and Gain
+15:39 : InitializeCCD :  Complete
+
+15:39 : bool connect_devices() :  Mono and CCD connected
+15:39 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:39 : InitializeGainSelect :  0
+15:39 : InitializeADCSelect :  0
+15:39 : OnCCDEvent_Initialized :  Gain and ADC Added
+15:40 : buttonRun_Click :  auto_run_central() started
+15:40 : auto_run_central() :  Starting data acquisition
+15:40 : auto_run_central() :  Setting devices...
+15:40 : SetSlit :  0.011
+15:40 : auto_run_central() :  Getting data...
+15:40 : GetData() :  Loop Started
+15:40 : GetData() :  300.0006
+15:40 : buttonRun_Click :  auto_run_central() started
+15:40 : auto_run_central() :  Starting data acquisition
+15:40 : auto_run_central() :  Setting devices...
+15:40 : SetSlit :  0.0986
+15:40 : auto_run_central() :  Getting data...
+15:40 : GetData() :  Loop Started
+15:40 : GetData() :  300.0006
+15:41 : bool connect_devices() :  PM100A connected
+15:41 : bool connect_devices() :  M9700 connected
+15:42 : InitializeCCD :  CCD Event
+15:42 : InitializeCCD :  CCD Load
+15:42 : InitializeCCD :  CCD Open
+15:42 : InitializeCCD :  CCD Initialize
+15:42 : InitializeCCD :  Load ADC and Gain
+15:42 : InitializeCCD :  Complete
+
+15:42 : bool connect_devices() :  Mono and CCD connected
+15:42 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:42 : InitializeGainSelect :  0
+15:42 : InitializeADCSelect :  0
+15:42 : OnCCDEvent_Initialized :  Gain and ADC Added
+15:42 : buttonRun_Click :  auto_run() started
+15:42 : auto_run() :  Starting data acquisition
+15:42 : auto_run() :  Task0
+15:42 : auto_run() :  Setting devices...
+15:42 : auto_run() :  Setting NDF1 position...
+15:42 : SetSlit :  0.011
+15:42 : auto_run() :  Getting data...
+15:42 : GetData() :  Loop Started
+15:43 : bool connect_devices() :  PM100A connected
+15:43 : bool connect_devices() :  M9700 connected
+15:43 : InitializeCCD :  CCD Event
+15:43 : InitializeCCD :  CCD Load
+15:43 : InitializeCCD :  CCD Open
+15:43 : InitializeCCD :  CCD Initialize
+15:43 : InitializeCCD :  Load ADC and Gain
+15:43 : InitializeCCD :  Complete
+
+15:43 : bool connect_devices() :  Mono and CCD connected
+15:43 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:43 : InitializeGainSelect :  0
+15:43 : InitializeADCSelect :  0
+15:43 : OnCCDEvent_Initialized :  Gain and ADC Added
+15:44 : buttonRun_Click :  auto_run() started
+15:44 : auto_run() :  Starting data acquisition
+15:44 : auto_run() :  Task0
+15:44 : auto_run() :  Setting devices...
+15:44 : auto_run() :  Setting NDF1 position...
+15:44 : SetSlit :  0.011
+15:44 : auto_run() :  Getting data...
+15:44 : GetData() :  Loop Started
+15:45 : bool connect_devices() :  PM100A connected
+15:45 : bool connect_devices() :  M9700 connected
+15:45 : InitializeCCD :  CCD Event
+15:45 : InitializeCCD :  CCD Load
+15:45 : InitializeCCD :  CCD Open
+15:45 : InitializeCCD :  CCD Initialize
+15:45 : InitializeCCD :  Load ADC and Gain
+15:45 : InitializeCCD :  Complete
+
+15:45 : bool connect_devices() :  Mono and CCD connected
+15:45 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:45 : InitializeGainSelect :  0
+15:45 : InitializeADCSelect :  0
+15:45 : OnCCDEvent_Initialized :  Gain and ADC Added
+15:45 : buttonRun_Click :  auto_run() started
+15:45 : auto_run() :  Starting data acquisition
+15:45 : auto_run() :  Task0
+15:45 : auto_run() :  Setting devices...
+15:45 : auto_run() :  Setting NDF1 position...
+15:45 : SetSlit :  0.011
+15:47 : bool connect_devices() :  PM100A connected
+15:47 : bool connect_devices() :  M9700 connected
+15:47 : InitializeCCD :  CCD Event
+15:47 : InitializeCCD :  CCD Load
+15:47 : InitializeCCD :  CCD Open
+15:47 : InitializeCCD :  CCD Initialize
+15:47 : InitializeCCD :  Load ADC and Gain
+15:47 : InitializeCCD :  Complete
+
+15:47 : bool connect_devices() :  Mono and CCD connected
+15:47 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:47 : InitializeGainSelect :  0
+15:47 : InitializeADCSelect :  0
+15:47 : OnCCDEvent_Initialized :  Gain and ADC Added
+15:48 : bool connect_devices() :  PM100A connected
+15:48 : bool connect_devices() :  M9700 connected
+15:48 : InitializeCCD :  CCD Event
+15:48 : InitializeCCD :  CCD Load
+15:48 : InitializeCCD :  CCD Open
+15:48 : InitializeCCD :  CCD Initialize
+15:48 : InitializeCCD :  Load ADC and Gain
+15:48 : InitializeCCD :  Complete
+
+15:48 : bool connect_devices() :  Mono and CCD connected
+15:48 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:48 : InitializeGainSelect :  0
+15:48 : InitializeADCSelect :  0
+15:48 : OnCCDEvent_Initialized :  Gain and ADC Added
+15:48 : buttonRun_Click :  auto_run() started
+15:48 : auto_run() :  Starting data acquisition
+15:48 : auto_run() :  Task0
+15:48 : auto_run() :  Setting devices...
+15:48 : auto_run() :  Setting NDF1 position...
+15:48 : SetSlit :  0.011
+15:49 : auto_run() :  Getting data...
+15:49 : GetData() :  Loop Started
+15:49 : DataAddColumn :  6144
+15:49 : DataAddColumn :  0
+15:49 : DataAddColumn :  6144
+15:49 : DataAddColumn :  6144
+15:49 : auto_run() :  Data taken...
+15:49 : auto_run() :  Adding data to DataSet...
+15:49 : DataAddColumn :  6144
+15:49 : DataAddColumn :  0
+15:51 : bool connect_devices() :  PM100A connected
+15:51 : bool connect_devices() :  M9700 connected
+15:51 : InitializeCCD :  CCD Event
+15:51 : InitializeCCD :  CCD Load
+15:51 : InitializeCCD :  CCD Open
+15:51 : InitializeCCD :  CCD Initialize
+15:51 : InitializeCCD :  Load ADC and Gain
+15:51 : InitializeCCD :  Complete
+
+15:51 : bool connect_devices() :  Mono and CCD connected
+15:51 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:51 : InitializeGainSelect :  0
+15:51 : InitializeADCSelect :  0
+15:51 : OnCCDEvent_Initialized :  Gain and ADC Added
+15:52 : buttonRun_Click :  auto_run() started
+15:52 : auto_run() :  Starting data acquisition
+15:52 : auto_run() :  Task0
+15:52 : auto_run() :  Setting devices...
+15:52 : auto_run() :  Setting NDF1 position...
+15:52 : SetSlit :  0.011
+15:52 : auto_run() :  Getting data...
+15:52 : GetData() :  Loop Started
+15:52 : DataAddColumn :  6144
+15:52 : DataAddColumn :  0
+15:52 : DataAddColumn :  6144
+15:52 : DataAddColumn :  6144
+15:52 : auto_run() :  Data taken...
+15:52 : auto_run() :  Adding data to DataSet...
+15:52 : DataAddColumn :  6144
+15:52 : DataAddColumn :  0
+15:59 : bool connect_devices() :  PM100A connected
+15:59 : bool connect_devices() :  M9700 connected
+15:59 : InitializeCCD :  CCD Event
+15:59 : InitializeCCD :  CCD Load
+15:59 : InitializeCCD :  CCD Open
+15:59 : InitializeCCD :  CCD Initialize
+15:59 : InitializeCCD :  Load ADC and Gain
+15:59 : InitializeCCD :  Complete
+
+15:59 : bool connect_devices() :  Mono and CCD connected
+15:59 : OnCCDEvent_Initialized :  Adding Gain and ADC
+15:59 : InitializeGainSelect :  0
+15:59 : InitializeADCSelect :  0
+15:59 : OnCCDEvent_Initialized :  Gain and ADC Added
+16:09 : bool connect_devices() :  PM100A connected
+16:09 : bool connect_devices() :  M9700 connected
+16:09 : InitializeCCD :  CCD Event
+16:09 : InitializeCCD :  CCD Load
+16:09 : InitializeCCD :  CCD Open
+16:09 : InitializeCCD :  CCD Initialize
+16:09 : InitializeCCD :  Load ADC and Gain
+16:09 : InitializeCCD :  Complete
+
+16:09 : bool connect_devices() :  Mono and CCD connected
+16:09 : OnCCDEvent_Initialized :  Adding Gain and ADC
+16:09 : InitializeGainSelect :  0
+16:09 : InitializeADCSelect :  0
+16:09 : OnCCDEvent_Initialized :  Gain and ADC Added
+16:10 : buttonRun_Click :  auto_run() started
+16:10 : auto_run() :  Starting data acquisition
+16:10 : auto_run() :  Task0
+16:10 : auto_run() :  Setting devices...
+16:10 : auto_run() :  Setting NDF1 position...
+16:10 : SetSlit :  0.011
+16:10 : auto_run() :  Getting data...
+16:10 : GetData() :  Loop Started
+16:11 : bool connect_devices() :  PM100A connected
+16:11 : bool connect_devices() :  M9700 connected
+16:11 : InitializeCCD :  CCD Event
+16:11 : InitializeCCD :  CCD Load
+16:11 : InitializeCCD :  CCD Open
+16:11 : InitializeCCD :  CCD Initialize
+16:11 : InitializeCCD :  Load ADC and Gain
+16:11 : InitializeCCD :  Complete
+
+16:11 : bool connect_devices() :  Mono and CCD connected
+16:11 : OnCCDEvent_Initialized :  Adding Gain and ADC
+16:11 : InitializeGainSelect :  0
+16:11 : InitializeADCSelect :  0
+16:11 : OnCCDEvent_Initialized :  Gain and ADC Added
+16:11 : buttonRun_Click :  auto_run() started
+16:11 : auto_run() :  Starting data acquisition
+16:11 : auto_run() :  Task0
+16:11 : auto_run() :  Setting devices...
+16:11 : auto_run() :  Setting NDF1 position...
+16:11 : SetSlit :  0.011
+16:11 : auto_run() :  Getting data...
+16:11 : GetData() :  Loop Started
+16:11 : DataAddColumn :  6144
+16:11 : DataAddColumn :  0
+16:11 : DataAddColumn :  6144
+16:11 : DataAddColumn :  6144
+16:11 : auto_run() :  Data taken...
+16:11 : auto_run() :  Adding data to DataSet...
+16:11 : DataAddColumn :  6144
+16:11 : DataAddColumn :  0
