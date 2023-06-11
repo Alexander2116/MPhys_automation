@@ -437,17 +437,27 @@ namespace MPhys.GUI
                 if(RangeMode.Checked)
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run() started");
-                    int code = Task.Run(() => auto_run()).Result;
+                    //int code = Task.Run(() => auto_run()).Result;
                     /*Task<int> sCode = Task.Run(async () =>
                     {
                         int msg = await AutoRunAsync();
                         return msg;
                     });*/
+                    var thread = new Thread(() =>
+                    {
+                        auto_run();
+                    });
+                    thread.Start();
                 }
                 if(PositionMode.Checked)
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run_central() started");
-                    int code = Task.Run(() => auto_run_central()).Result;
+                    //int code = Task.Run(() => auto_run_central()).Result;
+                    var thread = new Thread(() =>
+                    {
+                        auto_run_central();
+                    });
+                    thread.Start();
                 }
             }
             else

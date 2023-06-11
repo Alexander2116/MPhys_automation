@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MPhys"
+    "\\MPhys",
+    "\\MPhys\\GUI"
   ],
-  "SelectedNode": "\\MPhys\\Program.cs",
+  "SelectedNode": "\\MPhys\\GUI\\MainForm.resx",
   "PreviewInSolutionExplorer": false
 }
