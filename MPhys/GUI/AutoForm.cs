@@ -418,6 +418,7 @@ namespace MPhys.GUI
             labelMaxTask.Text = dataTable.Rows.Count.ToString();
         }
 
+        [Obsolete]
         private void buttonRun_Click(object sender, EventArgs e)
         {
             ADCStringType adc = myfunctions.ReadFromBinaryFile<ADCStringType>("ADC_settings.dat");
@@ -434,7 +435,7 @@ namespace MPhys.GUI
 
             if (DeviceInitialized && MonoSpec.ReadForAcq() && !MonoSpec.MonoIsBusy())
             {
-                if(RangeMode.Checked)
+                if (RangeMode.Checked)
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run() started");
                     //int code = Task.Run(() => auto_run()).Result;
@@ -447,9 +448,23 @@ namespace MPhys.GUI
                     {
                         auto_run();
                     });
+                    thread.Priority = ThreadPriority.Highest;
                     thread.Start();
+                    bool loop_while = true;
+                    while (loop_while)
+                    {
+                        if ((thread.ThreadState == ThreadState.Stopped || thread.ThreadState == ThreadState.Suspended) && !(thread.ThreadState == ThreadState.Unstarted) && thread.ThreadState == ThreadState.Running)
+                        {
+                            thread.Resume();
+                        }
+                        if (!thread.IsAlive)
+                        {
+                            loop_while = false;
+                        }
+                    }
+
                 }
-                if(PositionMode.Checked)
+                if (PositionMode.Checked)
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run_central() started");
                     //int code = Task.Run(() => auto_run_central()).Result;
@@ -457,7 +472,20 @@ namespace MPhys.GUI
                     {
                         auto_run_central();
                     });
+                    thread.Priority = ThreadPriority.Highest;
                     thread.Start();
+                    bool loop_while = true;
+                    while (loop_while)
+                    {
+                        if ((thread.ThreadState == ThreadState.Stopped || thread.ThreadState == ThreadState.Suspended) && !(thread.ThreadState == ThreadState.Unstarted) && thread.ThreadState == ThreadState.Running)
+                        {
+                            thread.Resume();
+                        }
+                        if (!thread.IsAlive)
+                        {
+                            loop_while = false;
+                        }
+                    }
                 }
             }
             else
@@ -475,6 +503,7 @@ namespace MPhys.GUI
         {
             return Task.Run<int>(() => auto_run_central());
         }
+
 
         private int auto_run()
         {
@@ -826,6 +855,38 @@ namespace MPhys.GUI
                     List<double> wavelengthdata;
                     List<Int32> intensitydata;
                     DataTable DataToBeSaved = new DataTable();
+
+                    /*
+                                         // Save data
+                    myfunctions.add_to_log("auto_run()", "Getting data...");
+                    List<double> testList = MonoSpec.Get_Central_Positions(mStart, mEnd, (int)MonoSpec.current_grating);
+                    MonoSpec.GetDataRange(testList);
+                    myfunctions.add_to_log("auto_run()", "Data taken...");
+                    wavelengthdata = MonoSpec.GetWavelengthDataColumn();
+                    intensitydata = MonoSpec.GetIntensityDataColumn();
+
+                    myfunctions.add_to_log("auto_run()", "Adding data to DataSet...");
+                    myfunctions.DataAddColumn(ref DataToBeSaved, wavelengthdata, "Wavelength");
+                    myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, "Intensity0");
+
+                    wavelengthdata.Clear();
+                    intensitydata.Clear();
+                    myfunctions.add_to_log("auto_run()", "Taking N-1 times...");
+
+                    // Getting data count-1 times
+                    for (int j=1; j < count; j++)
+                    {
+                        myfunctions.add_to_log("auto_run()", "Getting data...");
+                        MonoSpec.GetDataRange(testList);
+                        intensitydata = MonoSpec.GetIntensityDataColumn();
+
+                        string intensityName = "Intensity" + j.ToString();
+                        myfunctions.DataAddColumn(ref DataToBeSaved, intensitydata, intensityName);
+                        wavelengthdata.Clear();
+                        intensitydata.Clear();
+                    }
+                     */
+
 
                     // Save data
                     myfunctions.add_to_log("auto_run_central()", "Getting data...");
