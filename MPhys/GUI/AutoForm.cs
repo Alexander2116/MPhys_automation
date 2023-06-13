@@ -12,6 +12,8 @@ using System.Configuration;
 using System.Threading;
 using MPhys.MyFunctions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
+using System.Windows.Forms.VisualStyles;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace MPhys.GUI
 {
@@ -465,12 +467,11 @@ namespace MPhys.GUI
                             loop_while = false;
                         }
                     }*/
-                    await AutoRunAysc();
-                    /*
+                    
                     await Task.Run(() =>
                     {
                         auto_run();
-                    });*/
+                    });
 
                 }
                 if (PositionMode.Checked)
@@ -504,27 +505,9 @@ namespace MPhys.GUI
             }
 
         }
-        private async Task<int> AutoRunAysc()
-        {
-            Task<int> p = Task.Factory.StartNew(() => { auto_run(); return 1; });
-
-            await p;
-
-            return p.Result;
-        }
-
-        /*private Task<int> AutoRunAsync()
-        {
-            return Task.Run<int>(() => auto_run());
-        }*/
-
-        private Task<int> CentralAutoRunAsync()
-        {
-            return Task.Run<int>(() => auto_run_central());
-        }
 
 
-        private int auto_run()
+        private async void auto_run()
         {
             double ct = 0.0; double ce = 0.0; // current temperature ; current exposure time
             double cs = 1.0; // current slit width
@@ -543,7 +526,7 @@ namespace MPhys.GUI
             catch
             {
                 MessageBox.Show("Count is not set correctly");
-                return -1;
+                return;
             }
 
             try
@@ -557,13 +540,13 @@ namespace MPhys.GUI
                 else
                 {
                     MessageBox.Show("Start and End are not set correctly");
-                    return -1;
+                    return;
                 }
             }
             catch
             {
                 MessageBox.Show("Start and End are not set correctly");
-                return -1;
+                return;
             }
 
             if (count > 0 && all_good)
@@ -621,39 +604,19 @@ namespace MPhys.GUI
                         cs = slit;
                         MonoSpec.SetSlit(cs);
                     }
-                      
+
                     // Wait 2s to make sure wheel is set
                     if (wait_few > 0)
                     {
-                        Thread.Sleep(500*wait_few);
+                        await Task.Delay(wait_few);
                     }
 
                     // Wait for pos to change
 
                     // Wait for temp to change
                     // Wait additional 20s for stability
-                    
-                    int cont = 1;
-                    if (temp_changed)
-                    {
-                        bool temp_good = false;
 
-                        while (cont < 4)
-                        {
-                            Thread.Sleep(2000);
-                            temp_good = TempDev.is_temp_good(ct, 0.7);
-                            Thread.Sleep(500);
-                            if (temp_good)
-                            {
-                                cont++;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Wait");
-                            }
-                            myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
-                        }
-                    }/*
+                    int code = Task.Run(() => check_temperature(ct)).Result;/*
                     if (temp_changed)
                     {
                         int cont = 1;
@@ -731,12 +694,49 @@ namespace MPhys.GUI
                 MessageBox.Show("Count is not set. It's current value is: 0 (must be greater than that)");
             }
             myfunctions.add_to_log("auto_run()", "The tasks are finished");
-            return 0;
-           
         }
 
+        private async Task<int> check_temperature(double current_temp)
+        {
+            bool temp_good = false;
+            int cont = 0;
 
-        private int auto_run_central()
+            var t = Task.Run(async delegate
+            {
+                await Task.Delay(TimeSpan.FromSeconds(2000));
+                return TempDev.is_temp_good(current_temp, 0.7);
+            });
+
+            try
+            {
+                // Best case scenario - wait 8s
+                await Task.Run(() =>
+                {
+                    while (cont < 4)
+                    {
+                        t.Wait();
+                        temp_good = t.Result;
+                        if (temp_good)
+                        {
+                            cont++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Wait");
+                        }
+                        myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
+                    }
+                });
+            
+                return 0;
+            }
+            catch (Exception e){
+                return -1;
+            }
+            
+        }
+
+        private async void auto_run_central()
         {
             double ct = 0.0; double ce = 0.0; // current temperature ; current exposure time
             double cs = 1.0; // current slit width
@@ -754,7 +754,7 @@ namespace MPhys.GUI
             catch
             {
                 MessageBox.Show("Count is not set correctly");
-                return -1;
+                return;
             }
 
             try
@@ -767,13 +767,13 @@ namespace MPhys.GUI
                 else
                 {
                     MessageBox.Show("Start and End are not set correctly");
-                    return -1;
+                    return;
                 }
             }
             catch
             {
                 MessageBox.Show("Start and End are not set correctly");
-                return -1;
+                return;
             }
 
             if (count > 0 && all_good)
@@ -832,23 +832,26 @@ namespace MPhys.GUI
                     // Wait 2s to make sure wheel is set
                     if (wait_few > 0)
                     {
-                        Thread.Sleep(1000 * wait_few);
+                        await Task.Delay(wait_few);
                     }
 
                     // Wait for pos to change
 
                     // Wait for temp to change
                     // Wait additional 20s for stability
-                    int cont = 1;
+
+                    int code = Task.Run(() => check_temperature(ct)).Result;
+
+                    //int cont = 1;
+                    /*
                     if (temp_changed)
                     {
                         bool temp_good = false;
 
                         while (cont < 4)
                         {
-                            Thread.Sleep(2000);
+                            await Task.Delay(2000);
                             temp_good = TempDev.is_temp_good(ct, 0.7);
-                            Thread.Sleep(500);
                             if (temp_good)
                             {
                                 cont++;
@@ -859,7 +862,7 @@ namespace MPhys.GUI
                             }
                             myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
                         }
-                    }
+                    }*/
                     /*
                     while (!TempDev.is_temp_good(ct) && cont<5)
                     {
@@ -963,7 +966,6 @@ namespace MPhys.GUI
                 MessageBox.Show("Count is not set. It's current value is: 0 (must be greater than that)");
             }
             myfunctions.add_to_log("auto_run_central()", "The tasks are finished");
-            return 0;
         }
 
 

@@ -872,3 +872,586 @@
 11:13 : InitializeGainSelect :  0
 11:13 : InitializeADCSelect :  0
 11:13 : OnCCDEvent_Initialized :  Gain and ADC Added
+13:12 : InitializeCCD :  CCD Event
+13:12 : InitializeCCD :  CCD Load
+13:12 : InitializeCCD :  CCD Open
+13:12 : InitializeCCD :  CCD Initialize
+13:12 : InitializeCCD :  Load ADC and Gain
+13:12 : InitializeCCD :  Complete
+
+13:12 : OnCCDEvent_Initialized :  Adding Gain and ADC
+13:12 : InitializeGainSelect :  0
+13:12 : InitializeADCSelect :  0
+13:12 : OnCCDEvent_Initialized :  Gain and ADC Added
+13:19 : bool connect_devices() :  PM100A connected
+13:19 : bool connect_devices() :  M9700 connected
+13:19 : InitializeCCD :  CCD Event
+13:19 : InitializeCCD :  CCD Load
+13:19 : InitializeCCD :  CCD Open
+13:19 : InitializeCCD :  CCD Initialize
+13:19 : InitializeCCD :  Load ADC and Gain
+13:19 : InitializeCCD :  Complete
+
+13:19 : bool connect_devices() :  Mono and CCD connected
+13:19 : OnCCDEvent_Initialized :  Adding Gain and ADC
+13:19 : InitializeGainSelect :  0
+13:19 : InitializeADCSelect :  0
+13:19 : OnCCDEvent_Initialized :  Gain and ADC Added
+13:20 : buttonRun_Click :  auto_run() started
+13:20 : auto_run() :  Starting data acquisition
+13:20 : auto_run() :  Task0
+13:20 : auto_run() :  Setting devices...
+13:20 : auto_run() :  Setting NDF1 position...
+13:20 : SetSlit :  0.008
+13:26 : bool connect_devices() :  PM100A connected
+13:26 : bool connect_devices() :  M9700 connected
+13:26 : InitializeCCD :  CCD Event
+13:26 : InitializeCCD :  CCD Load
+13:26 : InitializeCCD :  CCD Open
+13:26 : InitializeCCD :  CCD Initialize
+13:26 : InitializeCCD :  Load ADC and Gain
+13:26 : InitializeCCD :  Complete
+
+13:26 : bool connect_devices() :  Mono and CCD connected
+13:26 : OnCCDEvent_Initialized :  Adding Gain and ADC
+13:26 : InitializeGainSelect :  0
+13:26 : InitializeADCSelect :  0
+13:26 : OnCCDEvent_Initialized :  Gain and ADC Added
+13:27 : buttonRun_Click :  auto_run() started
+13:27 : auto_run() :  Starting data acquisition
+13:27 : auto_run() :  Task0
+13:27 : auto_run() :  Setting devices...
+13:27 : auto_run() :  Setting NDF1 position...
+13:27 : SetSlit :  0.008
+13:27 : auto_run() :  Wait for temperature... 2
+13:27 : auto_run() :  Wait for temperature... 3
+13:28 : InitializeCCD :  CCD Event
+13:28 : InitializeCCD :  CCD Load
+13:28 : InitializeCCD :  CCD Open
+13:28 : InitializeCCD :  CCD Initialize
+13:28 : InitializeCCD :  Load ADC and Gain
+13:28 : InitializeCCD :  Complete
+
+13:28 : OnCCDEvent_Initialized :  Adding Gain and ADC
+13:28 : InitializeGainSelect :  0
+13:28 : InitializeADCSelect :  0
+13:28 : OnCCDEvent_Initialized :  Gain and ADC Added
+13:29 : StartBtn_Click :  Check if ready for acquisition
+13:29 : StartBtn_Click :  Saving in: c:\temp\mydata.txt\Test.txt
+13:29 : StartBtn_Click :  Call GoStream
+13:29 : StartBtn_Click :  GoStream(c:\temp\mydata.txt\Test.txt,1,3)
+13:29 : GoStream :  GoStream() Called
+13:29 : GoStream :  Creating arrays
+13:29 : GoStream :  Arrays created
+13:29 : GoStream :  Starting acquisition
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  AcquisitionBusy
+13:29 : GoStream :  Get result
