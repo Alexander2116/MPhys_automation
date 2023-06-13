@@ -436,6 +436,7 @@ namespace MPhys.GUI
 
             if (DeviceInitialized && MonoSpec.ReadForAcq() && !MonoSpec.MonoIsBusy())
             {
+                buttonRun.Enabled = false;
                 if (RangeMode.Checked)
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run() started");
@@ -495,6 +496,7 @@ namespace MPhys.GUI
                         }
                     }
                 }
+                buttonRun.Enabled = true;
             }
             else
             {

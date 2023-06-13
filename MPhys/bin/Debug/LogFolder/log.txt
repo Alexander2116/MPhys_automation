@@ -816,3 +816,59 @@
 11:42 : buttonRun_Click :  auto_run() started
 11:42 : buttonRun_Click :  auto_run() started
 11:43 : buttonRun_Click :  auto_run() started
+10:54 : bool connect_devices() :  PM100A connected
+10:54 : bool connect_devices() :  M9700 connected
+10:54 : InitializeCCD :  CCD Event
+10:54 : InitializeCCD :  CCD Load
+10:54 : InitializeCCD :  CCD Open
+10:54 : InitializeCCD :  CCD Initialize
+10:54 : InitializeCCD :  Load ADC and Gain
+10:54 : InitializeCCD :  Complete
+
+10:54 : bool connect_devices() :  Mono and CCD connected
+10:55 : OnCCDEvent_Initialized :  Adding Gain and ADC
+10:55 : InitializeGainSelect :  0
+10:55 : InitializeADCSelect :  0
+10:55 : OnCCDEvent_Initialized :  Gain and ADC Added
+11:02 : buttonRun_Click :  auto_run() started
+11:02 : auto_run() :  Starting data acquisition
+11:02 : auto_run() :  Task0
+11:02 : auto_run() :  Setting devices...
+11:02 : auto_run() :  Setting NDF1 position...
+11:02 : SetSlit :  0.011
+11:02 : auto_run() :  Wait for temperature... 1
+11:02 : auto_run() :  Wait for temperature... 1
+11:02 : auto_run() :  Wait for temperature... 1
+11:02 : auto_run() :  Wait for temperature... 1
+11:02 : auto_run() :  Wait for temperature... 1
+11:02 : auto_run() :  Wait for temperature... 1
+11:02 : auto_run() :  Wait for temperature... 1
+11:02 : auto_run() :  Wait for temperature... 1
+11:02 : auto_run() :  Wait for temperature... 1
+11:12 : InitializeCCD :  CCD Event
+11:12 : InitializeCCD :  CCD Load
+11:12 : InitializeCCD :  CCD Open
+11:12 : InitializeCCD :  CCD Initialize
+11:12 : InitializeCCD :  Load ADC and Gain
+11:12 : InitializeCCD :  Complete
+
+11:12 : OnCCDEvent_Initialized :  Adding Gain and ADC
+11:12 : InitializeGainSelect :  0
+11:12 : InitializeADCSelect :  0
+11:12 : OnCCDEvent_Initialized :  Gain and ADC Added
+11:12 : buttonSaveGainADC_Click :  Started
+11:12 : buttonSaveGainADC_Click :  Finished
+11:13 : bool connect_devices() :  PM100A connected
+11:13 : bool connect_devices() :  M9700 connected
+11:13 : InitializeCCD :  CCD Event
+11:13 : InitializeCCD :  CCD Load
+11:13 : InitializeCCD :  CCD Open
+11:13 : InitializeCCD :  CCD Initialize
+11:13 : InitializeCCD :  Load ADC and Gain
+11:13 : InitializeCCD :  Complete
+
+11:13 : bool connect_devices() :  Mono and CCD connected
+11:13 : OnCCDEvent_Initialized :  Adding Gain and ADC
+11:13 : InitializeGainSelect :  0
+11:13 : InitializeADCSelect :  0
+11:13 : OnCCDEvent_Initialized :  Gain and ADC Added
