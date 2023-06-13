@@ -11,6 +11,7 @@ using MPhys.Devices;
 using System.Configuration;
 using System.Threading;
 using MPhys.MyFunctions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace MPhys.GUI
 {
@@ -419,7 +420,7 @@ namespace MPhys.GUI
         }
 
         [Obsolete]
-        private void buttonRun_Click(object sender, EventArgs e)
+        private async void buttonRun_Click(object sender, EventArgs e)
         {
             ADCStringType adc = myfunctions.ReadFromBinaryFile<ADCStringType>("ADC_settings.dat");
             PairStringInt gain = myfunctions.ReadFromBinaryFile<PairStringInt>("Gain_settings.dat");
@@ -444,6 +445,7 @@ namespace MPhys.GUI
                         int msg = await AutoRunAsync();
                         return msg;
                     });*/
+                    /*
                     var thread = new Thread(() =>
                     {
                         auto_run();
@@ -461,7 +463,13 @@ namespace MPhys.GUI
                         {
                             loop_while = false;
                         }
-                    }
+                    }*/
+                    await AutoRunAysc();
+                    /*
+                    await Task.Run(() =>
+                    {
+                        auto_run();
+                    });*/
 
                 }
                 if (PositionMode.Checked)
@@ -494,10 +502,19 @@ namespace MPhys.GUI
             }
 
         }
-        private Task<int> AutoRunAsync()
+        private async Task<int> AutoRunAysc()
+        {
+            Task<int> p = Task.Factory.StartNew(() => { auto_run(); return 1; });
+
+            await p;
+
+            return p.Result;
+        }
+
+        /*private Task<int> AutoRunAsync()
         {
             return Task.Run<int>(() => auto_run());
-        }
+        }*/
 
         private Task<int> CentralAutoRunAsync()
         {
