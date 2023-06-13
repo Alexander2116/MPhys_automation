@@ -478,7 +478,7 @@ namespace MPhys.GUI
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run_central() started");
                     //int code = Task.Run(() => auto_run_central()).Result;
-                    var thread = new Thread(() =>
+                    /*var thread = new Thread(() =>
                     {
                         auto_run_central();
                     });
@@ -495,7 +495,11 @@ namespace MPhys.GUI
                         {
                             loop_while = false;
                         }
-                    }
+                    }*/
+                    await Task.Run(() =>
+                    {
+                        auto_run_central();
+                    });
                 }
                 buttonRun.Enabled = true;
             }
