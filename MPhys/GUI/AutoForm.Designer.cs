@@ -69,6 +69,8 @@ namespace MPhys.GUI
             this.buttonRemove = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxCentral = new System.Windows.Forms.TextBox();
+            this.textCurrTemp = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -475,6 +477,26 @@ namespace MPhys.GUI
             this.textBoxCentral.TabIndex = 56;
             this.textBoxCentral.Text = "300";
             // 
+            // textCurrTemp
+            // 
+            this.textCurrTemp.Location = new System.Drawing.Point(618, 77);
+            this.textCurrTemp.Margin = new System.Windows.Forms.Padding(2);
+            this.textCurrTemp.Name = "textCurrTemp";
+            this.textCurrTemp.ReadOnly = true;
+            this.textCurrTemp.Size = new System.Drawing.Size(62, 20);
+            this.textCurrTemp.TabIndex = 58;
+            this.textCurrTemp.Text = "Temp K";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(529, 80);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(87, 13);
+            this.label14.TabIndex = 57;
+            this.label14.Text = "Current Temp [K]";
+            // 
             // AutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,6 +504,8 @@ namespace MPhys.GUI
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textCurrTemp);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.textBoxCentral);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.buttonRemove);
@@ -572,5 +596,7 @@ namespace MPhys.GUI
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxCentral;
+        private System.Windows.Forms.TextBox textCurrTemp;
+        private System.Windows.Forms.Label label14;
     }
 }

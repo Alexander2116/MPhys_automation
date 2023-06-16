@@ -51,13 +51,14 @@ namespace MPhys.GUI
             MonoSpec = new HR550();
         }
 
-        private void buttonInit_Click(object sender, EventArgs e)
+        private async void buttonInit_Click(object sender, EventArgs e)
         {
             bool ok = connect_devices();
             if (ok)
             {
                 labelInit.ForeColor = Color.Green;
                 labelInit.Text = "Initialized - ready";
+                await Task.Run(() => UpdateTemp());
             }
             else
             {
@@ -65,6 +66,20 @@ namespace MPhys.GUI
                 labelInit.Text = "Not ready";
             }
         }
+
+        private async Task UpdateTemp()
+        {
+            try
+            {
+                while (true)
+                {
+                    Thread.Sleep(2000);
+                    textCurrTemp.Text = TempDev.Get_temperature();
+                }
+            }
+            catch (Exception ex) { }
+        }
+
         private bool connect_devices()
         {
             bool all_good = true;
@@ -158,6 +173,7 @@ namespace MPhys.GUI
                     TempDev.Open();
                     TempDev.Close();
                     myfunctions.add_to_log("bool connect_devices()", "M9700 connected");
+                    TempDev.Set_mode(2);
                 }
                 catch
                 {
@@ -615,7 +631,7 @@ namespace MPhys.GUI
                             cont += 1;
                         }
                     }*/
-                    temp_good = false;
+                    //temp_good = false;
                     cont = 0;
                     if (temp_changed == false)
                     {
@@ -640,16 +656,9 @@ namespace MPhys.GUI
                         //Task.Delay(TimeSpan.FromSeconds(2000));
                         Console.WriteLine("Reading");
                         // it stops here when the temp is changed 20->50
-                        if(TempDev.IsOpen() == 0)
-                        {
-                            Console.WriteLine("Open");
-                            TempDev.Open();
-                        }
-                        temp_good = TempDev.is_temp_good(ct, 0.7);
-                        TempDev.Close();
-                        Thread.Sleep(100);
-                        Console.WriteLine(temp_good);
-                        if (temp_good)
+                        //temp_good = TempDev.is_temp_good(ct, 0.7);
+                        //Console.WriteLine(temp_good);
+                        if (Math.Abs(double.Parse(textCurrTemp.Text.ToString()) - ct) < 0.7)
                         {
                             cont++;
                             Console.WriteLine(cont);
@@ -657,7 +666,7 @@ namespace MPhys.GUI
                         else
                         {
                             Console.WriteLine("Wait");
-                            Thread.Sleep(5000); //5s
+                            Thread.Sleep(10000); // 10s
                         }
                         //myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
                     }
