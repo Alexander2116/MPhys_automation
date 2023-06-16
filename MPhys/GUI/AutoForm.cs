@@ -87,7 +87,7 @@ namespace MPhys.GUI
             CCD.sName = sNameC;
 
             // NDF1
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             try
             {
                 //NDF1 = null;
@@ -110,7 +110,7 @@ namespace MPhys.GUI
             // NDF2
             if (all_good)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 try
                 {
                     //NDF2 = null;
@@ -134,7 +134,7 @@ namespace MPhys.GUI
             if (all_good)
             {
                 // PM
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 try
                 {
                     PMDev = new PM100A(PMport);
@@ -150,7 +150,7 @@ namespace MPhys.GUI
             }
             if (all_good)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 // TEMP
                 try
                 {
@@ -168,7 +168,7 @@ namespace MPhys.GUI
             if (all_good)
             {
                 // Mono & CCD
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 try
                 {
                     //bool Bmono = true;
@@ -186,7 +186,7 @@ namespace MPhys.GUI
                     all_good = false;
                     MessageBox.Show("Issues with connecting with iHR550");
                 }
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
             }
             DeviceInitialized = all_good;
             return all_good;
@@ -442,36 +442,15 @@ namespace MPhys.GUI
                 if (RangeMode.Checked)
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run() started");
-                    //int code = Task.Run(() => auto_run()).Result;
-                    /*Task<int> sCode = Task.Run(async () =>
-                    {
-                        int msg = await AutoRunAsync();
-                        return msg;
-                    });*/
-                    /*
+
+                    Console.WriteLine("Run");
                     var thread = new Thread(() =>
                     {
+                        Console.WriteLine("Thread");
                         auto_run();
                     });
                     thread.Priority = ThreadPriority.Highest;
                     thread.Start();
-                    bool loop_while = true;
-                    while (loop_while)
-                    {
-                        if ((thread.ThreadState == ThreadState.Stopped || thread.ThreadState == ThreadState.Suspended) && !(thread.ThreadState == ThreadState.Unstarted) && thread.ThreadState == ThreadState.Running)
-                        {
-                            thread.Resume();
-                        }
-                        if (!thread.IsAlive)
-                        {
-                            loop_while = false;
-                        }
-                    }*/
-                    
-                    await Task.Run(() =>
-                    {
-                        auto_run();
-                    });
 
                 }
                 if (PositionMode.Checked)
@@ -513,6 +492,7 @@ namespace MPhys.GUI
 
         private async void auto_run()
         {
+            Console.WriteLine("autorun");
             double ct = 0.0; double ce = 0.0; // current temperature ; current exposure time
             double cs = 1.0; // current slit width
             Int32 cp1 = 0; Int32 cp2 = 0; // current possition 1, 2
@@ -521,6 +501,8 @@ namespace MPhys.GUI
             bool all_good = false;
             double Inc = 0.036; // nm
             bool temp_changed = false;
+            int cont = 0;
+            bool temp_good = false;
 
 
             try
@@ -560,6 +542,7 @@ namespace MPhys.GUI
                 int Loop_no = dataTable.Rows.Count;
                 for (int i = 0; i < Loop_no; i++)
                 {
+                    Console.WriteLine("ReadLine");
                     myfunctions.add_to_log("auto_run()", "Task"+i.ToString());
                     DataRow lastRow = dataTable.Rows[i];
 
@@ -612,6 +595,7 @@ namespace MPhys.GUI
                     // Wait 2s to make sure wheel is set
                     if (wait_few > 0)
                     {
+                        Console.WriteLine("Wait for wheel");
                         await Task.Delay(wait_few);
                     }
 
@@ -620,7 +604,8 @@ namespace MPhys.GUI
                     // Wait for temp to change
                     // Wait additional 20s for stability
 
-                    int code = Task.Run(() => check_temperature(ct)).Result;/*
+                //int code = Task.Run(() => check_temperature(ct)).Result;
+                  /*
                     if (temp_changed)
                     {
                         int cont = 1;
@@ -630,7 +615,53 @@ namespace MPhys.GUI
                             cont += 1;
                         }
                     }*/
+                    temp_good = false;
+                    cont = 0;
+                    if (temp_changed == false)
+                    {
+                        cont = 8;
+                    }
+                    else
+                    {
+                        if (TempDev.is_temp_good(ct, 0.7) != true)
+                        {
+                            Console.WriteLine("Wait 30s");
+                            Thread.Sleep(30000); // 30s
+                            Console.WriteLine("Waiting finished");
+                        }
+                    }
+                    // Best case scenario - wait 8s
+                    Console.WriteLine("Loop");
+                    while (cont < 8 )
+                    {
 
+                        Console.WriteLine("InLoop");
+                        Thread.Sleep(500); // 0.5s
+                        //Task.Delay(TimeSpan.FromSeconds(2000));
+                        Console.WriteLine("Reading");
+                        // it stops here when the temp is changed 20->50
+                        if(TempDev.IsOpen() == 0)
+                        {
+                            Console.WriteLine("Open");
+                            TempDev.Open();
+                        }
+                        temp_good = TempDev.is_temp_good(ct, 0.7);
+                        TempDev.Close();
+                        Thread.Sleep(100);
+                        Console.WriteLine(temp_good);
+                        if (temp_good)
+                        {
+                            cont++;
+                            Console.WriteLine(cont);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Wait");
+                            Thread.Sleep(5000); //5s
+                        }
+                        //myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
+                    }
+                    Console.WriteLine("OutLoop");
                     temp_changed = false;
 
                     // Take power

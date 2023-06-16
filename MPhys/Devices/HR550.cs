@@ -691,26 +691,21 @@ namespace MPhys.Devices
             {
                 // move mono
                 mMono.MovetoWavelength(pos);
-                Console.WriteLine("a");
                 isMonoBusy = true;
                 while (isMonoBusy == true)
                 {
                     isMonoBusy = mMono.IsBusy();
                 }
-                Console.WriteLine("b");
                 dPos = mMono.GetCurrentWavelength();
                 //myFunc.add_to_log("GetData()", dPos.ToString()); // works
                 // Start the acquisition
                 isCCDBusy = true;
-                Console.WriteLine("c");
                 mCCD.StartAcquisition(true);
-                Console.WriteLine("d");
                 while ((isCCDBusy == true))
                 {
                     // Poll Busy
                     isCCDBusy = mCCD.AcquisitionBusy();
                 }
-                Console.WriteLine("e");
 
                 // Retrieve the data
                 ccdResult = mCCD.GetResult();
@@ -719,25 +714,19 @@ namespace MPhys.Devices
                 Object temp;
                 ccdData.GetDataAsArray(out temp);
                 ccdData = null;
-                Console.WriteLine("f");
                 Int32[] array = (Int32[])temp;
                 List<int> scan_i = new List<int>();
                 for (int i = 0; i < 1024; i++)
                 {
                     scan_i.Add((int)array[i]);
                 }
-                Console.WriteLine("g");
                 List<double> scan_w = Get_Wavelength_Range(dPos, (int)current_grating);
-                Console.WriteLine("h");
                 wavelength.AddRange(scan_w);
                 intensity.AddRange(scan_i);
-                Console.WriteLine("i");
 
             }          // end of loop
-            Console.WriteLine("j");
             myFunc.DataAddColumn(ref dData, wavelength, "Wavelength");
             myFunc.DataAddColumn(ref dData, intensity, "Intensity");
-            Console.WriteLine("k");
 
         }
 
