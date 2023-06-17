@@ -67,7 +67,7 @@ namespace MPhys.GUI
             }
         }
 
-        private async Task UpdateTemp()
+        private async Task UpdateTemp() // only use I see is awaited anyways, so why make it a Task?
         {
             try
             {
@@ -77,7 +77,7 @@ namespace MPhys.GUI
                     textCurrTemp.Text = TempDev.Get_temperature();
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { } // why not do something about the exception?
         }
 
         private bool connect_devices()
@@ -102,7 +102,7 @@ namespace MPhys.GUI
             CCD.sName = sNameC;
 
             // NDF1
-            Thread.Sleep(500);
+            Thread.Sleep(500); // not sure if mixing Threads or Tasks is a good idea. Probs best to stick to one only
             try
             {
                 //NDF1 = null;
@@ -268,13 +268,22 @@ namespace MPhys.GUI
             column.ColumnName = "Slit";
             column.ReadOnly = false;
             column.Unique = false;
-            dataTable.Columns.Add(column);
+            dataTable.Columns.Add(column); // Since you're using a global variable, I recommend logging everything you do with it to make sure no issues arise
         }
 
         private void Update_TextBox()
         {
             string textrow;
-            listBoxTasks.Items.Clear();
+            listBoxTasks.Items.Clear(); // Really dislike accessing global vars like this - maybe create functions that do these for you instead? E.g.:
+            /*
+            private void clearListBoxTasks() {
+                log.info("Clearing list box tasks!);
+                listBoxTasks.Items.Clear();
+            }
+
+            private void addListBoxTasks() {...}
+                etc.
+            */
             for (int i =0; i < dataTable.Rows.Count; i++)
             {
                 DataRow lastRow = dataTable.Rows[i];
@@ -304,7 +313,7 @@ namespace MPhys.GUI
                 int id;
                 double slit = double.Parse(textBoxSlit.Text);
 
-                if (temp < 5.0 || temp > 400)
+                if (temp < 5.0 || temp > 400) // IDK how much time you have left, but these could be read form a config file instead
                 {
                     MessageBox.Show("Temperature is too small or too big");
                     return;
@@ -506,9 +515,9 @@ namespace MPhys.GUI
         }
 
 
-        private async void auto_run()
+        private async void auto_run() // in general this function does way too much - split it up
         {
-            Console.WriteLine("autorun");
+            Console.WriteLine("autorun"); // Why console when you have a logging function?
             double ct = 0.0; double ce = 0.0; // current temperature ; current exposure time
             double cs = 1.0; // current slit width
             Int32 cp1 = 0; Int32 cp2 = 0; // current possition 1, 2
@@ -527,7 +536,7 @@ namespace MPhys.GUI
             }
             catch
             {
-                MessageBox.Show("Count is not set correctly");
+                MessageBox.Show("Count is not set correctly"); // Useful to know why something fails, display the exception as well (or at least log it)
                 return;
             }
 
@@ -558,7 +567,7 @@ namespace MPhys.GUI
                 int Loop_no = dataTable.Rows.Count;
                 for (int i = 0; i < Loop_no; i++)
                 {
-                    Console.WriteLine("ReadLine");
+                    Console.WriteLine("ReadLine"); // what? xD
                     myfunctions.add_to_log("auto_run()", "Task"+i.ToString());
                     DataRow lastRow = dataTable.Rows[i];
 
@@ -646,7 +655,7 @@ namespace MPhys.GUI
                             Console.WriteLine("Waiting finished");
                         }
                     }
-                    // Best case scenario - wait 8s
+                    // Best case scenario - wait 8s <- hm? This whole section can be replaced with Thread Join
                     Console.WriteLine("Loop");
                     while (cont < 8 )
                     {
@@ -753,7 +762,7 @@ namespace MPhys.GUI
 
             try
             {
-                // Best case scenario - wait 8s
+                // Best case scenario - wait 8s <- hm? This whole section can be replaced with: t.Wait(8000);
                 await Task.Run(() =>
                 {
                     while (cont < 4)
@@ -885,6 +894,7 @@ namespace MPhys.GUI
                     // Wait additional 20s for stability
 
                     int code = Task.Run(() => check_temperature(ct)).Result;
+                    code = await check_temperature(ct); // this should give you the same
 
                     //int cont = 1;
                     /*
