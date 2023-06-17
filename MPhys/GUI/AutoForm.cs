@@ -655,7 +655,7 @@ namespace MPhys.GUI
                             Console.WriteLine("Waiting finished");
                         }
                     }
-                    // Best case scenario - wait 8s <- hm? This whole section can be replaced with: t.Wait(8000);
+                    // Best case scenario - wait 8s <- hm? This whole section can be replaced with Thread Join
                     Console.WriteLine("Loop");
                     while (cont < 8 )
                     {
@@ -894,6 +894,7 @@ namespace MPhys.GUI
                     // Wait additional 20s for stability
 
                     int code = Task.Run(() => check_temperature(ct)).Result;
+                    code = await check_temperature(ct); // this should give you the same
 
                     //int cont = 1;
                     /*
