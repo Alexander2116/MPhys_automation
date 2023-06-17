@@ -142,7 +142,7 @@ namespace MPhys.MyFunctions
             sw.Close();
         }
 
-        public void add_to_log(string function_name, string text_message)
+        public void add_to_log(string function_name, string text_message) // why not use an existing logging library. It will work much better and usually async
         {
             string path = "./LogFolder\\log.txt";
             System.IO.Directory.CreateDirectory("./LogFolder");
