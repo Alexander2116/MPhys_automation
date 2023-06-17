@@ -515,7 +515,7 @@ namespace MPhys.GUI
         }
 
 
-        private async void auto_run()
+        private async void auto_run() // in general this function does way too much - split it up
         {
             Console.WriteLine("autorun"); // Why console when you have a logging function?
             double ct = 0.0; double ce = 0.0; // current temperature ; current exposure time
@@ -536,7 +536,7 @@ namespace MPhys.GUI
             }
             catch
             {
-                MessageBox.Show("Count is not set correctly");
+                MessageBox.Show("Count is not set correctly"); // Useful to know why something fails, display the exception as well (or at least log it)
                 return;
             }
 
@@ -655,7 +655,7 @@ namespace MPhys.GUI
                             Console.WriteLine("Waiting finished");
                         }
                     }
-                    // Best case scenario - wait 8s
+                    // Best case scenario - wait 8s <- hm? This whole section can be replaced with: t.Wait(8000);
                     Console.WriteLine("Loop");
                     while (cont < 8 )
                     {
