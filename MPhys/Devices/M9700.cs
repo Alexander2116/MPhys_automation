@@ -133,7 +133,7 @@ namespace MPhys.Devices
 
 
         // receive data from the device
-        private string Receive(string initial)
+        /*private string Receive(string initial)
         {
             string received = "";
             string data;
@@ -162,7 +162,7 @@ namespace MPhys.Devices
                         }
                         received = (Encoding.ASCII.GetString(ByteArray));
                         _continue = false;
-                    }*/
+                    }*//*
 
                     data = _port.ReadExisting();
 
@@ -183,6 +183,46 @@ namespace MPhys.Devices
                 Console.WriteLine(ex.Message);
             }
             return received;
+        }*/
+
+        // This is another method of communication, it may work just fine, not sure
+        private string buffer { get; set; }
+
+        private string Receive(string initial)
+        {
+            buffer = "";
+            buffer += _port.ReadExisting();
+
+            //test for termination character in buffer
+            if (buffer.Contains("\r"))
+            {
+                //run code on data received from serial port
+                return buffer;
+            }
+            else
+            {
+                int c = 0;
+                while(c < 5)
+                {
+                    c++;
+                    buffer += _port.ReadExisting();
+                    if (buffer.Contains("\r"))
+                    {
+                        //run code on data received from serial port
+                        return buffer;
+                    }
+                }
+                buffer += _port.ReadExisting();
+                if (buffer.Contains("\r"))
+                {
+                    //run code on data received from serial port
+                    return buffer;
+                }
+                else
+                {
+                    return initial + 0 + "\r";
+                }
+            }
         }
 
         public void Close()
