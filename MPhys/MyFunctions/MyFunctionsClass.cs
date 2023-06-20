@@ -8,6 +8,7 @@ using System.IO;
 using System.Reflection;
 using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using NLog;
 
 
 namespace MPhys.MyFunctions
@@ -142,8 +143,20 @@ namespace MPhys.MyFunctions
             sw.Close();
         }
 
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public void add_to_log(string function_name, string text_message) // why not use an existing logging library. It will work much better and usually async
         {
+            string path = "./LogFolder\\log.txt";
+            System.IO.Directory.CreateDirectory("./LogFolder");
+            if (!System.IO.File.Exists(path))
+            {
+                var a = System.IO.File.Create(path);
+                a.Close();
+            }
+
+            //string mes = function_name + " :  " + text_message;
+            Logger.Info(" {function_name} {message}", function_name, text_message);
+            /*
             string path = "./LogFolder\\log.txt";
             System.IO.Directory.CreateDirectory("./LogFolder");
             if (!System.IO.File.Exists(path))
@@ -154,7 +167,7 @@ namespace MPhys.MyFunctions
             string temp = DateTime.Now.ToString("HH:mm");
 
             string mes = temp + " : " + function_name + " :  " + text_message;
-            File.AppendAllText(path, mes + Environment.NewLine);
+            File.AppendAllText(path, mes + Environment.NewLine);*/
         }
 
 

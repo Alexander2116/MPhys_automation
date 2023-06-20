@@ -1945,3 +1945,21 @@
 12:13 : auto_run() :  Task0
 12:13 : auto_run() :  Setting devices...
 12:13 : auto_run() :  Setting NDF1 position...
+2023-06-20 19:19:14.9912|Info|| "main" "started" |function_name=main, message=started 
+2023-06-20 19:21:04.0725 Info Message Template Auto Format enabled
+2023-06-20 19:21:04.1455 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to parse layout containing type: function_name - LayoutRenderer type-alias is unknown: 'function_name' ---> System.ArgumentException: LayoutRenderer type-alias is unknown: 'function_name'
+   at NLog.Config.FactoryExtensions.CreateInstance[TBaseType](IFactory`1 factory, String typeAlias)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(String typeName, ConfigurationItemFactory configurationItemFactory, Nullable`1 throwConfigExceptions)
+   --- End of inner exception stack trace ---
+2023-06-20 19:21:04.1775 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-06-20 19:21:04.1875 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logconsole' not found for logging rule: *.
+2023-06-20 19:21:04.2105 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.config
+2023-06-20 19:21:04.2335 Info Configuration initialized.
+2023-06-20 19:21:04.2335 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.0.1813. Product version: 5.2.0+eed5f76d158dbcaef9326f7a0e1c281adad171e8. GlobalAssemblyCache: False
+2023-06-20 19:21:04.2845|Info|| "main" "started" |function_name=main, message=started 
+2023-06-20 19:21:08.1182|Info|| "main" "started" |function_name=main, message=started 
+2023-06-20 19:21:19.0444 Info LogFactory has been closed.
+2023-06-20 19:22:38.1421|Info|| "main" "started" |function_name=main, message=started 
+2023-06-20 19:22:46.2589|Info|| "main" "started" |function_name=main, message=started 
+2023-06-20 19:38:16.9393|Info|| "main" "started" |function_name=main, message=started 
+2023-06-20 19:39:32.7046|Info|| "main" "started" |function_name=main, message=started 

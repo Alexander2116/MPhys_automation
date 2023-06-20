@@ -71,7 +71,18 @@ namespace MPhys.GUI
             this.textBoxCentral = new System.Windows.Forms.TextBox();
             this.textCurrTemp = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.buttonSaveGainADC = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.ADCSelect = new System.Windows.Forms.ComboBox();
+            this.GainList = new System.Windows.Forms.ComboBox();
+            this.groupboxWlCtrl = new System.Windows.Forms.GroupBox();
+            this.comboboxGrating = new System.Windows.Forms.ComboBox();
+            this.labelGrating = new System.Windows.Forms.Label();
+            this.textboxPosition = new System.Windows.Forms.TextBox();
+            this.labelPosition = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
+            this.groupboxWlCtrl.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBoxTasks
@@ -85,14 +96,14 @@ namespace MPhys.GUI
             // 
             // textBoxTemp
             // 
-            this.textBoxTemp.Location = new System.Drawing.Point(28, 100);
+            this.textBoxTemp.Location = new System.Drawing.Point(28, 55);
             this.textBoxTemp.Name = "textBoxTemp";
             this.textBoxTemp.Size = new System.Drawing.Size(79, 20);
             this.textBoxTemp.TabIndex = 17;
             // 
             // textBoxExp
             // 
-            this.textBoxExp.Location = new System.Drawing.Point(233, 100);
+            this.textBoxExp.Location = new System.Drawing.Point(233, 55);
             this.textBoxExp.Name = "textBoxExp";
             this.textBoxExp.Size = new System.Drawing.Size(51, 20);
             this.textBoxExp.TabIndex = 20;
@@ -107,7 +118,7 @@ namespace MPhys.GUI
             "4",
             "5",
             "6"});
-            this.comboNDF2pos.Location = new System.Drawing.Point(173, 99);
+            this.comboNDF2pos.Location = new System.Drawing.Point(173, 54);
             this.comboNDF2pos.Name = "comboNDF2pos";
             this.comboNDF2pos.Size = new System.Drawing.Size(54, 21);
             this.comboNDF2pos.TabIndex = 22;
@@ -122,7 +133,7 @@ namespace MPhys.GUI
             "4",
             "5",
             "6"});
-            this.comboNDF1pos.Location = new System.Drawing.Point(113, 99);
+            this.comboNDF1pos.Location = new System.Drawing.Point(113, 54);
             this.comboNDF1pos.Name = "comboNDF1pos";
             this.comboNDF1pos.Size = new System.Drawing.Size(54, 21);
             this.comboNDF1pos.TabIndex = 21;
@@ -130,7 +141,7 @@ namespace MPhys.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 84);
+            this.label1.Location = new System.Drawing.Point(27, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 23;
@@ -139,7 +150,7 @@ namespace MPhys.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(122, 84);
+            this.label2.Location = new System.Drawing.Point(122, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 24;
@@ -148,7 +159,7 @@ namespace MPhys.GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(182, 84);
+            this.label3.Location = new System.Drawing.Point(182, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 25;
@@ -157,7 +168,7 @@ namespace MPhys.GUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(233, 71);
+            this.label4.Location = new System.Drawing.Point(233, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 26);
             this.label4.TabIndex = 26;
@@ -165,7 +176,7 @@ namespace MPhys.GUI
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(347, 99);
+            this.buttonAdd.Location = new System.Drawing.Point(347, 54);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 27;
@@ -350,7 +361,7 @@ namespace MPhys.GUI
             // 
             this.groupBox4.Controls.Add(this.Image);
             this.groupBox4.Controls.Add(this.Spectra);
-            this.groupBox4.Location = new System.Drawing.Point(28, 136);
+            this.groupBox4.Location = new System.Drawing.Point(28, 88);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
@@ -406,7 +417,7 @@ namespace MPhys.GUI
             // 
             // textBoxSlit
             // 
-            this.textBoxSlit.Location = new System.Drawing.Point(290, 100);
+            this.textBoxSlit.Location = new System.Drawing.Point(290, 55);
             this.textBoxSlit.Name = "textBoxSlit";
             this.textBoxSlit.Size = new System.Drawing.Size(51, 20);
             this.textBoxSlit.TabIndex = 52;
@@ -414,7 +425,7 @@ namespace MPhys.GUI
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(294, 71);
+            this.label12.Location = new System.Drawing.Point(294, 26);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 26);
             this.label12.TabIndex = 53;
@@ -497,6 +508,105 @@ namespace MPhys.GUI
             this.label14.TabIndex = 57;
             this.label14.Text = "Current Temp [K]";
             // 
+            // buttonSaveGainADC
+            // 
+            this.buttonSaveGainADC.Location = new System.Drawing.Point(347, 190);
+            this.buttonSaveGainADC.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSaveGainADC.Name = "buttonSaveGainADC";
+            this.buttonSaveGainADC.Size = new System.Drawing.Size(53, 25);
+            this.buttonSaveGainADC.TabIndex = 59;
+            this.buttonSaveGainADC.Text = "Save";
+            this.buttonSaveGainADC.UseVisualStyleBackColor = true;
+            this.buttonSaveGainADC.Click += new System.EventHandler(this.buttonSaveGainADC_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(180, 205);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(29, 13);
+            this.label15.TabIndex = 64;
+            this.label15.Text = "ADC";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(180, 180);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 13);
+            this.label16.TabIndex = 63;
+            this.label16.Text = "Gain";
+            // 
+            // ADCSelect
+            // 
+            this.ADCSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ADCSelect.FormattingEnabled = true;
+            this.ADCSelect.Location = new System.Drawing.Point(213, 202);
+            this.ADCSelect.Margin = new System.Windows.Forms.Padding(2);
+            this.ADCSelect.Name = "ADCSelect";
+            this.ADCSelect.Size = new System.Drawing.Size(99, 21);
+            this.ADCSelect.TabIndex = 62;
+            // 
+            // GainList
+            // 
+            this.GainList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GainList.FormattingEnabled = true;
+            this.GainList.Location = new System.Drawing.Point(213, 178);
+            this.GainList.Margin = new System.Windows.Forms.Padding(2);
+            this.GainList.Name = "GainList";
+            this.GainList.Size = new System.Drawing.Size(122, 21);
+            this.GainList.TabIndex = 61;
+            // 
+            // groupboxWlCtrl
+            // 
+            this.groupboxWlCtrl.Controls.Add(this.comboboxGrating);
+            this.groupboxWlCtrl.Controls.Add(this.labelGrating);
+            this.groupboxWlCtrl.Controls.Add(this.textboxPosition);
+            this.groupboxWlCtrl.Controls.Add(this.labelPosition);
+            this.groupboxWlCtrl.Enabled = false;
+            this.groupboxWlCtrl.Location = new System.Drawing.Point(185, 88);
+            this.groupboxWlCtrl.Name = "groupboxWlCtrl";
+            this.groupboxWlCtrl.Size = new System.Drawing.Size(248, 78);
+            this.groupboxWlCtrl.TabIndex = 60;
+            this.groupboxWlCtrl.TabStop = false;
+            this.groupboxWlCtrl.Text = "Wavelength Control";
+            // 
+            // comboboxGrating
+            // 
+            this.comboboxGrating.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboboxGrating.FormattingEnabled = true;
+            this.comboboxGrating.Location = new System.Drawing.Point(142, 40);
+            this.comboboxGrating.Name = "comboboxGrating";
+            this.comboboxGrating.Size = new System.Drawing.Size(73, 21);
+            this.comboboxGrating.TabIndex = 3;
+            // 
+            // labelGrating
+            // 
+            this.labelGrating.AutoSize = true;
+            this.labelGrating.Location = new System.Drawing.Point(142, 23);
+            this.labelGrating.Name = "labelGrating";
+            this.labelGrating.Size = new System.Drawing.Size(41, 13);
+            this.labelGrating.TabIndex = 2;
+            this.labelGrating.Text = "Grating";
+            // 
+            // textboxPosition
+            // 
+            this.textboxPosition.Location = new System.Drawing.Point(28, 42);
+            this.textboxPosition.Name = "textboxPosition";
+            this.textboxPosition.Size = new System.Drawing.Size(75, 20);
+            this.textboxPosition.TabIndex = 1;
+            // 
+            // labelPosition
+            // 
+            this.labelPosition.AutoSize = true;
+            this.labelPosition.Location = new System.Drawing.Point(28, 23);
+            this.labelPosition.Name = "labelPosition";
+            this.labelPosition.Size = new System.Drawing.Size(67, 13);
+            this.labelPosition.TabIndex = 0;
+            this.labelPosition.Text = "Position (nm)";
+            // 
             // AutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +614,12 @@ namespace MPhys.GUI
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonSaveGainADC);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.ADCSelect);
+            this.Controls.Add(this.GainList);
+            this.Controls.Add(this.groupboxWlCtrl);
             this.Controls.Add(this.textCurrTemp);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBoxCentral);
@@ -549,6 +665,8 @@ namespace MPhys.GUI
             this.Text = "AutoForm";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupboxWlCtrl.ResumeLayout(false);
+            this.groupboxWlCtrl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,5 +716,15 @@ namespace MPhys.GUI
         private System.Windows.Forms.TextBox textBoxCentral;
         private System.Windows.Forms.TextBox textCurrTemp;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button buttonSaveGainADC;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox ADCSelect;
+        private System.Windows.Forms.ComboBox GainList;
+        internal System.Windows.Forms.GroupBox groupboxWlCtrl;
+        internal System.Windows.Forms.ComboBox comboboxGrating;
+        internal System.Windows.Forms.Label labelGrating;
+        internal System.Windows.Forms.TextBox textboxPosition;
+        internal System.Windows.Forms.Label labelPosition;
     }
 }

@@ -193,29 +193,30 @@ namespace MPhys.Devices
             buffer = "";
             buffer += _port.ReadExisting();
 
-            //test for termination character in buffer
+            // test for termination character in buffer
             if (buffer.Contains("\r"))
             {
-                //run code on data received from serial port
+                // run code on data received from serial port
                 return buffer;
             }
             else
             {
                 int c = 0;
+                // just force the readouts till eventually reads "\r"
                 while(c < 5)
                 {
                     c++;
                     buffer += _port.ReadExisting();
                     if (buffer.Contains("\r"))
                     {
-                        //run code on data received from serial port
+                        // run code on data received from serial port
                         return buffer;
                     }
                 }
                 buffer += _port.ReadExisting();
                 if (buffer.Contains("\r"))
                 {
-                    //run code on data received from serial port
+                    // run code on data received from serial port
                     return buffer;
                 }
                 else

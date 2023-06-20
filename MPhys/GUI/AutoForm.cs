@@ -49,22 +49,28 @@ namespace MPhys.GUI
             dataTable.TableName = "PendingTask";
             Create_DataSet();
             MonoSpec = new HR550();
+            myfunctions.add_to_log("main", "started");
         }
 
         private async void buttonInit_Click(object sender, EventArgs e)
         {
-            bool ok = connect_devices();
-            if (ok)
+            Thread t = new Thread(() =>
             {
-                labelInit.ForeColor = Color.Green;
-                labelInit.Text = "Initialized - ready";
-                await Task.Run(() => UpdateTemp());
-            }
-            else
-            {
-                labelInit.ForeColor = Color.Red;
-                labelInit.Text = "Not ready";
-            }
+                buttonInit.Enabled = false;
+                bool ok = connect_devices();
+                if (ok)
+                {
+                    labelInit.ForeColor = Color.Green;
+                    labelInit.Text = "Initialized - ready";
+                }
+                else
+                {
+                    labelInit.ForeColor = Color.Red;
+                    labelInit.Text = "Not ready";
+                }
+                buttonInit.Enabled = true;
+            });
+            t.Start();
         }
 
         private async Task UpdateTemp() // only use I see is awaited anyways, so why make it a Task?
@@ -102,7 +108,7 @@ namespace MPhys.GUI
             CCD.sName = sNameC;
 
             // NDF1
-            Thread.Sleep(500); // not sure if mixing Threads or Tasks is a good idea. Probs best to stick to one only
+            Thread.Sleep(100); // not sure if mixing Threads or Tasks is a good idea. Probs best to stick to one only
             try
             {
                 //NDF1 = null;
@@ -125,7 +131,7 @@ namespace MPhys.GUI
             // NDF2
             if (all_good)
             {
-                Thread.Sleep(500);
+                Thread.Sleep(100);
                 try
                 {
                     //NDF2 = null;
@@ -149,7 +155,7 @@ namespace MPhys.GUI
             if (all_good)
             {
                 // PM
-                Thread.Sleep(500);
+                Thread.Sleep(100);
                 try
                 {
                     PMDev = new PM100A(PMport);
@@ -165,7 +171,7 @@ namespace MPhys.GUI
             }
             if (all_good)
             {
-                Thread.Sleep(500);
+                Thread.Sleep(100);
                 // TEMP
                 try
                 {
@@ -184,7 +190,7 @@ namespace MPhys.GUI
             if (all_good)
             {
                 // Mono & CCD
-                Thread.Sleep(500);
+                Thread.Sleep(100);
                 try
                 {
                     //bool Bmono = true;
@@ -196,13 +202,22 @@ namespace MPhys.GUI
                     }*/
                     MonoSpec.InitializeCCD(CCD);
                     myfunctions.add_to_log("bool connect_devices()", "Mono and CCD connected");
+
+                    Load_ADC_Gain();
+                    groupboxWlCtrl.Enabled = true;
+                    foreach (double s in MonoSpec.combobox_Grating)
+                    {
+                        comboboxGrating.Items.Add(s);
+                    }
+                    textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
+
                 }
                 catch
                 {
                     all_good = false;
                     MessageBox.Show("Issues with connecting with iHR550");
                 }
-                Thread.Sleep(500);
+                Thread.Sleep(100);
             }
             DeviceInitialized = all_good;
             return all_good;
@@ -463,49 +478,32 @@ namespace MPhys.GUI
 
             if (DeviceInitialized && MonoSpec.ReadForAcq() && !MonoSpec.MonoIsBusy())
             {
-                buttonRun.Enabled = false;
                 if (RangeMode.Checked)
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run() started");
 
                     Console.WriteLine("Run");
-                    var thread = new Thread(() =>
+                    var t = new Thread(() =>
                     {
+                        buttonRun.Enabled = false;
                         Console.WriteLine("Thread");
                         auto_run();
+                        buttonRun.Enabled = true;
                     });
-                    thread.Priority = ThreadPriority.Highest;
-                    thread.Start();
+                    t.Priority = ThreadPriority.Highest;
+                    t.Start();
 
                 }
                 if (PositionMode.Checked)
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run_central() started");
-                    //int code = Task.Run(() => auto_run_central()).Result;
-                    /*var thread = new Thread(() =>
-                    {
-                        auto_run_central();
-                    });
-                    thread.Priority = ThreadPriority.Highest;
-                    thread.Start();
-                    bool loop_while = true;
-                    while (loop_while)
-                    {
-                        if ((thread.ThreadState == ThreadState.Stopped || thread.ThreadState == ThreadState.Suspended) && !(thread.ThreadState == ThreadState.Unstarted) && thread.ThreadState == ThreadState.Running)
-                        {
-                            thread.Resume();
-                        }
-                        if (!thread.IsAlive)
-                        {
-                            loop_while = false;
-                        }
-                    }*/
+
                     await Task.Run(() =>
                     {
                         auto_run_central();
                     });
                 }
-                buttonRun.Enabled = true;
+              
             }
             else
             {
@@ -1069,6 +1067,36 @@ namespace MPhys.GUI
         {
             MessageBox.Show(listBoxTasks.SelectedIndex.ToString());
             listBoxTasks.Text = listBoxTasks.Text.Remove(listBoxTasks.SelectedIndex);
+        }
+
+
+        private void buttonSaveGainADC_Click(object sender, EventArgs e)
+        {
+            if (GainList.Text != "" && ADCSelect.Text != "")
+            {
+                myfunctions.add_to_log("buttonSaveGainADC_Click", "Started");
+
+                ADCStringType adc = (ADCStringType)ADCSelect.SelectedItem;
+                PairStringInt gain = (PairStringInt)GainList.SelectedItem;
+
+                myfunctions.WriteToBinaryFile<ADCStringType>("ADC_settings.dat", adc);
+                myfunctions.WriteToBinaryFile<PairStringInt>("Gain_settings.dat", gain);
+
+                myfunctions.add_to_log("buttonSaveGainADC_Click", "Finished");
+
+            }
+        }
+
+        private void Load_ADC_Gain()
+        {
+            foreach (MPhys.Devices.ADCStringType a in MonoSpec.combobox_ADC)
+            {
+                ADCSelect.Items.Add(a);
+            }
+            foreach (MPhys.Devices.PairStringInt g in MonoSpec.combobox_Gain)
+            {
+                GainList.Items.Add(g);
+            }
         }
     }
 }
