@@ -50,6 +50,12 @@ namespace MPhys.Devices
             return power * Math.Pow(10, 6); // uW
         }
 
+        // mode = true : auto range on
+        public void AutoRange(bool mode)
+        {
+            pm.setPowerAutoRange(mode);
+        }
+
         // Disconnects the connection between the program and the device, removes object 
         public void Remove()
         {

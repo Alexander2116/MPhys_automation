@@ -1963,3 +1963,22 @@
 2023-06-20 19:22:46.2589|Info|| "main" "started" |function_name=main, message=started 
 2023-06-20 19:38:16.9393|Info|| "main" "started" |function_name=main, message=started 
 2023-06-20 19:39:32.7046|Info|| "main" "started" |function_name=main, message=started 
+2023-06-21 11:12:14.9837|Info|| "main" "started" |function_name=main, message=started 
+2023-06-21 11:13:04.1937|Info|| "main" "started" |function_name=main, message=started 
+2023-06-21 11:13:17.4062|Info|| "main" "started" |function_name=main, message=started 
+2023-06-21 11:14:12.8811|Info|| "main" "started" |function_name=main, message=started 
+2023-06-21 11:14:16.5398|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-06-21 11:14:17.0879|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-06-21 11:14:26.1183|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-06-21 11:14:26.1183|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-06-21 11:14:26.1512|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-06-21 11:14:26.9322|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-06-21 11:14:27.0578|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-06-21 11:14:27.0578|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-06-21 11:14:27.0578|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-06-21 11:14:27.3670|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-06-21 11:14:27.3670|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-06-21 11:14:27.3670|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-06-21 11:14:27.3670|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 

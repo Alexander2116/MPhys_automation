@@ -203,14 +203,6 @@ namespace MPhys.GUI
                     MonoSpec.InitializeCCD(CCD);
                     myfunctions.add_to_log("bool connect_devices()", "Mono and CCD connected");
 
-                    Load_ADC_Gain();
-                    groupboxWlCtrl.Enabled = true;
-                    foreach (double s in MonoSpec.combobox_Grating)
-                    {
-                        comboboxGrating.Items.Add(s);
-                    }
-                    textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
-
                 }
                 catch
                 {
@@ -218,6 +210,23 @@ namespace MPhys.GUI
                     MessageBox.Show("Issues with connecting with iHR550");
                 }
                 Thread.Sleep(100);
+            }
+            if (all_good)
+            {
+                try
+                {
+                    Load_ADC_Gain();
+                    groupboxWlCtrl.Enabled = true;
+                    foreach (double s in MonoSpec.combobox_Grating)
+                    {
+                        comboboxGrating.Items.Add(s);
+                    }
+                    textboxPosition.Text = MonoSpec.Text_CurrentWavelength;
+                }
+                catch
+                {
+                    MessageBox.Show("Couldn't load gratings nor ADCs");
+                }
             }
             DeviceInitialized = all_good;
             return all_good;

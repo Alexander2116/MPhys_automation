@@ -120,3 +120,6 @@ C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\obj\Debug\MPhys.
 C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\nlog.config
 C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.dll
 C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.xml
+C:\Users\a61908ak\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\nlog.config
+C:\Users\a61908ak\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.dll
+C:\Users\a61908ak\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.xml
