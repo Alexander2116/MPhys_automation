@@ -49,7 +49,6 @@ namespace MPhys.GUI
             dataTable.TableName = "PendingTask";
             Create_DataSet();
             MonoSpec = new HR550();
-            myfunctions.add_to_log("main", "started");
         }
 
         private async void buttonInit_Click(object sender, EventArgs e)
@@ -111,7 +110,9 @@ namespace MPhys.GUI
             Thread.Sleep(100); // not sure if mixing Threads or Tasks is a good idea. Probs best to stick to one only
             try
             {
-                //NDF1 = null;
+                NDF1 = null;
+                myfunctions.add_to_log("bool connect_devices()", "connecting NDF1");
+                // Starting com crashes the program
                 NDF1 = new FC102C(NDF1port);
                 if (NDF1.IsOpen() == 1)
                 {
@@ -134,7 +135,8 @@ namespace MPhys.GUI
                 Thread.Sleep(100);
                 try
                 {
-                    //NDF2 = null;
+                    NDF2 = null;
+                    myfunctions.add_to_log("bool connect_devices()", "connecting NDF2");
                     NDF2 = new FC102C(NDF2port);
                     if (NDF2.IsOpen() == 1)
                     {
@@ -497,7 +499,6 @@ namespace MPhys.GUI
                         buttonRun.Enabled = false;
                         Console.WriteLine("Thread");
                         auto_run();
-                        buttonRun.Enabled = true;
                     });
                     t.Priority = ThreadPriority.Highest;
                     t.Start();
@@ -653,15 +654,6 @@ namespace MPhys.GUI
                     {
                         cont = 8;
                     }
-                    else
-                    {
-                        if (TempDev.is_temp_good(ct, 0.7) != true)
-                        {
-                            Console.WriteLine("Wait 30s");
-                            Thread.Sleep(30000); // 30s
-                            Console.WriteLine("Waiting finished");
-                        }
-                    }
                     // Best case scenario - wait 8s <- hm? This whole section can be replaced with Thread Join
                     Console.WriteLine("Loop");
                     while (cont < 8 )
@@ -671,10 +663,10 @@ namespace MPhys.GUI
                         Thread.Sleep(500); // 0.5s
                         //Task.Delay(TimeSpan.FromSeconds(2000));
                         Console.WriteLine("Reading");
-                        // it stops here when the temp is changed 20->50
-                        //temp_good = TempDev.is_temp_good(ct, 0.7);
+                        // it stops here when the temp is changed 20->50 (hopefully solved by changing how temp receivces data)
+                        temp_good = TempDev.is_temp_good(ct, 0.7);
                         //Console.WriteLine(temp_good);
-                        if (Math.Abs(double.Parse(textCurrTemp.Text.ToString()) - ct) < 0.7)
+                        if (temp_good)
                         {
                             cont++;
                             Console.WriteLine(cont);
@@ -682,9 +674,9 @@ namespace MPhys.GUI
                         else
                         {
                             Console.WriteLine("Wait");
-                            Thread.Sleep(10000); // 10s
+                            Thread.Sleep(2000); // 2s
                         }
-                        //myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
+                        myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
                     }
                     Console.WriteLine("OutLoop");
                     temp_changed = false;
@@ -754,6 +746,7 @@ namespace MPhys.GUI
                 MessageBox.Show("Count is not set. It's current value is: 0 (must be greater than that)");
             }
             myfunctions.add_to_log("auto_run()", "The tasks are finished");
+            buttonRun.Enabled = true;
         }
 
         private async Task<int> check_temperature(double current_temp)
