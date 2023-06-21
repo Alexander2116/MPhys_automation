@@ -1247,3 +1247,130 @@
 2023-06-21 14:21:45.4283|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
 2023-06-21 14:21:45.4283|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.3192uW_n1_1_n2_6_0.1s_300K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.3192uW_n1_1_n2_6_0.1s_300K_0.1nm.csv 
 2023-06-21 14:21:45.4579|Info|| "auto_run()" "The tasks are finished" |function_name=auto_run(), message=The tasks are finished 
+2023-06-21 14:36:03.8665|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 14:36:04.0165|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 14:36:04.1265|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 14:36:04.1867|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-06-21 14:36:05.0665|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-06-21 14:36:05.3265|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-06-21 14:36:06.5965|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-06-21 14:36:06.5965|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-06-21 14:36:06.5965|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-06-21 14:36:07.6165|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-06-21 14:36:07.6165|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-06-21 14:36:07.6165|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-06-21 14:36:07.6165|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-06-21 14:36:07.7665|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-06-21 14:36:07.7665|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-06-21 14:36:07.7665|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-06-21 14:36:07.7665|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-06-21 14:37:39.9390|Info|| "buttonRun_Click" "auto_run_central() started" |function_name=buttonRun_Click, message=auto_run_central() started 
+2023-06-21 14:37:39.9390|Info|| "auto_run_central()" "Starting data acquisition" |function_name=auto_run_central(), message=Starting data acquisition 
+2023-06-21 14:37:39.9390|Info|| "auto_run_central()" "Setting devices..." |function_name=auto_run_central(), message=Setting devices... 
+2023-06-21 14:37:41.5110|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 14:37:47.9818|Info|| "buttonRun_Click" "auto_run_central() started" |function_name=buttonRun_Click, message=auto_run_central() started 
+2023-06-21 14:37:47.9818|Info|| "auto_run_central()" "Starting data acquisition" |function_name=auto_run_central(), message=Starting data acquisition 
+2023-06-21 14:37:47.9818|Info|| "auto_run_central()" "Setting devices..." |function_name=auto_run_central(), message=Setting devices... 
+2023-06-21 14:37:48.5792|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 14:37:49.0993|Info|| "buttonRun_Click" "auto_run_central() started" |function_name=buttonRun_Click, message=auto_run_central() started 
+2023-06-21 14:37:49.2463|Info|| "buttonRun_Click" "auto_run_central() started" |function_name=buttonRun_Click, message=auto_run_central() started 
+2023-06-21 14:37:49.4108|Info|| "buttonRun_Click" "auto_run_central() started" |function_name=buttonRun_Click, message=auto_run_central() started 
+2023-06-21 14:37:49.4978|Info|| "auto_run_central()" "Starting data acquisition" |function_name=auto_run_central(), message=Starting data acquisition 
+2023-06-21 14:37:49.4978|Info|| "auto_run_central()" "Setting devices..." |function_name=auto_run_central(), message=Setting devices... 
+2023-06-21 14:37:49.5478|Info|| "buttonRun_Click" "auto_run_central() started" |function_name=buttonRun_Click, message=auto_run_central() started 
+2023-06-21 14:37:49.6829|Info|| "buttonRun_Click" "auto_run_central() started" |function_name=buttonRun_Click, message=auto_run_central() started 
+2023-06-21 14:37:49.8134|Info|| "buttonRun_Click" "auto_run_central() started" |function_name=buttonRun_Click, message=auto_run_central() started 
+2023-06-21 14:37:49.9610|Info|| "buttonRun_Click" "auto_run_central() started" |function_name=buttonRun_Click, message=auto_run_central() started 
+2023-06-21 14:37:50.0698|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 14:37:50.0698|Info|| "auto_run_central()" "Starting data acquisition" |function_name=auto_run_central(), message=Starting data acquisition 
+2023-06-21 14:37:50.0698|Info|| "auto_run_central()" "Setting devices..." |function_name=auto_run_central(), message=Setting devices... 
+2023-06-21 14:37:50.6498|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 14:37:51.4998|Info|| "auto_run_central()" "Starting data acquisition" |function_name=auto_run_central(), message=Starting data acquisition 
+2023-06-21 14:37:51.4998|Info|| "auto_run_central()" "Setting devices..." |function_name=auto_run_central(), message=Setting devices... 
+2023-06-21 14:37:52.0499|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 14:37:52.9999|Info|| "auto_run_central()" "Starting data acquisition" |function_name=auto_run_central(), message=Starting data acquisition 
+2023-06-21 14:37:52.9999|Info|| "auto_run_central()" "Setting devices..." |function_name=auto_run_central(), message=Setting devices... 
+2023-06-21 14:37:53.5899|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 14:37:54.5115|Info|| "auto_run_central()" "Starting data acquisition" |function_name=auto_run_central(), message=Starting data acquisition 
+2023-06-21 14:37:54.5115|Info|| "auto_run_central()" "Setting devices..." |function_name=auto_run_central(), message=Setting devices... 
+2023-06-21 14:37:55.1013|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 14:37:56.0020|Info|| "auto_run_central()" "Starting data acquisition" |function_name=auto_run_central(), message=Starting data acquisition 
+2023-06-21 14:37:56.0020|Info|| "auto_run_central()" "Setting devices..." |function_name=auto_run_central(), message=Setting devices... 
+2023-06-21 14:37:56.5822|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 14:37:57.4963|Info|| "auto_run_central()" "Starting data acquisition" |function_name=auto_run_central(), message=Starting data acquisition 
+2023-06-21 14:37:57.4963|Info|| "auto_run_central()" "Setting devices..." |function_name=auto_run_central(), message=Setting devices... 
+2023-06-21 14:37:58.0862|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 14:43:02.5977|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 14:43:15.5735|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 14:43:15.7003|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 14:43:15.8081|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 14:43:24.4951|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 14:43:36.1387|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 14:43:36.2490|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 14:43:36.3576|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 14:43:36.4219|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-06-21 14:43:37.0887|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-06-21 14:43:37.3614|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-06-21 14:43:38.7824|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-06-21 14:43:38.7824|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-06-21 14:43:38.7824|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-06-21 14:43:39.8406|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-06-21 14:43:39.8416|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-06-21 14:43:39.8416|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-06-21 14:43:39.8416|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-06-21 14:43:40.0016|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-06-21 14:43:40.0016|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-06-21 14:43:40.0016|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-06-21 14:43:40.0016|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-06-21 14:44:09.2198|Info|| "buttonRun_Click" "auto_run_central() started" |function_name=buttonRun_Click, message=auto_run_central() started 
+2023-06-21 14:44:09.2605|Info|| "auto_run_central()" "Starting data acquisition" |function_name=auto_run_central(), message=Starting data acquisition 
+2023-06-21 14:44:09.2635|Info|| "auto_run_central()" "Setting devices..." |function_name=auto_run_central(), message=Setting devices... 
+2023-06-21 14:44:09.8057|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 14:44:11.3194|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-06-21 14:44:56.4260|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-06-21 14:44:56.4260|Info|| "auto_run_central()" "Getting data..." |function_name=auto_run_central(), message=Getting data... 
+2023-06-21 14:44:56.4400|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 14:44:56.8604|Info|| "GetData()" "499.9933" |function_name=GetData(), message=499.9933 
+2023-06-21 14:54:11.4924|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 14:54:14.8846|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 14:54:14.9963|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 14:54:15.0713|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-06-21 14:54:17.7222|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-06-21 14:54:18.6377|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-06-21 14:54:24.2883|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-06-21 14:54:24.2883|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-06-21 14:54:24.3176|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-06-21 14:54:24.4152|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-06-21 14:54:24.4152|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-06-21 14:54:24.4152|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-06-21 14:54:24.4152|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-06-21 15:00:01.5061|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 15:00:50.1086|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 15:00:50.2486|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 15:00:50.3586|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 15:00:50.4186|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-06-21 15:00:55.9312|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-06-21 15:00:56.3072|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-06-21 15:01:00.4972|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-06-21 15:01:00.4972|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-06-21 15:01:00.5172|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-06-21 15:01:00.9946|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-06-21 15:01:01.0286|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-06-21 15:01:01.0286|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-06-21 15:01:01.0286|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-06-21 15:01:20.4021|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-06-21 15:01:20.4037|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-06-21 15:01:20.4037|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-06-21 15:01:20.4231|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-06-21 15:01:52.2069|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 15:01:52.2663|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 15:01:52.3783|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 15:01:52.4405|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 

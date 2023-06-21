@@ -53,9 +53,9 @@ namespace MPhys.GUI
 
         private async void buttonInit_Click(object sender, EventArgs e)
         {
+            buttonInit.Enabled = false;
             Thread t = new Thread(() =>
             {
-                buttonInit.Enabled = false;
                 bool ok = connect_devices();
                 if (ok)
                 {
@@ -67,9 +67,9 @@ namespace MPhys.GUI
                     labelInit.ForeColor = Color.Red;
                     labelInit.Text = "Not ready";
                 }
-                buttonInit.Enabled = true;
             });
             t.Start();
+            buttonInit.Enabled = true;
         }
 
         private async Task UpdateTemp() // only use I see is awaited anyways, so why make it a Task?
@@ -494,11 +494,9 @@ namespace MPhys.GUI
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run() started");
 
-                    Console.WriteLine("Run");
                     var t = new Thread(() =>
                     {
                         buttonRun.Enabled = false;
-                        Console.WriteLine("Thread");
                         auto_run();
                     });
                     t.Priority = ThreadPriority.Highest;
@@ -509,10 +507,13 @@ namespace MPhys.GUI
                 {
                     myfunctions.add_to_log("buttonRun_Click", "auto_run_central() started");
 
-                    await Task.Run(() =>
+                    var t = new Thread(() =>
                     {
+                        buttonRun.Enabled = false;
                         auto_run_central();
                     });
+                    t.Priority = ThreadPriority.Highest;
+                    t.Start();
                 }
               
             }
@@ -792,6 +793,8 @@ namespace MPhys.GUI
             bool all_good = false;
             double Inc = 0.036; // nm
             bool temp_changed = false;
+            int cont = 0;
+            bool temp_good = false;
 
             try
             {
@@ -878,7 +881,7 @@ namespace MPhys.GUI
                     // Wait 2s to make sure wheel is set
                     if (wait_few > 0)
                     {
-                        await Task.Delay(wait_few);
+                        Thread.Sleep(wait_few*1500);
                     }
 
                     // Wait for pos to change
@@ -886,36 +889,31 @@ namespace MPhys.GUI
                     // Wait for temp to change
                     // Wait additional 20s for stability
 
-                    int code = Task.Run(() => check_temperature(ct)).Result;
-                    code = await check_temperature(ct); // this should give you the same
-
-                    //int cont = 1;
-                    /*
-                    if (temp_changed)
+                    myfunctions.add_to_log("auto_run_central()", "Start checking the temperature");
+                    cont = 0;
+                    if (temp_changed == false || TempDev.is_temp_good(ct, 0.7))
                     {
-                        bool temp_good = false;
-
-                        while (cont < 4)
+                        cont = 8;
+                    }
+                    // Best case scenario - wait 40s
+                    while (cont < 8)
+                    {
+                        // it stops here when the temp is changed 20->50 (hopefully solved by changing how temp receivces data)
+                        temp_good = TempDev.is_temp_good(ct, 0.7);
+                        //Console.WriteLine(temp_good);
+                        if (temp_good)
                         {
-                            await Task.Delay(2000);
-                            temp_good = TempDev.is_temp_good(ct, 0.7);
-                            if (temp_good)
-                            {
-                                cont++;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Wait");
-                            }
-                            myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
+                            cont++;
+                            Thread.Sleep(5000); // 2s
                         }
-                    }*/
-                    /*
-                    while (!TempDev.is_temp_good(ct) && cont<5)
-                    {
-                        Thread.Sleep(3000);
-                        cont += 1;
-                    }*/
+                        else
+                        {
+                            Thread.Sleep(5000); // 2s
+                        }
+                        //myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
+                    }
+                    myfunctions.add_to_log("auto_run_central()", "Temperature is fine");
+                    temp_changed = false;
 
                     // Take power
                     double power = PMDev.Get_power();
