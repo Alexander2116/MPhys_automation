@@ -113,15 +113,15 @@ namespace MPhys.GUI
             {
                 //NDF1 = null;
                 NDF1 = new FC102C(NDF1port);
-                /*if (NDF1.IsOpen() == 1)
+                if (NDF1.IsOpen() == 1)
                 {
                     myfunctions.add_to_log("bool connect_devices()","NDF1 connected");
                 }
                 else
                 {
-                    //all_good = false;
+                    all_good = false;
                     MessageBox.Show("NDF1 connection cannot be opened");
-                }*/
+                }
             }
             catch
             {
@@ -136,15 +136,15 @@ namespace MPhys.GUI
                 {
                     //NDF2 = null;
                     NDF2 = new FC102C(NDF2port);
-                    /*if (NDF2.IsOpen() == 1)
+                    if (NDF2.IsOpen() == 1)
                     {
                         myfunctions.add_to_log("bool connect_devices()", "NDF2 connected");
                     }
                     else
                     {
-                        //all_good = false;
+                        all_good = false;
                         MessageBox.Show("NDF2 connection cannot be opened");
-                    }*/
+                    }
                 }
                 catch
                 {
