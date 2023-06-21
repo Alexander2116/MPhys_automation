@@ -576,7 +576,6 @@ namespace MPhys.GUI
                 int Loop_no = dataTable.Rows.Count;
                 for (int i = 0; i < Loop_no; i++)
                 {
-                    Console.WriteLine("ReadLine"); // what? xD
                     myfunctions.add_to_log("auto_run()", "Task"+i.ToString());
                     DataRow lastRow = dataTable.Rows[i];
 
@@ -657,32 +656,23 @@ namespace MPhys.GUI
                         cont = 8;
                     }
                     // Best case scenario - wait 40s
-                    Console.WriteLine("Loop");
                     while (cont < 8 )
                     {
-
-                        Console.WriteLine("InLoop");
-                        Thread.Sleep(500); // 0.5s
-                        //Task.Delay(TimeSpan.FromSeconds(2000));
-                        Console.WriteLine("Reading");
                         // it stops here when the temp is changed 20->50 (hopefully solved by changing how temp receivces data)
                         temp_good = TempDev.is_temp_good(ct, 0.7);
                         //Console.WriteLine(temp_good);
                         if (temp_good)
                         {
                             cont++;
-                            Console.WriteLine(cont);
                             Thread.Sleep(5000); // 2s
                         }
                         else
                         {
-                            Console.WriteLine("Wait");
                             Thread.Sleep(5000); // 2s
                         }
                         //myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
                     }
                     myfunctions.add_to_log("auto_run()", "Temperature is fine");
-                    Console.WriteLine("OutLoop");
                     temp_changed = false;
 
                     // Take power

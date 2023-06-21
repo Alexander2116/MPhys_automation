@@ -188,3 +188,5 @@
 2023-06-21 12:13:58.8820 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\a61908ak\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.config
 2023-06-21 12:13:58.8920 Info Configuration initialized.
 2023-06-21 12:13:58.8920 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.0.1813. Product version: 5.2.0+eed5f76d158dbcaef9326f7a0e1c281adad171e8. GlobalAssemblyCache: False
+2023-06-21 14:29:16.8414 Info AppDomain Shutting down. LogFactory closing...
+2023-06-21 14:29:17.1544 Info LogFactory has been closed.
