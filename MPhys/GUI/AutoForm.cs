@@ -162,6 +162,7 @@ namespace MPhys.GUI
                 {
                     PMDev = new PM100A(PMport);
                     PMDev.Get_power();
+                    PMDev.AutoRange(true); // turn on auto range
                     myfunctions.add_to_log("bool connect_devices()", "PM100A connected");
 
                 }
@@ -629,7 +630,7 @@ namespace MPhys.GUI
                     if (wait_few > 0)
                     {
                         Console.WriteLine("Wait for wheel");
-                        await Task.Delay(wait_few);
+                        Thread.Sleep(wait_few*1500); // 1.5s * positions_changed
                     }
 
                     // Wait for pos to change
@@ -637,24 +638,25 @@ namespace MPhys.GUI
                     // Wait for temp to change
                     // Wait additional 20s for stability
 
-                //int code = Task.Run(() => check_temperature(ct)).Result;
-                  /*
-                    if (temp_changed)
-                    {
-                        int cont = 1;
-                        while (!TempDev.is_temp_good(ct,0.7) && cont > 5)
-                        {
-                            Thread.Sleep(3000);
-                            cont += 1;
-                        }
-                    }*/
+                    //int code = Task.Run(() => check_temperature(ct)).Result;
+                    /*
+                      if (temp_changed)
+                      {
+                          int cont = 1;
+                          while (!TempDev.is_temp_good(ct,0.7) && cont > 5)
+                          {
+                              Thread.Sleep(3000);
+                              cont += 1;
+                          }
+                      }*/
                     //temp_good = false;
+                    myfunctions.add_to_log("auto_run()", "Start checking the temperature");
                     cont = 0;
                     if (temp_changed == false)
                     {
                         cont = 8;
                     }
-                    // Best case scenario - wait 8s <- hm? This whole section can be replaced with Thread Join
+                    // Best case scenario - wait 40s
                     Console.WriteLine("Loop");
                     while (cont < 8 )
                     {
@@ -670,14 +672,16 @@ namespace MPhys.GUI
                         {
                             cont++;
                             Console.WriteLine(cont);
+                            Thread.Sleep(5000); // 2s
                         }
                         else
                         {
                             Console.WriteLine("Wait");
-                            Thread.Sleep(2000); // 2s
+                            Thread.Sleep(5000); // 2s
                         }
-                        myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
+                        //myfunctions.add_to_log("auto_run()", "Wait for temperature... " + cont.ToString());
                     }
+                    myfunctions.add_to_log("auto_run()", "Temperature is fine");
                     Console.WriteLine("OutLoop");
                     temp_changed = false;
 
@@ -728,15 +732,14 @@ namespace MPhys.GUI
                         path = FileName.Text.ToString();
                     }
 
-                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + Math.Round(power, 4) + "uW_n1_" + cp1 + "_n2_" + cp2 + "_" + ce + "s_" + ct + "K" + "_" + cs + "nm" + ".csv";
+                    string fullPath = path + "\\" + textSample.Text.ToString() + "_" + ct + "K" + "_" + Math.Round(power, 4) + "uW_n1_" + cp1 + "_n2_" + cp2 + "_" + ce + "s_" + cs + "nm" + ".csv";
 
                     myfunctions.add_to_log("auto_run()", "Saving " + fullPath);
                     myfunctions.ToCSV(DataToBeSaved, fullPath);
                     DataToBeSaved.Dispose();
                     DataToBeSaved = null;
-                    //MonoSpec.GoStream(path, count, 2);
                     // Increase number of finished tasks - thread error do not uncomment
-                    //labelFinishTasks.Text = (int.Parse(labelFinishTasks.Text.ToString()) + 1).ToString();
+                    labelFinishTasks.Text = (int.Parse(labelFinishTasks.Text.ToString()) + 1).ToString();
 
 
                 }

@@ -29,3 +29,1221 @@
 2023-06-21 12:01:21.0585|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
 2023-06-21 12:01:21.1085|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
 2023-06-21 12:01:49.9285|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:04:16.1363|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:04:34.7439|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:04:34.8539|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 12:04:34.9639|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 12:04:35.0139|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-06-21 12:04:45.0249|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:05:15.5370|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:05:17.8526|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 12:05:17.9629|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 12:05:32.0318|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:05:32.1318|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 12:05:32.2418|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 12:05:48.2475|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:05:48.3474|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 12:05:48.4575|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 12:05:48.5274|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-06-21 12:05:49.9373|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-06-21 12:05:50.6669|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-06-21 12:05:57.9069|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-06-21 12:05:57.9069|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-06-21 12:05:57.9270|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-06-21 12:05:58.6669|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-06-21 12:05:58.7070|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-06-21 12:05:58.7070|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-06-21 12:05:58.7070|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-06-21 12:05:59.1070|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-06-21 12:05:59.1070|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-06-21 12:05:59.1070|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-06-21 12:05:59.1169|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-06-21 12:08:22.2111|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:08:22.2612|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 12:08:22.3711|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 12:08:22.4212|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-06-21 12:08:47.8963|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:08:48.0063|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 12:08:48.1163|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 12:08:48.1663|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-06-21 12:09:03.6406|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:09:18.9932|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:09:38.0959|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:09:50.5045|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:09:50.6245|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 12:09:50.7345|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 12:10:50.8161|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:10:50.9261|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 12:10:51.0460|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 12:11:06.8469|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:12:36.1192|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:14:05.2707|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-06-21 12:14:05.4007|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-06-21 12:14:05.5109|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-06-21 12:14:05.5807|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-06-21 12:14:12.0907|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-06-21 12:14:12.6307|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-06-21 12:14:18.0606|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-06-21 12:14:18.0606|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-06-21 12:14:18.0606|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-06-21 12:14:18.8706|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-06-21 12:14:18.8906|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-06-21 12:14:18.8906|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-06-21 12:14:18.8906|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-06-21 12:14:19.1706|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-06-21 12:14:19.1706|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-06-21 12:14:19.1706|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-06-21 12:14:19.1706|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-06-21 13:49:41.1139|Info|| "buttonRun_Click" "auto_run() started" |function_name=buttonRun_Click, message=auto_run() started 
+2023-06-21 13:49:41.1784|Info|| "auto_run()" "Starting data acquisition" |function_name=auto_run(), message=Starting data acquisition 
+2023-06-21 13:49:41.1784|Info|| "auto_run()" "Task0" |function_name=auto_run(), message=Task0 
+2023-06-21 13:49:41.1784|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:49:41.1804|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-06-21 13:49:41.7612|Info|| "SetSlit" "0.0877" |function_name=SetSlit, message=0.0877 
+2023-06-21 13:49:44.3715|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:49:44.9112|Info|| "auto_run()" "Wait for temperature... 1" |function_name=auto_run(), message=Wait for temperature... 1 
+2023-06-21 13:49:45.4215|Info|| "auto_run()" "Wait for temperature... 2" |function_name=auto_run(), message=Wait for temperature... 2 
+2023-06-21 13:49:45.9314|Info|| "auto_run()" "Wait for temperature... 3" |function_name=auto_run(), message=Wait for temperature... 3 
+2023-06-21 13:49:46.4415|Info|| "auto_run()" "Wait for temperature... 4" |function_name=auto_run(), message=Wait for temperature... 4 
+2023-06-21 13:49:46.9515|Info|| "auto_run()" "Wait for temperature... 5" |function_name=auto_run(), message=Wait for temperature... 5 
+2023-06-21 13:49:47.4614|Info|| "auto_run()" "Wait for temperature... 6" |function_name=auto_run(), message=Wait for temperature... 6 
+2023-06-21 13:49:47.9715|Info|| "auto_run()" "Wait for temperature... 7" |function_name=auto_run(), message=Wait for temperature... 7 
+2023-06-21 13:49:48.4815|Info|| "auto_run()" "Wait for temperature... 8" |function_name=auto_run(), message=Wait for temperature... 8 
+2023-06-21 13:49:48.4815|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:49:48.4815|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:49:49.0312|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:49.0312|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:49.0312|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:49.0312|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:49.0412|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:49:49.0412|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:49:49.0412|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:49.0412|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:49.0412|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:49.0412|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:49.0412|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:49:49.0412|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2794uW_n1_1_n2_1_0.1s_20K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2794uW_n1_1_n2_1_0.1s_20K_0.1nm.csv 
+2023-06-21 13:49:49.0612|Info|| "auto_run()" "Task1" |function_name=auto_run(), message=Task1 
+2023-06-21 13:49:49.0612|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:49:50.3575|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:49:50.3575|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:49:50.5974|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:50.5974|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:50.6377|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:50.6377|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:50.6377|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:49:50.6377|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:49:50.6377|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:50.6377|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:50.6377|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:50.6377|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:50.6377|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:49:50.6377|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.295uW_n1_1_n2_2_0.1s_20K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.295uW_n1_1_n2_2_0.1s_20K_0.1nm.csv 
+2023-06-21 13:49:50.6377|Info|| "auto_run()" "Task2" |function_name=auto_run(), message=Task2 
+2023-06-21 13:49:50.6377|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:49:51.9975|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:49:51.9975|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:49:52.2375|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:52.2375|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:52.2375|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:52.2375|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:52.2375|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:49:52.2375|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:49:52.2375|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:52.2375|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:52.2375|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:52.2375|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:52.2375|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:49:52.2375|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2898uW_n1_1_n2_3_0.1s_20K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2898uW_n1_1_n2_3_0.1s_20K_0.1nm.csv 
+2023-06-21 13:49:52.2474|Info|| "auto_run()" "Task3" |function_name=auto_run(), message=Task3 
+2023-06-21 13:49:52.2474|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:49:53.5277|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:49:53.5277|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:49:53.7574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:53.7574|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:53.7574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:53.7574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:53.7574|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:49:53.7574|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:49:53.7574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:53.7574|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:53.7574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:53.7574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:53.7574|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:49:53.7574|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.3003uW_n1_1_n2_4_0.1s_20K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.3003uW_n1_1_n2_4_0.1s_20K_0.1nm.csv 
+2023-06-21 13:49:53.7775|Info|| "auto_run()" "Task4" |function_name=auto_run(), message=Task4 
+2023-06-21 13:49:53.7775|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:49:55.0777|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:49:55.0777|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:49:55.3174|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:55.3174|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:55.3174|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:55.3174|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:55.3174|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:49:55.3174|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:49:55.3174|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:55.3174|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:55.3174|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:55.3174|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:55.3174|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:49:55.3174|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2173uW_n1_1_n2_5_0.1s_20K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2173uW_n1_1_n2_5_0.1s_20K_0.1nm.csv 
+2023-06-21 13:49:55.3275|Info|| "auto_run()" "Task5" |function_name=auto_run(), message=Task5 
+2023-06-21 13:49:55.3275|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:49:56.6376|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:49:56.6376|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:49:56.8474|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:56.8474|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:56.8574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:56.8574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:56.8574|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:49:56.8574|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:49:56.8574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:56.8574|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:49:56.8574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:56.8574|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:49:56.8574|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:49:56.8574|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2134uW_n1_1_n2_6_0.1s_20K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2134uW_n1_1_n2_6_0.1s_20K_0.1nm.csv 
+2023-06-21 13:49:56.8974|Info|| "auto_run()" "Task6" |function_name=auto_run(), message=Task6 
+2023-06-21 13:49:56.8974|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:50:00.7677|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:03.2877|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:05.8077|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:08.3277|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:10.8477|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:13.3680|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:15.8880|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:18.4085|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:20.9285|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:23.4485|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:25.9685|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:28.4885|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:31.0088|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:33.5287|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:36.0488|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:38.5688|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:41.0887|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:43.6085|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:46.1216|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:48.6416|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:51.1619|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:53.6817|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:56.2020|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:50:56.7120|Info|| "auto_run()" "Wait for temperature... 1" |function_name=auto_run(), message=Wait for temperature... 1 
+2023-06-21 13:50:57.2220|Info|| "auto_run()" "Wait for temperature... 2" |function_name=auto_run(), message=Wait for temperature... 2 
+2023-06-21 13:50:57.7323|Info|| "auto_run()" "Wait for temperature... 3" |function_name=auto_run(), message=Wait for temperature... 3 
+2023-06-21 13:50:58.2523|Info|| "auto_run()" "Wait for temperature... 4" |function_name=auto_run(), message=Wait for temperature... 4 
+2023-06-21 13:50:58.7622|Info|| "auto_run()" "Wait for temperature... 5" |function_name=auto_run(), message=Wait for temperature... 5 
+2023-06-21 13:50:59.2726|Info|| "auto_run()" "Wait for temperature... 6" |function_name=auto_run(), message=Wait for temperature... 6 
+2023-06-21 13:50:59.7826|Info|| "auto_run()" "Wait for temperature... 7" |function_name=auto_run(), message=Wait for temperature... 7 
+2023-06-21 13:51:00.2926|Info|| "auto_run()" "Wait for temperature... 8" |function_name=auto_run(), message=Wait for temperature... 8 
+2023-06-21 13:51:00.2926|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:51:00.2926|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:51:00.5324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:00.5324|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:00.5324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:00.5324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:00.5324|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:51:00.5324|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:51:00.5324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:00.5324|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:00.5324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:00.5324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:00.5324|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:51:00.5324|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.1925uW_n1_1_n2_1_0.1s_50K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.1925uW_n1_1_n2_1_0.1s_50K_0.1nm.csv 
+2023-06-21 13:51:00.5424|Info|| "auto_run()" "Task7" |function_name=auto_run(), message=Task7 
+2023-06-21 13:51:00.5424|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:51:01.8424|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:51:01.8424|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:51:02.0724|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:02.0724|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:02.0724|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:02.0724|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:02.0724|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:51:02.0724|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:51:02.0724|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:02.0724|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:02.0724|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:02.0724|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:02.0724|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:51:02.0724|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2199uW_n1_1_n2_2_0.1s_50K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2199uW_n1_1_n2_2_0.1s_50K_0.1nm.csv 
+2023-06-21 13:51:02.0724|Info|| "auto_run()" "Task8" |function_name=auto_run(), message=Task8 
+2023-06-21 13:51:02.0724|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:51:03.3926|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:51:03.3926|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:51:03.6324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:03.6324|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:03.6324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:03.6324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:03.6324|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:51:03.6324|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:51:03.6324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:03.6324|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:03.6324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:03.6324|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:03.6324|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:51:03.6324|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.1984uW_n1_1_n2_3_0.1s_50K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.1984uW_n1_1_n2_3_0.1s_50K_0.1nm.csv 
+2023-06-21 13:51:03.6424|Info|| "auto_run()" "Task9" |function_name=auto_run(), message=Task9 
+2023-06-21 13:51:03.6424|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:51:04.9326|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:51:04.9326|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:51:05.1726|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:05.1726|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:05.1726|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:05.1726|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:05.1726|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:51:05.1726|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:51:05.1726|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:05.1726|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:05.1726|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:05.1726|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:05.1726|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:51:05.1726|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.1801uW_n1_1_n2_4_0.1s_50K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.1801uW_n1_1_n2_4_0.1s_50K_0.1nm.csv 
+2023-06-21 13:51:05.1826|Info|| "auto_run()" "Task10" |function_name=auto_run(), message=Task10 
+2023-06-21 13:51:05.1826|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:51:06.4628|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:51:06.4628|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:51:06.6826|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:06.6826|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:06.6826|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:06.6826|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:06.6826|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:51:06.6826|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:51:06.6826|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:06.6826|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:06.6826|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:06.6826|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:06.6826|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:51:06.6826|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.1716uW_n1_1_n2_5_0.1s_50K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.1716uW_n1_1_n2_5_0.1s_50K_0.1nm.csv 
+2023-06-21 13:51:06.7026|Info|| "auto_run()" "Task11" |function_name=auto_run(), message=Task11 
+2023-06-21 13:51:06.7026|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:51:08.0428|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:51:08.0428|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:51:08.2626|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:08.2626|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:08.2626|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:08.2626|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:08.2626|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:51:08.2626|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:51:08.2626|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:08.2626|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:51:08.2626|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:08.2626|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:51:08.2626|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:51:08.2626|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2552uW_n1_1_n2_6_0.1s_50K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.2552uW_n1_1_n2_6_0.1s_50K_0.1nm.csv 
+2023-06-21 13:51:08.2626|Info|| "auto_run()" "Task12" |function_name=auto_run(), message=Task12 
+2023-06-21 13:51:08.2626|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:51:12.0828|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:14.6028|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:17.1228|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:19.6426|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:22.1600|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:24.6800|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:27.2000|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:29.7166|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:32.2366|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:34.7567|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:37.2779|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:39.7962|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:42.3161|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:44.8362|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:47.3560|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:49.8704|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:52.3905|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:54.9106|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:57.4306|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:51:59.9506|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:02.4706|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:04.9906|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:07.5107|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:10.0306|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:12.5506|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:15.0737|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:17.6015|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:20.1586|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:22.6887|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:25.2149|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:27.7381|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:30.2614|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:32.7955|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:35.3229|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:37.8485|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:40.3786|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:42.9084|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:45.4226|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:47.9297|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:50.4528|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:52.9694|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:55.4974|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:52:58.0274|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:00.5518|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:03.0766|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:05.5971|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:08.1285|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:10.6572|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:13.1664|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:15.6935|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:18.2124|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:20.7326|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:23.2494|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:25.7685|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:28.2994|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:30.8272|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:33.3527|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:35.8621|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:38.3885|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:40.9214|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:43.4506|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:45.9832|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:48.5105|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:51.0368|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:53.5585|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:56.0906|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:53:58.6213|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:01.1466|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:03.6666|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:06.1966|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:08.7186|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:11.2358|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:13.7705|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:16.2986|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:18.8226|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:21.3445|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:23.8567|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:26.3773|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:28.8945|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:31.4215|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:33.9440|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:36.4583|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:38.9840|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:41.5164|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:44.0452|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:46.5545|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:49.0663|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:51.5923|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:54.1064|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:56.6383|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:54:59.1555|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:01.6644|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:04.1854|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:06.7033|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:09.2328|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:11.7572|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:14.2822|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:16.8100|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:19.3444|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:21.8632|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:24.3739|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:26.9071|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:29.4378|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:31.9578|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:34.4845|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:37.0162|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:39.5318|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:42.0646|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:44.5849|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:47.1049|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:49.6296|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:52.1537|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:54.6629|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:57.1830|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:55:59.7063|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:02.2327|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:04.7683|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:07.2736|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:09.7814|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:12.3116|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:14.8394|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:17.3482|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:19.8772|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:22.3881|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:24.9044|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:27.4312|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:29.9544|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:32.4832|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:35.0179|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:37.5311|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:40.0579|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:42.5835|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:45.1104|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:47.6398|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:50.1616|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:52.6804|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:55.2158|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:56:57.7311|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:00.2638|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:02.7798|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:05.2979|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:07.8382|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:10.3613|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:12.8866|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:15.4005|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:17.9321|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:20.4423|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:22.9596|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:25.4855|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:28.0075|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:30.5350|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:33.0685|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:35.5920|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:38.1218|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:40.6495|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:43.1830|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:45.6932|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:48.2183|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:50.7392|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:53.2471|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:55.7602|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:57:58.2717|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:00.8062|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:03.3222|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:05.8461|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:08.3779|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:10.9043|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:13.4315|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:15.9501|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:18.4660|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:20.9889|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:23.5133|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:26.0360|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:28.5440|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:31.0558|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:31.5760|Info|| "auto_run()" "Wait for temperature... 1" |function_name=auto_run(), message=Wait for temperature... 1 
+2023-06-21 13:58:32.0917|Info|| "auto_run()" "Wait for temperature... 2" |function_name=auto_run(), message=Wait for temperature... 2 
+2023-06-21 13:58:32.6072|Info|| "auto_run()" "Wait for temperature... 3" |function_name=auto_run(), message=Wait for temperature... 3 
+2023-06-21 13:58:33.1254|Info|| "auto_run()" "Wait for temperature... 4" |function_name=auto_run(), message=Wait for temperature... 4 
+2023-06-21 13:58:33.6381|Info|| "auto_run()" "Wait for temperature... 5" |function_name=auto_run(), message=Wait for temperature... 5 
+2023-06-21 13:58:34.1536|Info|| "auto_run()" "Wait for temperature... 6" |function_name=auto_run(), message=Wait for temperature... 6 
+2023-06-21 13:58:34.6704|Info|| "auto_run()" "Wait for temperature... 7" |function_name=auto_run(), message=Wait for temperature... 7 
+2023-06-21 13:58:35.1855|Info|| "auto_run()" "Wait for temperature... 8" |function_name=auto_run(), message=Wait for temperature... 8 
+2023-06-21 13:58:35.1855|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:58:35.1855|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:58:35.4255|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:35.4255|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:35.4255|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:35.4255|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:35.4255|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:58:35.4275|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:58:35.4275|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:35.4275|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:35.4275|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:35.4275|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:35.4275|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:58:35.4275|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.8676uW_n1_1_n2_1_0.1s_150K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.8676uW_n1_1_n2_1_0.1s_150K_0.1nm.csv 
+2023-06-21 13:58:35.4275|Info|| "auto_run()" "Task13" |function_name=auto_run(), message=Task13 
+2023-06-21 13:58:35.4275|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:58:36.7396|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:58:36.7396|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:58:36.9640|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:36.9640|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:36.9640|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:36.9640|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:36.9640|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:58:36.9640|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:58:36.9640|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:36.9640|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:36.9640|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:36.9640|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:36.9640|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:58:36.9640|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.8304uW_n1_1_n2_2_0.1s_150K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.8304uW_n1_1_n2_2_0.1s_150K_0.1nm.csv 
+2023-06-21 13:58:36.9750|Info|| "auto_run()" "Task14" |function_name=auto_run(), message=Task14 
+2023-06-21 13:58:36.9750|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:58:38.2653|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:58:38.2653|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:58:38.4829|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:38.4829|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:38.4829|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:38.4829|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:38.4829|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:58:38.4829|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:58:38.4829|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:38.4829|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:38.4829|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:38.4829|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:38.4829|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:58:38.4829|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.8728uW_n1_1_n2_3_0.1s_150K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.8728uW_n1_1_n2_3_0.1s_150K_0.1nm.csv 
+2023-06-21 13:58:38.5194|Info|| "auto_run()" "Task15" |function_name=auto_run(), message=Task15 
+2023-06-21 13:58:38.5194|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:58:39.8813|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:58:39.8813|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:58:40.1031|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:40.1031|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:40.1031|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:40.1031|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:40.1031|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:58:40.1031|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:58:40.1031|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:40.1031|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:40.1031|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:40.1031|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:40.1031|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:58:40.1031|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.8591uW_n1_1_n2_4_0.1s_150K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.8591uW_n1_1_n2_4_0.1s_150K_0.1nm.csv 
+2023-06-21 13:58:40.1031|Info|| "auto_run()" "Task16" |function_name=auto_run(), message=Task16 
+2023-06-21 13:58:40.1151|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:58:41.4778|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:58:41.4778|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:58:41.7033|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:41.7033|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:41.7033|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:41.7033|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:41.7033|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:58:41.7033|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:58:41.7033|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:41.7033|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:41.7033|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:41.7033|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:41.7033|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:58:41.7033|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.8611uW_n1_1_n2_5_0.1s_150K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.8611uW_n1_1_n2_5_0.1s_150K_0.1nm.csv 
+2023-06-21 13:58:41.7133|Info|| "auto_run()" "Task17" |function_name=auto_run(), message=Task17 
+2023-06-21 13:58:41.7133|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:58:43.0754|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 13:58:43.0754|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 13:58:43.3044|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:43.3044|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:43.3044|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:43.3044|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:43.3044|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 13:58:43.3044|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 13:58:43.3044|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:43.3044|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 13:58:43.3044|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:43.3044|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 13:58:43.3044|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 13:58:43.3044|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.818uW_n1_1_n2_6_0.1s_150K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.818uW_n1_1_n2_6_0.1s_150K_0.1nm.csv 
+2023-06-21 13:58:43.3416|Info|| "auto_run()" "Task18" |function_name=auto_run(), message=Task18 
+2023-06-21 13:58:43.3416|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 13:58:47.1738|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:49.6997|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:52.2056|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:54.7265|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:57.2574|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:58:59.7851|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:02.3035|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:04.8322|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:07.3594|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:09.8872|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:12.3915|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:14.9220|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:17.4483|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:19.9673|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:22.4754|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:24.9955|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:27.5124|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:30.0309|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:32.5526|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:35.0714|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:37.5969|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:40.1195|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:42.6374|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:45.1496|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:47.6817|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:50.2009|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:52.7316|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:55.2462|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 13:59:57.7784|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:00.3084|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:02.8350|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:05.3563|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:07.8754|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:10.3809|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:12.9112|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:15.4330|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:17.9654|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:20.4855|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:22.9915|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:25.5096|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:28.0273|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:30.5585|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:33.0862|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:35.6196|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:38.1325|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:40.6513|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:43.1814|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:45.7130|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:48.2384|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:50.7524|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:53.2685|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:55.7934|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:00:58.3093|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:00.8382|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:03.3462|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:05.8717|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:08.3886|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:10.9163|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:13.4207|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:15.9362|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:18.4627|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:20.9832|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:23.5154|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:26.0417|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:28.5616|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:31.0787|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:33.6090|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:36.1394|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:38.6475|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:41.1724|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:43.6888|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:46.1963|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:48.7162|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:51.2291|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:53.7480|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:56.2640|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:01:58.7904|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:01.3117|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:03.8325|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:06.3382|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:08.8596|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:11.3915|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:13.9214|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:16.4554|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:18.9883|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:21.5162|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:24.0374|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:26.5534|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:29.0727|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:31.5953|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:34.1210|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:36.6424|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:39.1642|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:41.6973|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:44.2235|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:46.7466|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:49.2762|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:51.7910|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:54.3005|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:56.8173|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:02:59.3395|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:01.8688|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:04.3794|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:06.8862|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:09.4061|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:11.9116|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:14.4313|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:16.9522|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:19.4961|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:22.0288|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:24.5471|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:27.0809|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:29.6111|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:32.1344|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:34.6530|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:37.1714|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:39.6777|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:42.1871|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:44.7073|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:47.2372|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:49.7571|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:52.2804|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:54.7915|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:57.3111|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:03:59.8171|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:02.3329|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:04.8621|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:07.3829|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:09.8988|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:12.4180|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:14.9495|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:17.4749|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:19.9822|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:22.5209|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:25.0392|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:27.5545|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:30.0697|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:32.5910|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:35.1172|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:37.6385|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:40.1597|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:42.6800|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:45.1982|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:47.7115|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:50.2348|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:52.7560|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:55.2773|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:04:57.8025|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:00.3148|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:02.8261|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:05.3355|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:07.8640|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:10.3724|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:12.8995|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:15.4223|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:17.9494|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:20.4774|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:22.9954|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:25.5277|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:28.0595|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:30.5874|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:33.1184|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:35.6383|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:38.1715|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:40.7052|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:43.2175|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:45.7274|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:48.2565|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:50.7799|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:53.2970|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:55.8174|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:05:58.3352|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:00.8585|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:03.3774|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:05.8947|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:08.4239|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:10.9519|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:13.4805|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:16.0134|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:18.5381|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:21.0574|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:23.5916|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:26.1154|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:28.6462|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:31.1682|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:33.6909|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:36.2083|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:38.7262|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:41.2485|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:43.7654|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:46.2874|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:48.8117|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:51.3263|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:53.8554|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:56.3755|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:06:58.8928|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:01.4118|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:03.9228|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:06.4429|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:08.9635|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:11.4955|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:14.0137|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:16.5475|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:19.0740|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:21.5955|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:24.1155|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:26.6317|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:29.1493|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:31.6825|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:34.2116|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:36.7336|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:39.2429|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:41.7675|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:44.2855|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:46.8164|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:49.3487|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:51.8664|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:54.3756|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:56.8998|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:07:59.4356|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:01.9556|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:04.4656|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:06.9764|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:09.4918|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:11.9988|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:14.5124|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:17.0415|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:19.5718|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:22.1017|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:24.6091|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:27.1288|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:29.6476|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:32.1656|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:34.6857|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:37.2157|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:39.7376|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:42.2613|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:44.7950|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:47.3219|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:49.8417|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:52.3700|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:54.8926|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:57.4125|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:08:59.9194|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:02.4350|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:04.9512|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:07.4589|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:09.9884|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:12.5172|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:15.0269|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:17.5416|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:20.0599|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:22.5696|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:25.0834|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:27.5990|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:30.1124|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:32.6208|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:35.1296|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:37.6384|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:40.1451|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:42.6588|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:45.1684|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:47.6844|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:50.1885|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:52.7005|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:55.2099|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:09:57.7204|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:00.2379|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:02.7543|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:05.2687|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:07.7906|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:10.3166|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:12.8428|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:15.3710|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:17.8888|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:20.4080|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:22.9391|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:25.4495|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:27.9616|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:30.4863|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:32.9992|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:35.5082|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:38.0197|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:40.5445|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:43.0545|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:45.5786|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:48.0851|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:50.5988|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:53.1126|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:55.6291|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:10:58.1461|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:00.6521|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:03.1836|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:05.6979|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:08.2195|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:10.7370|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:13.2506|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:15.7643|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:18.2830|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:20.7940|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:23.3063|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:25.8237|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:28.3272|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:30.8408|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:33.3518|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:35.8606|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:38.3717|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:40.8792|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:43.3997|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:45.9094|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:48.4296|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:50.9435|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:11:53.4593|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:25.0452|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:33.8312|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:36.3644|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:38.8789|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:41.4211|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:43.9379|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:46.4545|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:48.9828|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:51.5126|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:54.0291|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:56.5590|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:12:59.0880|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:01.6201|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:04.1336|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:06.6531|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:09.1671|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:11.6848|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:14.2048|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:16.7116|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:19.2412|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:21.7609|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:24.2921|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:26.8113|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:29.3271|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:31.8307|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:34.3570|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:36.8730|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:39.4061|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:41.9258|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:44.4436|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:46.9709|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:49.4881|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:52.0170|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:54.5348|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:57.0547|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:13:59.5747|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:02.0785|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:04.6047|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:07.1446|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:09.6657|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:12.1989|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:14.7202|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:17.2468|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:19.7657|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:22.2948|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:24.8221|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:27.3467|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:29.8800|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:32.3891|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:34.9209|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:37.4501|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:39.9735|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:42.4836|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:45.0090|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:47.5421|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:50.0609|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:52.5779|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:55.1047|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:14:57.6224|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:00.1533|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:02.6823|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:05.2122|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:07.7286|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:10.2457|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:12.7647|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:15.2920|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:17.8246|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:20.3529|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:22.8716|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:25.3935|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:27.9120|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:30.4320|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:32.9564|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:35.4757|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:37.9957|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:40.5258|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:43.0420|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:45.5735|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:48.0831|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:50.6059|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:53.1286|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:55.6489|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:15:58.1685|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:00.7008|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:03.2344|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:05.7657|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:08.2879|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:10.8109|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:13.3357|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:15.8535|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:18.3711|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:20.8930|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:23.4103|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:25.9356|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:28.4667|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:30.9835|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:33.5147|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:36.0247|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:38.5467|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:41.0547|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:43.5654|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:46.0782|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:48.5997|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:51.1204|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:53.6307|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:56.1479|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:16:58.6671|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:01.1931|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:03.7116|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:06.2222|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:08.7470|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:11.2648|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:13.7693|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:16.2818|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:18.7917|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:21.3112|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:23.8179|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:26.3278|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:28.8384|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:31.3426|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:33.8634|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:36.3698|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:38.8810|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:41.3995|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:43.9058|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:46.4158|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:48.9277|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:51.4384|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:53.9481|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:56.4564|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:17:58.9795|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:01.4901|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:04.0188|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:06.5372|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:09.0575|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:11.5669|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:14.0894|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:16.6073|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:19.1174|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:21.6428|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:24.1650|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:26.6955|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:29.2013|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:31.7166|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:34.2360|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:36.7514|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:39.2676|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:41.7937|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:44.3224|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:46.8347|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:49.3694|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:51.8864|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:54.4122|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:56.9335|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:18:59.4594|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:01.9802|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:04.5006|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:07.0295|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:09.5542|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:12.0738|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:14.5914|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:17.1200|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:19.6507|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:22.1840|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:24.7079|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:27.2132|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:29.7282|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:32.2471|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:34.7704|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:37.3011|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:39.8286|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:42.3583|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:44.8774|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:47.3812|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:49.9088|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:52.4363|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:54.9649|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:19:57.4957|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:00.0146|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:02.5306|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:05.0594|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:07.5764|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:10.1064|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:12.6218|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:15.1292|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:17.6519|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:20.1669|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:22.6851|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:25.2067|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:27.7245|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:30.2556|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:32.7654|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:35.2939|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:37.8225|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:40.3532|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:42.8825|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:45.4165|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:47.9259|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:50.4456|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:52.9624|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:55.4680|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:20:57.9805|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:00.4983|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:03.0298|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:05.5494|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:08.0696|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:10.5879|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:13.0951|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:15.6161|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:18.1505|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:20.6734|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:23.1917|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:25.7216|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:28.2512|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:30.7795|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:33.2932|Info|| "auto_run()" "Wait for temperature... 0" |function_name=auto_run(), message=Wait for temperature... 0 
+2023-06-21 14:21:33.8117|Info|| "auto_run()" "Wait for temperature... 1" |function_name=auto_run(), message=Wait for temperature... 1 
+2023-06-21 14:21:34.3243|Info|| "auto_run()" "Wait for temperature... 2" |function_name=auto_run(), message=Wait for temperature... 2 
+2023-06-21 14:21:34.8411|Info|| "auto_run()" "Wait for temperature... 3" |function_name=auto_run(), message=Wait for temperature... 3 
+2023-06-21 14:21:35.3549|Info|| "auto_run()" "Wait for temperature... 4" |function_name=auto_run(), message=Wait for temperature... 4 
+2023-06-21 14:21:35.8710|Info|| "auto_run()" "Wait for temperature... 5" |function_name=auto_run(), message=Wait for temperature... 5 
+2023-06-21 14:21:36.3842|Info|| "auto_run()" "Wait for temperature... 6" |function_name=auto_run(), message=Wait for temperature... 6 
+2023-06-21 14:21:36.9004|Info|| "auto_run()" "Wait for temperature... 7" |function_name=auto_run(), message=Wait for temperature... 7 
+2023-06-21 14:21:37.4149|Info|| "auto_run()" "Wait for temperature... 8" |function_name=auto_run(), message=Wait for temperature... 8 
+2023-06-21 14:21:37.4149|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 14:21:37.4149|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 14:21:37.6563|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:37.6563|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:37.6563|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:37.6563|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:37.6563|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 14:21:37.6563|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 14:21:37.6563|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:37.6563|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:37.6563|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:37.6563|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:37.6563|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 14:21:37.6563|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.7449uW_n1_1_n2_1_0.1s_300K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.7449uW_n1_1_n2_1_0.1s_300K_0.1nm.csv 
+2023-06-21 14:21:37.6672|Info|| "auto_run()" "Task19" |function_name=auto_run(), message=Task19 
+2023-06-21 14:21:37.6672|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 14:21:38.9659|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 14:21:38.9659|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 14:21:39.1941|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:39.1941|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:39.1941|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:39.1941|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:39.1941|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 14:21:39.1941|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 14:21:39.1941|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:39.1941|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:39.1941|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:39.1941|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:39.1941|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 14:21:39.1941|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.6907uW_n1_1_n2_2_0.1s_300K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.6907uW_n1_1_n2_2_0.1s_300K_0.1nm.csv 
+2023-06-21 14:21:39.1941|Info|| "auto_run()" "Task20" |function_name=auto_run(), message=Task20 
+2023-06-21 14:21:39.1941|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 14:21:40.4880|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 14:21:40.4880|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 14:21:40.7121|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:40.7121|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:40.7121|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:40.7121|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:40.7121|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 14:21:40.7121|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 14:21:40.7121|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:40.7121|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:40.7121|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:40.7121|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:40.7121|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 14:21:40.7121|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.4968uW_n1_1_n2_3_0.1s_300K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.4968uW_n1_1_n2_3_0.1s_300K_0.1nm.csv 
+2023-06-21 14:21:40.7241|Info|| "auto_run()" "Task21" |function_name=auto_run(), message=Task21 
+2023-06-21 14:21:40.7241|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 14:21:42.0044|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 14:21:42.0044|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 14:21:42.2300|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:42.2300|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:42.2300|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:42.2300|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:42.2300|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 14:21:42.2300|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 14:21:42.2300|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:42.2300|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:42.2300|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:42.2300|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:42.2300|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 14:21:42.2300|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.5758uW_n1_1_n2_4_0.1s_300K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.5758uW_n1_1_n2_4_0.1s_300K_0.1nm.csv 
+2023-06-21 14:21:42.2410|Info|| "auto_run()" "Task22" |function_name=auto_run(), message=Task22 
+2023-06-21 14:21:42.2410|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 14:21:43.6000|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 14:21:43.6000|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 14:21:43.8293|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:43.8293|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:43.8303|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:43.8303|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:43.8303|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 14:21:43.8303|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 14:21:43.8303|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:43.8303|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:43.8303|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:43.8303|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:43.8303|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 14:21:43.8303|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.7383uW_n1_1_n2_5_0.1s_300K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.7383uW_n1_1_n2_5_0.1s_300K_0.1nm.csv 
+2023-06-21 14:21:43.8303|Info|| "auto_run()" "Task23" |function_name=auto_run(), message=Task23 
+2023-06-21 14:21:43.8303|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-06-21 14:21:45.1955|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-06-21 14:21:45.1955|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-06-21 14:21:45.4283|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:45.4283|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:45.4283|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:45.4283|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:45.4283|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-06-21 14:21:45.4283|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-06-21 14:21:45.4283|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:45.4283|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-06-21 14:21:45.4283|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:45.4283|Info|| "DataAddColumn" "1024" |function_name=DataAddColumn, message=1024 
+2023-06-21 14:21:45.4283|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-06-21 14:21:45.4283|Info|| "auto_run()" "Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.3192uW_n1_1_n2_6_0.1s_300K_0.1nm.csv" |function_name=auto_run(), message=Saving C:\Users\d26009dd\Desktop\TestAuto\Test_15.3192uW_n1_1_n2_6_0.1s_300K_0.1nm.csv 
+2023-06-21 14:21:45.4579|Info|| "auto_run()" "The tasks are finished" |function_name=auto_run(), message=The tasks are finished 
