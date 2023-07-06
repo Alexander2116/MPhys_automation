@@ -184,10 +184,11 @@ namespace MPhys.Devices
         // From documentation initial BaudRate = 115200
         public int Open(String port, int BaudRate = 115200)
         {
-            var res = FC102C_Methods.Open(_port, BaudRate, 10);
+            //var res = FC102C_Methods.Open(_port, BaudRate, 10);
+            _hdl = FC102C_Methods.Open(_port, BaudRate, 10);
             // newly added
-            _hdl = (int)res;
-            return (int)res;
+            //_hdl = (int)res;
+            return _hdl;
         }
 
         /// <return> 
@@ -237,7 +238,7 @@ namespace MPhys.Devices
             {
                 Console.WriteLine("Incorrect position");
             }
-            Close();
+            //Close();
             //return (int)ret;
         }
 
@@ -250,7 +251,7 @@ namespace MPhys.Devices
             }
             Int32 pos = 0;
             var ret = FC102C_Methods.GetPosition(_hdl, out pos);
-            Close();
+            //Close();
             return pos;
         }
 
@@ -263,7 +264,7 @@ namespace MPhys.Devices
             }
             int pos = 0;
             FC102C_Methods.GetPositionCount(_hdl, out pos);
-            Close();
+            //Close();
             return pos;
         }
 
