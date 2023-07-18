@@ -108,7 +108,7 @@
     <Reference Include="Thorlabs.PM100D_32.Interop, Version=1.0.1408.46, Culture=neutral, PublicKeyToken=db52e1f7e1afc70c, processorArchitecture=x86" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Devices\FC102C.cs" />
+    <Compile Include="Devices\FW102C.cs" />
     <Compile Include="Devices\HR550.cs" />
     <Compile Include="Devices\PM100A.cs" />
     <Compile Include="Devices\M9700.cs" />

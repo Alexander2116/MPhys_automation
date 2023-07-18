@@ -131,13 +131,13 @@ namespace MPhys.Devices
     }
 
 
-    class FC102C
+    class FW102C
     {
         // Port COM[]
         private String _port;
         // handle of port
         public Int32 _hdl;
-        public FC102C(String port, int BaudRate = 115200)
+        public FW102C(String port, int BaudRate = 115200)
         {
             // Must be present, cannot connect without it (weird)
             GetPorts();
@@ -156,7 +156,7 @@ namespace MPhys.Devices
             catch(Exception e) { }
         }
         /*
-        ~FC102C() {
+        ~FW102C() {
             //Close();
         }*/
 

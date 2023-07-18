@@ -15,8 +15,8 @@ namespace MPhys.GUI
 {
     public partial class NDFForm : Form
     {
-        private FC102C NDF1;
-        private FC102C NDF2;
+        private FW102C NDF1;
+        private FW102C NDF2;
         private bool NDF1Open = false;
         private bool NDF2Open = false;
 
@@ -74,7 +74,7 @@ namespace MPhys.GUI
             NDF2COM.Text = NDF2port;
             try
             {
-                NDF1 = new FC102C(NDF1port);
+                NDF1 = new FW102C(NDF1port);
                 if (NDF1.IsOpen()==1)
                 {
                     NDF1Open = true;
@@ -87,7 +87,7 @@ namespace MPhys.GUI
             catch { }
             try
             {
-                NDF2 = new FC102C(NDF2port);
+                NDF2 = new FW102C(NDF2port);
                 if (NDF2.IsOpen() == 1)
                 {
                     NDF2Open = true;

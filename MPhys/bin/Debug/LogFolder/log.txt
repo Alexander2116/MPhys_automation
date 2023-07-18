@@ -1374,3 +1374,83 @@
 2023-06-21 15:01:52.2663|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
 2023-06-21 15:01:52.3783|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
 2023-06-21 15:01:52.4405|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 10:43:23.9329|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 10:43:23.9773|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 10:43:23.9773|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 10:43:36.9958|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 10:43:36.9958|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 10:43:36.9958|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 10:44:43.0074|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 10:44:43.0404|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 10:44:43.0404|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 10:44:43.0837|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 10:44:43.0837|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 10:44:43.0837|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 10:44:43.1570|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-07-18 10:44:43.1670|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-07-18 10:44:43.1670|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-07-18 10:44:43.1670|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-07-18 10:44:48.6473|Info|| "buttonSaveGainADC_Click" "Started" |function_name=buttonSaveGainADC_Click, message=Started 
+2023-07-18 10:44:48.6473|Info|| "buttonSaveGainADC_Click" "Finished" |function_name=buttonSaveGainADC_Click, message=Finished 
+2023-07-18 10:51:41.0642|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 10:51:41.1986|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 10:51:41.3088|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 10:51:41.3387|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 10:52:33.1539|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 10:52:33.3402|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 10:52:33.4503|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 10:52:33.4802|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 10:52:33.6594|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-07-18 10:52:33.9505|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-07-18 10:52:34.9231|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 10:52:34.9331|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 10:52:34.9331|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 10:52:36.0101|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 10:52:36.0101|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 10:52:36.0101|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 10:52:36.0101|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-07-18 10:53:28.0841|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 10:53:28.1141|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 10:53:28.1141|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 10:53:28.1854|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 10:53:28.1854|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 10:53:28.1854|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 10:53:28.2577|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-07-18 10:53:28.2577|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-07-18 10:53:28.2577|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-07-18 10:53:28.2577|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-07-18 10:53:33.3427|Info|| "buttonSaveGainADC_Click" "Started" |function_name=buttonSaveGainADC_Click, message=Started 
+2023-07-18 10:53:33.3427|Info|| "buttonSaveGainADC_Click" "Finished" |function_name=buttonSaveGainADC_Click, message=Finished 
+2023-07-18 10:53:33.5383|Info|| "buttonSaveGainADC_Click" "Started" |function_name=buttonSaveGainADC_Click, message=Started 
+2023-07-18 10:53:33.5383|Info|| "buttonSaveGainADC_Click" "Finished" |function_name=buttonSaveGainADC_Click, message=Finished 
+2023-07-18 10:53:33.7222|Info|| "buttonSaveGainADC_Click" "Started" |function_name=buttonSaveGainADC_Click, message=Started 
+2023-07-18 10:53:33.7222|Info|| "buttonSaveGainADC_Click" "Finished" |function_name=buttonSaveGainADC_Click, message=Finished 
+2023-07-18 10:53:33.8831|Info|| "buttonSaveGainADC_Click" "Started" |function_name=buttonSaveGainADC_Click, message=Started 
+2023-07-18 10:53:33.8831|Info|| "buttonSaveGainADC_Click" "Finished" |function_name=buttonSaveGainADC_Click, message=Finished 
+2023-07-18 10:53:51.7261|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 10:53:51.8461|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 10:53:51.9463|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 10:53:51.9761|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 10:53:52.1325|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-07-18 10:53:52.4064|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-07-18 10:53:52.7464|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 10:53:52.7464|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 10:53:52.7464|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 10:53:52.7764|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 10:53:52.7764|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 10:53:52.7764|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 10:53:52.7764|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-07-18 10:53:52.9364|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-07-18 10:53:52.9364|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-07-18 10:53:52.9364|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-07-18 10:53:52.9364|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 

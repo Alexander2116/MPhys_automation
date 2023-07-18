@@ -60,12 +60,12 @@ namespace MPhys.GUI
                 if (ok)
                 {
                     labelInit.ForeColor = Color.Green;
-                    labelInit.Text = "Initialized - ready";
+                    //labelInit.Text = "Initialized - ready";
                 }
                 else
                 {
                     labelInit.ForeColor = Color.Red;
-                    labelInit.Text = "Not ready";
+                    //labelInit.Text = "Not ready";
                 }
             });
             t.Start();
