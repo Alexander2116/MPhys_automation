@@ -1454,3 +1454,561 @@
 2023-07-18 10:53:52.9364|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
 2023-07-18 10:53:52.9364|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
 2023-07-18 10:53:52.9364|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-07-18 12:42:51.1801|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:42:51.2897|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:42:51.3997|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:42:51.3997|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:43:54.4108|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:43:54.5408|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:43:54.6511|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:43:54.6810|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:43:58.9611|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:43:59.0511|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:43:59.1611|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:43:59.1811|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:44:01.7512|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:44:01.8297|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:44:01.9396|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:44:01.9494|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:44:07.7517|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:44:07.8517|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:44:07.9615|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:44:07.9815|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:44:11.0917|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:44:11.1685|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:44:11.2784|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:44:11.2784|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:44:13.6585|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:44:13.7585|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:44:13.8683|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:44:13.8885|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:44:29.5814|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:44:29.7175|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:44:29.8277|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:44:29.8575|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:44:30.0075|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-07-18 12:44:30.2770|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-07-18 12:44:38.3520|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:44:38.4381|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:44:38.5481|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:44:38.5681|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:44:46.4377|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 12:44:46.4377|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 12:44:46.4377|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 12:44:47.1981|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:44:47.4778|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:44:47.5878|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:44:47.5878|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 12:44:47.5878|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 12:44:47.5878|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 12:44:47.5878|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-07-18 12:44:47.6778|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:44:47.8879|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-07-18 12:44:47.8879|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-07-18 12:44:47.8879|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-07-18 12:44:47.8879|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-07-18 12:44:55.5232|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:44:55.6806|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:44:55.7907|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:44:55.8306|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:44:55.9807|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-07-18 12:44:56.1705|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-07-18 12:44:57.3205|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 12:44:57.3205|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 12:44:57.3205|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 12:45:00.9205|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 12:45:00.9205|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 12:45:00.9205|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 12:45:00.9205|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-07-18 12:45:01.2807|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-07-18 12:45:01.2905|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-07-18 12:45:01.2905|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-07-18 12:45:01.2905|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-07-18 12:46:01.3121|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 12:46:01.3121|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 12:46:01.3121|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 12:46:01.3322|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 12:46:01.3322|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 12:46:01.3322|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 12:46:01.4021|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-07-18 12:46:01.4021|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-07-18 12:46:01.4021|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-07-18 12:46:01.4021|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-07-18 12:46:11.3223|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 12:46:11.3223|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 12:46:39.8968|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 12:46:54.9702|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 12:46:55.0002|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 12:46:55.0002|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 12:46:55.1002|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 12:46:55.1002|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 12:46:55.1002|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 12:46:55.2102|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-07-18 12:46:55.2102|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-07-18 12:46:55.2102|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-07-18 12:46:55.2102|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-07-18 12:47:04.1205|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 12:47:04.2340|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 12:47:04.3443|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 12:47:04.3743|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 12:47:04.5243|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-07-18 12:47:04.7739|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-07-18 12:47:05.1139|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 12:47:05.1139|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 12:47:05.1139|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 12:47:05.1339|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 12:47:05.1339|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 12:47:05.1339|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 12:47:05.1339|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-07-18 12:47:05.3141|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-07-18 12:47:05.3141|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-07-18 12:47:05.3141|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-07-18 12:47:05.3141|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-07-18 12:53:54.1278|Info|| "buttonRun_Click" "auto_run() started" |function_name=buttonRun_Click, message=auto_run() started 
+2023-07-18 12:53:54.1278|Info|| "auto_run()" "Starting data acquisition" |function_name=auto_run(), message=Starting data acquisition 
+2023-07-18 12:53:54.1278|Info|| "auto_run()" "Task0" |function_name=auto_run(), message=Task0 
+2023-07-18 12:53:54.1278|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 12:53:54.1375|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 12:53:58.1156|Info|| "SetSlit" "0.008" |function_name=SetSlit, message=0.008 
+2023-07-18 12:53:59.6259|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 12:54:49.6769|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 12:54:49.6769|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 12:54:49.6769|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 12:55:00.1119|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:00.1119|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 12:55:00.1119|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:00.1119|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:00.1219|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 12:55:00.1219|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 12:55:00.1219|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:00.1219|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 12:55:00.1219|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:00.1219|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:00.1219|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 12:55:00.1418|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_sample_11K_69.2109uW_n1_1_n2_1_0.1s_0.1nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_sample_11K_69.2109uW_n1_1_n2_1_0.1s_0.1nm.csv 
+2023-07-18 12:55:00.5467|Info|| "auto_run()" "Task1" |function_name=auto_run(), message=Task1 
+2023-07-18 12:55:00.5467|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 12:55:00.5467|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 12:55:07.5389|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 12:55:07.5389|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 12:55:07.5389|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 12:55:07.5389|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 12:55:17.6333|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:17.6333|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 12:55:17.6333|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:17.6333|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:17.6333|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 12:55:17.6533|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 12:55:17.6533|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:17.6533|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 12:55:17.6533|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:17.6533|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:17.6533|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 12:55:17.6533|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_sample_11K_2.2472uW_n1_3_n2_3_0.1s_0.1nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_sample_11K_2.2472uW_n1_3_n2_3_0.1s_0.1nm.csv 
+2023-07-18 12:55:17.7933|Info|| "auto_run()" "Task2" |function_name=auto_run(), message=Task2 
+2023-07-18 12:55:17.7933|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 12:55:17.7933|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 12:55:28.0319|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 12:55:28.0319|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 12:55:28.0319|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 12:55:28.0319|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 12:55:38.1331|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:38.1331|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 12:55:38.1331|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:38.1331|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:38.1331|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 12:55:38.1331|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 12:55:38.1331|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:38.1331|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 12:55:38.1531|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:38.1531|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 12:55:38.1531|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 12:55:38.1531|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_sample_11K_292.6544uW_n1_6_n2_6_0.1s_0.1nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_sample_11K_292.6544uW_n1_6_n2_6_0.1s_0.1nm.csv 
+2023-07-18 12:55:38.2833|Info|| "auto_run()" "Task3" |function_name=auto_run(), message=Task3 
+2023-07-18 12:55:38.2833|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 12:55:38.2833|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 12:55:48.0829|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:00:13.4419|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:00:13.4419|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:00:13.4419|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:00:23.5353|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:23.5353|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:00:23.5453|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:23.5453|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:23.5553|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:00:23.5553|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:00:23.5553|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:23.5553|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:00:23.5553|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:23.5553|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:23.5553|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:00:23.5553|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_sample_100K_68.0383uW_n1_1_n2_1_0.1s_0.1nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_sample_100K_68.0383uW_n1_1_n2_1_0.1s_0.1nm.csv 
+2023-07-18 13:00:23.9953|Info|| "auto_run()" "Task4" |function_name=auto_run(), message=Task4 
+2023-07-18 13:00:23.9953|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:00:23.9953|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:00:30.9885|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:00:30.9885|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:00:30.9885|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:00:30.9885|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:00:41.1486|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:41.1486|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:00:41.1486|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:41.1486|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:41.1486|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:00:41.1686|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:00:41.1686|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:41.1686|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:00:41.1686|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:41.1686|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:00:41.1686|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:00:41.1686|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_sample_100K_2.2064uW_n1_3_n2_3_0.1s_0.1nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_sample_100K_2.2064uW_n1_3_n2_3_0.1s_0.1nm.csv 
+2023-07-18 13:00:41.3488|Info|| "auto_run()" "Task5" |function_name=auto_run(), message=Task5 
+2023-07-18 13:00:41.3488|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:00:41.3488|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:00:51.5912|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:00:51.5912|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:00:51.5912|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:00:51.5912|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:01:01.6874|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:01:01.6874|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:01:01.6874|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:01:01.6874|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:01:01.6974|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:01:01.6974|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:01:01.6974|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:01:01.6974|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:01:01.6974|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:01:01.6974|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:01:01.6974|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:01:01.6974|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_sample_100K_290.6934uW_n1_6_n2_6_0.1s_0.1nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_sample_100K_290.6934uW_n1_6_n2_6_0.1s_0.1nm.csv 
+2023-07-18 13:01:01.8374|Info|| "auto_run()" "Task6" |function_name=auto_run(), message=Task6 
+2023-07-18 13:01:01.8374|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:01:01.8374|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:01:11.6974|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:12:22.6832|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:12:22.6832|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:12:22.6832|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:12:32.7754|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:32.7754|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:12:32.7754|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:32.7754|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:32.7754|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:12:32.7954|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:12:32.7954|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:32.7954|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:12:32.8054|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:32.8054|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:32.8054|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:12:32.8054|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_sample_200K_67.4455uW_n1_1_n2_1_0.1s_0.1nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_sample_200K_67.4455uW_n1_1_n2_1_0.1s_0.1nm.csv 
+2023-07-18 13:12:33.1554|Info|| "auto_run()" "Task7" |function_name=auto_run(), message=Task7 
+2023-07-18 13:12:33.1554|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:12:33.1554|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:12:40.1462|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:12:40.1462|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:12:40.1462|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:12:40.1462|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:12:50.2443|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:50.2443|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:12:50.2443|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:50.2443|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:50.2443|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:12:50.2643|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:12:50.2643|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:50.2643|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:12:50.2743|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:50.2743|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:12:50.2743|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:12:50.2743|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_sample_200K_2.1955uW_n1_3_n2_3_0.1s_0.1nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_sample_200K_2.1955uW_n1_3_n2_3_0.1s_0.1nm.csv 
+2023-07-18 13:12:50.4643|Info|| "auto_run()" "Task8" |function_name=auto_run(), message=Task8 
+2023-07-18 13:12:50.4643|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:12:50.4643|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:13:00.6212|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:13:00.6212|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:13:00.6212|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:13:00.6212|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:13:10.7401|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:13:10.7401|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:13:10.7501|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:13:10.7501|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:13:10.7501|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:13:10.7601|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:13:10.7601|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:13:10.7601|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:13:10.7601|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:13:10.7601|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:13:10.7601|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:13:10.7601|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_sample_200K_292.1968uW_n1_6_n2_6_0.1s_0.1nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_sample_200K_292.1968uW_n1_6_n2_6_0.1s_0.1nm.csv 
+2023-07-18 13:13:10.8301|Info|| "auto_run()" "The tasks are finished" |function_name=auto_run(), message=The tasks are finished 
+2023-07-18 13:16:12.2731|Info|| "buttonRun_Click" "auto_run() started" |function_name=buttonRun_Click, message=auto_run() started 
+2023-07-18 13:16:12.2731|Info|| "auto_run()" "Starting data acquisition" |function_name=auto_run(), message=Starting data acquisition 
+2023-07-18 13:16:12.2731|Info|| "auto_run()" "Task0" |function_name=auto_run(), message=Task0 
+2023-07-18 13:16:12.2731|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:16:12.2731|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:16:14.6431|Info|| "SetSlit" "0.092" |function_name=SetSlit, message=0.092 
+2023-07-18 13:16:22.1526|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:17:02.2110|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:17:02.2110|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:17:02.2110|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:17:11.5364|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:17:11.5364|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:17:11.5464|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:17:11.5464|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:17:11.5464|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:17:11.5564|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:17:11.5564|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:17:11.5564|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:17:11.5564|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:17:11.5564|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:17:11.5564|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:17:11.5564|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_sample_200K_0.0236uW_n1_5_n2_5_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_sample_200K_0.0236uW_n1_5_n2_5_0.01s_0.01nm.csv 
+2023-07-18 13:17:12.0664|Info|| "auto_run()" "The tasks are finished" |function_name=auto_run(), message=The tasks are finished 
+2023-07-18 13:25:12.6995|Info|| "bool connect_devices()" "connecting NDF1" |function_name=bool connect_devices(), message=connecting NDF1 
+2023-07-18 13:25:12.8772|Info|| "bool connect_devices()" "NDF1 connected" |function_name=bool connect_devices(), message=NDF1 connected 
+2023-07-18 13:25:12.9872|Info|| "bool connect_devices()" "connecting NDF2" |function_name=bool connect_devices(), message=connecting NDF2 
+2023-07-18 13:25:13.0172|Info|| "bool connect_devices()" "NDF2 connected" |function_name=bool connect_devices(), message=NDF2 connected 
+2023-07-18 13:25:13.7273|Info|| "bool connect_devices()" "PM100A connected" |function_name=bool connect_devices(), message=PM100A connected 
+2023-07-18 13:25:13.9973|Info|| "bool connect_devices()" "M9700 connected" |function_name=bool connect_devices(), message=M9700 connected 
+2023-07-18 13:25:14.7972|Info|| "InitializeCCD" "CCD Event" |function_name=InitializeCCD, message=CCD Event 
+2023-07-18 13:25:14.7972|Info|| "InitializeCCD" "CCD Load" |function_name=InitializeCCD, message=CCD Load 
+2023-07-18 13:25:14.7972|Info|| "InitializeCCD" "CCD Open" |function_name=InitializeCCD, message=CCD Open 
+2023-07-18 13:25:15.5076|Info|| "InitializeCCD" "CCD Initialize" |function_name=InitializeCCD, message=CCD Initialize 
+2023-07-18 13:25:15.5076|Info|| "InitializeCCD" "Load ADC and Gain" |function_name=InitializeCCD, message=Load ADC and Gain 
+2023-07-18 13:25:15.5076|Info|| "InitializeCCD" "Complete
+" |function_name=InitializeCCD, message=Complete
+ 
+2023-07-18 13:25:15.5076|Info|| "bool connect_devices()" "Mono and CCD connected" |function_name=bool connect_devices(), message=Mono and CCD connected 
+2023-07-18 13:25:15.7376|Info|| "OnCCDEvent_Initialized" "Adding Gain and ADC" |function_name=OnCCDEvent_Initialized, message=Adding Gain and ADC 
+2023-07-18 13:25:15.7376|Info|| "InitializeGainSelect" "0" |function_name=InitializeGainSelect, message=0 
+2023-07-18 13:25:15.7376|Info|| "InitializeADCSelect" "0" |function_name=InitializeADCSelect, message=0 
+2023-07-18 13:25:15.7476|Info|| "OnCCDEvent_Initialized" "Gain and ADC Added" |function_name=OnCCDEvent_Initialized, message=Gain and ADC Added 
+2023-07-18 13:26:20.0045|Info|| "buttonRun_Click" "auto_run() started" |function_name=buttonRun_Click, message=auto_run() started 
+2023-07-18 13:26:20.0143|Info|| "auto_run()" "Starting data acquisition" |function_name=auto_run(), message=Starting data acquisition 
+2023-07-18 13:26:20.0143|Info|| "auto_run()" "Task0" |function_name=auto_run(), message=Task0 
+2023-07-18 13:26:20.0143|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:26:20.0143|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:26:20.3144|Info|| "SetSlit" "0.008" |function_name=SetSlit, message=0.008 
+2023-07-18 13:26:27.8243|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:28:38.0043|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:28:38.0043|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:28:38.0043|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:28:47.6676|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:28:47.6676|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:28:47.6876|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:28:47.6876|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:28:47.6876|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:28:47.6876|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:28:47.6876|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:28:47.6876|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:28:47.6976|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:28:47.6976|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:28:47.6976|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:28:47.6976|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_200K_0.0245uW_n1_5_n2_5_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_200K_0.0245uW_n1_5_n2_5_0.01s_0.01nm.csv 
+2023-07-18 13:28:48.1274|Info|| "auto_run()" "The tasks are finished" |function_name=auto_run(), message=The tasks are finished 
+2023-07-18 13:30:05.9163|Info|| "buttonRun_Click" "auto_run() started" |function_name=buttonRun_Click, message=auto_run() started 
+2023-07-18 13:30:05.9163|Info|| "auto_run()" "Starting data acquisition" |function_name=auto_run(), message=Starting data acquisition 
+2023-07-18 13:30:05.9163|Info|| "auto_run()" "Task0" |function_name=auto_run(), message=Task0 
+2023-07-18 13:30:05.9163|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:30:05.9163|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:30:08.2961|Info|| "SetSlit" "0.01" |function_name=SetSlit, message=0.01 
+2023-07-18 13:30:17.3054|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:30:57.3445|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:30:57.3445|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:30:57.3445|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:31:06.6649|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:31:06.6649|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:31:06.6649|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:31:06.6649|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:31:06.6649|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:31:06.6649|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:31:06.6649|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:31:06.6649|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:31:06.6850|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:31:06.6850|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:31:06.6850|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:31:06.6850|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_200K_290.2358uW_n1_6_n2_6_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_200K_290.2358uW_n1_6_n2_6_0.01s_0.01nm.csv 
+2023-07-18 13:31:06.7150|Info|| "auto_run()" "The tasks are finished" |function_name=auto_run(), message=The tasks are finished 
+2023-07-18 13:36:30.0117|Info|| "buttonRun_Click" "auto_run() started" |function_name=buttonRun_Click, message=auto_run() started 
+2023-07-18 13:36:30.0117|Info|| "auto_run()" "Starting data acquisition" |function_name=auto_run(), message=Starting data acquisition 
+2023-07-18 13:36:30.0117|Info|| "auto_run()" "Task0" |function_name=auto_run(), message=Task0 
+2023-07-18 13:36:30.0117|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:36:30.0117|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:36:30.2715|Info|| "SetSlit" "0.01" |function_name=SetSlit, message=0.01 
+2023-07-18 13:36:39.2820|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:37:19.3247|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:37:19.3247|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:37:19.3247|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:37:28.6718|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:28.6718|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:37:28.6718|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:28.6718|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:28.6817|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:37:28.6817|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:37:28.6817|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:28.6817|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:37:28.6817|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:28.6817|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:28.6817|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:37:28.6817|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_2_200K_289.7129uW_n1_6_n2_6_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_2_200K_289.7129uW_n1_6_n2_6_0.01s_0.01nm.csv 
+2023-07-18 13:37:28.7417|Info|| "auto_run()" "Task1" |function_name=auto_run(), message=Task1 
+2023-07-18 13:37:28.7417|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:37:28.7417|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:37:38.8795|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:37:38.8795|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:37:38.8795|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:37:38.8795|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:37:48.1824|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:48.1824|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:37:48.1824|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:48.1824|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:48.1824|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:37:48.1824|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:37:48.1824|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:48.1824|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:37:48.2024|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:48.2024|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:37:48.2124|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:37:48.2124|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_2_200K_2.1814uW_n1_3_n2_3_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_2_200K_2.1814uW_n1_3_n2_3_0.01s_0.01nm.csv 
+2023-07-18 13:37:48.2124|Info|| "auto_run()" "Task2" |function_name=auto_run(), message=Task2 
+2023-07-18 13:37:48.2124|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:37:48.2124|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:37:55.2368|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:37:55.2368|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:37:55.2368|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:37:55.2368|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:38:04.5741|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:38:04.5741|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:38:04.5741|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:38:04.5741|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:38:04.5741|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:38:04.5941|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:38:04.5941|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:38:04.5941|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:38:04.5941|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:38:04.5941|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:38:04.6041|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:38:04.6041|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_2_200K_71.7776uW_n1_1_n2_1_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_2_200K_71.7776uW_n1_1_n2_1_0.01s_0.01nm.csv 
+2023-07-18 13:38:04.6241|Info|| "auto_run()" "Task3" |function_name=auto_run(), message=Task3 
+2023-07-18 13:38:04.6241|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:38:04.6241|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:38:14.5199|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:55:56.1479|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:55:56.1479|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:55:56.1479|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:56:05.4307|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:05.4307|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:56:05.4307|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:05.4307|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:05.4307|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:56:05.4307|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:56:05.4307|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:05.4307|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:56:05.4507|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:05.4507|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:05.4507|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:56:05.4507|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_2_100K_290.8241uW_n1_6_n2_6_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_2_100K_290.8241uW_n1_6_n2_6_0.01s_0.01nm.csv 
+2023-07-18 13:56:06.1207|Info|| "auto_run()" "Task4" |function_name=auto_run(), message=Task4 
+2023-07-18 13:56:06.1207|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:56:06.1207|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:56:16.3273|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:56:16.3273|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:56:16.3273|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:56:16.3273|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:56:25.6417|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:25.6417|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:56:25.6517|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:25.6517|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:25.6517|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:56:25.6517|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:56:25.6517|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:25.6517|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:56:25.6717|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:25.6717|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:25.6717|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:56:25.6717|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_2_100K_2.179uW_n1_3_n2_3_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_2_100K_2.179uW_n1_3_n2_3_0.01s_0.01nm.csv 
+2023-07-18 13:56:25.7117|Info|| "auto_run()" "Task5" |function_name=auto_run(), message=Task5 
+2023-07-18 13:56:25.7117|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:56:25.7117|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:56:32.7177|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 13:56:32.7177|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 13:56:32.7177|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 13:56:32.7177|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 13:56:42.0399|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:42.0399|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:56:42.0399|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:42.0399|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:42.0399|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 13:56:42.0599|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 13:56:42.0599|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:42.0599|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 13:56:42.0699|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:42.0699|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 13:56:42.0699|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 13:56:42.0699|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_2_100K_70.6897uW_n1_1_n2_1_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_2_100K_70.6897uW_n1_1_n2_1_0.01s_0.01nm.csv 
+2023-07-18 13:56:42.1099|Info|| "auto_run()" "Task6" |function_name=auto_run(), message=Task6 
+2023-07-18 13:56:42.1099|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 13:56:42.1099|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 13:56:51.9394|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 14:13:03.2460|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 14:13:03.2460|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 14:13:03.2460|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 14:13:12.5576|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:12.5576|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 14:13:12.5576|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:12.5576|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:12.5576|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 14:13:12.5576|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 14:13:12.5576|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:12.5576|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 14:13:12.5775|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:12.5775|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:12.5775|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 14:13:12.5775|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_2_11K_290.3665uW_n1_6_n2_6_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_2_11K_290.3665uW_n1_6_n2_6_0.01s_0.01nm.csv 
+2023-07-18 14:13:13.1475|Info|| "auto_run()" "Task7" |function_name=auto_run(), message=Task7 
+2023-07-18 14:13:13.1475|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 14:13:13.1475|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 14:13:23.3479|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 14:13:23.3479|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 14:13:23.3479|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 14:13:23.3479|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 14:13:32.6681|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:32.6681|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 14:13:32.6681|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:32.6681|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:32.6681|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 14:13:32.6881|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 14:13:32.6881|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:32.6881|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 14:13:32.6982|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:32.6982|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:32.6982|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 14:13:32.6982|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_2_11K_2.1842uW_n1_3_n2_3_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_2_11K_2.1842uW_n1_3_n2_3_0.01s_0.01nm.csv 
+2023-07-18 14:13:32.8181|Info|| "auto_run()" "Task8" |function_name=auto_run(), message=Task8 
+2023-07-18 14:13:32.8181|Info|| "auto_run()" "Setting devices..." |function_name=auto_run(), message=Setting devices... 
+2023-07-18 14:13:32.8181|Info|| "auto_run()" "Setting NDF1 position..." |function_name=auto_run(), message=Setting NDF1 position... 
+2023-07-18 14:13:39.7970|Info|| "auto_run()" "Start checking the temperature" |function_name=auto_run(), message=Start checking the temperature 
+2023-07-18 14:13:39.7970|Info|| "auto_run()" "Temperature is fine" |function_name=auto_run(), message=Temperature is fine 
+2023-07-18 14:13:39.7970|Info|| "auto_run()" "Getting data..." |function_name=auto_run(), message=Getting data... 
+2023-07-18 14:13:39.7970|Info|| "GetData()" "Loop Started" |function_name=GetData(), message=Loop Started 
+2023-07-18 14:13:49.1917|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:49.1917|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 14:13:49.2015|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:49.2015|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:49.2115|Info|| "auto_run()" "Data taken..." |function_name=auto_run(), message=Data taken... 
+2023-07-18 14:13:49.2115|Info|| "auto_run()" "Adding data to DataSet..." |function_name=auto_run(), message=Adding data to DataSet... 
+2023-07-18 14:13:49.2115|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:49.2115|Info|| "DataAddColumn" "0" |function_name=DataAddColumn, message=0 
+2023-07-18 14:13:49.2115|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:49.2115|Info|| "DataAddColumn" "9216" |function_name=DataAddColumn, message=9216 
+2023-07-18 14:13:49.2115|Info|| "auto_run()" "Taking N-1 times..." |function_name=auto_run(), message=Taking N-1 times... 
+2023-07-18 14:13:49.2115|Info|| "auto_run()" "Saving D:\PL_data_18_07_2023\QD_test_2_11K_70.8069uW_n1_1_n2_1_0.01s_0.01nm.csv" |function_name=auto_run(), message=Saving D:\PL_data_18_07_2023\QD_test_2_11K_70.8069uW_n1_1_n2_1_0.01s_0.01nm.csv 
+2023-07-18 14:13:49.4016|Info|| "auto_run()" "The tasks are finished" |function_name=auto_run(), message=The tasks are finished 

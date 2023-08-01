@@ -22,7 +22,7 @@ namespace MPhys.GUI
         private System.Data.DataTable dataTable; // Current loaded dataTable (Tasks to perform)
 
         //Devices
-        FC102C NDF1; FC102C NDF2;
+        FW102C NDF1; FW102C NDF2;
         HR550 MonoSpec;
         M9700 TempDev;
         PM100A PMDev;
@@ -60,12 +60,12 @@ namespace MPhys.GUI
                 if (ok)
                 {
                     labelInit.ForeColor = Color.Green;
-                    //labelInit.Text = "Initialized - ready";
+                    labelInit.Text = "Initialized - ready";
                 }
                 else
                 {
                     labelInit.ForeColor = Color.Red;
-                    //labelInit.Text = "Not ready";
+                    labelInit.Text = "Not ready";
                 }
             });
             t.Start();
@@ -113,7 +113,7 @@ namespace MPhys.GUI
                 NDF1 = null;
                 myfunctions.add_to_log("bool connect_devices()", "connecting NDF1");
                 // Starting com crashes the program
-                NDF1 = new FC102C(NDF1port);
+                NDF1 = new FW102C(NDF1port);
                 if (NDF1.IsOpen() == 1)
                 {
                     myfunctions.add_to_log("bool connect_devices()","NDF1 connected");
@@ -137,7 +137,7 @@ namespace MPhys.GUI
                 {
                     NDF2 = null;
                     myfunctions.add_to_log("bool connect_devices()", "connecting NDF2");
-                    NDF2 = new FC102C(NDF2port);
+                    NDF2 = new FW102C(NDF2port);
                     if (NDF2.IsOpen() == 1)
                     {
                         myfunctions.add_to_log("bool connect_devices()", "NDF2 connected");
@@ -182,6 +182,7 @@ namespace MPhys.GUI
                     TempDev.Open();
                     TempDev.Close();
                     myfunctions.add_to_log("bool connect_devices()", "M9700 connected");
+                    TempDev.Set_temperature(10.0);
                     TempDev.Set_mode(2);
                 }
                 catch

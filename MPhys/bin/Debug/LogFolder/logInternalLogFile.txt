@@ -396,3 +396,85 @@
 2023-07-18 10:53:09.1873 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.0.1813. Product version: 5.2.0+eed5f76d158dbcaef9326f7a0e1c281adad171e8. GlobalAssemblyCache: False
 2023-07-18 10:55:14.3268 Info AppDomain Shutting down. LogFactory closing...
 2023-07-18 10:55:14.3568 Info LogFactory has been closed.
+2023-07-18 12:16:47.5921 Info Message Template Auto Format enabled
+2023-07-18 12:16:47.6841 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to parse layout containing type: function_name - LayoutRenderer type-alias is unknown: 'function_name' ---> System.ArgumentException: LayoutRenderer type-alias is unknown: 'function_name'
+   at NLog.Config.FactoryExtensions.CreateInstance[TBaseType](IFactory`1 factory, String typeAlias)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(String typeName, ConfigurationItemFactory configurationItemFactory, Nullable`1 throwConfigExceptions)
+   --- End of inner exception stack trace ---
+2023-07-18 12:16:47.7211 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-18 12:16:47.7291 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logconsole' not found for logging rule: *.
+2023-07-18 12:16:47.7491 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.config
+2023-07-18 12:16:47.7641 Info Configuration initialized.
+2023-07-18 12:16:47.7641 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.0.1813. Product version: 5.2.0+eed5f76d158dbcaef9326f7a0e1c281adad171e8. GlobalAssemblyCache: False
+2023-07-18 12:16:55.1663 Info AppDomain Shutting down. LogFactory closing...
+2023-07-18 12:16:55.1863 Info LogFactory has been closed.
+2023-07-18 12:41:50.6735 Info Message Template Auto Format enabled
+2023-07-18 12:41:50.7335 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to parse layout containing type: function_name - LayoutRenderer type-alias is unknown: 'function_name' ---> System.ArgumentException: LayoutRenderer type-alias is unknown: 'function_name'
+   at NLog.Config.FactoryExtensions.CreateInstance[TBaseType](IFactory`1 factory, String typeAlias)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(String typeName, ConfigurationItemFactory configurationItemFactory, Nullable`1 throwConfigExceptions)
+   --- End of inner exception stack trace ---
+2023-07-18 12:41:50.7635 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-18 12:41:50.7735 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logconsole' not found for logging rule: *.
+2023-07-18 12:41:50.7735 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.config
+2023-07-18 12:41:50.7935 Info Configuration initialized.
+2023-07-18 12:41:50.7935 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.0.1813. Product version: 5.2.0+eed5f76d158dbcaef9326f7a0e1c281adad171e8. GlobalAssemblyCache: False
+2023-07-18 12:43:09.8434 Info AppDomain Shutting down. LogFactory closing...
+2023-07-18 12:43:09.8534 Info LogFactory has been closed.
+2023-07-18 12:43:49.6116 Info Message Template Auto Format enabled
+2023-07-18 12:43:49.6716 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to parse layout containing type: function_name - LayoutRenderer type-alias is unknown: 'function_name' ---> System.ArgumentException: LayoutRenderer type-alias is unknown: 'function_name'
+   at NLog.Config.FactoryExtensions.CreateInstance[TBaseType](IFactory`1 factory, String typeAlias)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(String typeName, ConfigurationItemFactory configurationItemFactory, Nullable`1 throwConfigExceptions)
+   --- End of inner exception stack trace ---
+2023-07-18 12:43:49.6816 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-18 12:43:49.7016 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logconsole' not found for logging rule: *.
+2023-07-18 12:43:49.7116 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.config
+2023-07-18 12:43:49.7116 Info Configuration initialized.
+2023-07-18 12:43:49.7116 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.0.1813. Product version: 5.2.0+eed5f76d158dbcaef9326f7a0e1c281adad171e8. GlobalAssemblyCache: False
+2023-07-18 12:44:24.8612 Info AppDomain Shutting down. LogFactory closing...
+2023-07-18 12:44:24.8712 Info LogFactory has been closed.
+2023-07-18 12:44:26.0912 Info Message Template Auto Format enabled
+2023-07-18 12:44:26.1512 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to parse layout containing type: function_name - LayoutRenderer type-alias is unknown: 'function_name' ---> System.ArgumentException: LayoutRenderer type-alias is unknown: 'function_name'
+   at NLog.Config.FactoryExtensions.CreateInstance[TBaseType](IFactory`1 factory, String typeAlias)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(String typeName, ConfigurationItemFactory configurationItemFactory, Nullable`1 throwConfigExceptions)
+   --- End of inner exception stack trace ---
+2023-07-18 12:44:26.1812 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-18 12:44:26.1812 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logconsole' not found for logging rule: *.
+2023-07-18 12:44:26.1812 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.config
+2023-07-18 12:44:26.2012 Info Configuration initialized.
+2023-07-18 12:44:26.2112 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.0.1813. Product version: 5.2.0+eed5f76d158dbcaef9326f7a0e1c281adad171e8. GlobalAssemblyCache: False
+2023-07-18 12:44:52.5277 Info AppDomain Shutting down. LogFactory closing...
+2023-07-18 12:44:52.5477 Info LogFactory has been closed.
+2023-07-18 12:44:53.7577 Info Message Template Auto Format enabled
+2023-07-18 12:44:53.8277 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to parse layout containing type: function_name - LayoutRenderer type-alias is unknown: 'function_name' ---> System.ArgumentException: LayoutRenderer type-alias is unknown: 'function_name'
+   at NLog.Config.FactoryExtensions.CreateInstance[TBaseType](IFactory`1 factory, String typeAlias)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(String typeName, ConfigurationItemFactory configurationItemFactory, Nullable`1 throwConfigExceptions)
+   --- End of inner exception stack trace ---
+2023-07-18 12:44:53.8477 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-18 12:44:53.8477 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logconsole' not found for logging rule: *.
+2023-07-18 12:44:53.8677 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.config
+2023-07-18 12:44:53.8677 Info Configuration initialized.
+2023-07-18 12:44:53.8677 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.0.1813. Product version: 5.2.0+eed5f76d158dbcaef9326f7a0e1c281adad171e8. GlobalAssemblyCache: False
+2023-07-18 12:46:44.6875 Info AppDomain Shutting down. LogFactory closing...
+2023-07-18 12:46:44.6976 Info LogFactory has been closed.
+2023-07-18 12:46:47.7075 Info Message Template Auto Format enabled
+2023-07-18 12:46:47.7776 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to parse layout containing type: function_name - LayoutRenderer type-alias is unknown: 'function_name' ---> System.ArgumentException: LayoutRenderer type-alias is unknown: 'function_name'
+   at NLog.Config.FactoryExtensions.CreateInstance[TBaseType](IFactory`1 factory, String typeAlias)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(String typeName, ConfigurationItemFactory configurationItemFactory, Nullable`1 throwConfigExceptions)
+   --- End of inner exception stack trace ---
+2023-07-18 12:46:47.7976 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-18 12:46:47.7976 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logconsole' not found for logging rule: *.
+2023-07-18 12:46:47.8176 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.config
+2023-07-18 12:46:47.8276 Info Configuration initialized.
+2023-07-18 12:46:47.8276 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.0.1813. Product version: 5.2.0+eed5f76d158dbcaef9326f7a0e1c281adad171e8. GlobalAssemblyCache: False
+2023-07-18 13:23:20.5594 Info Message Template Auto Format enabled
+2023-07-18 13:23:20.6194 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to parse layout containing type: function_name - LayoutRenderer type-alias is unknown: 'function_name' ---> System.ArgumentException: LayoutRenderer type-alias is unknown: 'function_name'
+   at NLog.Config.FactoryExtensions.CreateInstance[TBaseType](IFactory`1 factory, String typeAlias)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(String typeName, ConfigurationItemFactory configurationItemFactory, Nullable`1 throwConfigExceptions)
+   --- End of inner exception stack trace ---
+2023-07-18 13:23:20.6494 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-18 13:23:20.6494 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logconsole' not found for logging rule: *.
+2023-07-18 13:23:20.6694 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Alex\source\repos\Alexander2116\MPhys_automation\MPhys\bin\Debug\NLog.config
+2023-07-18 13:23:20.6894 Info Configuration initialized.
+2023-07-18 13:23:20.6894 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.0.1813. Product version: 5.2.0+eed5f76d158dbcaef9326f7a0e1c281adad171e8. GlobalAssemblyCache: False
+2023-07-18 14:37:19.9273 Info AppDomain Shutting down. LogFactory closing...
+2023-07-18 14:37:19.9473 Info LogFactory has been closed.
