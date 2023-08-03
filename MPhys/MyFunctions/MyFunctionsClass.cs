@@ -9,7 +9,9 @@ using System.Reflection;
 using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using NLog;
-
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Runtime;
 
 namespace MPhys.MyFunctions
 {
@@ -207,5 +209,71 @@ namespace MPhys.MyFunctions
         }
 
 
+        public void Update_ini(double a, double b, double c, string section_name)
+        {
+            var MyIni = new IniFile("MappingParameters.ini");
+            MyIni.Write("a", a.ToString(), section_name);
+            MyIni.Write("b", b.ToString(), section_name);
+            MyIni.Write("c", c.ToString(), section_name);
+        }
+
+        public double[] Read_ini(string section_name)
+        {
+            double[] list = new double[3];
+            var MyIni = new IniFile("MappingParameters.ini");
+            list[0] = double.Parse(MyIni.Read("a", section_name));
+            list[1] = double.Parse(MyIni.Read("b", section_name));
+            list[2] = double.Parse(MyIni.Read("c", section_name));
+
+            return list;
+        }
+
+
     }
+
+
+    class IniFile   // revision 11
+    {
+        string Path;
+        string EXE = Assembly.GetExecutingAssembly().GetName().Name;
+
+        [DllImport("kernel32", CharSet = CharSet.Unicode)]
+        static extern long WritePrivateProfileString(string Section, string Key, string Value, string FilePath);
+
+        [DllImport("kernel32", CharSet = CharSet.Unicode)]
+        static extern int GetPrivateProfileString(string Section, string Key, string Default, StringBuilder RetVal, int Size, string FilePath);
+
+        public IniFile(string IniPath = null)
+        {
+            Path = new FileInfo(IniPath ?? EXE + ".ini").FullName;
+        }
+
+        public string Read(string Key, string Section = null)
+        {
+            var RetVal = new StringBuilder(255);
+            GetPrivateProfileString(Section ?? EXE, Key, "", RetVal, 255, Path);
+            return RetVal.ToString();
+        }
+
+        public void Write(string Key, string Value, string Section = null)
+        {
+            WritePrivateProfileString(Section ?? EXE, Key, Value, Path);
+        }
+
+        public void DeleteKey(string Key, string Section = null)
+        {
+            Write(Key, null, Section ?? EXE);
+        }
+
+        public void DeleteSection(string Section = null)
+        {
+            Write(null, null, Section ?? EXE);
+        }
+
+        public bool KeyExists(string Key, string Section = null)
+        {
+            return Read(Key, Section).Length > 0;
+        }
+    }
+
 }
