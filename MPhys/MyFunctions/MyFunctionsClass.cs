@@ -233,7 +233,6 @@ namespace MPhys.MyFunctions
 
             return double.Parse(MyIni.Read(key, section_name));
         }
-        public
 
 
     }
