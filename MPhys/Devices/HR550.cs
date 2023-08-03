@@ -814,37 +814,37 @@ namespace MPhys.Devices
             {
                 if (central_wl > 600)
                 {
-                    double[] temp = { 0, 0.033, 649.7961 };
+                    double[] temp = myFunc.Read_ini("1200-1");
                     p = temp;
-                    offset = 0.12;
+                    offset = myFunc.Read_ini("offset","1200-1");
                 }
                 else
                 {
-                    double[] temp = { 0, 0.03642, 549.4396 }; // initial 0, 0.0342 - too small
+                    double[] temp = myFunc.Read_ini("1200-2"); // initial 0, 0.0342 - too small
                     p = temp;
-                    offset = 0.07;
+                    offset = myFunc.Read_ini("offset", "1200-2");
                 }
 
             }
             else if (grating == 300)
             {
                 //guesstimate
-                double[] temp = { -1.419e-6, 0.1502, 505.76 };
+                double[] temp = myFunc.Read_ini("300");
                 p = temp;
-                offset = 1;
+                offset = myFunc.Read_ini("offset", "300");
             }
             else if (grating == 150)
             {
                 //quadratic calibration fit
-                double[] temp = { 2.11514338456425e-06, 0.297079305471633, 547.3409 };
+                double[] temp = myFunc.Read_ini("150");
                 p = temp;
-                offset = 1.8;
+                offset = myFunc.Read_ini("offset", "150");
             }
             else // option for 150
             {
-                double[] temp = { 2.11514338456425e-06, 0.297079305471633, 547.3409 };
+                double[] temp = myFunc.Read_ini("150");
                 p = temp;
-                offset = 1.8;
+                offset = myFunc.Read_ini("offset", "150");
             }
 
             //adjust center pixel(512) offset
@@ -865,7 +865,7 @@ namespace MPhys.Devices
         {
             List<double> positions = new List<double>();
             double p;
-            double st = Start - 0.5; // extra offset for the start
+            double st = Start - 1; // extra offset for the start
             while (st < End)
             {
 
@@ -873,27 +873,27 @@ namespace MPhys.Devices
                 {
                     if (st > 600)
                     {
-                        p = 0.033; // correct
+                        p = myFunc.Read_ini("b", "1200-1"); // correct
                     }
                     else
                     {
-                        p = 0.03642; // below it is 0.036 or 0.037
+                        p = myFunc.Read_ini("b", "1200-2"); // below it is 0.036 or 0.037
                     }
 
                 }
                 else if (grating == 300)
                 {
                     //guesstimate
-                    p = 0.1502;
+                    p = myFunc.Read_ini("b", "300");
                 }
                 else if (grating == 150)
                 {
                     //quadratic calibration fit
-                    p = 0.297079305471633;
+                    p = myFunc.Read_ini("b", "150");
                 }
                 else // option for 150
                 {
-                    p =  0.297079305471633;
+                    p = myFunc.Read_ini("b", "150");
                 }
 
                 // Add middle position 

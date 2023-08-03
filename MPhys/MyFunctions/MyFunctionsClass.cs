@@ -227,6 +227,13 @@ namespace MPhys.MyFunctions
 
             return list;
         }
+        public double Read_ini(string key, string section_name)
+        {
+            var MyIni = new IniFile("MappingParameters.ini");
+
+            return double.Parse(MyIni.Read(key, section_name));
+        }
+        public
 
 
     }
