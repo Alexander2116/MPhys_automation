@@ -94,6 +94,9 @@ namespace MPhys.GUI
             this.Slit = new System.Windows.Forms.TextBox();
             this.Slit_pos = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.buttonCalibrate = new System.Windows.Forms.Button();
+            this.textBoxCalibrate = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupboxWlCtrl.SuspendLayout();
             this.GroupBoxAcquire.SuspendLayout();
             this.GroupBoxStreamAcq.SuspendLayout();
@@ -783,12 +786,42 @@ namespace MPhys.GUI
             this.label6.TabIndex = 0;
             this.label6.Text = "Front slit (mm)";
             // 
+            // buttonCalibrate
+            // 
+            this.buttonCalibrate.Location = new System.Drawing.Point(159, 252);
+            this.buttonCalibrate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCalibrate.Name = "buttonCalibrate";
+            this.buttonCalibrate.Size = new System.Drawing.Size(65, 25);
+            this.buttonCalibrate.TabIndex = 48;
+            this.buttonCalibrate.Text = "Calibrate";
+            this.buttonCalibrate.UseVisualStyleBackColor = true;
+            this.buttonCalibrate.Click += new System.EventHandler(this.buttonCalibrate_Click);
+            // 
+            // textBoxCalibrate
+            // 
+            this.textBoxCalibrate.Location = new System.Drawing.Point(55, 255);
+            this.textBoxCalibrate.Name = "textBoxCalibrate";
+            this.textBoxCalibrate.Size = new System.Drawing.Size(75, 20);
+            this.textBoxCalibrate.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(50, 239);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Expected Peak (nm)";
+            // 
             // SpecForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBoxCalibrate);
+            this.Controls.Add(this.buttonCalibrate);
             this.Controls.Add(this.groupBoxSlit);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.buttonSaveGainADC);
@@ -905,5 +938,8 @@ namespace MPhys.GUI
         internal System.Windows.Forms.TextBox Slit;
         internal System.Windows.Forms.TextBox Slit_pos;
         internal System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonCalibrate;
+        internal System.Windows.Forms.TextBox textBoxCalibrate;
+        internal System.Windows.Forms.Label label5;
     }
 }

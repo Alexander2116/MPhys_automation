@@ -1284,5 +1284,93 @@ namespace MPhys.Devices
 
         }
 
+        private List<int> _Get_position(double position, out double dPos)
+        {
+            bool isMonoBusy;
+            bool isCCDBusy;
+            dPos = 0;
+            // move mono
+            mMono.MovetoWavelength(position);
+
+            isMonoBusy = true;
+            while (isMonoBusy == true)
+            {
+                isMonoBusy = mMono.IsBusy();
+            }
+            dPos = mMono.GetCurrentWavelength();
+            myFunc.add_to_log("_Get_position()", dPos.ToString());
+            // Start the acquisition
+            isCCDBusy = true;
+            mCCD.StartAcquisition(true);
+            while ((isCCDBusy == true))
+            {
+                // Poll Busy
+                isCCDBusy = mCCD.AcquisitionBusy();
+            }
+
+            // Retrieve the data
+            ccdResult = mCCD.GetResult();
+            ccdData = ccdResult.GetFirstDataObject();
+            ccdResult = null;
+            Object temp;
+            ccdData.GetDataAsArray(out temp);
+            ccdData = null;
+
+            double[,] array = (double[,])temp;
+            List<int> intensity = new List<int>();
+            for (int i = 0; i < 1024; i++)
+            {
+                intensity.Add((int)array[i, 1]);
+            }
+            return intensity;
+        }
+
+
+        public void Calibrate_mapping_coeff(double expected_peak)
+        {
+            bool isMonoBusy;
+            double dPos1=0, dPos2=0, dPos3=0;
+            List<int> intensity;
+
+            intensity = _Get_position(expected_peak - 4, out dPos1);
+            int maxInt1 = intensity.Max();
+            int maxPos1 = intensity.FindIndex(x => x >= maxInt1);
+
+            intensity = _Get_position(expected_peak, out dPos2);
+            int maxInt2 = intensity.Max();
+            int maxPos2 = intensity.FindIndex(x => x >= maxInt2);
+
+            intensity = _Get_position(expected_peak + 6, out dPos3);
+            int maxInt3 = intensity.Max();
+            int maxPos3 = intensity.FindIndex(x => x >= maxInt3);
+
+
+            double d = (maxPos2 - maxPos1) / (maxPos3 - maxPos2);
+
+            double a = ((dPos2 - dPos1) - d * (dPos3 - dPos2)) / (d * (maxPos3 * maxPos3 - maxPos2 * maxPos2) - (maxPos2 * maxPos2 - maxPos1 * maxPos1));
+            double b = ((dPos2 - dPos1) - a * (maxPos2 * maxPos2 - maxPos1 * maxPos1)) / ((maxPos2 - maxPos1));
+            double c = dPos2 - a*maxPos2*maxPos2 - b*maxPos2;
+
+            double grating;
+            object grat;
+            mMono.GetCurrentGrating(out grating, out grat);
+
+            if(grating == 1200)
+            {
+                if(expected_peak > 600)
+                {
+                    myFunc.Update_ini(a, b, c, "1200-1");
+                }
+                else
+                {
+                    myFunc.Update_ini(a, b, c, "1200-2");
+                }
+            }
+            else
+            {
+                myFunc.Update_ini(a,b,c,grating.ToString());
+            }
+        }
+
     }
 }

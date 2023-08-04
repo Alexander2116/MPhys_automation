@@ -548,6 +548,15 @@ namespace MPhys.GUI
             }
             Slit_pos.Text = MonoSpec.GetFrontEntranceSlit().ToString();
         }
+
+        private void buttonCalibrate_Click(object sender, EventArgs e)
+        {
+            if (textBoxCalibrate.Text != null && textBoxCalibrate.Text != "")
+            {
+                double exp = double.Parse(textBoxCalibrate.Text);
+                MonoSpec.Calibrate_mapping_coeff(exp);
+            }
+        }
         //=============================================
     }
 }
